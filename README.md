@@ -10,6 +10,8 @@
 | 구분 | 식별자 |
 |---|---|
 | 프로그램 표시 이름 | R-edit |
+| 회사명 | 리치원컴퍼니 |
+| 초기 개발 버전 | `0.1.0+1` |
 | GitHub 저장소 | https://github.com/richwon-lab/r-edit |
 | 로컬 프로젝트·모듈·Dart 패키지 | `r_edit` |
 | 초기 대상 플랫폼 | Windows |
@@ -29,17 +31,35 @@
 flutter --version
 dart --version
 flutter pub get
+dart format lib test
 flutter analyze
 flutter test
+flutter build windows --debug
 flutter run -d windows
 ```
 
-현재 채택한 SDK 버전과 실제 실행 결과는 로컬에서 확인한 후 기록한다.
-이 README가 추가됐다는 이유만으로 기능 구현이나 실행 검증이 완료된 것은 아니다.
+현재 SDK는 Flutter 3.44.8 stable / Dart 3.12.2이며, 생성 시 Dart 제약 `^3.12.2`를 유지한다.
+실제 검증 결과와 확인 범위는 [현재 상태](docs/next-step.md)에 기록한다.
+2026-10-19 앱 골격 검증에서 포맷·의존성 갱신·분석·위젯 테스트 1개·Windows 디버그 빌드가 통과했다.
+Windows 실행과 실제 창 제목·제품 리소스를 확인했다. 화면 외관의 직접 시각 확인은 남아 있다.
 
 ## 현재 개발 범위
 
-초기 작업은 Flutter 기본 프로젝트와 Git 연결, 개발 문서 정리다.
+현재 앱은 R-edit 제목과 한국어 안내를 표시하는 시작 화면이다. 업무 기능은 아직 없다.
+
+| 파일 | 책임 |
+|---|---|
+| `lib/main.dart` | 앱 실행 진입점 |
+| `lib/app/r_edit_app.dart` | `REditApp`, MaterialApp과 시작 화면 연결 |
+| `lib/app/r_edit_theme.dart` | 공통 ThemeData, Windows 한국어 글꼴 맑은 고딕 |
+| `lib/app/start_page.dart` | 시작 안내 화면 |
+
+Windows 창 제목·제품명·파일 설명은 R-edit, 회사명은 리치원컴퍼니다.
+실행 파일·내부 식별자는 `r_edit`를 유지한다. 버전 리소스는 Flutter의 버전 설정에 연결한다.
+의존성은 Flutter와 개발용 flutter_test·flutter_lints만 사용하며 앱의 pubspec.lock을 관리한다.
+첫 업무 상태를 연결할 때 상태 관리 방식을, 저장 모델을 구현할 때 JSON 코드 생성을 검토한다.
+라우터·DI·코드 생성 패키지나 빈 계층은 미리 추가하지 않는다.
+
 다음 실제 기능은 별도 순수 Dart 패키지의 작업 데이터 모델과 저장 정책부터 구현한다.
 아직 생성되지 않은 라이브러리를 pubspec.yaml에 선언하지 않는다.
 

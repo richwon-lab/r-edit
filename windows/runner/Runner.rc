@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.richwon" "\0"
-            VALUE "FileDescription", "r_edit" "\0"
+            VALUE "CompanyName", "리치원컴퍼니" "\0"
+            VALUE "FileDescription", "R-edit" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "r_edit" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2026 com.richwon. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2026 리치원컴퍼니. All rights reserved." "\0"
             VALUE "OriginalFilename", "r_edit.exe" "\0"
-            VALUE "ProductName", "r_edit" "\0"
+            VALUE "ProductName", "R-edit" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
