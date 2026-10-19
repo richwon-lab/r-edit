@@ -1,0 +1,113 @@
+{
+  "note": "Isolated 75x25 sample experiment. Normal line range 1-3 first, then maximum feasible height; four lines reference only when no normal candidate. Fixed 0.3 cutter constraints height>=3mm and width>=58%; sample geometry/font only. Heights sampled by 0.25mm; no-fit refers to enumerated candidates, not proof over continuous space. Production export guards not implemented here.",
+  "rows": 286,
+  "heights": {
+    "4.5": 286
+  },
+  "lineCounts": {
+    "1": 92,
+    "2": 183,
+    "3": 11
+  },
+  "changedRows": 0,
+  "changed": [],
+  "probes": [
+    {
+      "id": "ABC2",
+      "text": "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT",
+      "status": "normal",
+      "normal": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE",
+          "CONTROLLER",
+          "REMOTE DISPLAY UNIT"
+        ],
+        "height": 4.5,
+        "minWidth": 73.08
+      },
+      "referenceOnly": null
+    },
+    {
+      "id": "ABC3",
+      "text": "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT EMERGENCY CONTROL PANEL",
+      "status": "normal",
+      "normal": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE",
+          "CONTROLLER REMOTE DISPLAY",
+          "UNIT EMERGENCY CONTROL PANEL"
+        ],
+        "height": 3.75,
+        "minWidth": 61.26
+      },
+      "referenceOnly": null
+    },
+    {
+      "id": "LONG4",
+      "text": "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT EMERGENCY CONTROL PANEL AUXILIARY POWER SUPPLY MONITOR",
+      "status": "manual_required",
+      "normal": null,
+      "referenceOnly": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT",
+          "EMERGENCY CONTROL PANEL",
+          "AUXILIARY POWER SUPPLY MONITOR"
+        ],
+        "height": 3.75,
+        "minWidth": 60.32
+      }
+    },
+    {
+      "id": "LONG6",
+      "text": "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT EMERGENCY CONTROL PANEL AUXILIARY POWER SUPPLY MONITOR ENGINE ROOM VENTILATION CONTROL",
+      "status": "manual_required",
+      "normal": null,
+      "referenceOnly": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT EMERGENCY",
+          "CONTROL PANEL AUXILIARY POWER SUPPLY",
+          "MONITOR ENGINE ROOM VENTILATION CONTROL"
+        ],
+        "height": 3,
+        "minWidth": 59.32
+      }
+    },
+    {
+      "id": "PATTERN_RELAX",
+      "text": "NO.1 MAIN ENGINE ROOM VENTILATION FAN LOCAL CONTROL PANEL EM'CY STOP P/B (ES-A)",
+      "status": "normal",
+      "normal": {
+        "lines": [
+          "NO.1 MAIN ENGINE ROOM",
+          "VENTILATION FAN LOCAL CONTROL",
+          "PANEL EM'CY STOP P/B (ES-A)"
+        ],
+        "height": 3.75,
+        "minWidth": 59.72
+      },
+      "referenceOnly": null
+    },
+    {
+      "id": "UNBREAKABLE_18",
+      "text": "WWWWWWWWWWWWWWWWWW",
+      "status": "normal",
+      "normal": {
+        "lines": [
+          "WWWWWWWWWWWWWWWWWW"
+        ],
+        "height": 4.25,
+        "minWidth": 59.33
+      },
+      "referenceOnly": null
+    },
+    {
+      "id": "NO_FIT",
+      "text": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+      "status": "manual_required",
+      "normal": null,
+      "referenceOnly": null
+    }
+  ]
+}

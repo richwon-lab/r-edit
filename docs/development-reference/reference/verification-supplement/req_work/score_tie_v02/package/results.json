@@ -1,0 +1,1625 @@
+{
+  "version": "0.2",
+  "passed": 16,
+  "total": 16,
+  "assertions": {
+    "mean_dilutes_with_uncompressed_line": true,
+    "sum_neutral_for_uncompressed_line": true,
+    "sum_distinguishes_more_compressed_lines": true,
+    "secondary_sum_never_beats_primary": true,
+    "tiny_primary_difference_not_rounded_to_tie": true,
+    "curve_and_strength_applied_to_each_line": true,
+    "disabled_width_has_no_secondary_effect": true,
+    "sum_never_improves_when_compression_added": true,
+    "equal_base_floor_supported": true,
+    "invalid_inputs_rejected": true,
+    "prior_four_choices_unchanged": true,
+    "prior_primary_scores_unchanged": true,
+    "secondary_does_not_bypass_geometry_or_cutter": true,
+    "disabled_rule_restores_fixed_tie_order": true,
+    "vector_order_deterministic": true,
+    "sources_and_candidates_not_mutated": true
+  },
+  "labels": {
+    "mean_dilutes_with_uncompressed_line": "평균은 축소되지 않은 줄 추가만으로 유리해짐을 재현",
+    "sum_neutral_for_uncompressed_line": "보조 합계는 축소되지 않은 줄을 추가해도 동일",
+    "sum_distinguishes_more_compressed_lines": "최악의 줄이 같아도 좁아진 줄이 많으면 합계로 구분",
+    "secondary_sum_never_beats_primary": "보조 합계가 더 커도 주점수가 좋은 B 우선",
+    "tiny_primary_difference_not_rounded_to_tie": "아주 작은 주점수 차이도 보조 점수로 뒤집지 않음",
+    "curve_and_strength_applied_to_each_line": "곡선·강도를 줄별로 적용한 뒤 합산",
+    "disabled_width_has_no_secondary_effect": "자폭 규칙을 끄면 평균·합계도 모두 0",
+    "sum_never_improves_when_compression_added": "축소된 줄을 추가해도 보조 합계가 좋아지지 않음",
+    "equal_base_floor_supported": "기본 자폭과 하한이 같아도 계산 가능",
+    "invalid_inputs_rejected": "범위 위반·비정상 수치·미지원 방식 거부",
+    "prior_four_choices_unchanged": "기존 실제 형상 후보의 네 설정 선택 유지",
+    "prior_primary_scores_unchanged": "기존 주점수·감점 내역은 그대로 유지",
+    "secondary_does_not_bypass_geometry_or_cutter": "보조 점수가 홀·영역·커터 판정을 우회하지 않음",
+    "disabled_rule_restores_fixed_tie_order": "모든 점수 규칙을 끄면 기존 고정 동점 순서 유지",
+    "vector_order_deterministic": "수학 후보 입력 순서와 무관하게 같은 선택",
+    "sources_and_candidates_not_mutated": "기존 파일·후보·규칙은 변경하지 않음"
+  },
+  "findings": {
+    "mean_prefers_D_over_A": true,
+    "sum_keeps_A_D_width_tied": true,
+    "recommendation": "worst_primary_then_sum_on_exact_total_tie",
+    "production_policy_changed": false
+  },
+  "elapsed_ms": 7.301,
+  "output": "results.json / preview.html",
+  "limitations": [
+    "A〜D는 수학적 자폭 사례이며 같은 실제 문구에서 생성한 배치 후보가 아닙니다. 미관·줄바꿈 품질을 검증하지 않습니다.",
+    "보조 합계는 검토 제안입니다. 기본 동작은 기존 fixed 방식으로 유지하며 평균·합계는 비교 호출에서만 지정합니다.",
+    "실제 형상 후보 두 개의 기존 네 가지 선택과 감점 내역 유지도 확인하지만, 전체 100개 배치 재생성 시험은 아닙니다.",
+    "동점은 내부 수치가 정확히 같을 때만 취급합니다. 최종 수치 정밀도 정책은 미정입니다.",
+    "곡선·강도·줄별 집계의 최종 운영 기준, 여러 명판 간 패턴 최적화, 규칙 레이어 연결은 이번에 변경하지 않습니다.",
+    "DXF·Type3·참고 배치 생성·새 폰트·실제 가공은 이번 범위에 없습니다."
+  ],
+  "width_vectors": {
+    "A": [
+      0.6,
+      0.8,
+      0.8
+    ],
+    "B": [
+      0.65,
+      0.65,
+      0.65
+    ],
+    "C": [
+      0.6,
+      0.6,
+      0.8
+    ],
+    "D": [
+      0.6,
+      0.8,
+      0.8,
+      0.8
+    ]
+  },
+  "costs": {
+    "A": {
+      "worst": 0.9090909090909091,
+      "mean": 0.30303030303030304,
+      "sum": 0.9090909090909091,
+      "lines": [
+        0.9090909090909091,
+        0,
+        0
+      ]
+    },
+    "B": {
+      "worst": 0.6818181818181817,
+      "mean": 0.6818181818181817,
+      "sum": 2.045454545454545,
+      "lines": [
+        0.6818181818181817,
+        0.6818181818181817,
+        0.6818181818181817
+      ]
+    },
+    "C": {
+      "worst": 0.9090909090909091,
+      "mean": 0.6060606060606061,
+      "sum": 1.8181818181818181,
+      "lines": [
+        0.9090909090909091,
+        0.9090909090909091,
+        0
+      ]
+    },
+    "D": {
+      "worst": 0.9090909090909091,
+      "mean": 0.22727272727272727,
+      "sum": 0.9090909090909091,
+      "lines": [
+        0.9090909090909091,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "integration": [
+    {
+      "settings": {
+        "width": {
+          "enabled": true,
+          "strength": 1,
+          "power": 1
+        },
+        "pattern": {
+          "enabled": true,
+          "strength": 0.4,
+          "power": 1
+        }
+      },
+      "previous": {
+        "status": "normal",
+        "selected": "B",
+        "audit": {
+          "A": {
+            "status": "normal",
+            "reasons": [],
+            "total": 0.7163544319867964,
+            "breakdown": [
+              {
+                "rule": "pattern",
+                "target": "pattern:FEEDER PANEL",
+                "severity": 0,
+                "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                "occurrences": 1,
+                "enabled": true,
+                "strength": 0.4,
+                "power": 1,
+                "curve_value": 0,
+                "contribution": 0.0
+              },
+              {
+                "rule": "width",
+                "target": "region:main",
+                "severity": 0.7163544319867964,
+                "reason": "가장 많이 축소된 줄",
+                "line": 2,
+                "actual_width": 0.6424020249629048,
+                "base_width": 0.8,
+                "floor": 0.58,
+                "enabled": true,
+                "strength": 1,
+                "power": 1,
+                "curve_value": 0.7163544319867964,
+                "contribution": 0.7163544319867964
+              }
+            ]
+          },
+          "B": {
+            "status": "normal",
+            "reasons": [],
+            "total": 0.4,
+            "breakdown": [
+              {
+                "rule": "pattern",
+                "target": "pattern:FEEDER PANEL",
+                "severity": 1,
+                "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                "occurrences": 1,
+                "enabled": true,
+                "strength": 0.4,
+                "power": 1,
+                "curve_value": 1,
+                "contribution": 0.4
+              },
+              {
+                "rule": "width",
+                "target": "region:main",
+                "severity": 0,
+                "reason": "가장 많이 축소된 줄",
+                "line": 1,
+                "actual_width": 0.8,
+                "base_width": 0.8,
+                "floor": 0.58,
+                "enabled": true,
+                "strength": 1,
+                "power": 1,
+                "curve_value": 0,
+                "contribution": 0
+              }
+            ]
+          }
+        }
+      },
+      "results": {
+        "fixed": {
+          "status": "normal",
+          "selected": "B",
+          "audit": {
+            "A": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.7163544319867964,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 0,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0.0
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0.7163544319867964,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 2,
+                  "actual_width": 0.6424020249629048,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": true,
+                  "strength": 1,
+                  "power": 1,
+                  "curve_value": 0.7163544319867964,
+                  "contribution": 0.7163544319867964
+                }
+              ],
+              "tie_break": {
+                "method": "fixed",
+                "worst": 0.7163544319867964,
+                "mean": 0.3581772159933982,
+                "sum": 0.7163544319867964,
+                "lines": [
+                  0,
+                  0.7163544319867964
+                ]
+              }
+            },
+            "B": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.4,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 1,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 1,
+                  "contribution": 0.4
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 1,
+                  "actual_width": 0.8,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": true,
+                  "strength": 1,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0
+                }
+              ],
+              "tie_break": {
+                "method": "fixed",
+                "worst": 0,
+                "mean": 0.0,
+                "sum": 0.0,
+                "lines": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          }
+        },
+        "mean": {
+          "status": "normal",
+          "selected": "B",
+          "audit": {
+            "A": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.7163544319867964,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 0,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0.0
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0.7163544319867964,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 2,
+                  "actual_width": 0.6424020249629048,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": true,
+                  "strength": 1,
+                  "power": 1,
+                  "curve_value": 0.7163544319867964,
+                  "contribution": 0.7163544319867964
+                }
+              ],
+              "tie_break": {
+                "method": "mean",
+                "worst": 0.7163544319867964,
+                "mean": 0.3581772159933982,
+                "sum": 0.7163544319867964,
+                "lines": [
+                  0,
+                  0.7163544319867964
+                ]
+              }
+            },
+            "B": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.4,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 1,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 1,
+                  "contribution": 0.4
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 1,
+                  "actual_width": 0.8,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": true,
+                  "strength": 1,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0
+                }
+              ],
+              "tie_break": {
+                "method": "mean",
+                "worst": 0,
+                "mean": 0.0,
+                "sum": 0.0,
+                "lines": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          }
+        },
+        "sum": {
+          "status": "normal",
+          "selected": "B",
+          "audit": {
+            "A": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.7163544319867964,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 0,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0.0
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0.7163544319867964,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 2,
+                  "actual_width": 0.6424020249629048,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": true,
+                  "strength": 1,
+                  "power": 1,
+                  "curve_value": 0.7163544319867964,
+                  "contribution": 0.7163544319867964
+                }
+              ],
+              "tie_break": {
+                "method": "sum",
+                "worst": 0.7163544319867964,
+                "mean": 0.3581772159933982,
+                "sum": 0.7163544319867964,
+                "lines": [
+                  0,
+                  0.7163544319867964
+                ]
+              }
+            },
+            "B": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.4,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 1,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 1,
+                  "contribution": 0.4
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 1,
+                  "actual_width": 0.8,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": true,
+                  "strength": 1,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0
+                }
+              ],
+              "tie_break": {
+                "method": "sum",
+                "worst": 0,
+                "mean": 0.0,
+                "sum": 0.0,
+                "lines": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "settings": {
+        "width": {
+          "enabled": true,
+          "strength": 1,
+          "power": 4
+        },
+        "pattern": {
+          "enabled": true,
+          "strength": 0.4,
+          "power": 1
+        }
+      },
+      "previous": {
+        "status": "normal",
+        "selected": "A",
+        "audit": {
+          "A": {
+            "status": "normal",
+            "reasons": [],
+            "total": 0.26333695449362887,
+            "breakdown": [
+              {
+                "rule": "pattern",
+                "target": "pattern:FEEDER PANEL",
+                "severity": 0,
+                "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                "occurrences": 1,
+                "enabled": true,
+                "strength": 0.4,
+                "power": 1,
+                "curve_value": 0,
+                "contribution": 0.0
+              },
+              {
+                "rule": "width",
+                "target": "region:main",
+                "severity": 0.7163544319867964,
+                "reason": "가장 많이 축소된 줄",
+                "line": 2,
+                "actual_width": 0.6424020249629048,
+                "base_width": 0.8,
+                "floor": 0.58,
+                "enabled": true,
+                "strength": 1,
+                "power": 4,
+                "curve_value": 0.26333695449362887,
+                "contribution": 0.26333695449362887
+              }
+            ]
+          },
+          "B": {
+            "status": "normal",
+            "reasons": [],
+            "total": 0.4,
+            "breakdown": [
+              {
+                "rule": "pattern",
+                "target": "pattern:FEEDER PANEL",
+                "severity": 1,
+                "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                "occurrences": 1,
+                "enabled": true,
+                "strength": 0.4,
+                "power": 1,
+                "curve_value": 1,
+                "contribution": 0.4
+              },
+              {
+                "rule": "width",
+                "target": "region:main",
+                "severity": 0,
+                "reason": "가장 많이 축소된 줄",
+                "line": 1,
+                "actual_width": 0.8,
+                "base_width": 0.8,
+                "floor": 0.58,
+                "enabled": true,
+                "strength": 1,
+                "power": 4,
+                "curve_value": 0,
+                "contribution": 0
+              }
+            ]
+          }
+        }
+      },
+      "results": {
+        "fixed": {
+          "status": "normal",
+          "selected": "A",
+          "audit": {
+            "A": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.26333695449362887,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 0,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0.0
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0.7163544319867964,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 2,
+                  "actual_width": 0.6424020249629048,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": true,
+                  "strength": 1,
+                  "power": 4,
+                  "curve_value": 0.26333695449362887,
+                  "contribution": 0.26333695449362887
+                }
+              ],
+              "tie_break": {
+                "method": "fixed",
+                "worst": 0.26333695449362887,
+                "mean": 0.13166847724681444,
+                "sum": 0.26333695449362887,
+                "lines": [
+                  0,
+                  0.26333695449362887
+                ]
+              }
+            },
+            "B": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.4,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 1,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 1,
+                  "contribution": 0.4
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 1,
+                  "actual_width": 0.8,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": true,
+                  "strength": 1,
+                  "power": 4,
+                  "curve_value": 0,
+                  "contribution": 0
+                }
+              ],
+              "tie_break": {
+                "method": "fixed",
+                "worst": 0,
+                "mean": 0.0,
+                "sum": 0.0,
+                "lines": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          }
+        },
+        "mean": {
+          "status": "normal",
+          "selected": "A",
+          "audit": {
+            "A": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.26333695449362887,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 0,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0.0
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0.7163544319867964,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 2,
+                  "actual_width": 0.6424020249629048,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": true,
+                  "strength": 1,
+                  "power": 4,
+                  "curve_value": 0.26333695449362887,
+                  "contribution": 0.26333695449362887
+                }
+              ],
+              "tie_break": {
+                "method": "mean",
+                "worst": 0.26333695449362887,
+                "mean": 0.13166847724681444,
+                "sum": 0.26333695449362887,
+                "lines": [
+                  0,
+                  0.26333695449362887
+                ]
+              }
+            },
+            "B": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.4,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 1,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 1,
+                  "contribution": 0.4
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 1,
+                  "actual_width": 0.8,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": true,
+                  "strength": 1,
+                  "power": 4,
+                  "curve_value": 0,
+                  "contribution": 0
+                }
+              ],
+              "tie_break": {
+                "method": "mean",
+                "worst": 0,
+                "mean": 0.0,
+                "sum": 0.0,
+                "lines": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          }
+        },
+        "sum": {
+          "status": "normal",
+          "selected": "A",
+          "audit": {
+            "A": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.26333695449362887,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 0,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0.0
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0.7163544319867964,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 2,
+                  "actual_width": 0.6424020249629048,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": true,
+                  "strength": 1,
+                  "power": 4,
+                  "curve_value": 0.26333695449362887,
+                  "contribution": 0.26333695449362887
+                }
+              ],
+              "tie_break": {
+                "method": "sum",
+                "worst": 0.26333695449362887,
+                "mean": 0.13166847724681444,
+                "sum": 0.26333695449362887,
+                "lines": [
+                  0,
+                  0.26333695449362887
+                ]
+              }
+            },
+            "B": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.4,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 1,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 1,
+                  "contribution": 0.4
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 1,
+                  "actual_width": 0.8,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": true,
+                  "strength": 1,
+                  "power": 4,
+                  "curve_value": 0,
+                  "contribution": 0
+                }
+              ],
+              "tie_break": {
+                "method": "sum",
+                "worst": 0,
+                "mean": 0.0,
+                "sum": 0.0,
+                "lines": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "settings": {
+        "width": {
+          "enabled": false,
+          "strength": 1,
+          "power": 1
+        },
+        "pattern": {
+          "enabled": true,
+          "strength": 0.4,
+          "power": 1
+        }
+      },
+      "previous": {
+        "status": "normal",
+        "selected": "A",
+        "audit": {
+          "A": {
+            "status": "normal",
+            "reasons": [],
+            "total": 0.0,
+            "breakdown": [
+              {
+                "rule": "pattern",
+                "target": "pattern:FEEDER PANEL",
+                "severity": 0,
+                "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                "occurrences": 1,
+                "enabled": true,
+                "strength": 0.4,
+                "power": 1,
+                "curve_value": 0,
+                "contribution": 0.0
+              },
+              {
+                "rule": "width",
+                "target": "region:main",
+                "severity": 0.7163544319867964,
+                "reason": "가장 많이 축소된 줄",
+                "line": 2,
+                "actual_width": 0.6424020249629048,
+                "base_width": 0.8,
+                "floor": 0.58,
+                "enabled": false,
+                "strength": 1,
+                "power": 1,
+                "curve_value": 0.7163544319867964,
+                "contribution": 0
+              }
+            ]
+          },
+          "B": {
+            "status": "normal",
+            "reasons": [],
+            "total": 0.4,
+            "breakdown": [
+              {
+                "rule": "pattern",
+                "target": "pattern:FEEDER PANEL",
+                "severity": 1,
+                "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                "occurrences": 1,
+                "enabled": true,
+                "strength": 0.4,
+                "power": 1,
+                "curve_value": 1,
+                "contribution": 0.4
+              },
+              {
+                "rule": "width",
+                "target": "region:main",
+                "severity": 0,
+                "reason": "가장 많이 축소된 줄",
+                "line": 1,
+                "actual_width": 0.8,
+                "base_width": 0.8,
+                "floor": 0.58,
+                "enabled": false,
+                "strength": 1,
+                "power": 1,
+                "curve_value": 0,
+                "contribution": 0
+              }
+            ]
+          }
+        }
+      },
+      "results": {
+        "fixed": {
+          "status": "normal",
+          "selected": "A",
+          "audit": {
+            "A": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.0,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 0,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0.0
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0.7163544319867964,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 2,
+                  "actual_width": 0.6424020249629048,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": false,
+                  "strength": 1,
+                  "power": 1,
+                  "curve_value": 0.7163544319867964,
+                  "contribution": 0
+                }
+              ],
+              "tie_break": {
+                "method": "fixed",
+                "worst": 0,
+                "mean": 0.0,
+                "sum": 0.0,
+                "lines": [
+                  0,
+                  0
+                ]
+              }
+            },
+            "B": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.4,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 1,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 1,
+                  "contribution": 0.4
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 1,
+                  "actual_width": 0.8,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": false,
+                  "strength": 1,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0
+                }
+              ],
+              "tie_break": {
+                "method": "fixed",
+                "worst": 0,
+                "mean": 0.0,
+                "sum": 0.0,
+                "lines": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          }
+        },
+        "mean": {
+          "status": "normal",
+          "selected": "A",
+          "audit": {
+            "A": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.0,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 0,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0.0
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0.7163544319867964,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 2,
+                  "actual_width": 0.6424020249629048,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": false,
+                  "strength": 1,
+                  "power": 1,
+                  "curve_value": 0.7163544319867964,
+                  "contribution": 0
+                }
+              ],
+              "tie_break": {
+                "method": "mean",
+                "worst": 0,
+                "mean": 0.0,
+                "sum": 0.0,
+                "lines": [
+                  0,
+                  0
+                ]
+              }
+            },
+            "B": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.4,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 1,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 1,
+                  "contribution": 0.4
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 1,
+                  "actual_width": 0.8,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": false,
+                  "strength": 1,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0
+                }
+              ],
+              "tie_break": {
+                "method": "mean",
+                "worst": 0,
+                "mean": 0.0,
+                "sum": 0.0,
+                "lines": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          }
+        },
+        "sum": {
+          "status": "normal",
+          "selected": "A",
+          "audit": {
+            "A": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.0,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 0,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0.0
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0.7163544319867964,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 2,
+                  "actual_width": 0.6424020249629048,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": false,
+                  "strength": 1,
+                  "power": 1,
+                  "curve_value": 0.7163544319867964,
+                  "contribution": 0
+                }
+              ],
+              "tie_break": {
+                "method": "sum",
+                "worst": 0,
+                "mean": 0.0,
+                "sum": 0.0,
+                "lines": [
+                  0,
+                  0
+                ]
+              }
+            },
+            "B": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.4,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 1,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 1,
+                  "contribution": 0.4
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 1,
+                  "actual_width": 0.8,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": false,
+                  "strength": 1,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0
+                }
+              ],
+              "tie_break": {
+                "method": "sum",
+                "worst": 0,
+                "mean": 0.0,
+                "sum": 0.0,
+                "lines": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "settings": {
+        "width": {
+          "enabled": true,
+          "strength": 0.3,
+          "power": 1
+        },
+        "pattern": {
+          "enabled": true,
+          "strength": 0.4,
+          "power": 1
+        }
+      },
+      "previous": {
+        "status": "normal",
+        "selected": "A",
+        "audit": {
+          "A": {
+            "status": "normal",
+            "reasons": [],
+            "total": 0.21490632959603892,
+            "breakdown": [
+              {
+                "rule": "pattern",
+                "target": "pattern:FEEDER PANEL",
+                "severity": 0,
+                "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                "occurrences": 1,
+                "enabled": true,
+                "strength": 0.4,
+                "power": 1,
+                "curve_value": 0,
+                "contribution": 0.0
+              },
+              {
+                "rule": "width",
+                "target": "region:main",
+                "severity": 0.7163544319867964,
+                "reason": "가장 많이 축소된 줄",
+                "line": 2,
+                "actual_width": 0.6424020249629048,
+                "base_width": 0.8,
+                "floor": 0.58,
+                "enabled": true,
+                "strength": 0.3,
+                "power": 1,
+                "curve_value": 0.7163544319867964,
+                "contribution": 0.21490632959603892
+              }
+            ]
+          },
+          "B": {
+            "status": "normal",
+            "reasons": [],
+            "total": 0.4,
+            "breakdown": [
+              {
+                "rule": "pattern",
+                "target": "pattern:FEEDER PANEL",
+                "severity": 1,
+                "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                "occurrences": 1,
+                "enabled": true,
+                "strength": 0.4,
+                "power": 1,
+                "curve_value": 1,
+                "contribution": 0.4
+              },
+              {
+                "rule": "width",
+                "target": "region:main",
+                "severity": 0,
+                "reason": "가장 많이 축소된 줄",
+                "line": 1,
+                "actual_width": 0.8,
+                "base_width": 0.8,
+                "floor": 0.58,
+                "enabled": true,
+                "strength": 0.3,
+                "power": 1,
+                "curve_value": 0,
+                "contribution": 0.0
+              }
+            ]
+          }
+        }
+      },
+      "results": {
+        "fixed": {
+          "status": "normal",
+          "selected": "A",
+          "audit": {
+            "A": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.21490632959603892,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 0,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0.0
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0.7163544319867964,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 2,
+                  "actual_width": 0.6424020249629048,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": true,
+                  "strength": 0.3,
+                  "power": 1,
+                  "curve_value": 0.7163544319867964,
+                  "contribution": 0.21490632959603892
+                }
+              ],
+              "tie_break": {
+                "method": "fixed",
+                "worst": 0.21490632959603892,
+                "mean": 0.10745316479801946,
+                "sum": 0.21490632959603892,
+                "lines": [
+                  0.0,
+                  0.21490632959603892
+                ]
+              }
+            },
+            "B": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.4,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 1,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 1,
+                  "contribution": 0.4
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 1,
+                  "actual_width": 0.8,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": true,
+                  "strength": 0.3,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0.0
+                }
+              ],
+              "tie_break": {
+                "method": "fixed",
+                "worst": 0.0,
+                "mean": 0.0,
+                "sum": 0.0,
+                "lines": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        },
+        "mean": {
+          "status": "normal",
+          "selected": "A",
+          "audit": {
+            "A": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.21490632959603892,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 0,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0.0
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0.7163544319867964,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 2,
+                  "actual_width": 0.6424020249629048,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": true,
+                  "strength": 0.3,
+                  "power": 1,
+                  "curve_value": 0.7163544319867964,
+                  "contribution": 0.21490632959603892
+                }
+              ],
+              "tie_break": {
+                "method": "mean",
+                "worst": 0.21490632959603892,
+                "mean": 0.10745316479801946,
+                "sum": 0.21490632959603892,
+                "lines": [
+                  0.0,
+                  0.21490632959603892
+                ]
+              }
+            },
+            "B": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.4,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 1,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 1,
+                  "contribution": 0.4
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 1,
+                  "actual_width": 0.8,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": true,
+                  "strength": 0.3,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0.0
+                }
+              ],
+              "tie_break": {
+                "method": "mean",
+                "worst": 0.0,
+                "mean": 0.0,
+                "sum": 0.0,
+                "lines": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        },
+        "sum": {
+          "status": "normal",
+          "selected": "A",
+          "audit": {
+            "A": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.21490632959603892,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 0,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0.0
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0.7163544319867964,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 2,
+                  "actual_width": 0.6424020249629048,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": true,
+                  "strength": 0.3,
+                  "power": 1,
+                  "curve_value": 0.7163544319867964,
+                  "contribution": 0.21490632959603892
+                }
+              ],
+              "tie_break": {
+                "method": "sum",
+                "worst": 0.21490632959603892,
+                "mean": 0.10745316479801946,
+                "sum": 0.21490632959603892,
+                "lines": [
+                  0.0,
+                  0.21490632959603892
+                ]
+              }
+            },
+            "B": {
+              "status": "normal",
+              "reasons": [],
+              "total": 0.4,
+              "breakdown": [
+                {
+                  "rule": "pattern",
+                  "target": "pattern:FEEDER PANEL",
+                  "severity": 1,
+                  "reason": "시험용 패턴을 독립된 한 줄로 유지",
+                  "occurrences": 1,
+                  "enabled": true,
+                  "strength": 0.4,
+                  "power": 1,
+                  "curve_value": 1,
+                  "contribution": 0.4
+                },
+                {
+                  "rule": "width",
+                  "target": "region:main",
+                  "severity": 0,
+                  "reason": "가장 많이 축소된 줄",
+                  "line": 1,
+                  "actual_width": 0.8,
+                  "base_width": 0.8,
+                  "floor": 0.58,
+                  "enabled": true,
+                  "strength": 0.3,
+                  "power": 1,
+                  "curve_value": 0,
+                  "contribution": 0.0
+                }
+              ],
+              "tie_break": {
+                "method": "sum",
+                "worst": 0.0,
+                "mean": 0.0,
+                "sum": 0.0,
+                "lines": [
+                  0.0,
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

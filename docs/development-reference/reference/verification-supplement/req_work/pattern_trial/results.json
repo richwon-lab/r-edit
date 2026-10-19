@@ -1,0 +1,3774 @@
+{
+  "parameters": {
+    "boundary_weight": 18,
+    "common_line_width_weight": 3,
+    "max_width_loss": 0.05,
+    "line_count_rule": "within 3 preferred lines; preserve 4-line exceptions",
+    "scope": "MRCE / 3448 BCC / 75×25 only",
+    "status": "experimental, not approved defaults"
+  },
+  "stats": {
+    "cases": 9,
+    "items": 33,
+    "changed": 8,
+    "before_mismatch": 14,
+    "after_mismatch": 2
+  },
+  "cases": [
+    {
+      "id": "P01",
+      "title": "번호와 머릿말",
+      "source": "합성 예시",
+      "texts": [
+        "NO.1 ABC MONITOR",
+        "NO.2 ABC KEYBOARD",
+        "NO.3 ABC TEMPERATURE CONTROLLER"
+      ],
+      "before": {
+        "NO.1 ABC MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 0.0,
+            "word_group_balance": 0.0,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 0.00304385925695895,
+          "cuts": [],
+          "signature": [],
+          "lines": [
+            {
+              "text": "NO.1 ABC MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.256114130434783,
+              "x": 12.81603260869565,
+              "bbox": [
+                13.358967391304347,
+                10.152173913043478,
+                61.64103260869565,
+                14.847826086956523
+              ]
+            }
+          ],
+          "prior_score": 0.0,
+          "broken_phrases": []
+        },
+        "NO.2 ABC KEYBOARD": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 0.0,
+            "word_group_balance": 0.0,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 0.00304385925695895,
+          "cuts": [],
+          "signature": [],
+          "lines": [
+            {
+              "text": "NO.2 ABC KEYBOARD",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.256114130434783,
+              "x": 10.720108695652172,
+              "bbox": [
+                11.263043478260869,
+                10.152173913043478,
+                63.73695652173913,
+                14.847826086956523
+              ]
+            }
+          ],
+          "prior_score": 0.0,
+          "broken_phrases": []
+        },
+        "NO.3 ABC TEMPERATURE CONTROLLER": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 2.0,
+            "word_group_balance": 0.18499867479459287,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 4
+          },
+          "score": 6.188042534051552,
+          "cuts": [
+            2,
+            3
+          ],
+          "signature": [
+            2,
+            3
+          ],
+          "lines": [
+            {
+              "text": "NO.3 ABC ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 15.956114130434782,
+              "x": 25.330434782608695,
+              "bbox": [
+                25.873369565217388,
+                15.852173913043478,
+                49.12663043478261,
+                20.547826086956523
+              ]
+            },
+            {
+              "text": "TEMPERATURE ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.256114130434781,
+              "x": 18.83478260869565,
+              "bbox": [
+                19.04510869565217,
+                10.152173913043477,
+                55.954891304347825,
+                14.75
+              ]
+            },
+            {
+              "text": "CONTROLLER",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 4.556114130434782,
+              "x": 20.187228260869563,
+              "bbox": [
+                20.602989130434782,
+                4.452173913043477,
+                54.39701086956522,
+                9.14782608695652
+              ]
+            }
+          ],
+          "prior_score": 2.184998674794593,
+          "broken_phrases": [
+            "TEMPERATURE CONTROLLER"
+          ]
+        }
+      },
+      "after": {
+        "NO.1 ABC MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.01787968026924691,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.020923539526206,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.1 ABC ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 25.330434782608695,
+              "bbox": [
+                25.873369565217388,
+                13.002173913043478,
+                49.12663043478261,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 25.765760869565216,
+              "bbox": [
+                26.289130434782606,
+                7.302173913043478,
+                48.71086956521739,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.017879680269247,
+          "broken_phrases": []
+        },
+        "NO.2 ABC KEYBOARD": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.06329230203931635,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.0663361612962754,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.2 ABC ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 25.330434782608695,
+              "bbox": [
+                25.873369565217388,
+                13.002173913043478,
+                49.12663043478261,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "KEYBOARD",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 23.674728260869564,
+              "bbox": [
+                24.188315217391303,
+                7.302173913043478,
+                50.811684782608694,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.0632923020393164,
+          "broken_phrases": []
+        },
+        "NO.3 ABC TEMPERATURE CONTROLLER": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 2.0,
+            "word_group_balance": 0.18499867479459287,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 4
+          },
+          "score": 6.188042534051552,
+          "cuts": [
+            2,
+            3
+          ],
+          "signature": [
+            2,
+            3
+          ],
+          "lines": [
+            {
+              "text": "NO.3 ABC ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 15.956114130434782,
+              "x": 25.330434782608695,
+              "bbox": [
+                25.873369565217388,
+                15.852173913043478,
+                49.12663043478261,
+                20.547826086956523
+              ]
+            },
+            {
+              "text": "TEMPERATURE ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.256114130434781,
+              "x": 18.83478260869565,
+              "bbox": [
+                19.04510869565217,
+                10.152173913043477,
+                55.954891304347825,
+                14.75
+              ]
+            },
+            {
+              "text": "CONTROLLER",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 4.556114130434782,
+              "x": 20.187228260869563,
+              "bbox": [
+                20.602989130434782,
+                4.452173913043477,
+                54.39701086956522,
+                9.14782608695652
+              ]
+            }
+          ],
+          "prior_score": 2.184998674794593,
+          "broken_phrases": [
+            "TEMPERATURE CONTROLLER"
+          ]
+        }
+      },
+      "relations": [
+        {
+          "a": "NO.1 ABC MONITOR",
+          "b": "NO.2 ABC KEYBOARD",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2,
+          "words": [
+            "NO.#",
+            "ABC"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 ABC MONITOR",
+          "b": "NO.3 ABC TEMPERATURE CONTROLLER",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2,
+          "words": [
+            "NO.#",
+            "ABC"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.2 ABC KEYBOARD",
+          "b": "NO.3 ABC TEMPERATURE CONTROLLER",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2,
+          "words": [
+            "NO.#",
+            "ABC"
+          ],
+          "kind": "번호 계열"
+        }
+      ],
+      "passes": 1,
+      "mismatches_before": 2,
+      "mismatches_after": 0
+    },
+    {
+      "id": "P02",
+      "title": "공통 꼬릿말",
+      "source": "합성 예시",
+      "texts": [
+        "PORT VOIP TELEPHONE MONITOR",
+        "NO.1 ABC VOIP TELEPHONE MONITOR",
+        "STBD VOIP TELEPHONE MONITOR"
+      ],
+      "before": {
+        "NO.1 ABC VOIP TELEPHONE MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 2.0,
+            "word_group_balance": 0.23799725651577486,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 2.2410411157727337,
+          "cuts": [
+            2,
+            4
+          ],
+          "signature": [
+            2,
+            4
+          ],
+          "lines": [
+            {
+              "text": "NO.1 ABC ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 15.956114130434782,
+              "x": 25.330434782608695,
+              "bbox": [
+                25.873369565217388,
+                15.852173913043478,
+                49.12663043478261,
+                20.547826086956523
+              ]
+            },
+            {
+              "text": "VOIP TELEPHONE ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.256114130434781,
+              "x": 15.929347826086953,
+              "bbox": [
+                16.105434782608693,
+                10.152173913043477,
+                58.8945652173913,
+                14.84782608695652
+              ]
+            },
+            {
+              "text": "MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 4.556114130434782,
+              "x": 25.765760869565216,
+              "bbox": [
+                26.289130434782606,
+                4.452173913043477,
+                48.71086956521739,
+                9.14782608695652
+              ]
+            }
+          ],
+          "prior_score": 2.237997256515775,
+          "broken_phrases": []
+        },
+        "PORT VOIP TELEPHONE MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.8777896895891435,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.296321927677607,
+            "contraction_preference": 0.014627648814146918,
+            "semantic_supplement": 0
+          },
+          "score": 2.1887392660808973,
+          "cuts": [
+            3
+          ],
+          "signature": [
+            3
+          ],
+          "lines": [
+            {
+              "text": "PORT VOIP TELEPHONE ",
+              "width": 0.7581003654051938,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 9.473719609509143,
+              "bbox": [
+                9.978948181834209,
+                13.002173913043478,
+                65.02105181816579,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 25.765760869565216,
+              "bbox": [
+                26.289130434782606,
+                7.302173913043478,
+                48.71086956521739,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 2.1741116172667505,
+          "broken_phrases": []
+        },
+        "STBD VOIP TELEPHONE MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.6223660282099365,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.29631815038258824,
+            "contraction_preference": 0.011381401978222922,
+            "semantic_supplement": 0
+          },
+          "score": 1.9300655805707478,
+          "cuts": [
+            3
+          ],
+          "signature": [
+            3
+          ],
+          "lines": [
+            {
+              "text": "STBD VOIP TELEPHONE ",
+              "width": 0.7647192395714056,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 9.586708734937755,
+              "bbox": [
+                9.979458561782849,
+                12.996059782608695,
+                65.02054143821715,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 25.765760869565216,
+              "bbox": [
+                26.289130434782606,
+                7.302173913043478,
+                48.71086956521739,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.9186841785925248,
+          "broken_phrases": []
+        }
+      },
+      "after": {
+        "NO.1 ABC VOIP TELEPHONE MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 2.0,
+            "word_group_balance": 0.23799725651577486,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 2.2410411157727337,
+          "cuts": [
+            2,
+            4
+          ],
+          "signature": [
+            2,
+            4
+          ],
+          "lines": [
+            {
+              "text": "NO.1 ABC ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 15.956114130434782,
+              "x": 25.330434782608695,
+              "bbox": [
+                25.873369565217388,
+                15.852173913043478,
+                49.12663043478261,
+                20.547826086956523
+              ]
+            },
+            {
+              "text": "VOIP TELEPHONE ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.256114130434781,
+              "x": 15.929347826086953,
+              "bbox": [
+                16.105434782608693,
+                10.152173913043477,
+                58.8945652173913,
+                14.84782608695652
+              ]
+            },
+            {
+              "text": "MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 4.556114130434782,
+              "x": 25.765760869565216,
+              "bbox": [
+                26.289130434782606,
+                4.452173913043477,
+                48.71086956521739,
+                9.14782608695652
+              ]
+            }
+          ],
+          "prior_score": 2.237997256515775,
+          "broken_phrases": []
+        },
+        "PORT VOIP TELEPHONE MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 2.0,
+            "word_group_balance": 0.3452789208962046,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 2.3483227801531634,
+          "cuts": [
+            1,
+            3
+          ],
+          "signature": [
+            1,
+            3
+          ],
+          "lines": [
+            {
+              "text": "PORT ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 15.956114130434782,
+              "x": 30.346467391304348,
+              "bbox": [
+                30.87961956521739,
+                15.852173913043478,
+                44.12038043478261,
+                20.547826086956523
+              ]
+            },
+            {
+              "text": "VOIP TELEPHONE ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.256114130434781,
+              "x": 15.929347826086953,
+              "bbox": [
+                16.105434782608693,
+                10.152173913043477,
+                58.8945652173913,
+                14.84782608695652
+              ]
+            },
+            {
+              "text": "MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 4.556114130434782,
+              "x": 25.765760869565216,
+              "bbox": [
+                26.289130434782606,
+                4.452173913043477,
+                48.71086956521739,
+                9.14782608695652
+              ]
+            }
+          ],
+          "prior_score": 2.3452789208962046,
+          "broken_phrases": []
+        },
+        "STBD VOIP TELEPHONE MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 2.0,
+            "word_group_balance": 0.3535665294924555,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 2.3566103887494143,
+          "cuts": [
+            1,
+            3
+          ],
+          "signature": [
+            1,
+            3
+          ],
+          "lines": [
+            {
+              "text": "STBD ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 15.959171195652175,
+              "x": 30.82336956521739,
+              "bbox": [
+                31.23423913043478,
+                15.849116847826087,
+                43.76576086956522,
+                20.544769021739132
+              ]
+            },
+            {
+              "text": "VOIP TELEPHONE ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.259171195652176,
+              "x": 15.929347826086953,
+              "bbox": [
+                16.105434782608693,
+                10.155230978260871,
+                58.8945652173913,
+                14.850883152173914
+              ]
+            },
+            {
+              "text": "MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 4.5591711956521745,
+              "x": 25.765760869565216,
+              "bbox": [
+                26.289130434782606,
+                4.45523097826087,
+                48.71086956521739,
+                9.150883152173915
+              ]
+            }
+          ],
+          "prior_score": 2.3535665294924555,
+          "broken_phrases": []
+        }
+      },
+      "relations": [
+        {
+          "a": "NO.1 ABC VOIP TELEPHONE MONITOR",
+          "b": "PORT VOIP TELEPHONE MONITOR",
+          "start_a": 2,
+          "start_b": 1,
+          "n": 3,
+          "words": [
+            "VOIP",
+            "TELEPHONE",
+            "MONITOR"
+          ],
+          "kind": "공통 꼬릿말"
+        },
+        {
+          "a": "NO.1 ABC VOIP TELEPHONE MONITOR",
+          "b": "STBD VOIP TELEPHONE MONITOR",
+          "start_a": 2,
+          "start_b": 1,
+          "n": 3,
+          "words": [
+            "VOIP",
+            "TELEPHONE",
+            "MONITOR"
+          ],
+          "kind": "공통 꼬릿말"
+        },
+        {
+          "a": "PORT VOIP TELEPHONE MONITOR",
+          "b": "STBD VOIP TELEPHONE MONITOR",
+          "start_a": 1,
+          "start_b": 1,
+          "n": 3,
+          "words": [
+            "VOIP",
+            "TELEPHONE",
+            "MONITOR"
+          ],
+          "kind": "공통 꼬릿말"
+        }
+      ],
+      "passes": 1,
+      "mismatches_before": 2,
+      "mismatches_after": 0
+    },
+    {
+      "id": "P03",
+      "title": "중간의 공통 표현",
+      "source": "합성 예시",
+      "texts": [
+        "MAIN TEMPERATURE CONTROLLER POWER SUPPLY",
+        "AUXILIARY TEMPERATURE CONTROLLER MONITOR"
+      ],
+      "before": {
+        "AUXILIARY TEMPERATURE CONTROLLER MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.31813590010027726,
+            "severe_compression": 0.0,
+            "line_count": 2.0,
+            "word_group_balance": 0.2813681205887959,
+            "contraction_preference": 0.007784468032520884,
+            "semantic_supplement": 4
+          },
+          "score": 6.607288488721594,
+          "cuts": [
+            1,
+            2
+          ],
+          "signature": [
+            1,
+            2
+          ],
+          "lines": [
+            {
+              "text": "AUXILIARY ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 16.005027173913042,
+              "x": 24.767934782608695,
+              "bbox": [
+                25.041847826086958,
+                15.901086956521738,
+                49.95815217391304,
+                20.49891304347826
+              ]
+            },
+            {
+              "text": "TEMPERATURE ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.305027173913043,
+              "x": 18.83478260869565,
+              "bbox": [
+                19.04510869565217,
+                10.201086956521738,
+                55.954891304347825,
+                14.798913043478262
+              ]
+            },
+            {
+              "text": "CONTROLLER MONITOR",
+              "width": 0.7747755713602755,
+              "height": 4.5,
+              "baseline": 4.605027173913042,
+              "x": 8.60618724347282,
+              "bbox": [
+                9.008838950056116,
+                4.501086956521737,
+                65.99116104994388,
+                9.196739130434782
+              ]
+            }
+          ],
+          "prior_score": 2.599504020689073,
+          "broken_phrases": [
+            "TEMPERATURE CONTROLLER"
+          ]
+        },
+        "MAIN TEMPERATURE CONTROLLER POWER SUPPLY": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 2.0,
+            "word_group_balance": 0.16454651388619146,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 4
+          },
+          "score": 6.167590373143151,
+          "cuts": [
+            2,
+            3
+          ],
+          "signature": [
+            2,
+            3
+          ],
+          "lines": [
+            {
+              "text": "MAIN TEMPERATURE ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 16.008084239130437,
+              "x": 11.791304347826085,
+              "bbox": [
+                12.314673913043478,
+                15.904144021739132,
+                62.68532608695652,
+                20.501970108695655
+              ]
+            },
+            {
+              "text": "CONTROLLER ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.308084239130437,
+              "x": 20.187228260869563,
+              "bbox": [
+                20.602989130434782,
+                10.204144021739133,
+                54.39701086956522,
+                14.899796195652176
+              ]
+            },
+            {
+              "text": "POWER SUPPLY",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 4.608084239130436,
+              "x": 17.435869565217388,
+              "bbox": [
+                17.969021739130433,
+                4.498029891304349,
+                57.03097826086957,
+                9.199796195652176
+              ]
+            }
+          ],
+          "prior_score": 2.1645465138861915,
+          "broken_phrases": [
+            "TEMPERATURE CONTROLLER"
+          ]
+        }
+      },
+      "after": {
+        "AUXILIARY TEMPERATURE CONTROLLER MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.31813590010027726,
+            "severe_compression": 0.0,
+            "line_count": 2.0,
+            "word_group_balance": 0.2813681205887959,
+            "contraction_preference": 0.007784468032520884,
+            "semantic_supplement": 4
+          },
+          "score": 6.607288488721594,
+          "cuts": [
+            1,
+            2
+          ],
+          "signature": [
+            1,
+            2
+          ],
+          "lines": [
+            {
+              "text": "AUXILIARY ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 16.005027173913042,
+              "x": 24.767934782608695,
+              "bbox": [
+                25.041847826086958,
+                15.901086956521738,
+                49.95815217391304,
+                20.49891304347826
+              ]
+            },
+            {
+              "text": "TEMPERATURE ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.305027173913043,
+              "x": 18.83478260869565,
+              "bbox": [
+                19.04510869565217,
+                10.201086956521738,
+                55.954891304347825,
+                14.798913043478262
+              ]
+            },
+            {
+              "text": "CONTROLLER MONITOR",
+              "width": 0.7747755713602755,
+              "height": 4.5,
+              "baseline": 4.605027173913042,
+              "x": 8.60618724347282,
+              "bbox": [
+                9.008838950056116,
+                4.501086956521737,
+                65.99116104994388,
+                9.196739130434782
+              ]
+            }
+          ],
+          "prior_score": 2.599504020689073,
+          "broken_phrases": [
+            "TEMPERATURE CONTROLLER"
+          ]
+        },
+        "MAIN TEMPERATURE CONTROLLER POWER SUPPLY": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 2.0,
+            "word_group_balance": 0.16454651388619146,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 4
+          },
+          "score": 6.167590373143151,
+          "cuts": [
+            2,
+            3
+          ],
+          "signature": [
+            2,
+            3
+          ],
+          "lines": [
+            {
+              "text": "MAIN TEMPERATURE ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 16.008084239130437,
+              "x": 11.791304347826085,
+              "bbox": [
+                12.314673913043478,
+                15.904144021739132,
+                62.68532608695652,
+                20.501970108695655
+              ]
+            },
+            {
+              "text": "CONTROLLER ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.308084239130437,
+              "x": 20.187228260869563,
+              "bbox": [
+                20.602989130434782,
+                10.204144021739133,
+                54.39701086956522,
+                14.899796195652176
+              ]
+            },
+            {
+              "text": "POWER SUPPLY",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 4.608084239130436,
+              "x": 17.435869565217388,
+              "bbox": [
+                17.969021739130433,
+                4.498029891304349,
+                57.03097826086957,
+                9.199796195652176
+              ]
+            }
+          ],
+          "prior_score": 2.1645465138861915,
+          "broken_phrases": [
+            "TEMPERATURE CONTROLLER"
+          ]
+        }
+      },
+      "relations": [
+        {
+          "a": "AUXILIARY TEMPERATURE CONTROLLER MONITOR",
+          "b": "MAIN TEMPERATURE CONTROLLER POWER SUPPLY",
+          "start_a": 1,
+          "start_b": 1,
+          "n": 2,
+          "words": [
+            "TEMPERATURE",
+            "CONTROLLER"
+          ],
+          "kind": "공통 표현"
+        }
+      ],
+      "passes": 1,
+      "mismatches_before": 2,
+      "mismatches_after": 2
+    },
+    {
+      "id": "P04",
+      "title": "단어 하나만 같음",
+      "source": "오묶음 대조군",
+      "texts": [
+        "NO.1 ABC MONITOR",
+        "ENGINE ROOM MONITOR",
+        "BATTERY VOLTAGE MONITOR"
+      ],
+      "before": {
+        "BATTERY VOLTAGE MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.2616224648985961,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.2646663241555551,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "BATTERY VOLTAGE ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 13.461684782608693,
+              "bbox": [
+                13.985054347826082,
+                13.002173913043478,
+                61.01494565217392,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 25.765760869565216,
+              "bbox": [
+                26.289130434782606,
+                7.302173913043478,
+                48.71086956521739,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.261622464898596,
+          "broken_phrases": []
+        },
+        "ENGINE ROOM MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.17836093179904577,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.1814047910560048,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "ENGINE ROOM ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 19.553804347826087,
+              "bbox": [
+                20.072282608695648,
+                13.002173913043478,
+                54.927717391304355,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 25.765760869565216,
+              "bbox": [
+                26.289130434782606,
+                7.302173913043478,
+                48.71086956521739,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.1783609317990458,
+          "broken_phrases": []
+        },
+        "NO.1 ABC MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 0.0,
+            "word_group_balance": 0.0,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 0.00304385925695895,
+          "cuts": [],
+          "signature": [],
+          "lines": [
+            {
+              "text": "NO.1 ABC MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.256114130434783,
+              "x": 12.81603260869565,
+              "bbox": [
+                13.358967391304347,
+                10.152173913043478,
+                61.64103260869565,
+                14.847826086956523
+              ]
+            }
+          ],
+          "prior_score": 0.0,
+          "broken_phrases": []
+        }
+      },
+      "after": {
+        "BATTERY VOLTAGE MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.2616224648985961,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.2646663241555551,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "BATTERY VOLTAGE ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 13.461684782608693,
+              "bbox": [
+                13.985054347826082,
+                13.002173913043478,
+                61.01494565217392,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 25.765760869565216,
+              "bbox": [
+                26.289130434782606,
+                7.302173913043478,
+                48.71086956521739,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.261622464898596,
+          "broken_phrases": []
+        },
+        "ENGINE ROOM MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.17836093179904577,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.1814047910560048,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "ENGINE ROOM ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 19.553804347826087,
+              "bbox": [
+                20.072282608695648,
+                13.002173913043478,
+                54.927717391304355,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 25.765760869565216,
+              "bbox": [
+                26.289130434782606,
+                7.302173913043478,
+                48.71086956521739,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.1783609317990458,
+          "broken_phrases": []
+        },
+        "NO.1 ABC MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 0.0,
+            "word_group_balance": 0.0,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 0.00304385925695895,
+          "cuts": [],
+          "signature": [],
+          "lines": [
+            {
+              "text": "NO.1 ABC MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.256114130434783,
+              "x": 12.81603260869565,
+              "bbox": [
+                13.358967391304347,
+                10.152173913043478,
+                61.64103260869565,
+                14.847826086956523
+              ]
+            }
+          ],
+          "prior_score": 0.0,
+          "broken_phrases": []
+        }
+      },
+      "relations": [],
+      "passes": 1,
+      "mismatches_before": 0,
+      "mismatches_after": 0
+    },
+    {
+      "id": "P05",
+      "title": "영어 의미 단위",
+      "source": "합성 예시",
+      "texts": [
+        "RJ45(1-PORT) FOR VOIP TELEPHONE",
+        "RJ45(2-PORT) FOR VOIP TELEPHONE",
+        "ALARM BUZZER STOP P/B"
+      ],
+      "before": {
+        "ALARM BUZZER STOP P/B": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.19077258726899382,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.1938164465259529,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "ALARM BUZZER ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.344565217391304,
+              "x": 18.169565217391302,
+              "bbox": [
+                18.443478260869565,
+                13.240625,
+                56.55652173913043,
+                17.83845108695652
+              ]
+            },
+            {
+              "text": "STOP P/B",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.644565217391304,
+              "x": 25.30353260869565,
+              "bbox": [
+                25.714402173913044,
+                7.161548913043478,
+                49.285597826086956,
+                12.621467391304348
+              ]
+            }
+          ],
+          "prior_score": 1.1907725872689938,
+          "broken_phrases": []
+        },
+        "RJ45(1-PORT) FOR VOIP TELEPHONE": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.17624641319942613,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.1792902724563852,
+          "cuts": [
+            1
+          ],
+          "signature": [
+            1
+          ],
+          "lines": [
+            {
+              "text": "RJ45(1-PORT) ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 12.91046195652174,
+              "x": 19.287228260869565,
+              "bbox": [
+                19.839945652173913,
+                12.415217391304349,
+                55.16005434782609,
+                17.893478260869564
+              ]
+            },
+            {
+              "text": "FOR VOIP TELEPHONE",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.21046195652174,
+              "x": 9.707608695652173,
+              "bbox": [
+                10.226086956521737,
+                7.106521739130435,
+                64.77391304347826,
+                11.802173913043479
+              ]
+            }
+          ],
+          "prior_score": 1.1762464131994261,
+          "broken_phrases": []
+        },
+        "RJ45(2-PORT) FOR VOIP TELEPHONE": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.17624641319942613,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.1792902724563852,
+          "cuts": [
+            1
+          ],
+          "signature": [
+            1
+          ],
+          "lines": [
+            {
+              "text": "RJ45(2-PORT) ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 12.91046195652174,
+              "x": 19.287228260869565,
+              "bbox": [
+                19.839945652173913,
+                12.415217391304349,
+                55.16005434782609,
+                17.893478260869564
+              ]
+            },
+            {
+              "text": "FOR VOIP TELEPHONE",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.21046195652174,
+              "x": 9.707608695652173,
+              "bbox": [
+                10.226086956521737,
+                7.106521739130435,
+                64.77391304347826,
+                11.802173913043479
+              ]
+            }
+          ],
+          "prior_score": 1.1762464131994261,
+          "broken_phrases": []
+        }
+      },
+      "after": {
+        "ALARM BUZZER STOP P/B": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.19077258726899382,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.1938164465259529,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "ALARM BUZZER ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.344565217391304,
+              "x": 18.169565217391302,
+              "bbox": [
+                18.443478260869565,
+                13.240625,
+                56.55652173913043,
+                17.83845108695652
+              ]
+            },
+            {
+              "text": "STOP P/B",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.644565217391304,
+              "x": 25.30353260869565,
+              "bbox": [
+                25.714402173913044,
+                7.161548913043478,
+                49.285597826086956,
+                12.621467391304348
+              ]
+            }
+          ],
+          "prior_score": 1.1907725872689938,
+          "broken_phrases": []
+        },
+        "RJ45(1-PORT) FOR VOIP TELEPHONE": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.17624641319942613,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.1792902724563852,
+          "cuts": [
+            1
+          ],
+          "signature": [
+            1
+          ],
+          "lines": [
+            {
+              "text": "RJ45(1-PORT) ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 12.91046195652174,
+              "x": 19.287228260869565,
+              "bbox": [
+                19.839945652173913,
+                12.415217391304349,
+                55.16005434782609,
+                17.893478260869564
+              ]
+            },
+            {
+              "text": "FOR VOIP TELEPHONE",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.21046195652174,
+              "x": 9.707608695652173,
+              "bbox": [
+                10.226086956521737,
+                7.106521739130435,
+                64.77391304347826,
+                11.802173913043479
+              ]
+            }
+          ],
+          "prior_score": 1.1762464131994261,
+          "broken_phrases": []
+        },
+        "RJ45(2-PORT) FOR VOIP TELEPHONE": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.17624641319942613,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.1792902724563852,
+          "cuts": [
+            1
+          ],
+          "signature": [
+            1
+          ],
+          "lines": [
+            {
+              "text": "RJ45(2-PORT) ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 12.91046195652174,
+              "x": 19.287228260869565,
+              "bbox": [
+                19.839945652173913,
+                12.415217391304349,
+                55.16005434782609,
+                17.893478260869564
+              ]
+            },
+            {
+              "text": "FOR VOIP TELEPHONE",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.21046195652174,
+              "x": 9.707608695652173,
+              "bbox": [
+                10.226086956521737,
+                7.106521739130435,
+                64.77391304347826,
+                11.802173913043479
+              ]
+            }
+          ],
+          "prior_score": 1.1762464131994261,
+          "broken_phrases": []
+        }
+      },
+      "relations": [
+        {
+          "a": "RJ45(1-PORT) FOR VOIP TELEPHONE",
+          "b": "RJ45(2-PORT) FOR VOIP TELEPHONE",
+          "start_a": 1,
+          "start_b": 1,
+          "n": 3,
+          "words": [
+            "FOR",
+            "VOIP",
+            "TELEPHONE"
+          ],
+          "kind": "공통 꼬릿말"
+        }
+      ],
+      "passes": 1,
+      "mismatches_before": 0,
+      "mismatches_after": 0
+    },
+    {
+      "id": "P06",
+      "title": "공통 머릿말보다 긴 문구의 수용성",
+      "source": "합성 예시",
+      "texts": [
+        "NO.1 ABC MONITOR",
+        "NO.2 ABC KEYBOARD",
+        "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT EMERGENCY CONTROL PANEL"
+      ],
+      "before": {
+        "NO.1 ABC MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 0.0,
+            "word_group_balance": 0.0,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 0.00304385925695895,
+          "cuts": [],
+          "signature": [],
+          "lines": [
+            {
+              "text": "NO.1 ABC MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.256114130434783,
+              "x": 12.81603260869565,
+              "bbox": [
+                13.358967391304347,
+                10.152173913043478,
+                61.64103260869565,
+                14.847826086956523
+              ]
+            }
+          ],
+          "prior_score": 0.0,
+          "broken_phrases": []
+        },
+        "NO.2 ABC KEYBOARD": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 0.0,
+            "word_group_balance": 0.0,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 0.00304385925695895,
+          "cuts": [],
+          "signature": [],
+          "lines": [
+            {
+              "text": "NO.2 ABC KEYBOARD",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.256114130434783,
+              "x": 10.720108695652172,
+              "bbox": [
+                11.263043478260869,
+                10.152173913043478,
+                63.73695652173913,
+                14.847826086956523
+              ]
+            }
+          ],
+          "prior_score": 0.0,
+          "broken_phrases": []
+        },
+        "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT EMERGENCY CONTROL PANEL": {
+          "penalties": {
+            "size": 47.0,
+            "compression": 26.730425057511816,
+            "severe_compression": 44.70068013063816,
+            "line_count": 2.0,
+            "word_group_balance": 12.04021737587027,
+            "contraction_preference": 2.8859139607899125,
+            "semantic_supplement": 8
+          },
+          "score": 143.35723652481016,
+          "cuts": [
+            3,
+            6
+          ],
+          "signature": [
+            3,
+            6
+          ],
+          "lines": [
+            {
+              "text": "NO.4 ABC TEMPERATURE ",
+              "width": 0.8,
+              "height": 3.75,
+              "baseline": 15.580095108695652,
+              "x": 11.023777173913043,
+              "bbox": [
+                11.476222826086953,
+                15.493478260869564,
+                63.52377717391305,
+                19.406521739130433
+              ]
+            },
+            {
+              "text": "CONTROLLER REMOTE DISPLAY ",
+              "width": 0.6645325453500779,
+              "height": 3.75,
+              "baseline": 10.630095108695652,
+              "x": 9.712201428219654,
+              "bbox": [
+                10.0,
+                10.538383152173914,
+                65.0,
+                14.456521739130435
+              ]
+            },
+            {
+              "text": "UNIT EMERGENCY CONTROL PANEL",
+              "width": 0.6126249246946252,
+              "height": 3.75,
+              "baseline": 5.680095108695651,
+              "x": 8.869044895916531,
+              "bbox": [
+                9.19991229750092,
+                5.593478260869564,
+                65.80008770249908,
+                9.506521739130434
+              ]
+            }
+          ],
+          "prior_score": 132.47132256402026,
+          "broken_phrases": [
+            "REMOTE DISPLAY UNIT",
+            "TEMPERATURE CONTROLLER"
+          ]
+        }
+      },
+      "after": {
+        "NO.1 ABC MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 0.0,
+            "word_group_balance": 0.0,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 0.00304385925695895,
+          "cuts": [],
+          "signature": [],
+          "lines": [
+            {
+              "text": "NO.1 ABC MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.256114130434783,
+              "x": 12.81603260869565,
+              "bbox": [
+                13.358967391304347,
+                10.152173913043478,
+                61.64103260869565,
+                14.847826086956523
+              ]
+            }
+          ],
+          "prior_score": 0.0,
+          "broken_phrases": []
+        },
+        "NO.2 ABC KEYBOARD": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 0.0,
+            "word_group_balance": 0.0,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 0.00304385925695895,
+          "cuts": [],
+          "signature": [],
+          "lines": [
+            {
+              "text": "NO.2 ABC KEYBOARD",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.256114130434783,
+              "x": 10.720108695652172,
+              "bbox": [
+                11.263043478260869,
+                10.152173913043478,
+                63.73695652173913,
+                14.847826086956523
+              ]
+            }
+          ],
+          "prior_score": 0.0,
+          "broken_phrases": []
+        },
+        "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT EMERGENCY CONTROL PANEL": {
+          "penalties": {
+            "size": 47.0,
+            "compression": 26.730425057511816,
+            "severe_compression": 44.70068013063816,
+            "line_count": 2.0,
+            "word_group_balance": 12.04021737587027,
+            "contraction_preference": 2.8859139607899125,
+            "semantic_supplement": 8
+          },
+          "score": 143.35723652481016,
+          "cuts": [
+            3,
+            6
+          ],
+          "signature": [
+            3,
+            6
+          ],
+          "lines": [
+            {
+              "text": "NO.4 ABC TEMPERATURE ",
+              "width": 0.8,
+              "height": 3.75,
+              "baseline": 15.580095108695652,
+              "x": 11.023777173913043,
+              "bbox": [
+                11.476222826086953,
+                15.493478260869564,
+                63.52377717391305,
+                19.406521739130433
+              ]
+            },
+            {
+              "text": "CONTROLLER REMOTE DISPLAY ",
+              "width": 0.6645325453500779,
+              "height": 3.75,
+              "baseline": 10.630095108695652,
+              "x": 9.712201428219654,
+              "bbox": [
+                10.0,
+                10.538383152173914,
+                65.0,
+                14.456521739130435
+              ]
+            },
+            {
+              "text": "UNIT EMERGENCY CONTROL PANEL",
+              "width": 0.6126249246946252,
+              "height": 3.75,
+              "baseline": 5.680095108695651,
+              "x": 8.869044895916531,
+              "bbox": [
+                9.19991229750092,
+                5.593478260869564,
+                65.80008770249908,
+                9.506521739130434
+              ]
+            }
+          ],
+          "prior_score": 132.47132256402026,
+          "broken_phrases": [
+            "REMOTE DISPLAY UNIT",
+            "TEMPERATURE CONTROLLER"
+          ]
+        }
+      },
+      "relations": [
+        {
+          "a": "NO.1 ABC MONITOR",
+          "b": "NO.2 ABC KEYBOARD",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2,
+          "words": [
+            "NO.#",
+            "ABC"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 ABC MONITOR",
+          "b": "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT EMERGENCY CONTROL PANEL",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2,
+          "words": [
+            "NO.#",
+            "ABC"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.2 ABC KEYBOARD",
+          "b": "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT EMERGENCY CONTROL PANEL",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2,
+          "words": [
+            "NO.#",
+            "ABC"
+          ],
+          "kind": "번호 계열"
+        }
+      ],
+      "passes": 1,
+      "mismatches_before": 0,
+      "mismatches_after": 0
+    },
+    {
+      "id": "P07",
+      "title": "다른 프로젝트",
+      "source": "범위 격리 대조군",
+      "texts": [
+        "PORT VOIP TELEPHONE MONITOR",
+        "NO.1 ABC VOIP TELEPHONE MONITOR"
+      ],
+      "before": {
+        "NO.1 ABC VOIP TELEPHONE MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 2.0,
+            "word_group_balance": 0.23799725651577486,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 2.2410411157727337,
+          "cuts": [
+            2,
+            4
+          ],
+          "signature": [
+            2,
+            4
+          ],
+          "lines": [
+            {
+              "text": "NO.1 ABC ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 15.956114130434782,
+              "x": 25.330434782608695,
+              "bbox": [
+                25.873369565217388,
+                15.852173913043478,
+                49.12663043478261,
+                20.547826086956523
+              ]
+            },
+            {
+              "text": "VOIP TELEPHONE ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.256114130434781,
+              "x": 15.929347826086953,
+              "bbox": [
+                16.105434782608693,
+                10.152173913043477,
+                58.8945652173913,
+                14.84782608695652
+              ]
+            },
+            {
+              "text": "MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 4.556114130434782,
+              "x": 25.765760869565216,
+              "bbox": [
+                26.289130434782606,
+                4.452173913043477,
+                48.71086956521739,
+                9.14782608695652
+              ]
+            }
+          ],
+          "prior_score": 2.237997256515775,
+          "broken_phrases": []
+        },
+        "PORT VOIP TELEPHONE MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.8777896895891435,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.296321927677607,
+            "contraction_preference": 0.014627648814146918,
+            "semantic_supplement": 0
+          },
+          "score": 2.1887392660808973,
+          "cuts": [
+            3
+          ],
+          "signature": [
+            3
+          ],
+          "lines": [
+            {
+              "text": "PORT VOIP TELEPHONE ",
+              "width": 0.7581003654051938,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 9.473719609509143,
+              "bbox": [
+                9.978948181834209,
+                13.002173913043478,
+                65.02105181816579,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 25.765760869565216,
+              "bbox": [
+                26.289130434782606,
+                7.302173913043478,
+                48.71086956521739,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 2.1741116172667505,
+          "broken_phrases": []
+        }
+      },
+      "after": {
+        "NO.1 ABC VOIP TELEPHONE MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 2.0,
+            "word_group_balance": 0.23799725651577486,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 2.2410411157727337,
+          "cuts": [
+            2,
+            4
+          ],
+          "signature": [
+            2,
+            4
+          ],
+          "lines": [
+            {
+              "text": "NO.1 ABC ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 15.956114130434782,
+              "x": 25.330434782608695,
+              "bbox": [
+                25.873369565217388,
+                15.852173913043478,
+                49.12663043478261,
+                20.547826086956523
+              ]
+            },
+            {
+              "text": "VOIP TELEPHONE ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.256114130434781,
+              "x": 15.929347826086953,
+              "bbox": [
+                16.105434782608693,
+                10.152173913043477,
+                58.8945652173913,
+                14.84782608695652
+              ]
+            },
+            {
+              "text": "MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 4.556114130434782,
+              "x": 25.765760869565216,
+              "bbox": [
+                26.289130434782606,
+                4.452173913043477,
+                48.71086956521739,
+                9.14782608695652
+              ]
+            }
+          ],
+          "prior_score": 2.237997256515775,
+          "broken_phrases": []
+        },
+        "PORT VOIP TELEPHONE MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.8777896895891435,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.296321927677607,
+            "contraction_preference": 0.014627648814146918,
+            "semantic_supplement": 0
+          },
+          "score": 2.1887392660808973,
+          "cuts": [
+            3
+          ],
+          "signature": [
+            3
+          ],
+          "lines": [
+            {
+              "text": "PORT VOIP TELEPHONE ",
+              "width": 0.7581003654051938,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 9.473719609509143,
+              "bbox": [
+                9.978948181834209,
+                13.002173913043478,
+                65.02105181816579,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 25.765760869565216,
+              "bbox": [
+                26.289130434782606,
+                7.302173913043478,
+                48.71086956521739,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 2.1741116172667505,
+          "broken_phrases": []
+        }
+      },
+      "relations": [],
+      "passes": 1,
+      "mismatches_before": 0,
+      "mismatches_after": 0
+    },
+    {
+      "id": "P08",
+      "title": "너무 긴 식별번호",
+      "source": "예외 대조군",
+      "texts": [
+        "NO.1 ABC MONITOR",
+        "NO.4 ABC ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
+      ],
+      "before": {
+        "NO.1 ABC MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 0.0,
+            "word_group_balance": 0.0,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 0.00304385925695895,
+          "cuts": [],
+          "signature": [],
+          "lines": [
+            {
+              "text": "NO.1 ABC MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.256114130434783,
+              "x": 12.81603260869565,
+              "bbox": [
+                13.358967391304347,
+                10.152173913043478,
+                61.64103260869565,
+                14.847826086956523
+              ]
+            }
+          ],
+          "prior_score": 0.0,
+          "broken_phrases": []
+        },
+        "NO.4 ABC ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ": null
+      },
+      "after": {
+        "NO.1 ABC MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 0.0,
+            "word_group_balance": 0.0,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 0.00304385925695895,
+          "cuts": [],
+          "signature": [],
+          "lines": [
+            {
+              "text": "NO.1 ABC MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.256114130434783,
+              "x": 12.81603260869565,
+              "bbox": [
+                13.358967391304347,
+                10.152173913043478,
+                61.64103260869565,
+                14.847826086956523
+              ]
+            }
+          ],
+          "prior_score": 0.0,
+          "broken_phrases": []
+        },
+        "NO.4 ABC ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ": null
+      },
+      "relations": [],
+      "passes": 1,
+      "mismatches_before": 0,
+      "mismatches_after": 0
+    },
+    {
+      "id": "P09",
+      "title": "실제 발주 ECDIS / X-BAND RADAR",
+      "source": "실제 발주 일부 · 원본 행 28, 29, 30, 31, 32, 33, 79, 80, 81, 87, 88, 89",
+      "texts": [
+        "NO.2 ECDIS MONITOR",
+        "NO.2 ECDIS KEYBOARD",
+        "NO.2 ECDIS TRACKBALL",
+        "NO.2 X-BAND RADAR MONITOR",
+        "NO.2 X-BAND RADAR KEYBOARD",
+        "NO.2 X-BAND RADAR TRACKBALL",
+        "NO.1 X-BAND RADAR MONITOR",
+        "NO.1 X-BAND RADAR KEYBOARD",
+        "NO.1 X-BAND RADAR TRACKBALL",
+        "NO.1 ECDIS MONITOR",
+        "NO.1 ECDIS KEYBOARD",
+        "NO.1 ECDIS TRACKBALL"
+      ],
+      "before": {
+        "NO.1 ECDIS KEYBOARD": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.5037159264235154,
+            "severe_compression": 0.0,
+            "line_count": 0.0,
+            "word_group_balance": 0.0,
+            "contraction_preference": 0.009954372445394774,
+            "semantic_supplement": 0
+          },
+          "score": 0.5136702988689101,
+          "cuts": [],
+          "signature": [],
+          "lines": [
+            {
+              "text": "NO.1 ECDIS KEYBOARD",
+              "width": 0.768259933005001,
+              "height": 4.5,
+              "baseline": 10.259171195652174,
+              "x": 9.478606200358694,
+              "bbox": [
+                10.0,
+                10.149116847826086,
+                65.0,
+                14.850883152173914
+              ]
+            }
+          ],
+          "prior_score": 0.5037159264235154,
+          "broken_phrases": []
+        },
+        "NO.1 ECDIS MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 0.0,
+            "word_group_balance": 0.0,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 0.00304385925695895,
+          "cuts": [],
+          "signature": [],
+          "lines": [
+            {
+              "text": "NO.1 ECDIS MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.259171195652174,
+              "x": 10.416847826086954,
+              "bbox": [
+                10.959782608695647,
+                10.149116847826086,
+                64.04021739130435,
+                14.850883152173914
+              ]
+            }
+          ],
+          "prior_score": 0.0,
+          "broken_phrases": []
+        },
+        "NO.1 ECDIS TRACKBALL": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.01873319892473102,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.02177705818169,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.1 ECDIS ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 22.94592391304348,
+              "bbox": [
+                23.48885869565217,
+                12.996059782608695,
+                51.51114130434783,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "TRACKBALL",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 22.73315217391304,
+              "bbox": [
+                22.943478260869565,
+                7.302173913043478,
+                52.05652173913043,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.018733198924731,
+          "broken_phrases": []
+        },
+        "NO.1 X-BAND RADAR KEYBOARD": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.1372759471933025,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.1403198064502615,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.1 X-BAND ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 20.426902173913042,
+              "bbox": [
+                20.969836956521736,
+                13.002173913043478,
+                54.03016304347827,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "RADAR KEYBOARD",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 14.161141304347822,
+              "bbox": [
+                14.71385869565217,
+                7.302173913043478,
+                60.28614130434783,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.1372759471933025,
+          "broken_phrases": []
+        },
+        "NO.1 X-BAND RADAR MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.10053191489361701,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.103575774150576,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.1 X-BAND ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 20.426902173913042,
+              "bbox": [
+                20.969836956521736,
+                13.002173913043478,
+                54.03016304347827,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "RADAR MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 16.2570652173913,
+              "bbox": [
+                16.80978260869565,
+                7.302173913043478,
+                58.19021739130435,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.100531914893617,
+          "broken_phrases": []
+        },
+        "NO.1 X-BAND RADAR TRACKBALL": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.1538816058992214,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.1569254651561804,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.1 X-BAND ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 20.426902173913042,
+              "bbox": [
+                20.969836956521736,
+                13.002173913043478,
+                54.03016304347827,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "RADAR TRACKBALL",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 13.067934782608692,
+              "bbox": [
+                13.620652173913044,
+                7.302173913043478,
+                61.379347826086956,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.1538816058992214,
+          "broken_phrases": []
+        },
+        "NO.2 ECDIS KEYBOARD": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.5037159264235154,
+            "severe_compression": 0.0,
+            "line_count": 0.0,
+            "word_group_balance": 0.0,
+            "contraction_preference": 0.009954372445394774,
+            "semantic_supplement": 0
+          },
+          "score": 0.5136702988689101,
+          "cuts": [],
+          "signature": [],
+          "lines": [
+            {
+              "text": "NO.2 ECDIS KEYBOARD",
+              "width": 0.768259933005001,
+              "height": 4.5,
+              "baseline": 10.259171195652174,
+              "x": 9.478606200358694,
+              "bbox": [
+                10.0,
+                10.149116847826086,
+                65.0,
+                14.850883152173914
+              ]
+            }
+          ],
+          "prior_score": 0.5037159264235154,
+          "broken_phrases": []
+        },
+        "NO.2 ECDIS MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 0.0,
+            "word_group_balance": 0.0,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 0.00304385925695895,
+          "cuts": [],
+          "signature": [],
+          "lines": [
+            {
+              "text": "NO.2 ECDIS MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.259171195652174,
+              "x": 10.416847826086954,
+              "bbox": [
+                10.959782608695647,
+                10.149116847826086,
+                64.04021739130435,
+                14.850883152173914
+              ]
+            }
+          ],
+          "prior_score": 0.0,
+          "broken_phrases": []
+        },
+        "NO.2 ECDIS TRACKBALL": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.01873319892473102,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.02177705818169,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.2 ECDIS ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 22.94592391304348,
+              "bbox": [
+                23.48885869565217,
+                12.996059782608695,
+                51.51114130434783,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "TRACKBALL",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 22.73315217391304,
+              "bbox": [
+                22.943478260869565,
+                7.302173913043478,
+                52.05652173913043,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.018733198924731,
+          "broken_phrases": []
+        },
+        "NO.2 X-BAND RADAR KEYBOARD": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.1372759471933025,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.1403198064502615,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.2 X-BAND ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 20.426902173913042,
+              "bbox": [
+                20.969836956521736,
+                13.002173913043478,
+                54.03016304347827,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "RADAR KEYBOARD",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 14.161141304347822,
+              "bbox": [
+                14.71385869565217,
+                7.302173913043478,
+                60.28614130434783,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.1372759471933025,
+          "broken_phrases": []
+        },
+        "NO.2 X-BAND RADAR MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.10053191489361701,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.103575774150576,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.2 X-BAND ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 20.426902173913042,
+              "bbox": [
+                20.969836956521736,
+                13.002173913043478,
+                54.03016304347827,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "RADAR MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 16.2570652173913,
+              "bbox": [
+                16.80978260869565,
+                7.302173913043478,
+                58.19021739130435,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.100531914893617,
+          "broken_phrases": []
+        },
+        "NO.2 X-BAND RADAR TRACKBALL": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.1538816058992214,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.1569254651561804,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.2 X-BAND ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 20.426902173913042,
+              "bbox": [
+                20.969836956521736,
+                13.002173913043478,
+                54.03016304347827,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "RADAR TRACKBALL",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 13.067934782608692,
+              "bbox": [
+                13.620652173913044,
+                7.302173913043478,
+                61.379347826086956,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.1538816058992214,
+          "broken_phrases": []
+        }
+      },
+      "after": {
+        "NO.1 ECDIS KEYBOARD": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.02496072613021494,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.028004585387174,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.1 ECDIS ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 22.94592391304348,
+              "bbox": [
+                23.48885869565217,
+                12.996059782608695,
+                51.51114130434783,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "KEYBOARD",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 23.674728260869564,
+              "bbox": [
+                24.188315217391303,
+                7.302173913043478,
+                50.811684782608694,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.024960726130215,
+          "broken_phrases": []
+        },
+        "NO.1 ECDIS MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.09993017978704843,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.1029740390440075,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.1 ECDIS ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 22.94592391304348,
+              "bbox": [
+                23.48885869565217,
+                12.996059782608695,
+                51.51114130434783,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 25.765760869565216,
+              "bbox": [
+                26.289130434782606,
+                7.302173913043478,
+                48.71086956521739,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.0999301797870484,
+          "broken_phrases": []
+        },
+        "NO.1 ECDIS TRACKBALL": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.01873319892473102,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.02177705818169,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.1 ECDIS ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 22.94592391304348,
+              "bbox": [
+                23.48885869565217,
+                12.996059782608695,
+                51.51114130434783,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "TRACKBALL",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 22.73315217391304,
+              "bbox": [
+                22.943478260869565,
+                7.302173913043478,
+                52.05652173913043,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.018733198924731,
+          "broken_phrases": []
+        },
+        "NO.1 X-BAND RADAR KEYBOARD": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.1372759471933025,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.1403198064502615,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.1 X-BAND ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 20.426902173913042,
+              "bbox": [
+                20.969836956521736,
+                13.002173913043478,
+                54.03016304347827,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "RADAR KEYBOARD",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 14.161141304347822,
+              "bbox": [
+                14.71385869565217,
+                7.302173913043478,
+                60.28614130434783,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.1372759471933025,
+          "broken_phrases": []
+        },
+        "NO.1 X-BAND RADAR MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.10053191489361701,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.103575774150576,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.1 X-BAND ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 20.426902173913042,
+              "bbox": [
+                20.969836956521736,
+                13.002173913043478,
+                54.03016304347827,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "RADAR MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 16.2570652173913,
+              "bbox": [
+                16.80978260869565,
+                7.302173913043478,
+                58.19021739130435,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.100531914893617,
+          "broken_phrases": []
+        },
+        "NO.1 X-BAND RADAR TRACKBALL": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.1538816058992214,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.1569254651561804,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.1 X-BAND ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 20.426902173913042,
+              "bbox": [
+                20.969836956521736,
+                13.002173913043478,
+                54.03016304347827,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "RADAR TRACKBALL",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 13.067934782608692,
+              "bbox": [
+                13.620652173913044,
+                7.302173913043478,
+                61.379347826086956,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.1538816058992214,
+          "broken_phrases": []
+        },
+        "NO.2 ECDIS KEYBOARD": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.02496072613021494,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.028004585387174,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.2 ECDIS ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 22.94592391304348,
+              "bbox": [
+                23.48885869565217,
+                12.996059782608695,
+                51.51114130434783,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "KEYBOARD",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 23.674728260869564,
+              "bbox": [
+                24.188315217391303,
+                7.302173913043478,
+                50.811684782608694,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.024960726130215,
+          "broken_phrases": []
+        },
+        "NO.2 ECDIS MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.09993017978704843,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.1029740390440075,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.2 ECDIS ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 22.94592391304348,
+              "bbox": [
+                23.48885869565217,
+                12.996059782608695,
+                51.51114130434783,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 25.765760869565216,
+              "bbox": [
+                26.289130434782606,
+                7.302173913043478,
+                48.71086956521739,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.0999301797870484,
+          "broken_phrases": []
+        },
+        "NO.2 ECDIS TRACKBALL": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.01873319892473102,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.02177705818169,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.2 ECDIS ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 22.94592391304348,
+              "bbox": [
+                23.48885869565217,
+                12.996059782608695,
+                51.51114130434783,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "TRACKBALL",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 22.73315217391304,
+              "bbox": [
+                22.943478260869565,
+                7.302173913043478,
+                52.05652173913043,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.018733198924731,
+          "broken_phrases": []
+        },
+        "NO.2 X-BAND RADAR KEYBOARD": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.1372759471933025,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.1403198064502615,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.2 X-BAND ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 20.426902173913042,
+              "bbox": [
+                20.969836956521736,
+                13.002173913043478,
+                54.03016304347827,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "RADAR KEYBOARD",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 14.161141304347822,
+              "bbox": [
+                14.71385869565217,
+                7.302173913043478,
+                60.28614130434783,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.1372759471933025,
+          "broken_phrases": []
+        },
+        "NO.2 X-BAND RADAR MONITOR": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.10053191489361701,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.103575774150576,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.2 X-BAND ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 20.426902173913042,
+              "bbox": [
+                20.969836956521736,
+                13.002173913043478,
+                54.03016304347827,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "RADAR MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 16.2570652173913,
+              "bbox": [
+                16.80978260869565,
+                7.302173913043478,
+                58.19021739130435,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.100531914893617,
+          "broken_phrases": []
+        },
+        "NO.2 X-BAND RADAR TRACKBALL": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.1538816058992214,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.1569254651561804,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.2 X-BAND ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 20.426902173913042,
+              "bbox": [
+                20.969836956521736,
+                13.002173913043478,
+                54.03016304347827,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "RADAR TRACKBALL",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 13.067934782608692,
+              "bbox": [
+                13.620652173913044,
+                7.302173913043478,
+                61.379347826086956,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.1538816058992214,
+          "broken_phrases": []
+        }
+      },
+      "relations": [
+        {
+          "a": "NO.1 ECDIS KEYBOARD",
+          "b": "NO.1 ECDIS MONITOR",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2,
+          "words": [
+            "NO.#",
+            "ECDIS"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 ECDIS KEYBOARD",
+          "b": "NO.1 ECDIS TRACKBALL",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2,
+          "words": [
+            "NO.#",
+            "ECDIS"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 ECDIS KEYBOARD",
+          "b": "NO.2 ECDIS KEYBOARD",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 3,
+          "words": [
+            "NO.#",
+            "ECDIS",
+            "KEYBOARD"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 ECDIS KEYBOARD",
+          "b": "NO.2 ECDIS MONITOR",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2,
+          "words": [
+            "NO.#",
+            "ECDIS"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 ECDIS KEYBOARD",
+          "b": "NO.2 ECDIS TRACKBALL",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2,
+          "words": [
+            "NO.#",
+            "ECDIS"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 ECDIS MONITOR",
+          "b": "NO.1 ECDIS TRACKBALL",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2,
+          "words": [
+            "NO.#",
+            "ECDIS"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 ECDIS MONITOR",
+          "b": "NO.2 ECDIS KEYBOARD",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2,
+          "words": [
+            "NO.#",
+            "ECDIS"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 ECDIS MONITOR",
+          "b": "NO.2 ECDIS MONITOR",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 3,
+          "words": [
+            "NO.#",
+            "ECDIS",
+            "MONITOR"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 ECDIS MONITOR",
+          "b": "NO.2 ECDIS TRACKBALL",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2,
+          "words": [
+            "NO.#",
+            "ECDIS"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 ECDIS TRACKBALL",
+          "b": "NO.2 ECDIS KEYBOARD",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2,
+          "words": [
+            "NO.#",
+            "ECDIS"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 ECDIS TRACKBALL",
+          "b": "NO.2 ECDIS MONITOR",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2,
+          "words": [
+            "NO.#",
+            "ECDIS"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 ECDIS TRACKBALL",
+          "b": "NO.2 ECDIS TRACKBALL",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 3,
+          "words": [
+            "NO.#",
+            "ECDIS",
+            "TRACKBALL"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 X-BAND RADAR KEYBOARD",
+          "b": "NO.1 X-BAND RADAR MONITOR",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 3,
+          "words": [
+            "NO.#",
+            "X-BAND",
+            "RADAR"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 X-BAND RADAR KEYBOARD",
+          "b": "NO.1 X-BAND RADAR TRACKBALL",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 3,
+          "words": [
+            "NO.#",
+            "X-BAND",
+            "RADAR"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 X-BAND RADAR KEYBOARD",
+          "b": "NO.2 X-BAND RADAR KEYBOARD",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 4,
+          "words": [
+            "NO.#",
+            "X-BAND",
+            "RADAR",
+            "KEYBOARD"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 X-BAND RADAR KEYBOARD",
+          "b": "NO.2 X-BAND RADAR MONITOR",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 3,
+          "words": [
+            "NO.#",
+            "X-BAND",
+            "RADAR"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 X-BAND RADAR KEYBOARD",
+          "b": "NO.2 X-BAND RADAR TRACKBALL",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 3,
+          "words": [
+            "NO.#",
+            "X-BAND",
+            "RADAR"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 X-BAND RADAR MONITOR",
+          "b": "NO.1 X-BAND RADAR TRACKBALL",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 3,
+          "words": [
+            "NO.#",
+            "X-BAND",
+            "RADAR"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 X-BAND RADAR MONITOR",
+          "b": "NO.2 X-BAND RADAR KEYBOARD",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 3,
+          "words": [
+            "NO.#",
+            "X-BAND",
+            "RADAR"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 X-BAND RADAR MONITOR",
+          "b": "NO.2 X-BAND RADAR MONITOR",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 4,
+          "words": [
+            "NO.#",
+            "X-BAND",
+            "RADAR",
+            "MONITOR"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 X-BAND RADAR MONITOR",
+          "b": "NO.2 X-BAND RADAR TRACKBALL",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 3,
+          "words": [
+            "NO.#",
+            "X-BAND",
+            "RADAR"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 X-BAND RADAR TRACKBALL",
+          "b": "NO.2 X-BAND RADAR KEYBOARD",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 3,
+          "words": [
+            "NO.#",
+            "X-BAND",
+            "RADAR"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 X-BAND RADAR TRACKBALL",
+          "b": "NO.2 X-BAND RADAR MONITOR",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 3,
+          "words": [
+            "NO.#",
+            "X-BAND",
+            "RADAR"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.1 X-BAND RADAR TRACKBALL",
+          "b": "NO.2 X-BAND RADAR TRACKBALL",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 4,
+          "words": [
+            "NO.#",
+            "X-BAND",
+            "RADAR",
+            "TRACKBALL"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.2 ECDIS KEYBOARD",
+          "b": "NO.2 ECDIS MONITOR",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2,
+          "words": [
+            "NO.#",
+            "ECDIS"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.2 ECDIS KEYBOARD",
+          "b": "NO.2 ECDIS TRACKBALL",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2,
+          "words": [
+            "NO.#",
+            "ECDIS"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.2 ECDIS MONITOR",
+          "b": "NO.2 ECDIS TRACKBALL",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2,
+          "words": [
+            "NO.#",
+            "ECDIS"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.2 X-BAND RADAR KEYBOARD",
+          "b": "NO.2 X-BAND RADAR MONITOR",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 3,
+          "words": [
+            "NO.#",
+            "X-BAND",
+            "RADAR"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.2 X-BAND RADAR KEYBOARD",
+          "b": "NO.2 X-BAND RADAR TRACKBALL",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 3,
+          "words": [
+            "NO.#",
+            "X-BAND",
+            "RADAR"
+          ],
+          "kind": "번호 계열"
+        },
+        {
+          "a": "NO.2 X-BAND RADAR MONITOR",
+          "b": "NO.2 X-BAND RADAR TRACKBALL",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 3,
+          "words": [
+            "NO.#",
+            "X-BAND",
+            "RADAR"
+          ],
+          "kind": "번호 계열"
+        }
+      ],
+      "passes": 1,
+      "mismatches_before": 8,
+      "mismatches_after": 0
+    }
+  ]
+}

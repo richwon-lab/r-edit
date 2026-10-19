@@ -1,0 +1,118 @@
+{
+  "version": "0.1",
+  "passed": 37,
+  "total": 37,
+  "assertions": {
+    "new_engine_baseline_calculates": true,
+    "all_100_rows_300_automatic_results_unchanged": true,
+    "one_off_manual_layout_calculates": true,
+    "manual_uses_exact_requested_lines": true,
+    "manual_change_does_not_propagate_to_99_other_rows": true,
+    "manual_change_does_not_register_or_modify_patterns": true,
+    "manual_state_and_automatic_edits_survive_draft_reopen": true,
+    "manual_main_never_participates_in_automatic_group_selection": true,
+    "automatic_group_result_is_accepted": true,
+    "automatic_peer_matches_automatic_only_selection": true,
+    "manual_result_and_298_other_regions_are_preserved": true,
+    "completed_group_result_reopens_exactly": true,
+    "repeated_group_calculation_is_identical": true,
+    "different_manual_lines_do_not_change_automatic_peer_result": true,
+    "manual_line_variants_never_create_pattern_rules": true,
+    "explicit_auto_restore_excludes_other_manual_mains": true,
+    "auto_restore_uses_automatic_result_without_registering_manual_pattern": true,
+    "pending_group_changes_block_dxf": true,
+    "late_group_result_cannot_restore_old_text_or_reasons": true,
+    "reopened_session_rejects_previous_worker_result": true,
+    "retry_uses_latest_edit_without_changing_manual": true,
+    "design_change_not_ignored_by_group_recalculation": true,
+    "manual_source_replacement_remains_explicitly_blocked": true,
+    "altered_group_plan_cannot_include_manual_row": true,
+    "engine_mismatch_blocks_group_calculation": true,
+    "font_metric_mismatch_blocks_group_calculation": true,
+    "group_move_rechecks_both_old_and_new_automatic_families": true,
+    "group_move_preserves_unrelated_rows_and_all_footers": true,
+    "recalculated_families_match_existing_group_selection": true,
+    "explicit_registered_pattern_still_controls_automatic_groups": true,
+    "all_recalculation_paths_leave_pattern_registry_unchanged": true,
+    "missing_main_metric_is_unavailable_without_using_manual_as_fallback": true,
+    "corrected_main_restores_result_without_old_failure_reason": true,
+    "fresh_process_exports_without_loading_calculation_engine": true,
+    "failed_main_excludes_only_its_plate_and_correction_restores_it": true,
+    "actual_dxf_preserves_manual_copies_and_new_automatic_text": true,
+    "source_snapshot_unchanged": true
+  },
+  "baseline": {
+    "rows": 100,
+    "regions": 300,
+    "layout_changes": 0
+  },
+  "manual": {
+    "id": "R028",
+    "lines": [
+      "EGCS WATER ",
+      "MONITORING ",
+      "PANEL (OUTLET) ",
+      "(E/R FLOOR)"
+    ],
+    "quantity": 2,
+    "registered_as_pattern": false
+  },
+  "automatic_edit": {
+    "id": "R027",
+    "main": "EGCS WATER MONITORING PANEL (INLET1) (E/R FLOOR)",
+    "rat": "20A",
+    "plan": {
+      "changed_main_ids": [
+        "R027"
+      ],
+      "main_ids": [
+        "R027"
+      ],
+      "footer_regions": [
+        [
+          "R027",
+          "rat"
+        ]
+      ],
+      "manual_main_ids": [
+        "R028"
+      ]
+    },
+    "before_lines": [
+      "EGCS WATER ",
+      "MONITORING PANEL ",
+      "(INLET) ",
+      "(E/R FLOOR)"
+    ],
+    "after_lines": [
+      "EGCS WATER ",
+      "MONITORING PANEL ",
+      "(INLET1) ",
+      "(E/R FLOOR)"
+    ]
+  },
+  "group_move": {
+    "id": "R019",
+    "new_text": "SPARE",
+    "inspected_main_ids": [
+      "R018",
+      "R019",
+      "R020",
+      "R021",
+      "R024",
+      "R052",
+      "R053",
+      "R054",
+      "R055",
+      "R056",
+      "R067",
+      "R068",
+      "R069",
+      "R070"
+    ]
+  },
+  "dxf_directory": "DXF",
+  "elapsed_ms": 9204.434,
+  "scope": "Separate per-plate manual lines from explicit pattern rules. Automatic main edits recheck old/new automatic families; manual mains are excluded and retained. Existing scoring and registered patterns remain. No pattern registration UI, automatic rule inference, manual source replacement or production changes.",
+  "output": "results.json / preview.html / saved_*.json / DXF/"
+}

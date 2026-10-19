@@ -1,0 +1,153 @@
+{
+  "note": "Isolated experimental fitter only. Fixed 75x25/HY sample, 0.3 cutter height>=3 and width>=58%. Manual breaks are authoritative; no pattern solver invoked in fitting. Warning fallback ranking is provisional. UI, per-plate/region identity, undo and export integration are not implemented.",
+  "normalRowsUnchanged": 286,
+  "manualBreaksPreserved": true,
+  "deterministic": true,
+  "automaticRulesUnchanged": true,
+  "outputs": [
+    {
+      "id": "USER_TWO_LINES",
+      "status": "normal",
+      "lines": [
+        "RJ45(1-PORT) FOR",
+        "VOIP TELEPHONE"
+      ],
+      "height": 4.5,
+      "widths": [
+        80,
+        80
+      ],
+      "warnings": []
+    },
+    {
+      "id": "USER_ONE_LINE",
+      "status": "normal",
+      "lines": [
+        "RJ45(1-PORT) FOR VOIP TELEPHONE"
+      ],
+      "height": 3.5,
+      "widths": [
+        61.16
+      ],
+      "warnings": []
+    },
+    {
+      "id": "PATTERN_OVERRIDE",
+      "status": "normal",
+      "lines": [
+        "EM'CY",
+        "STOP P/B"
+      ],
+      "height": 4.5,
+      "widths": [
+        80,
+        80
+      ],
+      "warnings": []
+    },
+    {
+      "id": "SHRINK_THREE_LINES",
+      "status": "normal",
+      "lines": [
+        "NO.4 ABC TEMPERATURE",
+        "CONTROLLER REMOTE DISPLAY",
+        "UNIT EMERGENCY CONTROL PANEL"
+      ],
+      "height": 3.75,
+      "widths": [
+        80,
+        66.45,
+        61.26
+      ],
+      "warnings": []
+    },
+    {
+      "id": "EXPLICIT_FOUR_LINES",
+      "status": "review_required",
+      "lines": [
+        "NO.4 ABC",
+        "TEMPERATURE CONTROLLER",
+        "REMOTE DISPLAY UNIT",
+        "EMERGENCY CONTROL PANEL"
+      ],
+      "height": 4.25,
+      "widths": [
+        80,
+        63.66,
+        80,
+        73.52
+      ],
+      "warnings": [
+        {
+          "code": "LINE_RANGE",
+          "actual": 4,
+          "preferred": "1-3"
+        }
+      ]
+    },
+    {
+      "id": "EXPLICIT_SIX_LINES",
+      "status": "review_required",
+      "lines": [
+        "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+        "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+        "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+        "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+        "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+        "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER"
+      ],
+      "height": 2.25,
+      "widths": [
+        76.35,
+        62.43,
+        59.2,
+        59.2,
+        62.43,
+        76.35
+      ],
+      "warnings": [
+        {
+          "code": "LINE_RANGE",
+          "actual": 6,
+          "preferred": "1-3"
+        },
+        {
+          "code": "CUTTER_HEIGHT",
+          "actual": 2.25,
+          "minimum": 3,
+          "cutter": 0.3
+        }
+      ]
+    },
+    {
+      "id": "LONG_SINGLE_LINE",
+      "status": "review_required",
+      "lines": [
+        "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+      ],
+      "height": 1.5,
+      "widths": [
+        50.27
+      ],
+      "warnings": [
+        {
+          "code": "CUTTER_HEIGHT",
+          "actual": 1.5,
+          "minimum": 3,
+          "cutter": 0.3
+        },
+        {
+          "code": "CUTTER_WIDTH",
+          "minimum": 0.58,
+          "cutter": 0.3,
+          "lines": [
+            {
+              "line": 1,
+              "width": 0.5026666915019775
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "version": "0.1",
+  "passed": 24,
+  "total": 24,
+  "assertions": {
+    "snapshot_hash_matches": true,
+    "font_metrics_hash_matches": true,
+    "all_94_nonspace_outlines_parse": true,
+    "all_100_rows_300_regions_audited": true,
+    "every_nonspace_glyph_checked_against_every_hole": true,
+    "existing_rectangle_results_all_pass": true,
+    "no_confirmed_outline_intrusion_in_existing_layouts": true,
+    "two_boundary_cases_reported_without_forced_pass": true,
+    "boundary_cases_include_original_character_positions": true,
+    "H_empty_area_passes_despite_rectangle_overlap": true,
+    "small_disk_inside_filled_stroke_fails": true,
+    "O_counter_remains_empty": true,
+    "O_curve_stroke_collision_fails": true,
+    "advance_and_spaces_do_not_become_ink": true,
+    "disk_enclosing_glyph_fails": true,
+    "quadratic_midpoint_intrusion_is_detected": true,
+    "near_curve_clearance_is_refined_before_pass": true,
+    "near_curve_intrusion_is_refined_before_fail": true,
+    "unresolved_tangency_stays_unknown": true,
+    "unsupported_curve_command_is_unknown": true,
+    "nonzero_fill_distinguishes_contour_directions": true,
+    "horizontal_scale_applied_to_glyph_and_advance": true,
+    "missing_outline_does_not_pass": true,
+    "no_input_or_layout_changed": true
+  },
+  "summary": {
+    "rows": 100,
+    "regions": 300,
+    "outline_pass": 298,
+    "outline_fail": 0,
+    "outline_unknown": 2,
+    "glyph_hole_checks": 5754,
+    "layout_changes": 0
+  },
+  "uncertain_regions": [
+    {
+      "row": "R044",
+      "no": "MCB39",
+      "region": "main",
+      "rectangle": "pass",
+      "outline": "unknown",
+      "issues": [
+        {
+          "line_index": 1,
+          "source_span": [
+            9,
+            10
+          ],
+          "char": "P",
+          "hole_index": 0,
+          "boundary_distance_mm": [
+            3.9999999999,
+            4.0000000001
+          ],
+          "tolerance_mm": 1e-07,
+          "edge_count": 8200,
+          "status": "unknown",
+          "reason": "boundary_too_close_to_resolve"
+        }
+      ]
+    },
+    {
+      "row": "R047",
+      "no": "MCB42",
+      "region": "main",
+      "rectangle": "pass",
+      "outline": "unknown",
+      "issues": [
+        {
+          "line_index": 1,
+          "source_span": [
+            8,
+            9
+          ],
+          "char": "D",
+          "hole_index": 0,
+          "boundary_distance_mm": [
+            3.9999999999,
+            4.0000000001
+          ],
+          "tolerance_mm": 1e-07,
+          "edge_count": 10246,
+          "status": "unknown",
+          "reason": "boundary_too_close_to_resolve"
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "name": "H의 위쪽 빈 부분",
+      "lines": [
+        {
+          "text": "H",
+          "height": 3.0,
+          "width": 1.0,
+          "x": 0.0,
+          "baseline": 0.0,
+          "bbox": [
+            0.4320652173913043,
+            0.0,
+            2.360054347826087,
+            3.0
+          ]
+        }
+      ],
+      "holes": [
+        {
+          "x": 1.3940217391304348,
+          "y": 2.4456521739130435,
+          "radius": 0.3,
+          "avoid_radius": 0.3
+        }
+      ],
+      "rectangle": "fail",
+      "outline": "pass",
+      "expected": "pass"
+    },
+    {
+      "name": "H의 세로 획 내부",
+      "lines": [
+        {
+          "text": "H",
+          "height": 3.0,
+          "width": 1.0,
+          "x": 0.0,
+          "baseline": 0.0,
+          "bbox": [
+            0.4320652173913043,
+            0.0,
+            2.360054347826087,
+            3.0
+          ]
+        }
+      ],
+      "holes": [
+        {
+          "x": 0.5054347826086957,
+          "y": 2.4456521739130435,
+          "radius": 0.01,
+          "avoid_radius": 0.01
+        }
+      ],
+      "rectangle": "fail",
+      "outline": "fail",
+      "expected": "fail"
+    },
+    {
+      "name": "O의 가운데 빈 부분",
+      "lines": [
+        {
+          "text": "O",
+          "height": 3.0,
+          "width": 1.0,
+          "x": 0.0,
+          "baseline": 0.0,
+          "bbox": [
+            0.34239130434782605,
+            -0.06929347826086957,
+            2.967391304347826,
+            3.061141304347826
+          ]
+        }
+      ],
+      "holes": [
+        {
+          "x": 1.6508152173913042,
+          "y": 1.4959239130434783,
+          "radius": 0.3,
+          "avoid_radius": 0.3
+        }
+      ],
+      "rectangle": "fail",
+      "outline": "pass",
+      "expected": "pass"
+    },
+    {
+      "name": "O의 왼쪽 곡선 획",
+      "lines": [
+        {
+          "text": "O",
+          "height": 3.0,
+          "width": 1.0,
+          "x": 0.0,
+          "baseline": 0.0,
+          "bbox": [
+            0.34239130434782605,
+            -0.06929347826086957,
+            2.967391304347826,
+            3.061141304347826
+          ]
+        }
+      ],
+      "holes": [
+        {
+          "x": 0.4076086956521739,
+          "y": 1.4959239130434783,
+          "radius": 0.01,
+          "avoid_radius": 0.01
+        }
+      ],
+      "rectangle": "fail",
+      "outline": "fail",
+      "expected": "fail"
+    },
+    {
+      "name": "H H 사이의 공백",
+      "lines": [
+        {
+          "text": "H H",
+          "height": 3.0,
+          "width": 1.0,
+          "x": 0.0,
+          "baseline": 0.0,
+          "bbox": [
+            0.4320652173913043,
+            0.0,
+            6.533967391304348,
+            3.0
+          ]
+        }
+      ],
+      "holes": [
+        {
+          "x": 3.260869565217391,
+          "y": 1.4959239130434783,
+          "radius": 0.2,
+          "avoid_radius": 0.2
+        }
+      ],
+      "rectangle": "fail",
+      "outline": "pass",
+      "expected": "pass"
+    },
+    {
+      "name": "회피 원이 글자 전체를 덮음",
+      "lines": [
+        {
+          "text": "H",
+          "height": 3.0,
+          "width": 1.0,
+          "x": 0.0,
+          "baseline": 0.0,
+          "bbox": [
+            0.4320652173913043,
+            0.0,
+            2.360054347826087,
+            3.0
+          ]
+        }
+      ],
+      "holes": [
+        {
+          "x": 1.3940217391304348,
+          "y": 1.4959239130434783,
+          "radius": 3,
+          "avoid_radius": 3
+        }
+      ],
+      "rectangle": "fail",
+      "outline": "fail",
+      "expected": "fail"
+    }
+  ],
+  "curve_refinement": {
+    "clear": {
+      "boundary_distance_mm": [
+        0.010038964743749998,
+        0.010161035256249997
+      ],
+      "tolerance_mm": 0.0001,
+      "edge_count": 131,
+      "status": "pass",
+      "reason": "clear"
+    },
+    "intrusion": {
+      "boundary_distance_mm": [
+        0.00983896474375002,
+        0.00996103525625002
+      ],
+      "tolerance_mm": 0.0001,
+      "edge_count": 131,
+      "status": "fail",
+      "reason": "outline_enters_hole_clearance"
+    }
+  },
+  "precision": {
+    "subdivision_levels_mm": [
+      0.001,
+      0.0001,
+      1e-05,
+      1e-06,
+      1e-07
+    ],
+    "numeric_guard_mm": 1e-10
+  },
+  "source_sha256": "f1c107c54576283031bd9b128b612f7c643477417c877d856ae10a9dc8f51c48",
+  "elapsed_ms": 542.559,
+  "scope": "Read-only hole/filled-glyph audit of stored HY paths, retained nominal-height scale. No width search, layout changes, DXF, Type3 verification, rounded-plate/decoration checks, stroke fonts or rigorous floating-point interval arithmetic.",
+  "output": "results.json / audit.json / preview.html"
+}

@@ -1,0 +1,145 @@
+{
+  "note": "Experiment only. 75x25 HY glyph sample; geometry unchanged. Normal path unchanged. Reference partition beam 12, adaptive height search, heuristic ranking; not proof of global optimum or manufacturing quality. Warnings do not select another cutter. No UI/export integration implemented.",
+  "unchangedActualRows": 286,
+  "widthWarningCheck": true,
+  "outputs": [
+    {
+      "id": "LONG4",
+      "text": "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT EMERGENCY CONTROL PANEL AUXILIARY POWER SUPPLY MONITOR",
+      "status": "review_required",
+      "result": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT",
+          "EMERGENCY CONTROL PANEL",
+          "AUXILIARY POWER SUPPLY MONITOR"
+        ],
+        "height": 3.75,
+        "minWidthPercent": 60.32
+      },
+      "warnings": [
+        {
+          "code": "LINE_RANGE",
+          "actual": 4,
+          "preferred": "1-3"
+        }
+      ]
+    },
+    {
+      "id": "LONG6",
+      "text": "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT EMERGENCY CONTROL PANEL AUXILIARY POWER SUPPLY MONITOR ENGINE ROOM VENTILATION CONTROL",
+      "status": "review_required",
+      "result": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT",
+          "EMERGENCY CONTROL PANEL",
+          "AUXILIARY POWER SUPPLY MONITOR",
+          "ENGINE ROOM VENTILATION CONTROL"
+        ],
+        "height": 3,
+        "minWidthPercent": 73.87
+      },
+      "warnings": [
+        {
+          "code": "LINE_RANGE",
+          "actual": 5,
+          "preferred": "1-3"
+        }
+      ]
+    },
+    {
+      "id": "NO_FIT",
+      "text": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+      "status": "review_required",
+      "result": {
+        "lines": [
+          "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+        ],
+        "height": 1.5,
+        "minWidthPercent": 50.27
+      },
+      "warnings": [
+        {
+          "code": "CUTTER_HEIGHT",
+          "actual": 1.5,
+          "minimum": 3,
+          "cutter": 0.3
+        },
+        {
+          "code": "CUTTER_WIDTH",
+          "minimum": 0.58,
+          "cutter": 0.3,
+          "lines": [
+            {
+              "line": 1,
+              "width": 0.5026666915019775
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "OVER_FOUR_LINES",
+      "text": "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+      "status": "review_required",
+      "result": {
+        "lines": [
+          "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+          "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+          "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+          "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+          "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+          "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER"
+        ],
+        "height": 2.25,
+        "minWidthPercent": 59.2
+      },
+      "warnings": [
+        {
+          "code": "LINE_RANGE",
+          "actual": 6,
+          "preferred": "1-3"
+        },
+        {
+          "code": "CUTTER_HEIGHT",
+          "actual": 2.25,
+          "minimum": 3,
+          "cutter": 0.3
+        }
+      ]
+    },
+    {
+      "id": "VERY_LONG",
+      "text": "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+      "status": "review_required",
+      "result": {
+        "lines": [
+          "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+          "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+          "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+          "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+          "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+          "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+          "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER",
+          "TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER TEMPERATURE CONTROLLER"
+        ],
+        "height": 1.5,
+        "minWidthPercent": 58.9
+      },
+      "warnings": [
+        {
+          "code": "LINE_RANGE",
+          "actual": 8,
+          "preferred": "1-3"
+        },
+        {
+          "code": "CUTTER_HEIGHT",
+          "actual": 1.5,
+          "minimum": 3,
+          "cutter": 0.3
+        }
+      ]
+    }
+  ]
+}

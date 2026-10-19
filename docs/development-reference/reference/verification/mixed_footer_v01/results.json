@@ -1,0 +1,131 @@
+{
+  "version": "0.1",
+  "passed": 35,
+  "total": 35,
+  "assertions": {
+    "old_snapshot_keeps_old_engine_identity": true,
+    "new_trial_records_current_engine_and_parent": true,
+    "automatic_baseline_calculates": true,
+    "all_100_rows_300_baseline_results_unchanged": true,
+    "manual_one_line_fixture_calculates": true,
+    "manual_fixture_matches_previously_verified_results": true,
+    "mixed_edits_manual_state_and_quantities_survive_reopen": true,
+    "pending_mixed_job_cannot_export_old_results": true,
+    "only_three_changed_footer_regions_are_calculated": true,
+    "mixed_result_is_accepted_for_current_input": true,
+    "all_297_other_region_results_and_diagnostics_unchanged": true,
+    "all_100_main_layouts_and_manual_one_line_unchanged": true,
+    "changed_footers_match_existing_full_automatic_calculation": true,
+    "mixed_completion_reopens_with_new_text_and_old_manual_lines": true,
+    "repeat_mixed_calculation_is_identical": true,
+    "later_edit_rejects_old_mixed_result": true,
+    "reopen_cannot_accept_previous_worker_result": true,
+    "retry_uses_latest_footer_edit": true,
+    "saved_in_progress_mixed_job_reopens_needing_calculation": true,
+    "automatic_main_change_not_silently_treated_as_footer_edit": true,
+    "design_change_not_silently_ignored": true,
+    "manual_source_replacement_remains_blocked": true,
+    "engine_mismatch_blocks_mixed_calculation": true,
+    "font_metric_mismatch_blocks_mixed_calculation": true,
+    "changed_calculation_targets_are_rejected": true,
+    "old_engine_snapshot_is_not_relabelled_to_allow_calculation": true,
+    "independent_footer_failure_results_are_accepted": true,
+    "missing_metric_and_no_fit_remain_distinct": true,
+    "footer_failures_preserve_all_manual_and_main_results": true,
+    "corrected_footer_recalculates": true,
+    "correction_removes_old_reason_and_keeps_other_failure": true,
+    "fresh_process_exports_completed_mixed_results_without_engine": true,
+    "failed_footer_excludes_whole_plate_and_correction_restores_only_one": true,
+    "actual_dxf_contains_changed_footers_and_manual_copies": true,
+    "source_snapshots_unchanged": true
+  },
+  "baseline": {
+    "rows": 100,
+    "regions": 300,
+    "layout_changes": 0
+  },
+  "mixed_example": {
+    "changed_regions": [
+      {
+        "id": "R002",
+        "region": "rat",
+        "text": "20A"
+      },
+      {
+        "id": "R005",
+        "region": "rat",
+        "text": "10A"
+      },
+      {
+        "id": "R006",
+        "region": "no",
+        "text": "F99"
+      }
+    ],
+    "retained_regions": 297,
+    "manual": {
+      "id": "R005",
+      "lines": 1,
+      "height": 2.3,
+      "quantity": 2
+    },
+    "order_quantity": 104
+  },
+  "exports": {
+    "completed": {
+      "normal": {
+        "rows": 98,
+        "order_quantity": 101,
+        "drawn_plates": 101
+      },
+      "reference": {
+        "rows": 2,
+        "order_quantity": 3,
+        "drawn_plates": 3
+      },
+      "excluded": {
+        "rows": 0,
+        "order_quantity": 0,
+        "drawn_plates": 0
+      }
+    },
+    "failures": {
+      "normal": {
+        "rows": 96,
+        "order_quantity": 99,
+        "drawn_plates": 99
+      },
+      "reference": {
+        "rows": 2,
+        "order_quantity": 3,
+        "drawn_plates": 3
+      },
+      "excluded": {
+        "rows": 2,
+        "order_quantity": 2,
+        "drawn_plates": 0
+      }
+    },
+    "corrected": {
+      "normal": {
+        "rows": 97,
+        "order_quantity": 100,
+        "drawn_plates": 100
+      },
+      "reference": {
+        "rows": 2,
+        "order_quantity": 3,
+        "drawn_plates": 3
+      },
+      "excluded": {
+        "rows": 1,
+        "order_quantity": 1,
+        "drawn_plates": 0
+      }
+    }
+  },
+  "dxf_directory": "DXF",
+  "elapsed_ms": 9545.573,
+  "scope": "Automatic NO/RAT edits beside unchanged manual layouts only. Reuses stored main results and existing footer fitting. No automatic main-group recalculation, manual source replacement, design changes, UI or production changes.",
+  "output": "results.json / preview.html / saved_mixed*.json / DXF/"
+}

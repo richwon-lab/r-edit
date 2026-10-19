@@ -1,0 +1,838 @@
+{
+  "checks": [
+    "different project exact reuse",
+    "different project pattern reference",
+    "prior exported snapshot unchanged",
+    "new batch order independent",
+    "export contains editable per-line TEXT and roundtrips",
+    "unexported manual edit not used by next order",
+    "same work reexport advances only that work",
+    "previous export retained verbatim",
+    "other order A not replaced",
+    "subgroup can reference customer common history",
+    "subgroup-specific exact record preferred",
+    "other subgroup record excluded",
+    "other customer excluded",
+    "other design cannot exact reuse",
+    "exception exact repeat reused",
+    "exception not generalized to new wording",
+    "separate order variant requires review",
+    "explicit ancestor resolves conflict",
+    "identical original text preserved after manual edit",
+    "history survives reload without changing resolution"
+  ],
+  "scope": {
+    "customer": "MRCE",
+    "group": null,
+    "project": "NEXT-PROJECT",
+    "design": "D75"
+  },
+  "base": {
+    "NO.1 ABC MONITOR": {
+      "penalties": {
+        "size": 0.0,
+        "compression": 0.0,
+        "severe_compression": 0.0,
+        "line_count": 1.0,
+        "word_group_balance": 0.01787968026924691,
+        "contraction_preference": 0.00304385925695895,
+        "semantic_supplement": 0
+      },
+      "score": 1.020923539526206,
+      "cuts": [
+        2
+      ],
+      "signature": [
+        2
+      ],
+      "lines": [
+        {
+          "text": "NO.1 ABC ",
+          "width": 0.8,
+          "height": 4.5,
+          "baseline": 13.106114130434783,
+          "x": 25.330434782608695,
+          "bbox": [
+            25.873369565217388,
+            13.002173913043478,
+            49.12663043478261,
+            17.69782608695652
+          ]
+        },
+        {
+          "text": "MONITOR",
+          "width": 0.8,
+          "height": 4.5,
+          "baseline": 7.406114130434783,
+          "x": 25.765760869565216,
+          "bbox": [
+            26.289130434782606,
+            7.302173913043478,
+            48.71086956521739,
+            11.997826086956522
+          ]
+        }
+      ],
+      "prior_score": 1.017879680269247,
+      "broken_phrases": []
+    },
+    "NO.2 ABC KEYBOARD": {
+      "penalties": {
+        "size": 0.0,
+        "compression": 0.0,
+        "severe_compression": 0.0,
+        "line_count": 1.0,
+        "word_group_balance": 0.06329230203931635,
+        "contraction_preference": 0.00304385925695895,
+        "semantic_supplement": 0
+      },
+      "score": 1.0663361612962754,
+      "cuts": [
+        2
+      ],
+      "signature": [
+        2
+      ],
+      "lines": [
+        {
+          "text": "NO.2 ABC ",
+          "width": 0.8,
+          "height": 4.5,
+          "baseline": 13.106114130434783,
+          "x": 25.330434782608695,
+          "bbox": [
+            25.873369565217388,
+            13.002173913043478,
+            49.12663043478261,
+            17.69782608695652
+          ]
+        },
+        {
+          "text": "KEYBOARD",
+          "width": 0.8,
+          "height": 4.5,
+          "baseline": 7.406114130434783,
+          "x": 23.674728260869564,
+          "bbox": [
+            24.188315217391303,
+            7.302173913043478,
+            50.811684782608694,
+            11.997826086956522
+          ]
+        }
+      ],
+      "prior_score": 1.0632923020393164,
+      "broken_phrases": []
+    },
+    "NO.3 ABC TEMPERATURE CONTROLLER": {
+      "penalties": {
+        "size": 0.0,
+        "compression": 0.0,
+        "severe_compression": 0.0,
+        "line_count": 2.0,
+        "word_group_balance": 0.18499867479459287,
+        "contraction_preference": 0.00304385925695895,
+        "semantic_supplement": 4
+      },
+      "score": 6.188042534051552,
+      "cuts": [
+        2,
+        3
+      ],
+      "signature": [
+        2,
+        3
+      ],
+      "lines": [
+        {
+          "text": "NO.3 ABC ",
+          "width": 0.8,
+          "height": 4.5,
+          "baseline": 15.956114130434782,
+          "x": 25.330434782608695,
+          "bbox": [
+            25.873369565217388,
+            15.852173913043478,
+            49.12663043478261,
+            20.547826086956523
+          ]
+        },
+        {
+          "text": "TEMPERATURE ",
+          "width": 0.8,
+          "height": 4.5,
+          "baseline": 10.256114130434781,
+          "x": 18.83478260869565,
+          "bbox": [
+            19.04510869565217,
+            10.152173913043477,
+            55.954891304347825,
+            14.75
+          ]
+        },
+        {
+          "text": "CONTROLLER",
+          "width": 0.8,
+          "height": 4.5,
+          "baseline": 4.556114130434782,
+          "x": 20.187228260869563,
+          "bbox": [
+            20.602989130434782,
+            4.452173913043477,
+            54.39701086956522,
+            9.14782608695652
+          ]
+        }
+      ],
+      "prior_score": 2.184998674794593,
+      "broken_phrases": [
+        "TEMPERATURE CONTROLLER"
+      ]
+    }
+  },
+  "new_batch": {
+    "resolved": {
+      "NO.1 ABC MONITOR": {
+        "status": "reused",
+        "layout": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.01787968026924691,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 0
+          },
+          "score": 1.020923539526206,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.1 ABC ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.106114130434783,
+              "x": 25.330434782608695,
+              "bbox": [
+                25.873369565217388,
+                13.002173913043478,
+                49.12663043478261,
+                17.69782608695652
+              ]
+            },
+            {
+              "text": "MONITOR",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 7.406114130434783,
+              "x": 25.765760869565216,
+              "bbox": [
+                26.289130434782606,
+                7.302173913043478,
+                48.71086956521739,
+                11.997826086956522
+              ]
+            }
+          ],
+          "prior_score": 1.017879680269247,
+          "broken_phrases": []
+        },
+        "records": [
+          "ORDER-A-r1"
+        ]
+      },
+      "NO.4 ABC REMOTE DISPLAY UNIT": {
+        "status": "generated",
+        "layout": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.1384665401652111,
+            "severe_compression": 0.0,
+            "line_count": 1.0,
+            "word_group_balance": 0.2887664567940471,
+            "contraction_preference": 0.005640157221376743,
+            "semantic_supplement": 0
+          },
+          "score": 1.4328731541806348,
+          "cuts": [
+            2
+          ],
+          "signature": [
+            2
+          ],
+          "lines": [
+            {
+              "text": "NO.4 ABC ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 13.109171195652173,
+              "x": 25.330434782608695,
+              "bbox": [
+                25.873369565217388,
+                13.005230978260869,
+                49.12663043478261,
+                17.700883152173912
+              ]
+            },
+            {
+              "text": "REMOTE DISPLAY UNIT",
+              "width": 0.7833586935509732,
+              "height": 4.5,
+              "baseline": 7.409171195652173,
+              "x": 9.43798419182312,
+              "bbox": [
+                9.979204158766962,
+                7.299116847826086,
+                65.02079584123304,
+                12.000883152173913
+              ]
+            }
+          ],
+          "prior_score": 1.427232996959258,
+          "broken_phrases": []
+        },
+        "references": [
+          "ORDER-A-r1"
+        ]
+      },
+      "NO.5 ABC TEMPERATURE CONTROLLER": {
+        "status": "generated",
+        "layout": {
+          "penalties": {
+            "size": 0.0,
+            "compression": 0.0,
+            "severe_compression": 0.0,
+            "line_count": 2.0,
+            "word_group_balance": 0.18499867479459287,
+            "contraction_preference": 0.00304385925695895,
+            "semantic_supplement": 4
+          },
+          "score": 6.188042534051552,
+          "cuts": [
+            2,
+            3
+          ],
+          "signature": [
+            2,
+            3
+          ],
+          "lines": [
+            {
+              "text": "NO.5 ABC ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 15.956114130434782,
+              "x": 25.330434782608695,
+              "bbox": [
+                25.873369565217388,
+                15.852173913043478,
+                49.12663043478261,
+                20.547826086956523
+              ]
+            },
+            {
+              "text": "TEMPERATURE ",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 10.256114130434781,
+              "x": 18.83478260869565,
+              "bbox": [
+                19.04510869565217,
+                10.152173913043477,
+                55.954891304347825,
+                14.75
+              ]
+            },
+            {
+              "text": "CONTROLLER",
+              "width": 0.8,
+              "height": 4.5,
+              "baseline": 4.556114130434782,
+              "x": 20.187228260869563,
+              "bbox": [
+                20.602989130434782,
+                4.452173913043477,
+                54.39701086956522,
+                9.14782608695652
+              ]
+            }
+          ],
+          "prior_score": 2.184998674794593,
+          "broken_phrases": [
+            "TEMPERATURE CONTROLLER"
+          ]
+        },
+        "references": [
+          "ORDER-A-r1"
+        ]
+      }
+    },
+    "layouts": {
+      "NO.1 ABC MONITOR": {
+        "penalties": {
+          "size": 0.0,
+          "compression": 0.0,
+          "severe_compression": 0.0,
+          "line_count": 1.0,
+          "word_group_balance": 0.01787968026924691,
+          "contraction_preference": 0.00304385925695895,
+          "semantic_supplement": 0
+        },
+        "score": 1.020923539526206,
+        "cuts": [
+          2
+        ],
+        "signature": [
+          2
+        ],
+        "lines": [
+          {
+            "text": "NO.1 ABC ",
+            "width": 0.8,
+            "height": 4.5,
+            "baseline": 13.106114130434783,
+            "x": 25.330434782608695,
+            "bbox": [
+              25.873369565217388,
+              13.002173913043478,
+              49.12663043478261,
+              17.69782608695652
+            ]
+          },
+          {
+            "text": "MONITOR",
+            "width": 0.8,
+            "height": 4.5,
+            "baseline": 7.406114130434783,
+            "x": 25.765760869565216,
+            "bbox": [
+              26.289130434782606,
+              7.302173913043478,
+              48.71086956521739,
+              11.997826086956522
+            ]
+          }
+        ],
+        "prior_score": 1.017879680269247,
+        "broken_phrases": []
+      },
+      "NO.4 ABC REMOTE DISPLAY UNIT": {
+        "penalties": {
+          "size": 0.0,
+          "compression": 0.1384665401652111,
+          "severe_compression": 0.0,
+          "line_count": 1.0,
+          "word_group_balance": 0.2887664567940471,
+          "contraction_preference": 0.005640157221376743,
+          "semantic_supplement": 0
+        },
+        "score": 1.4328731541806348,
+        "cuts": [
+          2
+        ],
+        "signature": [
+          2
+        ],
+        "lines": [
+          {
+            "text": "NO.4 ABC ",
+            "width": 0.8,
+            "height": 4.5,
+            "baseline": 13.109171195652173,
+            "x": 25.330434782608695,
+            "bbox": [
+              25.873369565217388,
+              13.005230978260869,
+              49.12663043478261,
+              17.700883152173912
+            ]
+          },
+          {
+            "text": "REMOTE DISPLAY UNIT",
+            "width": 0.7833586935509732,
+            "height": 4.5,
+            "baseline": 7.409171195652173,
+            "x": 9.43798419182312,
+            "bbox": [
+              9.979204158766962,
+              7.299116847826086,
+              65.02079584123304,
+              12.000883152173913
+            ]
+          }
+        ],
+        "prior_score": 1.427232996959258,
+        "broken_phrases": []
+      },
+      "NO.5 ABC TEMPERATURE CONTROLLER": {
+        "penalties": {
+          "size": 0.0,
+          "compression": 0.0,
+          "severe_compression": 0.0,
+          "line_count": 2.0,
+          "word_group_balance": 0.18499867479459287,
+          "contraction_preference": 0.00304385925695895,
+          "semantic_supplement": 4
+        },
+        "score": 6.188042534051552,
+        "cuts": [
+          2,
+          3
+        ],
+        "signature": [
+          2,
+          3
+        ],
+        "lines": [
+          {
+            "text": "NO.5 ABC ",
+            "width": 0.8,
+            "height": 4.5,
+            "baseline": 15.956114130434782,
+            "x": 25.330434782608695,
+            "bbox": [
+              25.873369565217388,
+              15.852173913043478,
+              49.12663043478261,
+              20.547826086956523
+            ]
+          },
+          {
+            "text": "TEMPERATURE ",
+            "width": 0.8,
+            "height": 4.5,
+            "baseline": 10.256114130434781,
+            "x": 18.83478260869565,
+            "bbox": [
+              19.04510869565217,
+              10.152173913043477,
+              55.954891304347825,
+              14.75
+            ]
+          },
+          {
+            "text": "CONTROLLER",
+            "width": 0.8,
+            "height": 4.5,
+            "baseline": 4.556114130434782,
+            "x": 20.187228260869563,
+            "bbox": [
+              20.602989130434782,
+              4.452173913043477,
+              54.39701086956522,
+              9.14782608695652
+            ]
+          }
+        ],
+        "prior_score": 2.184998674794593,
+        "broken_phrases": [
+          "TEMPERATURE CONTROLLER"
+        ]
+      }
+    }
+  },
+  "manual_edit": {
+    "text": "NO.4 ABC REMOTE DISPLAY UNIT",
+    "before": {
+      "penalties": {
+        "size": 0.0,
+        "compression": 0.1384665401652111,
+        "severe_compression": 0.0,
+        "line_count": 1.0,
+        "word_group_balance": 0.2887664567940471,
+        "contraction_preference": 0.005640157221376743,
+        "semantic_supplement": 0
+      },
+      "score": 1.4328731541806348,
+      "cuts": [
+        2
+      ],
+      "signature": [
+        2
+      ],
+      "lines": [
+        {
+          "text": "NO.4 ABC ",
+          "width": 0.8,
+          "height": 4.5,
+          "baseline": 13.109171195652173,
+          "x": 25.330434782608695,
+          "bbox": [
+            25.873369565217388,
+            13.005230978260869,
+            49.12663043478261,
+            17.700883152173912
+          ]
+        },
+        {
+          "text": "REMOTE DISPLAY UNIT",
+          "width": 0.7833586935509732,
+          "height": 4.5,
+          "baseline": 7.409171195652173,
+          "x": 9.43798419182312,
+          "bbox": [
+            9.979204158766962,
+            7.299116847826086,
+            65.02079584123304,
+            12.000883152173913
+          ]
+        }
+      ],
+      "prior_score": 1.427232996959258,
+      "broken_phrases": []
+    },
+    "after": {
+      "penalties": {
+        "size": 0.0,
+        "compression": 0.0,
+        "severe_compression": 0.0,
+        "line_count": 2.0,
+        "word_group_balance": 12.19513449948552,
+        "contraction_preference": 0.00304385925695895,
+        "semantic_supplement": 4
+      },
+      "score": 18.19817835874248,
+      "cuts": [
+        2,
+        3
+      ],
+      "signature": [
+        2,
+        3
+      ],
+      "lines": [
+        {
+          "text": "NO.4 ABC ",
+          "width": 0.8,
+          "height": 4.5,
+          "baseline": 15.959171195652175,
+          "x": 25.330434782608695,
+          "bbox": [
+            25.873369565217388,
+            15.85523097826087,
+            49.12663043478261,
+            20.550883152173913
+          ]
+        },
+        {
+          "text": "REMOTE ",
+          "width": 0.8,
+          "height": 4.5,
+          "baseline": 10.259171195652176,
+          "x": 26.80271739130435,
+          "bbox": [
+            27.355434782608697,
+            10.155230978260871,
+            47.6445652173913,
+            14.850883152173914
+          ]
+        },
+        {
+          "text": "DISPLAY UNIT",
+          "width": 0.8,
+          "height": 4.5,
+          "baseline": 4.5591711956521745,
+          "x": 20.333967391304345,
+          "bbox": [
+            20.862228260869564,
+            4.449116847826088,
+            54.137771739130436,
+            9.144769021739132
+          ]
+        }
+      ],
+      "prior_score": 14.19513449948552,
+      "broken_phrases": [
+        "REMOTE DISPLAY UNIT"
+      ]
+    },
+    "before_export_record": "ORDER-B-r1",
+    "after_export_record": "ORDER-B-r2"
+  },
+  "exception": {
+    "text": "NO.4 ABC ENGINE ROOM TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT EMERGENCY CONTROL PANEL AUXILIARY POWER SUPPLY MONITOR",
+    "layout": {
+      "penalties": {
+        "size": 128.0,
+        "compression": 37.88624830321658,
+        "severe_compression": 19.304842755793707,
+        "line_count": 153.0,
+        "word_group_balance": 12.049588027386733,
+        "history_break": 20,
+        "contraction_preference": 2.1986419158030537,
+        "semantic_supplement": 8
+      },
+      "score": 380.43932100220013,
+      "cuts": [
+        5,
+        8,
+        12
+      ],
+      "signature": [],
+      "lines": [
+        {
+          "text": "NO.4 ABC ENGINE ROOM TEMPERATURE ",
+          "width": 0.6283750838171162,
+          "height": 3.5,
+          "baseline": 17.807133152173915,
+          "x": 6.615492695962885,
+          "bbox": [
+            6.947182533004938,
+            17.726290760869567,
+            68.05281746699507,
+            21.378464673913044
+          ]
+        },
+        {
+          "text": "CONTROLLER REMOTE DISPLAY ",
+          "width": 0.7125871264060821,
+          "height": 3.5,
+          "baseline": 13.107133152173915,
+          "x": 9.68925419503871,
+          "bbox": [
+            9.97729043159552,
+            13.021535326086958,
+            65.02270956840448,
+            16.678464673913048
+          ]
+        },
+        {
+          "text": "UNIT EMERGENCY CONTROL PANEL ",
+          "width": 0.6383535698086581,
+          "height": 3.5,
+          "baseline": 8.407133152173914,
+          "x": 9.655511662031646,
+          "bbox": [
+            9.97729043159552,
+            8.326290760869567,
+            65.02270956840448,
+            11.978464673913045
+          ]
+        },
+        {
+          "text": "AUXILIARY POWER SUPPLY MONITOR",
+          "width": 0.6879874744142398,
+          "height": 3.5,
+          "baseline": 3.7071331521739133,
+          "x": 6.772385517737916,
+          "bbox": [
+            6.9555995734243155,
+            3.6215353260869567,
+            68.04440042657569,
+            7.278464673913044
+          ]
+        }
+      ],
+      "history_break_matched": false,
+      "prior_score": 370.24067908639705,
+      "broken_phrases": [
+        "REMOTE DISPLAY UNIT",
+        "TEMPERATURE CONTROLLER"
+      ]
+    }
+  },
+  "conflict": {
+    "text": "NO.1 ABC MONITOR",
+    "a": {
+      "penalties": {
+        "size": 0.0,
+        "compression": 0.0,
+        "severe_compression": 0.0,
+        "line_count": 1.0,
+        "word_group_balance": 0.01787968026924691,
+        "contraction_preference": 0.00304385925695895,
+        "semantic_supplement": 0
+      },
+      "score": 1.020923539526206,
+      "cuts": [
+        2
+      ],
+      "signature": [
+        2
+      ],
+      "lines": [
+        {
+          "text": "NO.1 ABC ",
+          "width": 0.8,
+          "height": 4.5,
+          "baseline": 13.106114130434783,
+          "x": 25.330434782608695,
+          "bbox": [
+            25.873369565217388,
+            13.002173913043478,
+            49.12663043478261,
+            17.69782608695652
+          ]
+        },
+        {
+          "text": "MONITOR",
+          "width": 0.8,
+          "height": 4.5,
+          "baseline": 7.406114130434783,
+          "x": 25.765760869565216,
+          "bbox": [
+            26.289130434782606,
+            7.302173913043478,
+            48.71086956521739,
+            11.997826086956522
+          ]
+        }
+      ],
+      "prior_score": 1.017879680269247,
+      "broken_phrases": []
+    },
+    "b": {
+      "penalties": {
+        "size": 0.0,
+        "compression": 0.0,
+        "severe_compression": 0.0,
+        "line_count": 0.0,
+        "word_group_balance": 0.0,
+        "contraction_preference": 0.00304385925695895,
+        "semantic_supplement": 0
+      },
+      "score": 0.00304385925695895,
+      "cuts": [],
+      "signature": [],
+      "lines": [
+        {
+          "text": "NO.1 ABC MONITOR",
+          "width": 0.8,
+          "height": 4.5,
+          "baseline": 10.256114130434783,
+          "x": 12.81603260869565,
+          "bbox": [
+            13.358967391304347,
+            10.152173913043478,
+            61.64103260869565,
+            14.847826086956523
+          ]
+        }
+      ],
+      "prior_score": 0.0,
+      "broken_phrases": []
+    }
+  },
+  "snapshots": 6,
+  "dxf_files": [
+    "ORDER-A-r1.dxf",
+    "ORDER-B-r1.dxf",
+    "ORDER-B-r2.dxf",
+    "TEAM-A-ORDER-r1.dxf",
+    "EXCEPTION-r1.dxf",
+    "SEPARATE-ORDER-r1.dxf"
+  ],
+  "limits": [
+    "synthetic adoption history, not actual company history",
+    "no UI or shared storage implemented",
+    "no Type3/CAM run",
+    "subgroup specific-over-common used as trial policy",
+    "exception marker supplied by fixture; automatic detection not implemented",
+    "different-design phrase transfer not implemented"
+  ]
+}

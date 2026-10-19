@@ -1,0 +1,250 @@
+{
+  "note": "Actual 1427 outline dimensions and draft regions; footer lower boundary trial-adjusted from 3.5 to 3.4mm for glyph overshoot while baseline remains 3.5; HY glyph sample. Hole extra 2mm, line gap 1.2mm and 0.3 cutter are test assumptions, not newly confirmed design settings. ASCII synthetic phrases, no shared-pattern evaluation. Main centered; NO/RAT visible-ink edge aligned at preserved baseline (DXF advance-point conversion not tested). 0.25mm height steps; reference ranking provisional. Other two designs not tested.",
+  "design": {
+    "size": [
+      36,
+      36
+    ],
+    "holes": [
+      {
+        "x": 4,
+        "y": 18,
+        "r": 2,
+        "extra": 2
+      },
+      {
+        "x": 32,
+        "y": 18,
+        "r": 2,
+        "extra": 2
+      }
+    ],
+    "regions": [
+      {
+        "id": "main",
+        "rect": [
+          2,
+          8,
+          34,
+          32
+        ],
+        "baseHeight": 3,
+        "baseWidth": 0.7,
+        "normalLines": [
+          1,
+          6
+        ],
+        "cutter": {
+          "size": 0.3,
+          "minHeight": 3,
+          "minWidth": 0.58
+        }
+      },
+      {
+        "id": "no",
+        "rect": [
+          3.5,
+          3.4,
+          16.5,
+          7
+        ],
+        "baseHeight": 3,
+        "baseWidth": 0.7,
+        "normalLines": [
+          1,
+          1
+        ],
+        "align": "left",
+        "baseline": 3.5,
+        "cutter": {
+          "size": 0.3,
+          "minHeight": 3,
+          "minWidth": 0.58
+        }
+      },
+      {
+        "id": "rat",
+        "rect": [
+          19.5,
+          3.4,
+          32.5,
+          7
+        ],
+        "baseHeight": 3,
+        "baseWidth": 0.7,
+        "normalLines": [
+          1,
+          1
+        ],
+        "align": "right",
+        "baseline": 3.5,
+        "cutter": {
+          "size": 0.3,
+          "minHeight": 3,
+          "minWidth": 0.58
+        }
+      }
+    ]
+  },
+  "checks": {
+    "footerUnchanged": true,
+    "leftRightEdges": true,
+    "baselineUnchanged": true,
+    "manualLinesPreserved": true,
+    "sourceAndSpace": true
+  },
+  "outputs": [
+    {
+      "id": "SHORT",
+      "status": "normal",
+      "lines": [
+        "RUN"
+      ],
+      "height": 3,
+      "widths": [
+        70
+      ],
+      "warnings": []
+    },
+    {
+      "id": "MEDIUM",
+      "status": "normal",
+      "lines": [
+        "MAIN ENGINE",
+        "CONTROL",
+        "PANEL"
+      ],
+      "height": 3,
+      "widths": [
+        70,
+        70,
+        70
+      ],
+      "warnings": []
+    },
+    {
+      "id": "SIX_MANUAL",
+      "status": "review_required",
+      "lines": [
+        "MAIN",
+        "ENGINE",
+        "CONTROL",
+        "PANEL",
+        "LOCAL",
+        "REMOTE"
+      ],
+      "height": 2.75,
+      "widths": [
+        70,
+        70,
+        70,
+        70,
+        70,
+        70
+      ],
+      "warnings": [
+        {
+          "code": "CUTTER_HEIGHT",
+          "actual": 2.75,
+          "minimum": 3
+        }
+      ]
+    },
+    {
+      "id": "SEVEN_MANUAL",
+      "status": "review_required",
+      "lines": [
+        "MAIN",
+        "ENGINE",
+        "CONTROL",
+        "PANEL",
+        "LOCAL",
+        "REMOTE",
+        "DISPLAY"
+      ],
+      "height": 2.25,
+      "widths": [
+        70,
+        70,
+        70,
+        70,
+        70,
+        70,
+        70
+      ],
+      "warnings": [
+        {
+          "code": "LINE_RANGE",
+          "actual": 7
+        },
+        {
+          "code": "CUTTER_HEIGHT",
+          "actual": 2.25,
+          "minimum": 3
+        }
+      ]
+    },
+    {
+      "id": "LONG_AUTO",
+      "status": "review_required",
+      "lines": [
+        "TEMPERATURE TEMPERATURE",
+        "TEMPERATURE TEMPERATURE",
+        "TEMPERATURE",
+        "TEMPERATURE",
+        "TEMPERATURE",
+        "TEMPERATURE TEMPERATURE"
+      ],
+      "height": 2.75,
+      "widths": [
+        55.01,
+        55.01,
+        70,
+        70,
+        70,
+        55.01
+      ],
+      "warnings": [
+        {
+          "code": "CUTTER_HEIGHT",
+          "actual": 2.75,
+          "minimum": 3
+        },
+        {
+          "code": "CUTTER_WIDTH",
+          "lines": [
+            1,
+            2,
+            6
+          ],
+          "minimum": 0.58
+        }
+      ]
+    },
+    {
+      "id": "IDENTIFIER",
+      "status": "review_required",
+      "lines": [
+        "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+      ],
+      "height": 1,
+      "widths": [
+        56.49
+      ],
+      "warnings": [
+        {
+          "code": "CUTTER_HEIGHT",
+          "actual": 1,
+          "minimum": 3
+        },
+        {
+          "code": "CUTTER_WIDTH",
+          "lines": [
+            1
+          ],
+          "minimum": 0.58
+        }
+      ]
+    }
+  ]
+}

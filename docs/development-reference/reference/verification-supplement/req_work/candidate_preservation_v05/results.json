@@ -1,0 +1,1718 @@
+{
+  "version": "0.5",
+  "cases": [
+    {
+      "id": "M01",
+      "label": "기본 배치 · 실제 발주 한 행",
+      "row": {
+        "id": "ROW-001",
+        "source_excel_row": 6,
+        "main": "DC BACKUP",
+        "no": "MCB1",
+        "rat": "32A"
+      },
+      "result": {
+        "main": {
+          "candidate": {
+            "cuts": [],
+            "lines": [
+              {
+                "text": "DC BACKUP",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 19.50407608695652,
+                "x": 9.32608695652174,
+                "bbox": [
+                  9.634239130434784,
+                  19.43478260869565,
+                  26.365760869565214,
+                  22.565217391304344
+                ]
+              }
+            ],
+            "height": 3.0,
+            "signature": [],
+            "local_cost": 0
+          },
+          "cutter_mm": 0.3,
+          "alignment": "center",
+          "line_policy": {
+            "kind": "preferred",
+            "min": 1,
+            "max": 6
+          }
+        },
+        "no": {
+          "candidate": {
+            "cuts": [],
+            "lines": [
+              {
+                "text": "MCB1",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 3.5,
+                "x": 3.1947010869565218,
+                "bbox": [
+                  3.5,
+                  3.4307065217391304,
+                  10.636005434782607,
+                  6.561141304347826
+                ]
+              }
+            ],
+            "height": 3.0,
+            "signature": [],
+            "local_cost": 0
+          },
+          "cutter_mm": 0.3,
+          "alignment": "left",
+          "line_policy": {
+            "kind": "fixed",
+            "count": 1
+          }
+        },
+        "rat": {
+          "candidate": {
+            "cuts": [],
+            "lines": [
+              {
+                "text": "32A",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 3.5,
+                "x": 27.055978260869566,
+                "bbox": [
+                  27.332744565217393,
+                  3.442934782608696,
+                  32.5,
+                  6.557065217391305
+                ]
+              }
+            ],
+            "height": 3.0,
+            "signature": [],
+            "local_cost": 0
+          },
+          "cutter_mm": 0.3,
+          "alignment": "right",
+          "line_policy": {
+            "kind": "fixed",
+            "count": 1
+          }
+        }
+      },
+      "design": {
+        "note": "영역 좌표는 기존 시험값이며 생산용 디자인 확정값이 아님",
+        "source_sha256": "660b9804bebba2092f61ec6510b248d5c47b1faa3b6986ce424f3de023eed073",
+        "size_mm": [
+          36,
+          36
+        ],
+        "regions": [
+          {
+            "id": "main",
+            "label": "문구",
+            "fixture": {
+              "width_mm": 36,
+              "height_mm": 36,
+              "text_region_mm": [
+                2,
+                9,
+                34,
+                33
+              ],
+              "base_height_100": 300,
+              "min_height_100": 300,
+              "height_step_100": 5,
+              "base_width": 0.7,
+              "width_floor": 0.58,
+              "min_lines": 1,
+              "max_lines": 6,
+              "baseline_extra_mm": 1.1,
+              "holes": [
+                {
+                  "x": 4,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                },
+                {
+                  "x": 32,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                }
+              ],
+              "alignment": "center",
+              "fixed_baseline_mm": null,
+              "cutter_mm": 0.3,
+              "line_policy": {
+                "kind": "preferred",
+                "min": 1,
+                "max": 6
+              },
+              "quality": {
+                "line_cost": 0.9,
+                "compression_weight": 3,
+                "compression_span": 0.12
+              }
+            }
+          },
+          {
+            "id": "no",
+            "label": "NO",
+            "fixture": {
+              "width_mm": 36,
+              "height_mm": 36,
+              "text_region_mm": [
+                3.5,
+                3.4,
+                16.5,
+                7
+              ],
+              "base_height_100": 300,
+              "min_height_100": 300,
+              "height_step_100": 5,
+              "base_width": 0.7,
+              "width_floor": 0.58,
+              "min_lines": 1,
+              "max_lines": 1,
+              "baseline_extra_mm": 1.1,
+              "holes": [
+                {
+                  "x": 4,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                },
+                {
+                  "x": 32,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                }
+              ],
+              "alignment": "left",
+              "fixed_baseline_mm": 3.5,
+              "cutter_mm": 0.3,
+              "line_policy": {
+                "kind": "fixed",
+                "count": 1
+              },
+              "quality": {
+                "line_cost": 0.9,
+                "compression_weight": 3,
+                "compression_span": 0.12
+              }
+            }
+          },
+          {
+            "id": "rat",
+            "label": "RAT",
+            "fixture": {
+              "width_mm": 36,
+              "height_mm": 36,
+              "text_region_mm": [
+                19.5,
+                3.4,
+                32.5,
+                7
+              ],
+              "base_height_100": 300,
+              "min_height_100": 300,
+              "height_step_100": 5,
+              "base_width": 0.7,
+              "width_floor": 0.58,
+              "min_lines": 1,
+              "max_lines": 1,
+              "baseline_extra_mm": 1.1,
+              "holes": [
+                {
+                  "x": 4,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                },
+                {
+                  "x": 32,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                }
+              ],
+              "alignment": "right",
+              "fixed_baseline_mm": 3.5,
+              "cutter_mm": 0.3,
+              "line_policy": {
+                "kind": "fixed",
+                "count": 1
+              },
+              "quality": {
+                "line_cost": 0.9,
+                "compression_weight": 3,
+                "compression_span": 0.12
+              }
+            }
+          }
+        ],
+        "baseline_row": {
+          "id": "ROW-001",
+          "source_excel_row": 6,
+          "main": "DC BACKUP",
+          "no": "MCB1",
+          "rat": "32A"
+        },
+        "changed_body": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY"
+      }
+    },
+    {
+      "id": "M02",
+      "label": "본문만 변경 · 가상 변경",
+      "row": {
+        "id": "ROW-001",
+        "source_excel_row": 6,
+        "main": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY",
+        "no": "MCB1",
+        "rat": "32A"
+      },
+      "result": {
+        "main": {
+          "candidate": {
+            "cuts": [
+              20,
+              32,
+              39
+            ],
+            "lines": [
+              {
+                "text": "MAIN ENGINE CONTROL ",
+                "height": 3.0,
+                "width": 0.6595536139348624,
+                "baseline": 25.65611413043478,
+                "x": 1.7123414265311265,
+                "bbox": [
+                  2.0,
+                  25.58682065217391,
+                  34.0,
+                  28.717255434782608
+                ]
+              },
+              {
+                "text": "PANEL LOCAL ",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 21.55611413043478,
+                "x": 7.709714673913045,
+                "bbox": [
+                  8.020720108695654,
+                  21.486820652173908,
+                  27.979279891304344,
+                  24.617255434782606
+                ]
+              },
+              {
+                "text": "REMOTE ",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 17.45611413043478,
+                "x": 11.75991847826087,
+                "bbox": [
+                  12.08233695652174,
+                  17.38682065217391,
+                  23.91766304347826,
+                  20.517255434782605
+                ]
+              },
+              {
+                "text": "DISPLAY",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 13.356114130434781,
+                "x": 11.836956521739129,
+                "bbox": [
+                  12.145108695652173,
+                  13.28274456521739,
+                  23.854891304347824,
+                  16.413179347826084
+                ]
+              }
+            ],
+            "height": 3.0,
+            "signature": [],
+            "local_cost": 3040815
+          },
+          "cutter_mm": 0.3,
+          "alignment": "center",
+          "line_policy": {
+            "kind": "preferred",
+            "min": 1,
+            "max": 6
+          }
+        },
+        "no": {
+          "candidate": {
+            "cuts": [],
+            "lines": [
+              {
+                "text": "MCB1",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 3.5,
+                "x": 3.1947010869565218,
+                "bbox": [
+                  3.5,
+                  3.4307065217391304,
+                  10.636005434782607,
+                  6.561141304347826
+                ]
+              }
+            ],
+            "height": 3.0,
+            "signature": [],
+            "local_cost": 0
+          },
+          "cutter_mm": 0.3,
+          "alignment": "left",
+          "line_policy": {
+            "kind": "fixed",
+            "count": 1
+          }
+        },
+        "rat": {
+          "candidate": {
+            "cuts": [],
+            "lines": [
+              {
+                "text": "32A",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 3.5,
+                "x": 27.055978260869566,
+                "bbox": [
+                  27.332744565217393,
+                  3.442934782608696,
+                  32.5,
+                  6.557065217391305
+                ]
+              }
+            ],
+            "height": 3.0,
+            "signature": [],
+            "local_cost": 0
+          },
+          "cutter_mm": 0.3,
+          "alignment": "right",
+          "line_policy": {
+            "kind": "fixed",
+            "count": 1
+          }
+        }
+      },
+      "design": {
+        "note": "영역 좌표는 기존 시험값이며 생산용 디자인 확정값이 아님",
+        "source_sha256": "660b9804bebba2092f61ec6510b248d5c47b1faa3b6986ce424f3de023eed073",
+        "size_mm": [
+          36,
+          36
+        ],
+        "regions": [
+          {
+            "id": "main",
+            "label": "문구",
+            "fixture": {
+              "width_mm": 36,
+              "height_mm": 36,
+              "text_region_mm": [
+                2,
+                9,
+                34,
+                33
+              ],
+              "base_height_100": 300,
+              "min_height_100": 300,
+              "height_step_100": 5,
+              "base_width": 0.7,
+              "width_floor": 0.58,
+              "min_lines": 1,
+              "max_lines": 6,
+              "baseline_extra_mm": 1.1,
+              "holes": [
+                {
+                  "x": 4,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                },
+                {
+                  "x": 32,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                }
+              ],
+              "alignment": "center",
+              "fixed_baseline_mm": null,
+              "cutter_mm": 0.3,
+              "line_policy": {
+                "kind": "preferred",
+                "min": 1,
+                "max": 6
+              },
+              "quality": {
+                "line_cost": 0.9,
+                "compression_weight": 3,
+                "compression_span": 0.12
+              }
+            }
+          },
+          {
+            "id": "no",
+            "label": "NO",
+            "fixture": {
+              "width_mm": 36,
+              "height_mm": 36,
+              "text_region_mm": [
+                3.5,
+                3.4,
+                16.5,
+                7
+              ],
+              "base_height_100": 300,
+              "min_height_100": 300,
+              "height_step_100": 5,
+              "base_width": 0.7,
+              "width_floor": 0.58,
+              "min_lines": 1,
+              "max_lines": 1,
+              "baseline_extra_mm": 1.1,
+              "holes": [
+                {
+                  "x": 4,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                },
+                {
+                  "x": 32,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                }
+              ],
+              "alignment": "left",
+              "fixed_baseline_mm": 3.5,
+              "cutter_mm": 0.3,
+              "line_policy": {
+                "kind": "fixed",
+                "count": 1
+              },
+              "quality": {
+                "line_cost": 0.9,
+                "compression_weight": 3,
+                "compression_span": 0.12
+              }
+            }
+          },
+          {
+            "id": "rat",
+            "label": "RAT",
+            "fixture": {
+              "width_mm": 36,
+              "height_mm": 36,
+              "text_region_mm": [
+                19.5,
+                3.4,
+                32.5,
+                7
+              ],
+              "base_height_100": 300,
+              "min_height_100": 300,
+              "height_step_100": 5,
+              "base_width": 0.7,
+              "width_floor": 0.58,
+              "min_lines": 1,
+              "max_lines": 1,
+              "baseline_extra_mm": 1.1,
+              "holes": [
+                {
+                  "x": 4,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                },
+                {
+                  "x": 32,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                }
+              ],
+              "alignment": "right",
+              "fixed_baseline_mm": 3.5,
+              "cutter_mm": 0.3,
+              "line_policy": {
+                "kind": "fixed",
+                "count": 1
+              },
+              "quality": {
+                "line_cost": 0.9,
+                "compression_weight": 3,
+                "compression_span": 0.12
+              }
+            }
+          }
+        ],
+        "baseline_row": {
+          "id": "ROW-001",
+          "source_excel_row": 6,
+          "main": "DC BACKUP",
+          "no": "MCB1",
+          "rat": "32A"
+        },
+        "changed_body": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY"
+      }
+    },
+    {
+      "id": "M03",
+      "label": "NO만 변경 · 가상 변경",
+      "row": {
+        "id": "ROW-001",
+        "source_excel_row": 6,
+        "main": "DC BACKUP",
+        "no": "MCB12",
+        "rat": "32A"
+      },
+      "result": {
+        "main": {
+          "candidate": {
+            "cuts": [],
+            "lines": [
+              {
+                "text": "DC BACKUP",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 19.50407608695652,
+                "x": 9.32608695652174,
+                "bbox": [
+                  9.634239130434784,
+                  19.43478260869565,
+                  26.365760869565214,
+                  22.565217391304344
+                ]
+              }
+            ],
+            "height": 3.0,
+            "signature": [],
+            "local_cost": 0
+          },
+          "cutter_mm": 0.3,
+          "alignment": "center",
+          "line_policy": {
+            "kind": "preferred",
+            "min": 1,
+            "max": 6
+          }
+        },
+        "no": {
+          "candidate": {
+            "cuts": [],
+            "lines": [
+              {
+                "text": "MCB12",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 3.5,
+                "x": 3.1947010869565218,
+                "bbox": [
+                  3.5,
+                  3.4307065217391304,
+                  13.02133152173913,
+                  6.561141304347826
+                ]
+              }
+            ],
+            "height": 3.0,
+            "signature": [],
+            "local_cost": 0
+          },
+          "cutter_mm": 0.3,
+          "alignment": "left",
+          "line_policy": {
+            "kind": "fixed",
+            "count": 1
+          }
+        },
+        "rat": {
+          "candidate": {
+            "cuts": [],
+            "lines": [
+              {
+                "text": "32A",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 3.5,
+                "x": 27.055978260869566,
+                "bbox": [
+                  27.332744565217393,
+                  3.442934782608696,
+                  32.5,
+                  6.557065217391305
+                ]
+              }
+            ],
+            "height": 3.0,
+            "signature": [],
+            "local_cost": 0
+          },
+          "cutter_mm": 0.3,
+          "alignment": "right",
+          "line_policy": {
+            "kind": "fixed",
+            "count": 1
+          }
+        }
+      },
+      "design": {
+        "note": "영역 좌표는 기존 시험값이며 생산용 디자인 확정값이 아님",
+        "source_sha256": "660b9804bebba2092f61ec6510b248d5c47b1faa3b6986ce424f3de023eed073",
+        "size_mm": [
+          36,
+          36
+        ],
+        "regions": [
+          {
+            "id": "main",
+            "label": "문구",
+            "fixture": {
+              "width_mm": 36,
+              "height_mm": 36,
+              "text_region_mm": [
+                2,
+                9,
+                34,
+                33
+              ],
+              "base_height_100": 300,
+              "min_height_100": 300,
+              "height_step_100": 5,
+              "base_width": 0.7,
+              "width_floor": 0.58,
+              "min_lines": 1,
+              "max_lines": 6,
+              "baseline_extra_mm": 1.1,
+              "holes": [
+                {
+                  "x": 4,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                },
+                {
+                  "x": 32,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                }
+              ],
+              "alignment": "center",
+              "fixed_baseline_mm": null,
+              "cutter_mm": 0.3,
+              "line_policy": {
+                "kind": "preferred",
+                "min": 1,
+                "max": 6
+              },
+              "quality": {
+                "line_cost": 0.9,
+                "compression_weight": 3,
+                "compression_span": 0.12
+              }
+            }
+          },
+          {
+            "id": "no",
+            "label": "NO",
+            "fixture": {
+              "width_mm": 36,
+              "height_mm": 36,
+              "text_region_mm": [
+                3.5,
+                3.4,
+                16.5,
+                7
+              ],
+              "base_height_100": 300,
+              "min_height_100": 300,
+              "height_step_100": 5,
+              "base_width": 0.7,
+              "width_floor": 0.58,
+              "min_lines": 1,
+              "max_lines": 1,
+              "baseline_extra_mm": 1.1,
+              "holes": [
+                {
+                  "x": 4,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                },
+                {
+                  "x": 32,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                }
+              ],
+              "alignment": "left",
+              "fixed_baseline_mm": 3.5,
+              "cutter_mm": 0.3,
+              "line_policy": {
+                "kind": "fixed",
+                "count": 1
+              },
+              "quality": {
+                "line_cost": 0.9,
+                "compression_weight": 3,
+                "compression_span": 0.12
+              }
+            }
+          },
+          {
+            "id": "rat",
+            "label": "RAT",
+            "fixture": {
+              "width_mm": 36,
+              "height_mm": 36,
+              "text_region_mm": [
+                19.5,
+                3.4,
+                32.5,
+                7
+              ],
+              "base_height_100": 300,
+              "min_height_100": 300,
+              "height_step_100": 5,
+              "base_width": 0.7,
+              "width_floor": 0.58,
+              "min_lines": 1,
+              "max_lines": 1,
+              "baseline_extra_mm": 1.1,
+              "holes": [
+                {
+                  "x": 4,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                },
+                {
+                  "x": 32,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                }
+              ],
+              "alignment": "right",
+              "fixed_baseline_mm": 3.5,
+              "cutter_mm": 0.3,
+              "line_policy": {
+                "kind": "fixed",
+                "count": 1
+              },
+              "quality": {
+                "line_cost": 0.9,
+                "compression_weight": 3,
+                "compression_span": 0.12
+              }
+            }
+          }
+        ],
+        "baseline_row": {
+          "id": "ROW-001",
+          "source_excel_row": 6,
+          "main": "DC BACKUP",
+          "no": "MCB1",
+          "rat": "32A"
+        },
+        "changed_body": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY"
+      }
+    },
+    {
+      "id": "M04",
+      "label": "RAT만 변경 · 가상 변경",
+      "row": {
+        "id": "ROW-001",
+        "source_excel_row": 6,
+        "main": "DC BACKUP",
+        "no": "MCB1",
+        "rat": "16A"
+      },
+      "result": {
+        "main": {
+          "candidate": {
+            "cuts": [],
+            "lines": [
+              {
+                "text": "DC BACKUP",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 19.50407608695652,
+                "x": 9.32608695652174,
+                "bbox": [
+                  9.634239130434784,
+                  19.43478260869565,
+                  26.365760869565214,
+                  22.565217391304344
+                ]
+              }
+            ],
+            "height": 3.0,
+            "signature": [],
+            "local_cost": 0
+          },
+          "cutter_mm": 0.3,
+          "alignment": "center",
+          "line_policy": {
+            "kind": "preferred",
+            "min": 1,
+            "max": 6
+          }
+        },
+        "no": {
+          "candidate": {
+            "cuts": [],
+            "lines": [
+              {
+                "text": "MCB1",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 3.5,
+                "x": 3.1947010869565218,
+                "bbox": [
+                  3.5,
+                  3.4307065217391304,
+                  10.636005434782607,
+                  6.561141304347826
+                ]
+              }
+            ],
+            "height": 3.0,
+            "signature": [],
+            "local_cost": 0
+          },
+          "cutter_mm": 0.3,
+          "alignment": "left",
+          "line_policy": {
+            "kind": "fixed",
+            "count": 1
+          }
+        },
+        "rat": {
+          "candidate": {
+            "cuts": [],
+            "lines": [
+              {
+                "text": "16A",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 3.5,
+                "x": 27.055978260869566,
+                "bbox": [
+                  27.623777173913044,
+                  3.4347826086956523,
+                  32.5,
+                  6.557065217391305
+                ]
+              }
+            ],
+            "height": 3.0,
+            "signature": [],
+            "local_cost": 0
+          },
+          "cutter_mm": 0.3,
+          "alignment": "right",
+          "line_policy": {
+            "kind": "fixed",
+            "count": 1
+          }
+        }
+      },
+      "design": {
+        "note": "영역 좌표는 기존 시험값이며 생산용 디자인 확정값이 아님",
+        "source_sha256": "660b9804bebba2092f61ec6510b248d5c47b1faa3b6986ce424f3de023eed073",
+        "size_mm": [
+          36,
+          36
+        ],
+        "regions": [
+          {
+            "id": "main",
+            "label": "문구",
+            "fixture": {
+              "width_mm": 36,
+              "height_mm": 36,
+              "text_region_mm": [
+                2,
+                9,
+                34,
+                33
+              ],
+              "base_height_100": 300,
+              "min_height_100": 300,
+              "height_step_100": 5,
+              "base_width": 0.7,
+              "width_floor": 0.58,
+              "min_lines": 1,
+              "max_lines": 6,
+              "baseline_extra_mm": 1.1,
+              "holes": [
+                {
+                  "x": 4,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                },
+                {
+                  "x": 32,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                }
+              ],
+              "alignment": "center",
+              "fixed_baseline_mm": null,
+              "cutter_mm": 0.3,
+              "line_policy": {
+                "kind": "preferred",
+                "min": 1,
+                "max": 6
+              },
+              "quality": {
+                "line_cost": 0.9,
+                "compression_weight": 3,
+                "compression_span": 0.12
+              }
+            }
+          },
+          {
+            "id": "no",
+            "label": "NO",
+            "fixture": {
+              "width_mm": 36,
+              "height_mm": 36,
+              "text_region_mm": [
+                3.5,
+                3.4,
+                16.5,
+                7
+              ],
+              "base_height_100": 300,
+              "min_height_100": 300,
+              "height_step_100": 5,
+              "base_width": 0.7,
+              "width_floor": 0.58,
+              "min_lines": 1,
+              "max_lines": 1,
+              "baseline_extra_mm": 1.1,
+              "holes": [
+                {
+                  "x": 4,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                },
+                {
+                  "x": 32,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                }
+              ],
+              "alignment": "left",
+              "fixed_baseline_mm": 3.5,
+              "cutter_mm": 0.3,
+              "line_policy": {
+                "kind": "fixed",
+                "count": 1
+              },
+              "quality": {
+                "line_cost": 0.9,
+                "compression_weight": 3,
+                "compression_span": 0.12
+              }
+            }
+          },
+          {
+            "id": "rat",
+            "label": "RAT",
+            "fixture": {
+              "width_mm": 36,
+              "height_mm": 36,
+              "text_region_mm": [
+                19.5,
+                3.4,
+                32.5,
+                7
+              ],
+              "base_height_100": 300,
+              "min_height_100": 300,
+              "height_step_100": 5,
+              "base_width": 0.7,
+              "width_floor": 0.58,
+              "min_lines": 1,
+              "max_lines": 1,
+              "baseline_extra_mm": 1.1,
+              "holes": [
+                {
+                  "x": 4,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                },
+                {
+                  "x": 32,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                }
+              ],
+              "alignment": "right",
+              "fixed_baseline_mm": 3.5,
+              "cutter_mm": 0.3,
+              "line_policy": {
+                "kind": "fixed",
+                "count": 1
+              },
+              "quality": {
+                "line_cost": 0.9,
+                "compression_weight": 3,
+                "compression_span": 0.12
+              }
+            }
+          }
+        ],
+        "baseline_row": {
+          "id": "ROW-001",
+          "source_excel_row": 6,
+          "main": "DC BACKUP",
+          "no": "MCB1",
+          "rat": "32A"
+        },
+        "changed_body": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY"
+      }
+    },
+    {
+      "id": "M05",
+      "label": "본문 전체 줄바꿈 지정 · 6줄",
+      "row": {
+        "id": "ROW-001",
+        "source_excel_row": 6,
+        "main": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY",
+        "no": "MCB1",
+        "rat": "32A"
+      },
+      "result": {
+        "main": {
+          "candidate": {
+            "lines": [
+              {
+                "text": "MAIN ENGINE ",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 29.75611413043478,
+                "x": 8.48294836956522,
+                "bbox": [
+                  8.788247282608697,
+                  29.68682065217391,
+                  27.211752717391303,
+                  32.81725543478261
+                ]
+              },
+              {
+                "text": "CONTROL ",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 25.65611413043478,
+                "x": 10.727038043478263,
+                "bbox": [
+                  10.969565217391306,
+                  25.58682065217391,
+                  25.030434782608694,
+                  28.717255434782608
+                ]
+              },
+              {
+                "text": "PANEL ",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 21.556114130434782,
+                "x": 13.126630434782609,
+                "bbox": [
+                  13.437635869565216,
+                  21.55203804347826,
+                  22.56236413043478,
+                  24.55203804347826
+                ]
+              },
+              {
+                "text": "LOCAL ",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 17.456114130434784,
+                "x": 13.009646739130435,
+                "bbox": [
+                  13.312092391304349,
+                  17.386820652173913,
+                  22.687907608695653,
+                  20.517255434782612
+                ]
+              },
+              {
+                "text": "REMOTE ",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 13.356114130434783,
+                "x": 11.75991847826087,
+                "bbox": [
+                  12.08233695652174,
+                  13.286820652173914,
+                  23.91766304347826,
+                  16.41725543478261
+                ]
+              },
+              {
+                "text": "DISPLAY",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 9.256114130434781,
+                "x": 11.836956521739129,
+                "bbox": [
+                  12.145108695652173,
+                  9.18274456521739,
+                  23.854891304347824,
+                  12.313179347826086
+                ]
+              }
+            ],
+            "height": 3.0,
+            "cuts": [],
+            "signature": [],
+            "local_cost": 4500000
+          },
+          "cutter_mm": 0.3,
+          "alignment": "center",
+          "line_policy": {
+            "kind": "preferred",
+            "min": 1,
+            "max": 6
+          }
+        },
+        "no": {
+          "candidate": {
+            "cuts": [],
+            "lines": [
+              {
+                "text": "MCB1",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 3.5,
+                "x": 3.1947010869565218,
+                "bbox": [
+                  3.5,
+                  3.4307065217391304,
+                  10.636005434782607,
+                  6.561141304347826
+                ]
+              }
+            ],
+            "height": 3.0,
+            "signature": [],
+            "local_cost": 0
+          },
+          "cutter_mm": 0.3,
+          "alignment": "left",
+          "line_policy": {
+            "kind": "fixed",
+            "count": 1
+          }
+        },
+        "rat": {
+          "candidate": {
+            "cuts": [],
+            "lines": [
+              {
+                "text": "32A",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 3.5,
+                "x": 27.055978260869566,
+                "bbox": [
+                  27.332744565217393,
+                  3.442934782608696,
+                  32.5,
+                  6.557065217391305
+                ]
+              }
+            ],
+            "height": 3.0,
+            "signature": [],
+            "local_cost": 0
+          },
+          "cutter_mm": 0.3,
+          "alignment": "right",
+          "line_policy": {
+            "kind": "fixed",
+            "count": 1
+          }
+        }
+      },
+      "design": {
+        "note": "영역 좌표는 기존 시험값이며 생산용 디자인 확정값이 아님",
+        "source_sha256": "660b9804bebba2092f61ec6510b248d5c47b1faa3b6986ce424f3de023eed073",
+        "size_mm": [
+          36,
+          36
+        ],
+        "regions": [
+          {
+            "id": "main",
+            "label": "문구",
+            "fixture": {
+              "width_mm": 36,
+              "height_mm": 36,
+              "text_region_mm": [
+                2,
+                9,
+                34,
+                33
+              ],
+              "base_height_100": 300,
+              "min_height_100": 300,
+              "height_step_100": 5,
+              "base_width": 0.7,
+              "width_floor": 0.58,
+              "min_lines": 1,
+              "max_lines": 6,
+              "baseline_extra_mm": 1.1,
+              "holes": [
+                {
+                  "x": 4,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                },
+                {
+                  "x": 32,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                }
+              ],
+              "alignment": "center",
+              "fixed_baseline_mm": null,
+              "cutter_mm": 0.3,
+              "line_policy": {
+                "kind": "preferred",
+                "min": 1,
+                "max": 6
+              },
+              "quality": {
+                "line_cost": 0.9,
+                "compression_weight": 3,
+                "compression_span": 0.12
+              }
+            }
+          },
+          {
+            "id": "no",
+            "label": "NO",
+            "fixture": {
+              "width_mm": 36,
+              "height_mm": 36,
+              "text_region_mm": [
+                3.5,
+                3.4,
+                16.5,
+                7
+              ],
+              "base_height_100": 300,
+              "min_height_100": 300,
+              "height_step_100": 5,
+              "base_width": 0.7,
+              "width_floor": 0.58,
+              "min_lines": 1,
+              "max_lines": 1,
+              "baseline_extra_mm": 1.1,
+              "holes": [
+                {
+                  "x": 4,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                },
+                {
+                  "x": 32,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                }
+              ],
+              "alignment": "left",
+              "fixed_baseline_mm": 3.5,
+              "cutter_mm": 0.3,
+              "line_policy": {
+                "kind": "fixed",
+                "count": 1
+              },
+              "quality": {
+                "line_cost": 0.9,
+                "compression_weight": 3,
+                "compression_span": 0.12
+              }
+            }
+          },
+          {
+            "id": "rat",
+            "label": "RAT",
+            "fixture": {
+              "width_mm": 36,
+              "height_mm": 36,
+              "text_region_mm": [
+                19.5,
+                3.4,
+                32.5,
+                7
+              ],
+              "base_height_100": 300,
+              "min_height_100": 300,
+              "height_step_100": 5,
+              "base_width": 0.7,
+              "width_floor": 0.58,
+              "min_lines": 1,
+              "max_lines": 1,
+              "baseline_extra_mm": 1.1,
+              "holes": [
+                {
+                  "x": 4,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                },
+                {
+                  "x": 32,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                }
+              ],
+              "alignment": "right",
+              "fixed_baseline_mm": 3.5,
+              "cutter_mm": 0.3,
+              "line_policy": {
+                "kind": "fixed",
+                "count": 1
+              },
+              "quality": {
+                "line_cost": 0.9,
+                "compression_weight": 3,
+                "compression_span": 0.12
+              }
+            }
+          }
+        ],
+        "baseline_row": {
+          "id": "ROW-001",
+          "source_excel_row": 6,
+          "main": "DC BACKUP",
+          "no": "MCB1",
+          "rat": "32A"
+        },
+        "changed_body": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY"
+      }
+    },
+    {
+      "id": "M06",
+      "label": "RAT 조건만 다른 시험용 디자인",
+      "row": {
+        "id": "ROW-001",
+        "source_excel_row": 6,
+        "main": "DC BACKUP",
+        "no": "MCB1",
+        "rat": "32A"
+      },
+      "result": {
+        "main": {
+          "candidate": {
+            "cuts": [],
+            "lines": [
+              {
+                "text": "DC BACKUP",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 19.50407608695652,
+                "x": 9.32608695652174,
+                "bbox": [
+                  9.634239130434784,
+                  19.43478260869565,
+                  26.365760869565214,
+                  22.565217391304344
+                ]
+              }
+            ],
+            "height": 3.0,
+            "signature": [],
+            "local_cost": 0
+          },
+          "cutter_mm": 0.3,
+          "alignment": "center",
+          "line_policy": {
+            "kind": "preferred",
+            "min": 1,
+            "max": 6
+          }
+        },
+        "no": {
+          "candidate": {
+            "cuts": [],
+            "lines": [
+              {
+                "text": "MCB1",
+                "height": 3.0,
+                "width": 0.7,
+                "baseline": 3.5,
+                "x": 3.1947010869565218,
+                "bbox": [
+                  3.5,
+                  3.4307065217391304,
+                  10.636005434782607,
+                  6.561141304347826
+                ]
+              }
+            ],
+            "height": 3.0,
+            "signature": [],
+            "local_cost": 0
+          },
+          "cutter_mm": 0.3,
+          "alignment": "left",
+          "line_policy": {
+            "kind": "fixed",
+            "count": 1
+          }
+        },
+        "rat": {
+          "candidate": {
+            "cuts": [],
+            "lines": [
+              {
+                "text": "32A",
+                "height": 2.5,
+                "width": 0.8,
+                "baseline": 3.5,
+                "x": 27.315217391304348,
+                "bbox": [
+                  27.578804347826086,
+                  3.452445652173913,
+                  32.5,
+                  6.047554347826087
+                ]
+              }
+            ],
+            "height": 2.5,
+            "signature": [],
+            "local_cost": 0
+          },
+          "cutter_mm": 0.2,
+          "alignment": "right",
+          "line_policy": {
+            "kind": "fixed",
+            "count": 1
+          }
+        }
+      },
+      "design": {
+        "note": "영역 좌표는 기존 시험값이며 생산용 디자인 확정값이 아님",
+        "source_sha256": "660b9804bebba2092f61ec6510b248d5c47b1faa3b6986ce424f3de023eed073",
+        "size_mm": [
+          36,
+          36
+        ],
+        "regions": [
+          {
+            "id": "main",
+            "label": "문구",
+            "fixture": {
+              "width_mm": 36,
+              "height_mm": 36,
+              "text_region_mm": [
+                2,
+                9,
+                34,
+                33
+              ],
+              "base_height_100": 300,
+              "min_height_100": 300,
+              "height_step_100": 5,
+              "base_width": 0.7,
+              "width_floor": 0.58,
+              "min_lines": 1,
+              "max_lines": 6,
+              "baseline_extra_mm": 1.1,
+              "holes": [
+                {
+                  "x": 4,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                },
+                {
+                  "x": 32,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                }
+              ],
+              "alignment": "center",
+              "fixed_baseline_mm": null,
+              "cutter_mm": 0.3,
+              "line_policy": {
+                "kind": "preferred",
+                "min": 1,
+                "max": 6
+              },
+              "quality": {
+                "line_cost": 0.9,
+                "compression_weight": 3,
+                "compression_span": 0.12
+              }
+            }
+          },
+          {
+            "id": "no",
+            "label": "NO",
+            "fixture": {
+              "width_mm": 36,
+              "height_mm": 36,
+              "text_region_mm": [
+                3.5,
+                3.4,
+                16.5,
+                7
+              ],
+              "base_height_100": 300,
+              "min_height_100": 300,
+              "height_step_100": 5,
+              "base_width": 0.7,
+              "width_floor": 0.58,
+              "min_lines": 1,
+              "max_lines": 1,
+              "baseline_extra_mm": 1.1,
+              "holes": [
+                {
+                  "x": 4,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                },
+                {
+                  "x": 32,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                }
+              ],
+              "alignment": "left",
+              "fixed_baseline_mm": 3.5,
+              "cutter_mm": 0.3,
+              "line_policy": {
+                "kind": "fixed",
+                "count": 1
+              },
+              "quality": {
+                "line_cost": 0.9,
+                "compression_weight": 3,
+                "compression_span": 0.12
+              }
+            }
+          },
+          {
+            "id": "rat",
+            "label": "RAT",
+            "fixture": {
+              "width_mm": 36,
+              "height_mm": 36,
+              "text_region_mm": [
+                19.5,
+                3.4,
+                32.5,
+                7
+              ],
+              "base_height_100": 250,
+              "min_height_100": 200,
+              "height_step_100": 5,
+              "base_width": 0.8,
+              "width_floor": 0.64,
+              "min_lines": 1,
+              "max_lines": 1,
+              "baseline_extra_mm": 1.1,
+              "holes": [
+                {
+                  "x": 4,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                },
+                {
+                  "x": 32,
+                  "y": 18,
+                  "radius": 2,
+                  "avoid_radius": 4
+                }
+              ],
+              "alignment": "right",
+              "fixed_baseline_mm": 3.5,
+              "cutter_mm": 0.2,
+              "line_policy": {
+                "kind": "fixed",
+                "count": 1
+              },
+              "quality": {
+                "line_cost": 0.9,
+                "compression_weight": 3,
+                "compression_span": 0.12
+              }
+            }
+          }
+        ],
+        "baseline_row": {
+          "id": "ROW-001",
+          "source_excel_row": 6,
+          "main": "DC BACKUP",
+          "no": "MCB1",
+          "rat": "32A"
+        },
+        "changed_body": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY"
+      }
+    }
+  ],
+  "assertions": {
+    "source_and_geometry": true,
+    "left_right_center_alignment": true,
+    "body_no_rat_edit_isolation": true,
+    "manual_six_lines_preserved": true,
+    "region_specific_cutter_and_style": true,
+    "input_order_invariant": true,
+    "design_not_mutated": true,
+    "v02_choices_unchanged": true
+  },
+  "elapsed_before_report_ms": 14.947,
+  "limitations": [
+    "영역·홀 좌표는 기존 36x36 시험값입니다. 실제 고객 디자인의 확정값이나 제품 공통값이 아닙니다.",
+    "M01은 기존 추출 발주의 DC BACKUP 행입니다. M02~M06은 영역 독립성을 확인하기 위한 가상 변경입니다.",
+    "영어 표현·공통 패턴 품질 검증은 포함하지 않습니다. 본문 점수는 영역 분리 시험용이며 기존 승인 줄바꿈을 대체하지 않습니다.",
+    "정상 배치와 기본 크기로 맞는 수동 6줄 사례만 검사합니다. 이번 코드는 참고 배치 또는 수동 맞춤의 일반 탐색을 구현하지 않습니다.",
+    "NO·RAT의 1줄은 이번 시험에서 고정 정책으로 표현했습니다. 제품의 모든 보조 영역을 1줄로 강제하지 않습니다.",
+    "폰트 사전 측정 자료와 경계 상자 충돌을 사용합니다. 실제 글꼴 측정 시간, DXF, Type3, 생산 품질 및 대량 성능은 제외합니다.",
+    "출력 표는 영역별 기준 커터 정보입니다. 생산 파일이나 NC를 생성하거나 커터를 실제로 변경하지 않습니다.",
+    "다른 영역 간 겹침 검사, S1·S2 정렬, 인쇄의 축소 기준은 이번 범위에 포함하지 않았습니다."
+  ]
+}

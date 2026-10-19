@@ -1,0 +1,128 @@
+{
+  "version": "0.1",
+  "passed": 36,
+  "total": 36,
+  "assertions": {
+    "automatic_baseline_calculates": true,
+    "all_100_rows_300_baseline_results_unchanged": true,
+    "one_off_manual_fixture_calculates": true,
+    "manual_alone_never_registers_pattern": true,
+    "preview_recalculates_only_matching_automatic_families": true,
+    "preview_reports_actual_changes_and_quantities": true,
+    "preview_does_not_change_policy_results_or_current_state": true,
+    "repeated_preview_is_identical": true,
+    "display_copy_cannot_modify_proposed_rule_or_results": true,
+    "cancel_keeps_current_job_and_blocks_later_apply": true,
+    "edit_and_restore_rejects_old_preview": true,
+    "dirty_job_cannot_prepare_pattern": true,
+    "reopen_rejects_previous_session_preview": true,
+    "quantity_change_and_restore_requires_new_preview": true,
+    "output_mode_change_requires_new_preview": true,
+    "engine_mismatch_blocks_preview": true,
+    "font_metric_mismatch_blocks_preview": true,
+    "duplicate_registered_literal_is_not_overwritten": true,
+    "invalid_rule_is_not_silently_normalized": true,
+    "manual_only_match_is_not_overridden": true,
+    "partial_family_pattern_is_not_forced": true,
+    "reference_candidate_cannot_bypass_registered_pattern": true,
+    "all_blocked_previews_leave_working_job_unchanged": true,
+    "automatic_reference_path_rejects_pattern_violation": true,
+    "explicit_apply_commits_rule_and_reviewed_results": true,
+    "same_preview_cannot_apply_twice": true,
+    "accepted_results_equal_reviewed_results": true,
+    "all_298_unaffected_regions_and_manual_state_unchanged": true,
+    "pattern_applies_to_both_automatic_mains": true,
+    "rule_manual_lines_quantities_and_results_survive_reopen": true,
+    "interrupted_save_preserves_completed_pattern_snapshot": true,
+    "later_automatic_edit_calculates_under_registered_pattern": true,
+    "later_edit_keeps_registered_rule_and_manual_result": true,
+    "fresh_process_exports_registered_results_without_engine": true,
+    "actual_dxf_uses_accepted_pattern_lines_and_manual_copies": true,
+    "source_snapshot_and_original_texts_unchanged": true
+  },
+  "baseline": {
+    "rows": 100,
+    "regions": 300,
+    "layout_changes": 0
+  },
+  "pattern": {
+    "literal": "MONITORING PANEL",
+    "internal_token_cuts": [
+      1
+    ],
+    "independent_block": true
+  },
+  "scope_of_application": "current_job_automatic_main",
+  "matched_ids": [
+    "R026",
+    "R027",
+    "R028"
+  ],
+  "manual_excluded_ids": [
+    "R028"
+  ],
+  "recalculated_ids": [
+    "R026",
+    "R027"
+  ],
+  "changed_layout_ids": [
+    "R027"
+  ],
+  "manual": {
+    "id": "R028",
+    "lines": [
+      "EGCS WATER ",
+      "MONITORING ",
+      "PANEL (OUTLET) ",
+      "(E/R FLOOR)"
+    ],
+    "quantity": 2
+  },
+  "blocked_examples": [
+    {
+      "rule": {
+        "literal": "(OUTLET)",
+        "internal_token_cuts": [],
+        "independent_block": true
+      },
+      "issues": [
+        {
+          "code": "no_automatic_match",
+          "message": "적용할 자동 본문이 없습니다."
+        }
+      ]
+    },
+    {
+      "rule": {
+        "literal": "E/R AC220V",
+        "internal_token_cuts": [],
+        "independent_block": true
+      },
+      "issues": [
+        {
+          "code": "pattern_not_resolved_in_current_search",
+          "message": "시험 미완료: 그룹 일부만 패턴에 포함됩니다."
+        }
+      ]
+    },
+    {
+      "rule": {
+        "literal": "IGS TOPPING-UP",
+        "internal_token_cuts": [],
+        "independent_block": true
+      },
+      "issues": [
+        {
+          "id": "R051",
+          "code": "candidate_violates_pattern",
+          "literal": "IGS TOPPING-UP",
+          "state": "reference_only"
+        }
+      ]
+    }
+  ],
+  "dxf_directory": "DXF",
+  "elapsed_ms": 10104.205,
+  "scope": "Explicit new pattern preview/cancel/apply in the current job, using existing token rules. Manual mains retained; only affected automatic families recalculated. Final pattern guard includes reference candidates. No customer/project sharing, pattern edit/delete, automatic inference, live UI or production changes.",
+  "output": "results.json / preview.html / pattern_preview.json / saved_*.json / DXF/"
+}

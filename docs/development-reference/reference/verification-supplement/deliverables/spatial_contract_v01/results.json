@@ -1,0 +1,51 @@
+{
+  "version": "0.1",
+  "passed": 20,
+  "total": 20,
+  "assertions": {
+    "bbox_overlap_is_not_collision": true,
+    "actual_overlap_is_rejected": true,
+    "unavailable_geometry_is_unknown": true,
+    "space_filter_precedes_size_and_score": true,
+    "all_invalid_returns_no_result": true,
+    "no_candidates_returns_no_result": true,
+    "plate_and_region_both_apply": true,
+    "region_applies_inside_plate": true,
+    "exact_required_clearance_passes": true,
+    "clearance_short_by_0001_rejected": true,
+    "hole_radius_change_is_applied": true,
+    "disjoint_bbox_skips_detail": true,
+    "every_hole_is_checked": true,
+    "size_precedes_score_among_valid": true,
+    "primary_precedes_secondary": true,
+    "secondary_breaks_primary_tie": true,
+    "stable_id_breaks_complete_tie": true,
+    "all_24_candidate_orders_equal": true,
+    "negative_clearance_rejected": true,
+    "reference_pool_uses_same_space_filter": true
+  },
+  "choice": "A",
+  "candidate_results": {
+    "A": {
+      "status": "pass",
+      "reasons": [],
+      "detail_checks": 1
+    },
+    "B": {
+      "status": "fail",
+      "reasons": [
+        "hole:H1"
+      ],
+      "detail_checks": 1
+    },
+    "C": {
+      "status": "unknown",
+      "reasons": [
+        "geometry_unavailable"
+      ],
+      "detail_checks": 0
+    }
+  },
+  "scope": "Synthetic rectangle unions, rectangular containment and circular holes; exact rational arithmetic. No actual fonts, curve approximation, rounded plates, decorations, layout generation, DXF, Type3, or production changes.",
+  "output": "results.json / preview.html"
+}

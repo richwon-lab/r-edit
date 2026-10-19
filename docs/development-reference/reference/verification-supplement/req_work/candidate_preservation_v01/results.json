@@ -1,0 +1,497 @@
+{
+  "purpose": "Independent synthetic candidate-preservation experiment",
+  "limitations": [
+    "Scores and signatures are hand supplied or seeded random, not learned or production values.",
+    "No fonts, physical geometry, cutter checks, real candidate generation or DXF/Type3 validation.",
+    "Exhaustive means all supplied candidates only; no proof of completeness of a layout search.",
+    "Signature pruning is valid here because ALL cross-item effects depend only on this signature.",
+    "If other interactions or constraints are added, the signature and dominance rule must change.",
+    "Combination counts are not production speedups or latency measurements.",
+    "Random cases are structural checks, not manufacturing or aesthetic quality evidence."
+  ],
+  "named": [
+    {
+      "name": "local_top2_loses_group_winner",
+      "input": {
+        "items": {
+          "A": [
+            {
+              "id": "A1",
+              "local_score": 100,
+              "signature": {
+                "STOP P/B": "whole|shared"
+              },
+              "lines": [
+                "NO.1",
+                "ABC STOP P/B"
+              ]
+            },
+            {
+              "id": "A2",
+              "local_score": 99,
+              "signature": {
+                "STOP P/B": "split|shared"
+              },
+              "lines": [
+                "NO.1 ABC STOP",
+                "P/B"
+              ]
+            },
+            {
+              "id": "A3",
+              "local_score": 95,
+              "signature": {
+                "STOP P/B": "whole|own"
+              },
+              "lines": [
+                "NO.1 ABC",
+                "STOP P/B"
+              ]
+            },
+            {
+              "id": "A4",
+              "local_score": 90,
+              "signature": {
+                "STOP P/B": "whole|own"
+              },
+              "lines": [
+                "NO.1",
+                "ABC",
+                "STOP P/B"
+              ]
+            }
+          ],
+          "B": [
+            {
+              "id": "B1",
+              "local_score": 100,
+              "signature": {
+                "STOP P/B": "whole|own"
+              },
+              "lines": [
+                "DEF",
+                "STOP P/B"
+              ]
+            }
+          ]
+        },
+        "edges": [
+          [
+            "A",
+            "B",
+            "STOP P/B",
+            20
+          ]
+        ]
+      },
+      "results": {
+        "all": {
+          "score": 215,
+          "local_score": 195,
+          "group_score": 20,
+          "choices": {
+            "A": "A3",
+            "B": "B1"
+          },
+          "lines": {
+            "A": [
+              "NO.1 ABC",
+              "STOP P/B"
+            ],
+            "B": [
+              "DEF",
+              "STOP P/B"
+            ]
+          },
+          "combinations": 4,
+          "candidates_before": 5,
+          "candidates_after": 5
+        },
+        "top2": {
+          "score": 200,
+          "local_score": 200,
+          "group_score": 0,
+          "choices": {
+            "A": "A1",
+            "B": "B1"
+          },
+          "lines": {
+            "A": [
+              "NO.1",
+              "ABC STOP P/B"
+            ],
+            "B": [
+              "DEF",
+              "STOP P/B"
+            ]
+          },
+          "combinations": 2,
+          "candidates_before": 5,
+          "candidates_after": 3
+        },
+        "signature": {
+          "score": 215,
+          "local_score": 195,
+          "group_score": 20,
+          "choices": {
+            "A": "A3",
+            "B": "B1"
+          },
+          "lines": {
+            "A": [
+              "NO.1 ABC",
+              "STOP P/B"
+            ],
+            "B": [
+              "DEF",
+              "STOP P/B"
+            ]
+          },
+          "combinations": 3,
+          "candidates_before": 5,
+          "candidates_after": 4
+        },
+        "internal_only": {
+          "score": 200,
+          "local_score": 200,
+          "group_score": 0,
+          "choices": {
+            "A": "A1",
+            "B": "B1"
+          },
+          "lines": {
+            "A": [
+              "NO.1",
+              "ABC STOP P/B"
+            ],
+            "B": [
+              "DEF",
+              "STOP P/B"
+            ]
+          },
+          "combinations": 2,
+          "candidates_before": 5,
+          "candidates_after": 3
+        }
+      }
+    },
+    {
+      "name": "internal_breaks_omit_outer_boundary",
+      "input": {
+        "items": {
+          "A": [
+            {
+              "id": "A1",
+              "local_score": 100,
+              "signature": {
+                "FEEDER PANEL": "FEEDER/PANEL|shared"
+              },
+              "lines": [
+                "E/R AC220V FEEDER",
+                "PANEL"
+              ]
+            },
+            {
+              "id": "A2",
+              "local_score": 95,
+              "signature": {
+                "FEEDER PANEL": "FEEDER/PANEL|own"
+              },
+              "lines": [
+                "E/R AC220V",
+                "FEEDER",
+                "PANEL"
+              ]
+            }
+          ],
+          "B": [
+            {
+              "id": "B1",
+              "local_score": 100,
+              "signature": {
+                "FEEDER PANEL": "FEEDER/PANEL|own"
+              },
+              "lines": [
+                "EM'CY AC220V",
+                "FEEDER",
+                "PANEL"
+              ]
+            }
+          ]
+        },
+        "edges": [
+          [
+            "A",
+            "B",
+            "FEEDER PANEL",
+            20
+          ]
+        ]
+      },
+      "results": {
+        "all": {
+          "score": 215,
+          "local_score": 195,
+          "group_score": 20,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "lines": {
+            "A": [
+              "E/R AC220V",
+              "FEEDER",
+              "PANEL"
+            ],
+            "B": [
+              "EM'CY AC220V",
+              "FEEDER",
+              "PANEL"
+            ]
+          },
+          "combinations": 2,
+          "candidates_before": 3,
+          "candidates_after": 3
+        },
+        "top2": {
+          "score": 215,
+          "local_score": 195,
+          "group_score": 20,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "lines": {
+            "A": [
+              "E/R AC220V",
+              "FEEDER",
+              "PANEL"
+            ],
+            "B": [
+              "EM'CY AC220V",
+              "FEEDER",
+              "PANEL"
+            ]
+          },
+          "combinations": 2,
+          "candidates_before": 3,
+          "candidates_after": 3
+        },
+        "signature": {
+          "score": 215,
+          "local_score": 195,
+          "group_score": 20,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "lines": {
+            "A": [
+              "E/R AC220V",
+              "FEEDER",
+              "PANEL"
+            ],
+            "B": [
+              "EM'CY AC220V",
+              "FEEDER",
+              "PANEL"
+            ]
+          },
+          "combinations": 2,
+          "candidates_before": 3,
+          "candidates_after": 3
+        },
+        "internal_only": {
+          "score": 200,
+          "local_score": 200,
+          "group_score": 0,
+          "choices": {
+            "A": "A1",
+            "B": "B1"
+          },
+          "lines": {
+            "A": [
+              "E/R AC220V FEEDER",
+              "PANEL"
+            ],
+            "B": [
+              "EM'CY AC220V",
+              "FEEDER",
+              "PANEL"
+            ]
+          },
+          "combinations": 1,
+          "candidates_before": 3,
+          "candidates_after": 2
+        }
+      }
+    },
+    {
+      "name": "unrelated_items_have_no_group_effect",
+      "input": {
+        "items": {
+          "A": [
+            {
+              "id": "A1",
+              "local_score": 100,
+              "signature": {
+                "STOP P/B": "whole|shared"
+              },
+              "lines": [
+                "NO.1",
+                "ABC STOP P/B"
+              ]
+            },
+            {
+              "id": "A2",
+              "local_score": 99,
+              "signature": {
+                "STOP P/B": "split|shared"
+              },
+              "lines": [
+                "NO.1 ABC STOP",
+                "P/B"
+              ]
+            },
+            {
+              "id": "A3",
+              "local_score": 95,
+              "signature": {
+                "STOP P/B": "whole|own"
+              },
+              "lines": [
+                "NO.1 ABC",
+                "STOP P/B"
+              ]
+            },
+            {
+              "id": "A4",
+              "local_score": 90,
+              "signature": {
+                "STOP P/B": "whole|own"
+              },
+              "lines": [
+                "NO.1",
+                "ABC",
+                "STOP P/B"
+              ]
+            }
+          ],
+          "B": [
+            {
+              "id": "B1",
+              "local_score": 100,
+              "signature": {
+                "STOP P/B": "whole|own"
+              },
+              "lines": [
+                "DEF",
+                "STOP P/B"
+              ]
+            }
+          ]
+        },
+        "edges": []
+      },
+      "results": {
+        "all": {
+          "score": 200,
+          "local_score": 200,
+          "group_score": 0,
+          "choices": {
+            "A": "A1",
+            "B": "B1"
+          },
+          "lines": {
+            "A": [
+              "NO.1",
+              "ABC STOP P/B"
+            ],
+            "B": [
+              "DEF",
+              "STOP P/B"
+            ]
+          },
+          "combinations": 4,
+          "candidates_before": 5,
+          "candidates_after": 5
+        },
+        "top2": {
+          "score": 200,
+          "local_score": 200,
+          "group_score": 0,
+          "choices": {
+            "A": "A1",
+            "B": "B1"
+          },
+          "lines": {
+            "A": [
+              "NO.1",
+              "ABC STOP P/B"
+            ],
+            "B": [
+              "DEF",
+              "STOP P/B"
+            ]
+          },
+          "combinations": 2,
+          "candidates_before": 5,
+          "candidates_after": 3
+        },
+        "signature": {
+          "score": 200,
+          "local_score": 200,
+          "group_score": 0,
+          "choices": {
+            "A": "A1",
+            "B": "B1"
+          },
+          "lines": {
+            "A": [
+              "NO.1",
+              "ABC STOP P/B"
+            ],
+            "B": [
+              "DEF",
+              "STOP P/B"
+            ]
+          },
+          "combinations": 3,
+          "candidates_before": 5,
+          "candidates_after": 4
+        },
+        "internal_only": {
+          "score": 200,
+          "local_score": 200,
+          "group_score": 0,
+          "choices": {
+            "A": "A1",
+            "B": "B1"
+          },
+          "lines": {
+            "A": [
+              "NO.1",
+              "ABC STOP P/B"
+            ],
+            "B": [
+              "DEF",
+              "STOP P/B"
+            ]
+          },
+          "combinations": 2,
+          "candidates_before": 5,
+          "candidates_after": 3
+        }
+      }
+    }
+  ],
+  "random": {
+    "seed": 20261008,
+    "cases": 200,
+    "exact_result_matches": 200,
+    "shuffled_order_matches": 200,
+    "top2_strictly_worse_cases": 63,
+    "full_combinations": 259200,
+    "reduced_combinations": 9011
+  }
+}

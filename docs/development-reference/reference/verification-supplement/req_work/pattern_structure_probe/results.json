@@ -1,0 +1,289 @@
+{
+  "scope": "Structural comparison of explicitly supplied patterns only. No pattern discovery, score magnitude, group optimizer, font measurement, or new layout generation. These eight examples are not production acceptance.",
+  "cases": [
+    {
+      "case": "prefix_old_failure",
+      "a": {
+        "text": "NO.1 ABC MONITOR",
+        "cuts": [],
+        "span": [
+          0,
+          2
+        ],
+        "signature": {
+          "commonBreaks": [],
+          "left": "absent",
+          "right": "all"
+        }
+      },
+      "b": {
+        "text": "NO.3 ABC TEMPERATURE CONTROLLER",
+        "cuts": [
+          3
+        ],
+        "span": [
+          0,
+          2
+        ],
+        "signature": {
+          "commonBreaks": [],
+          "left": "absent",
+          "right": "part"
+        }
+      },
+      "expectedSameStructure": false,
+      "sameStructure": false
+    },
+    {
+      "case": "prefix_target_different_tail_line_count",
+      "a": {
+        "text": "NO.1 ABC MONITOR",
+        "cuts": [
+          2
+        ],
+        "span": [
+          0,
+          2
+        ],
+        "signature": {
+          "commonBreaks": [],
+          "left": "absent",
+          "right": "separate"
+        }
+      },
+      "b": {
+        "text": "NO.3 ABC TEMPERATURE CONTROLLER",
+        "cuts": [
+          2,
+          3
+        ],
+        "span": [
+          0,
+          2
+        ],
+        "signature": {
+          "commonBreaks": [],
+          "left": "absent",
+          "right": "separate"
+        }
+      },
+      "expectedSameStructure": true,
+      "sameStructure": true
+    },
+    {
+      "case": "prefix_all_inline_allowed",
+      "a": {
+        "text": "NO.1 ABC MONITOR",
+        "cuts": [],
+        "span": [
+          0,
+          2
+        ],
+        "signature": {
+          "commonBreaks": [],
+          "left": "absent",
+          "right": "all"
+        }
+      },
+      "b": {
+        "text": "NO.3 ABC TEMPERATURE CONTROLLER",
+        "cuts": [],
+        "span": [
+          0,
+          2
+        ],
+        "signature": {
+          "commonBreaks": [],
+          "left": "absent",
+          "right": "all"
+        }
+      },
+      "expectedSameStructure": true,
+      "sameStructure": true
+    },
+    {
+      "case": "suffix_partial_attachment",
+      "a": {
+        "text": "MAIN ALARM PANEL",
+        "cuts": [
+          1
+        ],
+        "span": [
+          1,
+          3
+        ],
+        "signature": {
+          "commonBreaks": [],
+          "left": "separate",
+          "right": "absent"
+        }
+      },
+      "b": {
+        "text": "AUXILIARY ENGINE ROOM ALARM PANEL",
+        "cuts": [
+          2
+        ],
+        "span": [
+          3,
+          5
+        ],
+        "signature": {
+          "commonBreaks": [],
+          "left": "part",
+          "right": "absent"
+        }
+      },
+      "expectedSameStructure": false,
+      "sameStructure": false
+    },
+    {
+      "case": "suffix_target",
+      "a": {
+        "text": "MAIN ALARM PANEL",
+        "cuts": [
+          1
+        ],
+        "span": [
+          1,
+          3
+        ],
+        "signature": {
+          "commonBreaks": [],
+          "left": "separate",
+          "right": "absent"
+        }
+      },
+      "b": {
+        "text": "AUXILIARY ENGINE ROOM ALARM PANEL",
+        "cuts": [
+          3
+        ],
+        "span": [
+          3,
+          5
+        ],
+        "signature": {
+          "commonBreaks": [],
+          "left": "separate",
+          "right": "absent"
+        }
+      },
+      "expectedSameStructure": true,
+      "sameStructure": true
+    },
+    {
+      "case": "middle_partial_attachment",
+      "a": {
+        "text": "NO.1 ENGINE ROOM TEMPERATURE SENSOR",
+        "cuts": [
+          1,
+          3
+        ],
+        "span": [
+          1,
+          3
+        ],
+        "signature": {
+          "commonBreaks": [],
+          "left": "separate",
+          "right": "separate"
+        }
+      },
+      "b": {
+        "text": "NO.2 ENGINE ROOM PRESSURE SENSOR",
+        "cuts": [
+          1,
+          4
+        ],
+        "span": [
+          1,
+          3
+        ],
+        "signature": {
+          "commonBreaks": [],
+          "left": "separate",
+          "right": "part"
+        }
+      },
+      "expectedSameStructure": false,
+      "sameStructure": false
+    },
+    {
+      "case": "middle_target",
+      "a": {
+        "text": "NO.1 ENGINE ROOM TEMPERATURE SENSOR",
+        "cuts": [
+          1,
+          3
+        ],
+        "span": [
+          1,
+          3
+        ],
+        "signature": {
+          "commonBreaks": [],
+          "left": "separate",
+          "right": "separate"
+        }
+      },
+      "b": {
+        "text": "NO.2 ENGINE ROOM PRESSURE SENSOR",
+        "cuts": [
+          1,
+          3
+        ],
+        "span": [
+          1,
+          3
+        ],
+        "signature": {
+          "commonBreaks": [],
+          "left": "separate",
+          "right": "separate"
+        }
+      },
+      "expectedSameStructure": true,
+      "sameStructure": true
+    },
+    {
+      "case": "common_internal_split",
+      "a": {
+        "text": "NO.1 ENGINE ROOM TEMPERATURE SENSOR",
+        "cuts": [
+          1,
+          3
+        ],
+        "span": [
+          1,
+          3
+        ],
+        "signature": {
+          "commonBreaks": [],
+          "left": "separate",
+          "right": "separate"
+        }
+      },
+      "b": {
+        "text": "NO.2 ENGINE ROOM PRESSURE SENSOR",
+        "cuts": [
+          1,
+          2,
+          3
+        ],
+        "span": [
+          1,
+          3
+        ],
+        "signature": {
+          "commonBreaks": [
+            1
+          ],
+          "left": "separate",
+          "right": "separate"
+        }
+      },
+      "expectedSameStructure": false,
+      "sameStructure": false
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "note": "Isolated state/identity experiment. Per-target override + normal group solver adapter; actual editor, persistence backend, multiple region geometries and DXF output not implemented. Fallback not needed in these fixtures. Raw text editing inside manual mode remains outside this test.",
+  "checks": {
+    "sameTextDifferentPlate": true,
+    "otherRegionUnchanged": true,
+    "otherDesignUnchanged": true,
+    "twoDistinctManualBreaks": true,
+    "rowReorder": true,
+    "jsonRoundTrip": true,
+    "restoreAutoLocal": true,
+    "deletionDoesNotShiftState": true,
+    "staleOutputRejected": true,
+    "explicitRecalculation": true
+  },
+  "examples": [
+    {
+      "design": "D2",
+      "plate": "A",
+      "region": "main",
+      "mode": "auto",
+      "lines": [
+        "EM'CY STOP P/B"
+      ]
+    },
+    {
+      "design": "D1",
+      "plate": "B",
+      "region": "sub",
+      "mode": "auto",
+      "lines": [
+        "RJ45(1-PORT) FOR",
+        "VOIP TELEPHONE"
+      ]
+    },
+    {
+      "design": "D1",
+      "plate": "B",
+      "region": "main",
+      "mode": "manual",
+      "lines": [
+        "EM'CY STOP P/B"
+      ]
+    },
+    {
+      "design": "D1",
+      "plate": "A",
+      "region": "sub",
+      "mode": "auto",
+      "lines": [
+        "RJ45(1-PORT) FOR",
+        "VOIP TELEPHONE"
+      ]
+    },
+    {
+      "design": "D1",
+      "plate": "A",
+      "region": "main",
+      "mode": "manual",
+      "lines": [
+        "EM'CY",
+        "STOP P/B"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "version": "0.1",
+  "passed": 24,
+  "total": 24,
+  "assertions": {
+    "automatic_baseline_calculates": true,
+    "all_100_rows_300_results_and_diagnostics_unchanged": true,
+    "normal_99_reference_1_preserved": true,
+    "legacy_missing_floor_zero_fallback_reproduced": true,
+    "new_example_calculates": true,
+    "automatic_unregistered_floor_returns_no_candidate": true,
+    "missing_floor_reports_exact_height_and_cutter_band": true,
+    "missing_floor_does_not_become_no_fit_or_search_limit": true,
+    "known_normal_rejection_reasons_are_retained": true,
+    "configuration_issue_not_counted_as_inspected_candidate": true,
+    "original_cutter_not_replaced": true,
+    "registered_two_mm_boundary_still_returns_reference": true,
+    "same_text_manual_fit_calculates": true,
+    "automatic_and_manual_missing_floor_agree": true,
+    "manual_change_preserves_other_regions_and_rows": true,
+    "automatic_and_manual_registered_boundary_agree": true,
+    "earlier_search_limit_is_not_relabelled_as_missing_floor": true,
+    "footer_no_fit_remains_distinct": true,
+    "missing_font_metric_keeps_its_own_reason": true,
+    "missing_floor_reason_and_manual_lines_survive_reopen": true,
+    "repeat_automatic_result_is_identical": true,
+    "both_exports_exclude_missing_floor_plate": true,
+    "actual_dxf_contains_only_complete_registered_floor_plates": true,
+    "original_snapshot_unchanged": true
+  },
+  "baseline": {
+    "rows": 100,
+    "regions": 300,
+    "normal_rows": 99,
+    "reference_rows": 1,
+    "layout_changes": 0
+  },
+  "regression_example": {
+    "legacy_status": "reference_only",
+    "legacy_height": 1.95,
+    "legacy_width": 0.11109127124193412,
+    "new_status": "calculation_unavailable",
+    "new_candidate": null,
+    "reason": {
+      "code": "width_floor_unregistered",
+      "evaluation_cutter_mm": 0.1,
+      "height": 1.95
+    }
+  },
+  "registered_boundary_height": 2.0,
+  "dxf_directory": "DXF",
+  "elapsed_ms": 2664.105,
+  "scope": "Automatic reference search now stops at unregistered width floor, matching manual fitting. Existing 100-row results unchanged. No new cutter values, layout scoring, UI, geometry, quantity or production changes.",
+  "output": "results.json / preview.html / comparison.json / saved_auto_cases.json / saved_manual_cases.json / DXF/"
+}

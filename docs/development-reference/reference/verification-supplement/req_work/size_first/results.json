@@ -1,0 +1,471 @@
+{
+  "note": "Experimental, not production implementation. Prior candidate H120/W60/fourLine67.5/exponent5 retained for within-height comparisons; only admissible height ordering changed. 75x25, HY sample glyphs, fixed 0.3 cutter band height>=3 width>=58%. 0.25mm height steps, 4-line search ceiling are test limitations, not universal rules. Existing fixed references retained.",
+  "rows": 286,
+  "heights": {
+    "4.5": 286
+  },
+  "changedRows": 16,
+  "lineBreakChangedRows": 15,
+  "stopRowsChanged": 0,
+  "changed": [
+    {
+      "number": 14,
+      "text": "SOUND RECEPTION SYSTEM MAIN DISPLAY UNIT",
+      "before": {
+        "lines": [
+          "SOUND RECEPTION",
+          "SYSTEM MAIN DISPLAY UNIT"
+        ],
+        "height": 4.25,
+        "minWidth": 67.49
+      },
+      "after": {
+        "lines": [
+          "SOUND RECEPTION",
+          "SYSTEM",
+          "MAIN DISPLAY UNIT"
+        ],
+        "height": 4.5,
+        "minWidth": 80
+      }
+    },
+    {
+      "number": 20,
+      "text": "NO.2 VHF RADIO TELEPHONE",
+      "before": {
+        "lines": [
+          "NO.2 VHF RADIO TELEPHONE"
+        ],
+        "height": 4.25,
+        "minWidth": 65.42
+      },
+      "after": {
+        "lines": [
+          "NO.2 VHF RADIO",
+          "TELEPHONE"
+        ],
+        "height": 4.5,
+        "minWidth": 80
+      }
+    },
+    {
+      "number": 37,
+      "text": "NO.1 VHF RADIO TELEPHONE",
+      "before": {
+        "lines": [
+          "NO.1 VHF RADIO TELEPHONE"
+        ],
+        "height": 4.25,
+        "minWidth": 65.42
+      },
+      "after": {
+        "lines": [
+          "NO.1 VHF RADIO",
+          "TELEPHONE"
+        ],
+        "height": 4.5,
+        "minWidth": 80
+      }
+    },
+    {
+      "number": 82,
+      "text": "S-BAND RADAR MONITOR",
+      "before": {
+        "lines": [
+          "S-BAND RADAR MONITOR"
+        ],
+        "height": 4.5,
+        "minWidth": 69.13
+      },
+      "after": {
+        "lines": [
+          "S-BAND",
+          "RADAR MONITOR"
+        ],
+        "height": 4.5,
+        "minWidth": 80
+      }
+    },
+    {
+      "number": 83,
+      "text": "S-BAND RADAR KEYBOARD ",
+      "before": {
+        "lines": [
+          "S-BAND RADAR KEYBOARD"
+        ],
+        "height": 4.25,
+        "minWidth": 68.68
+      },
+      "after": {
+        "lines": [
+          "S-BAND",
+          "RADAR KEYBOARD"
+        ],
+        "height": 4.5,
+        "minWidth": 80
+      }
+    },
+    {
+      "number": 84,
+      "text": "S-BAND RADAR TRACKBALL",
+      "before": {
+        "lines": [
+          "S-BAND RADAR TRACKBALL"
+        ],
+        "height": 4.25,
+        "minWidth": 66.53
+      },
+      "after": {
+        "lines": [
+          "S-BAND",
+          "RADAR TRACKBALL"
+        ],
+        "height": 4.5,
+        "minWidth": 80
+      }
+    },
+    {
+      "number": 104,
+      "text": "DIM. SW. FOR  ALARM & INDICATION LAMP",
+      "before": {
+        "lines": [
+          "DIM. SW. FOR",
+          "ALARM & INDICATION LAMP"
+        ],
+        "height": 4.25,
+        "minWidth": 69.46
+      },
+      "after": {
+        "lines": [
+          "DIM. SW. FOR",
+          "ALARM & INDICATION LAMP"
+        ],
+        "height": 4.5,
+        "minWidth": 65.6
+      }
+    },
+    {
+      "number": 127,
+      "text": "NO.1 INMARSAT-C REMOTE DISTRESS BUTTON",
+      "before": {
+        "lines": [
+          "NO.1 INMARSAT-C",
+          "REMOTE DISTRESS BUTTON"
+        ],
+        "height": 4.25,
+        "minWidth": 67.54
+      },
+      "after": {
+        "lines": [
+          "NO.1 INMARSAT-C",
+          "REMOTE",
+          "DISTRESS BUTTON"
+        ],
+        "height": 4.5,
+        "minWidth": 80
+      }
+    },
+    {
+      "number": 195,
+      "text": "GYRO COMPASS CONTROL UNIT",
+      "before": {
+        "lines": [
+          "GYRO COMPASS CONTROL UNIT"
+        ],
+        "height": 3.75,
+        "minWidth": 65.88
+      },
+      "after": {
+        "lines": [
+          "GYRO COMPASS",
+          "CONTROL UNIT"
+        ],
+        "height": 4.5,
+        "minWidth": 80
+      }
+    },
+    {
+      "number": 196,
+      "text": "GYRO COMPASS DIGITAL COURSE RECORDER",
+      "before": {
+        "lines": [
+          "GYRO COMPASS DIGITAL",
+          "COURSE RECORDER"
+        ],
+        "height": 4.5,
+        "minWidth": 71.88
+      },
+      "after": {
+        "lines": [
+          "GYRO COMPASS",
+          "DIGITAL COURSE",
+          "RECORDER"
+        ],
+        "height": 4.5,
+        "minWidth": 80
+      }
+    },
+    {
+      "number": 215,
+      "text": "SAT. LOG MAIN DISPLAY",
+      "before": {
+        "lines": [
+          "SAT. LOG MAIN DISPLAY"
+        ],
+        "height": 4.5,
+        "minWidth": 74.3
+      },
+      "after": {
+        "lines": [
+          "SAT. LOG",
+          "MAIN DISPLAY"
+        ],
+        "height": 4.5,
+        "minWidth": 80
+      }
+    },
+    {
+      "number": 226,
+      "text": "ECHO SOUNDER DISPLAY PROCESSING UNIT",
+      "before": {
+        "lines": [
+          "ECHO SOUNDER",
+          "DISPLAY PROCESSING UNIT"
+        ],
+        "height": 4.25,
+        "minWidth": 68.43
+      },
+      "after": {
+        "lines": [
+          "ECHO SOUNDER DISPLAY",
+          "PROCESSING UNIT"
+        ],
+        "height": 4.5,
+        "minWidth": 70.28
+      }
+    },
+    {
+      "number": 251,
+      "text": "NO.1 BOW THRUSTER WING SWITCH PANEL (PORT)",
+      "before": {
+        "lines": [
+          "NO.1 BOW THRUSTER",
+          "WING SWITCH PANEL (PORT)"
+        ],
+        "height": 4.25,
+        "minWidth": 65.84
+      },
+      "after": {
+        "lines": [
+          "NO.1 BOW THRUSTER WING",
+          "SWITCH PANEL (PORT)"
+        ],
+        "height": 4.5,
+        "minWidth": 65.06
+      }
+    },
+    {
+      "number": 252,
+      "text": "NO.2 BOW THRUSTER WING SWITCH PANEL (PORT)",
+      "before": {
+        "lines": [
+          "NO.2 BOW THRUSTER",
+          "WING SWITCH PANEL (PORT)"
+        ],
+        "height": 4.25,
+        "minWidth": 65.84
+      },
+      "after": {
+        "lines": [
+          "NO.2 BOW THRUSTER WING",
+          "SWITCH PANEL (PORT)"
+        ],
+        "height": 4.5,
+        "minWidth": 65.06
+      }
+    },
+    {
+      "number": 280,
+      "text": "NO.1 BOW THRUSTER WING SWITCH PANEL (STBD)",
+      "before": {
+        "lines": [
+          "NO.1 BOW THRUSTER",
+          "WING SWITCH PANEL (STBD)"
+        ],
+        "height": 4.25,
+        "minWidth": 66.43
+      },
+      "after": {
+        "lines": [
+          "NO.1 BOW THRUSTER WING",
+          "SWITCH PANEL (STBD)"
+        ],
+        "height": 4.5,
+        "minWidth": 65.06
+      }
+    },
+    {
+      "number": 281,
+      "text": "NO.2 BOW THRUSTER WING SWITCH PANEL (STBD)",
+      "before": {
+        "lines": [
+          "NO.2 BOW THRUSTER",
+          "WING SWITCH PANEL (STBD)"
+        ],
+        "height": 4.25,
+        "minWidth": 66.43
+      },
+      "after": {
+        "lines": [
+          "NO.2 BOW THRUSTER WING",
+          "SWITCH PANEL (STBD)"
+        ],
+        "height": 4.5,
+        "minWidth": 65.06
+      }
+    }
+  ],
+  "probes": [
+    {
+      "id": "ABC2",
+      "text": "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT",
+      "before": {
+        "lines": [
+          "NO.4 ABC",
+          "TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT"
+        ],
+        "height": 4.25,
+        "minWidth": 63.61
+      },
+      "after": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE",
+          "CONTROLLER",
+          "REMOTE DISPLAY UNIT"
+        ],
+        "height": 4.5,
+        "minWidth": 73.08
+      }
+    },
+    {
+      "id": "ABC3",
+      "text": "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT EMERGENCY CONTROL PANEL",
+      "before": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE",
+          "CONTROLLER REMOTE DISPLAY",
+          "UNIT EMERGENCY CONTROL PANEL"
+        ],
+        "height": 3.75,
+        "minWidth": 61.26
+      },
+      "after": {
+        "lines": [
+          "NO.4 ABC",
+          "TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT",
+          "EMERGENCY CONTROL PANEL"
+        ],
+        "height": 4.25,
+        "minWidth": 63.66
+      }
+    },
+    {
+      "id": "LONG4",
+      "text": "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT EMERGENCY CONTROL PANEL AUXILIARY POWER SUPPLY MONITOR",
+      "before": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT",
+          "EMERGENCY CONTROL PANEL",
+          "AUXILIARY POWER SUPPLY MONITOR"
+        ],
+        "height": 3.75,
+        "minWidth": 60.32
+      },
+      "after": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT",
+          "EMERGENCY CONTROL PANEL",
+          "AUXILIARY POWER SUPPLY MONITOR"
+        ],
+        "height": 3.75,
+        "minWidth": 60.32
+      }
+    },
+    {
+      "id": "LONG6",
+      "text": "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT EMERGENCY CONTROL PANEL AUXILIARY POWER SUPPLY MONITOR ENGINE ROOM VENTILATION CONTROL",
+      "before": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT EMERGENCY",
+          "CONTROL PANEL AUXILIARY POWER SUPPLY",
+          "MONITOR ENGINE ROOM VENTILATION CONTROL"
+        ],
+        "height": 3,
+        "minWidth": 59.32
+      },
+      "after": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT EMERGENCY",
+          "CONTROL PANEL AUXILIARY POWER SUPPLY",
+          "MONITOR ENGINE ROOM VENTILATION CONTROL"
+        ],
+        "height": 3,
+        "minWidth": 59.32
+      }
+    },
+    {
+      "id": "PATTERN_RELAX",
+      "text": "NO.1 MAIN ENGINE ROOM VENTILATION FAN LOCAL CONTROL PANEL EM'CY STOP P/B (ES-A)",
+      "before": {
+        "lines": [
+          "NO.1 MAIN ENGINE",
+          "ROOM VENTILATION FAN",
+          "LOCAL CONTROL PANEL",
+          "EM'CY STOP P/B (ES-A)"
+        ],
+        "height": 4,
+        "minWidth": 80
+      },
+      "after": {
+        "lines": [
+          "NO.1 MAIN ENGINE",
+          "ROOM VENTILATION FAN",
+          "LOCAL CONTROL PANEL",
+          "EM'CY STOP P/B (ES-A)"
+        ],
+        "height": 4,
+        "minWidth": 80
+      }
+    },
+    {
+      "id": "UNBREAKABLE_18",
+      "text": "WWWWWWWWWWWWWWWWWW",
+      "before": {
+        "lines": [
+          "WWWWWWWWWWWWWWWWWW"
+        ],
+        "height": 4,
+        "minWidth": 63.03
+      },
+      "after": {
+        "lines": [
+          "WWWWWWWWWWWWWWWWWW"
+        ],
+        "height": 4.25,
+        "minWidth": 59.33
+      }
+    },
+    {
+      "id": "NO_FIT",
+      "text": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW",
+      "before": null,
+      "after": null
+    }
+  ]
+}

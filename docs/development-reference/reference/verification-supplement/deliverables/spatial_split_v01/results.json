@@ -1,0 +1,355 @@
+{
+  "version": "0.1",
+  "passed": 23,
+  "total": 23,
+  "assertions": {
+    "input_snapshot_digest_matches": true,
+    "font_metrics_digest_matches": true,
+    "unchanged_reference_sources": true,
+    "all_100_rows_and_order_unchanged": true,
+    "all_300_region_results_exactly_unchanged": true,
+    "normal_99_reference_1_unchanged": true,
+    "all_300_proposals_equal_legacy_fit": true,
+    "all_300_selected_placements_pass_reinspection": true,
+    "repeated_text_maps_to_distinct_source_spans": true,
+    "repeat_inspection_is_identical": true,
+    "inspection_does_not_change_layout": true,
+    "hole_failure_has_line_span_and_target": true,
+    "region_violation_is_distinct": true,
+    "missing_bounds_never_passes": true,
+    "known_failure_retains_unknown_reason": true,
+    "missing_font_metric_is_unknown": true,
+    "vertical_failure_has_specific_reason": true,
+    "width_floor_failure_has_specific_reason": true,
+    "no_usable_width_has_specific_reason": true,
+    "inspection_precedes_max_height_stop": true,
+    "unknown_candidate_not_returned_by_fit": true,
+    "input_objects_unchanged": true,
+    "source_snapshot_file_unchanged": true
+  },
+  "rows": 100,
+  "regions": 300,
+  "normal_rows": 99,
+  "reference_rows": 1,
+  "exceptions": [
+    {
+      "id": "R051",
+      "no": "MCB46",
+      "height": 2.35,
+      "lines": 7
+    }
+  ],
+  "differences": [],
+  "diagnostics": {
+    "hole": {
+      "status": "fail",
+      "stage": "inspection",
+      "reasons": [
+        {
+          "code": "line_rectangle_hits_hole",
+          "line_index": 1,
+          "source_span": [
+            2,
+            3
+          ],
+          "target": "hole:0",
+          "details": {
+            "actual_center_distance_mm": 0.0,
+            "required_center_distance_mm": 4
+          }
+        }
+      ],
+      "mode": "legacy_line_rectangles"
+    },
+    "outside_region": {
+      "status": "fail",
+      "stage": "inspection",
+      "reasons": [
+        {
+          "code": "line_rectangle_outside_region",
+          "line_index": 0,
+          "source_span": [
+            0,
+            2
+          ],
+          "target": "text_region",
+          "details": {}
+        }
+      ],
+      "mode": "legacy_line_rectangles"
+    },
+    "missing_bounds": {
+      "status": "unknown",
+      "stage": "inspection",
+      "reasons": [
+        {
+          "code": "line_bounds_missing",
+          "line_index": 1,
+          "source_span": [
+            2,
+            3
+          ],
+          "target": null,
+          "details": {}
+        }
+      ],
+      "mode": "legacy_line_rectangles"
+    },
+    "missing_font_metric": {
+      "status": "unknown",
+      "stage": "proposal",
+      "reasons": [
+        {
+          "code": "glyph_metrics_missing",
+          "line_index": 0,
+          "source_span": [
+            2,
+            3
+          ],
+          "target": "􏿿",
+          "details": {}
+        }
+      ],
+      "mode": "legacy_line_rectangles"
+    },
+    "vertical": {
+      "status": "fail",
+      "stage": "proposal",
+      "reasons": [
+        {
+          "code": "vertical_region_exceeded",
+          "line_index": 0,
+          "source_span": [
+            0,
+            1
+          ],
+          "target": "text_region",
+          "details": {
+            "actual": [
+              48.199999999999996,
+              51.199999999999996
+            ],
+            "required": [
+              9,
+              33
+            ]
+          }
+        },
+        {
+          "code": "vertical_region_exceeded",
+          "line_index": 1,
+          "source_span": [
+            1,
+            2
+          ],
+          "target": "text_region",
+          "details": {
+            "actual": [
+              44.099999999999994,
+              47.099999999999994
+            ],
+            "required": [
+              9,
+              33
+            ]
+          }
+        },
+        {
+          "code": "vertical_region_exceeded",
+          "line_index": 2,
+          "source_span": [
+            2,
+            3
+          ],
+          "target": "text_region",
+          "details": {
+            "actual": [
+              40.0,
+              43.0
+            ],
+            "required": [
+              9,
+              33
+            ]
+          }
+        },
+        {
+          "code": "vertical_region_exceeded",
+          "line_index": 3,
+          "source_span": [
+            3,
+            4
+          ],
+          "target": "text_region",
+          "details": {
+            "actual": [
+              35.9,
+              38.9
+            ],
+            "required": [
+              9,
+              33
+            ]
+          }
+        },
+        {
+          "code": "vertical_region_exceeded",
+          "line_index": 4,
+          "source_span": [
+            4,
+            5
+          ],
+          "target": "text_region",
+          "details": {
+            "actual": [
+              31.799999999999997,
+              34.8
+            ],
+            "required": [
+              9,
+              33
+            ]
+          }
+        },
+        {
+          "code": "vertical_region_exceeded",
+          "line_index": 10,
+          "source_span": [
+            10,
+            11
+          ],
+          "target": "text_region",
+          "details": {
+            "actual": [
+              7.199999999999996,
+              10.199999999999996
+            ],
+            "required": [
+              9,
+              33
+            ]
+          }
+        },
+        {
+          "code": "vertical_region_exceeded",
+          "line_index": 11,
+          "source_span": [
+            11,
+            12
+          ],
+          "target": "text_region",
+          "details": {
+            "actual": [
+              3.1000000000000014,
+              6.100000000000001
+            ],
+            "required": [
+              9,
+              33
+            ]
+          }
+        },
+        {
+          "code": "vertical_region_exceeded",
+          "line_index": 12,
+          "source_span": [
+            12,
+            13
+          ],
+          "target": "text_region",
+          "details": {
+            "actual": [
+              -1.0,
+              2.0
+            ],
+            "required": [
+              9,
+              33
+            ]
+          }
+        },
+        {
+          "code": "vertical_region_exceeded",
+          "line_index": 13,
+          "source_span": [
+            13,
+            14
+          ],
+          "target": "text_region",
+          "details": {
+            "actual": [
+              -5.100000000000001,
+              -2.1000000000000014
+            ],
+            "required": [
+              9,
+              33
+            ]
+          }
+        },
+        {
+          "code": "vertical_region_exceeded",
+          "line_index": 14,
+          "source_span": [
+            14,
+            15
+          ],
+          "target": "text_region",
+          "details": {
+            "actual": [
+              -9.199999999999996,
+              -6.199999999999996
+            ],
+            "required": [
+              9,
+              33
+            ]
+          }
+        }
+      ],
+      "mode": "legacy_line_rectangles"
+    },
+    "width_floor": {
+      "status": "fail",
+      "stage": "proposal",
+      "reasons": [
+        {
+          "code": "legacy_width_below_floor",
+          "line_index": 0,
+          "source_span": [
+            0,
+            100
+          ],
+          "target": "hole:0",
+          "details": {
+            "proposed_width": 0.05633498155990103,
+            "required_minimum": 0.58
+          }
+        }
+      ],
+      "mode": "legacy_line_rectangles"
+    },
+    "no_usable_width": {
+      "status": "fail",
+      "stage": "proposal",
+      "reasons": [
+        {
+          "code": "legacy_available_width_nonpositive",
+          "line_index": 0,
+          "source_span": [
+            0,
+            1
+          ],
+          "target": "hole:0",
+          "details": {
+            "available_mm": -8.0
+          }
+        }
+      ],
+      "mode": "legacy_line_rectangles"
+    }
+  },
+  "elapsed_ms": 592.038,
+  "scope": "Separation only: legacy line-rectangle proposal and read-only inspection. Existing font scale, hole width caps and numeric tolerances retained. No actual-outline collision, new candidate search, DXF export, rounded outer-boundary checks or production engine changes.",
+  "output": "results.json / preview.html / layouts.json"
+}

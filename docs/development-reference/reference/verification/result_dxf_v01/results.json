@@ -1,0 +1,51 @@
+{
+  "version": "0.1",
+  "passed": 23,
+  "total": 23,
+  "assertions": {
+    "fresh_process_exports_without_layout_engine_or_recalculation": true,
+    "normal_99_reference_1_exported_separately": true,
+    "manifest_bound_to_exact_saved_results": true,
+    "normal_only_editable_text_and_original_geometry": true,
+    "reference_only_editable_text_and_original_geometry": true,
+    "all_300_region_texts_positions_heights_and_widths_match_saved": true,
+    "reference_keeps_original_cutter_warnings_and_reasons": true,
+    "existing_exporter_roundtrip_checks_pass": true,
+    "all_missing_layout_plates_excluded_without_empty_dxf": true,
+    "unavailable_no_fit_incomplete_remain_distinct": true,
+    "excluded_manifest_keeps_exact_diagnostics_and_source_position": true,
+    "normal_regions_of_excluded_plates_not_partially_exported": true,
+    "corrected_plate_exports_while_unresolved_plates_stay_excluded": true,
+    "actual_corrected_dxf_contains_new_rat_text": true,
+    "export_does_not_mutate_layouts_or_diagnostics": true,
+    "existing_output_set_cannot_be_overwritten": true,
+    "edited_results_block_export_before_any_output": true,
+    "calculating_results_block_export": true,
+    "edit_during_dxf_write_blocks_publication": true,
+    "changed_accepted_reasons_block_publication": true,
+    "second_dxf_failure_does_not_publish_partial_set": true,
+    "rejected_staging_files_removed_and_prior_output_preserved": true,
+    "source_snapshots_unchanged": true
+  },
+  "summary": {
+    "rows": 100,
+    "regions": 300,
+    "normal_plates": 99,
+    "reference_plates": 1,
+    "layout_changes": 0,
+    "editable_texts": 439
+  },
+  "excluded_example_states": [
+    "calculation_unavailable",
+    "no_normal_in_search",
+    "search_incomplete"
+  ],
+  "corrected_example": {
+    "normal": 1,
+    "excluded": 2
+  },
+  "dxf_directory": "DXF",
+  "elapsed_ms": 974.289,
+  "scope": "Stored-result DXF adapter only. Existing R2000 editable TEXT exporter and original 36x36 two-hole fixture retained. No recalculation, scoring, production approval, Type3 verification, new geometry support or cloud concurrency changes.",
+  "output": "results.json / preview.html / DXF/"
+}

@@ -1,0 +1,72 @@
+{
+  "version": "0.1",
+  "passed": 34,
+  "total": 34,
+  "assertions": {
+    "automatic_baseline_calculates": true,
+    "all_100_rows_300_baseline_results_unchanged": true,
+    "completed_draft_reopens_as_current_without_changes": true,
+    "unfinished_text_quantity_and_mode_survive_reopen": true,
+    "old_layouts_and_reasons_are_only_previous_results": true,
+    "previous_result_view_cannot_mutate_saved_history": true,
+    "unfinished_draft_blocks_completed_save_and_dxf_before_output": true,
+    "repeated_draft_save_does_not_promote_previous_results": true,
+    "calculating_draft_reopens_needing_calculation_without_worker": true,
+    "pending_manual_one_line_and_quantity_survive_exactly": true,
+    "old_process_result_cannot_be_accepted_after_reopen": true,
+    "old_process_result_rejected_even_after_new_retry_started": true,
+    "restored_manual_retry_uses_existing_target_only_path": true,
+    "manual_retry_preserves_other_rows_and_regions": true,
+    "manual_one_line_reference_and_warning_preserved": true,
+    "new_completed_result_reopens_as_current": true,
+    "subsequent_edit_keeps_latest_completed_history": true,
+    "explicit_auto_restore_after_reopen_returns_original_layout": true,
+    "failed_draft_preserves_error_and_hides_current_results": true,
+    "failed_draft_can_retry_without_retaining_old_error": true,
+    "cancelled_draft_keeps_edits_and_needs_calculation": true,
+    "new_uncalculated_job_saves_without_fabricated_previous_results": true,
+    "new_job_calculates_after_reopen": true,
+    "edit_then_restore_input_does_not_silently_mark_complete": true,
+    "changed_draft_with_old_binding_is_rejected": true,
+    "contradictory_current_state_rejected_even_with_resealed_envelope": true,
+    "manual_source_mismatch_rejected_on_reopen": true,
+    "interrupted_draft_save_preserves_previous_file": true,
+    "unsupported_mixed_retry_keeps_draft_without_discarding_manual_state": true,
+    "stored_engine_identity_preserved_without_relabelling": true,
+    "fresh_process_reopens_all_states_without_layout_engine": true,
+    "automatic_retry_uses_edited_input_and_keeps_quantity": true,
+    "actual_dxf_uses_new_auto_text_and_restored_manual_copies": true,
+    "source_snapshots_unchanged": true
+  },
+  "baseline": {
+    "rows": 100,
+    "regions": 300,
+    "layout_changes": 0
+  },
+  "restored_states": {
+    "completed": "current",
+    "edited": "needs_layout",
+    "calculating": "needs_layout",
+    "failed": "failed",
+    "cancelled": "needs_layout",
+    "new": "needs_layout"
+  },
+  "retry_examples": {
+    "automatic": {
+      "id": "R002",
+      "rat": "20A",
+      "quantity": 4,
+      "mode": "label"
+    },
+    "manual": {
+      "id": "R005",
+      "lines": 1,
+      "quantity": 2,
+      "status": "reference_only"
+    }
+  },
+  "dxf_directory": "DXF",
+  "elapsed_ms": 13490.88,
+  "scope": "Local draft checkpoints with separate previous completed inputs/results. No automatic worker resume. Existing automatic and one-region manual retry paths only. No manual source replacement, general mixed-edit recalculation, UI, cloud conflicts, crash/power-loss or production changes.",
+  "output": "results.json / preview.html / saved_draft*.json / DXF/"
+}

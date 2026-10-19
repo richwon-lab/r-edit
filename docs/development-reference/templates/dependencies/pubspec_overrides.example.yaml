@@ -1,0 +1,5 @@
+# 소비 패키지의 pubspec_overrides.yaml로 복사한다.
+# 형제 폴더를 실제 생성한 뒤 사용하고 로컬 override 파일은 .gitignore에 추가한다.
+dependency_overrides:
+  nameplate_text_layout:
+    path: ../nameplate_text_layout

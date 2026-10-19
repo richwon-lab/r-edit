@@ -1,0 +1,124 @@
+{
+  "version": "0.1",
+  "passed": 15,
+  "total": 15,
+  "assertions": {
+    "expected_ledger_and_scores": true,
+    "duplicate_bundle_has_no_effect": true,
+    "replacement_changes_wrong_double_penalty_choice": true,
+    "replacement_plan_same_for_every_candidate": true,
+    "unmet_customer_preference_still_penalized": true,
+    "unrelated_boundary_kept": true,
+    "different_purpose_same_location_kept": true,
+    "other_occurrence_and_region_kept": true,
+    "large_pattern_failure_not_erased_with_child": true,
+    "secondary_never_reverses_primary": true,
+    "width_off_removes_both_costs": true,
+    "all_24_rule_orders_and_candidate_orders_equal": true,
+    "unresolved_duplicate_configuration_rejected": true,
+    "cross_scope_and_purpose_replacement_rejected": true,
+    "sources_unchanged": true
+  },
+  "choices": {
+    "declared_replacement": "A",
+    "wrong_double_penalty": "B",
+    "wrong_candidate_dependent": "B"
+  },
+  "scores": {
+    "A": {
+      "primary": 5,
+      "secondary": 9,
+      "ledger": [
+        {
+          "rule": "customer_layout",
+          "target": [
+            "R001",
+            "main",
+            "FEEDER_PANEL_INTERNAL"
+          ],
+          "primary": 0,
+          "secondary": 0
+        },
+        {
+          "rule": "general_expression",
+          "target": [
+            "R001",
+            "main",
+            "OTHER_BOUNDARY"
+          ],
+          "primary": 3,
+          "secondary": 0
+        },
+        {
+          "rule": "width",
+          "target": [
+            "R001",
+            "main",
+            "AREA"
+          ],
+          "primary": 2,
+          "secondary": 9
+        }
+      ]
+    },
+    "B": {
+      "primary": 6,
+      "secondary": 2,
+      "ledger": [
+        {
+          "rule": "customer_layout",
+          "target": [
+            "R001",
+            "main",
+            "FEEDER_PANEL_INTERNAL"
+          ],
+          "primary": 4,
+          "secondary": 0
+        },
+        {
+          "rule": "general_expression",
+          "target": [
+            "R001",
+            "main",
+            "OTHER_BOUNDARY"
+          ],
+          "primary": 0,
+          "secondary": 0
+        },
+        {
+          "rule": "width",
+          "target": [
+            "R001",
+            "main",
+            "AREA"
+          ],
+          "primary": 2,
+          "secondary": 2
+        }
+      ]
+    }
+  },
+  "suppressed": [
+    [
+      [
+        "general_expression",
+        [
+          "R001",
+          "main",
+          "FEEDER_PANEL_INTERNAL"
+        ]
+      ],
+      [
+        "customer_layout",
+        [
+          "R001",
+          "main",
+          "FEEDER_PANEL_INTERNAL"
+        ]
+      ]
+    ]
+  ],
+  "elapsed_ms": 0.824,
+  "scope": "Fixed synthetic integer costs and explicitly declared single-step replacements. No layout, geometry, font, group optimizer, automatic pattern detection or production policy changes.",
+  "output": "results.json / preview.html"
+}

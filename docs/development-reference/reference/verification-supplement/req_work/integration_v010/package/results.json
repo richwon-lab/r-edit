@@ -1,0 +1,69 @@
+{
+  "version": "0.10",
+  "rows": 100,
+  "modified_rows": 3,
+  "unchanged_rows": 97,
+  "normal": 99,
+  "reference": 1,
+  "assertions": {
+    "dirty_result_not_saved_as_current_or_exported": true,
+    "unmodified_97_rows_exactly_preserved": true,
+    "other_regions_of_modified_plates_preserved": true,
+    "edited_100_rows_save_reopen_equal": true,
+    "design_holes_font_metrics_and_rules_unchanged": true,
+    "fresh_process_exports_saved_layout_without_recalculation": true,
+    "normal_99_and_reference_1_separated": true,
+    "three_edited_values_present_in_actual_dxf": true,
+    "dxf_text_style_geometry_roundtrip": true,
+    "mcb46_reference_and_warnings_unchanged": true,
+    "edit_during_real_dxf_generation_blocks_publication": true,
+    "prior_dxf_generation_unchanged_when_new_export_rejected": true,
+    "rejected_staged_files_removed": true,
+    "original_saved_job_unchanged": true
+  },
+  "changes": [
+    {
+      "id": "R002",
+      "region": "no",
+      "before": "MCCB1",
+      "after": "MCCB9"
+    },
+    {
+      "id": "R003",
+      "region": "rat",
+      "before": "40A",
+      "after": "63A"
+    },
+    {
+      "id": "R006",
+      "region": "main",
+      "before": "DC BACKUP",
+      "after": "DC BACKUP SUPPLY"
+    }
+  ],
+  "dxf_directory": "DXF",
+  "files": [
+    {
+      "file": "01_Changed4_R2000.dxf",
+      "plates": 4,
+      "editable_texts": 22
+    },
+    {
+      "file": "02_Normal99_R2000.dxf",
+      "plates": 99,
+      "editable_texts": 431
+    },
+    {
+      "file": "03_Reference_MCB46_R2000.dxf",
+      "plates": 1,
+      "editable_texts": 9
+    }
+  ],
+  "total_ms": 1702.182,
+  "user_type3_confirmation": "v0.7 confirmed; v0.10 modified output not yet confirmed",
+  "limitations": [
+    "Local single-writer staged-directory test; not Flutter concurrent execution or Google Drive atomicity.",
+    "Only completed layouts are saved here. Saving and restoring unfinished edits is not covered.",
+    "No quantity, manual-break, physical engraving or Type3 final-edit synchronization test."
+  ]
+}

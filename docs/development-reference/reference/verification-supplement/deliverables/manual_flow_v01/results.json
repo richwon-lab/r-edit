@@ -1,0 +1,52 @@
+{
+  "version": "0.1",
+  "passed": 30,
+  "total": 30,
+  "assertions": {
+    "automatic_baseline_calculates": true,
+    "all_100_rows_300_automatic_results_unchanged": true,
+    "manual_existing_lines_preserve_layout": true,
+    "manual_only_changes_selected_region": true,
+    "manual_can_use_non_token_boundaries_without_rewriting_text": true,
+    "all_lines_share_one_height": true,
+    "manual_one_line_is_not_automatically_rewrapped": true,
+    "one_line_shrinks_and_keeps_original_cutter_warning": true,
+    "manual_one_line_state_explicit_without_newline": true,
+    "repeat_manual_fit_is_identical": true,
+    "other_99_rows_and_2_regions_remain_exact": true,
+    "manual_lines_reasons_and_results_survive_reopen": true,
+    "mismatched_manual_source_rejected_on_open": true,
+    "manual_text_replacement_not_silently_reinterpreted": true,
+    "pending_manual_change_hides_previous_result_and_blocks_export": true,
+    "late_manual_result_cannot_be_accepted": true,
+    "explicit_auto_restore_returns_original_target": true,
+    "auto_restore_preserves_other_results": true,
+    "manual_seven_lines_stay_fixed_in_reference_search": true,
+    "manual_search_limit_remains_incomplete": true,
+    "missing_metric_keeps_source_position": true,
+    "hole_violation_never_becomes_an_accepted_manual_layout": true,
+    "unregistered_width_floor_never_becomes_zero_or_a_layout": true,
+    "manual_input_does_not_trim_or_add_spaces": true,
+    "design_fixed_line_count_is_not_silently_overridden": true,
+    "footer_manual_failure_preserves_main_and_other_rows": true,
+    "actual_dxf_preserves_manual_one_line": true,
+    "manual_reference_and_original_reference_are_separate_from_normal": true,
+    "manual_footer_failure_excludes_whole_plate": true,
+    "original_snapshot_unchanged": true
+  },
+  "baseline": {
+    "rows": 100,
+    "regions": 300,
+    "layout_changes": 0
+  },
+  "manual_one_line": {
+    "id": "R005",
+    "height": 2.3,
+    "status": "reference_only",
+    "width": 0.6528905203741985
+  },
+  "dxf_directory": "DXF_02",
+  "elapsed_ms": 5053.97,
+  "scope": "Target-only full manual line boundaries on unchanged source text; existing sizing, hole checks and reference cutter bands. No UI, manual text replacement, partial boundary locks, blank-line design, printing rules or production changes.",
+  "output": "results.json / preview.html / manual_examples.json / saved_manual_one_line.json / saved_manual_with_footer_failure.json / DXF_02/"
+}

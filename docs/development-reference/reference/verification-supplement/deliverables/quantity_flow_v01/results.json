@@ -1,0 +1,90 @@
+{
+  "version": "0.1",
+  "passed": 27,
+  "total": 27,
+  "assertions": {
+    "automatic_baseline_calculates": true,
+    "all_100_rows_300_baseline_results_unchanged": true,
+    "manual_one_line_fixture_calculates": true,
+    "quantity_change_keeps_all_layouts_diagnostics_and_manual_state": true,
+    "mode_change_does_not_recalculate": true,
+    "same_quantity_and_mode_do_not_create_change": true,
+    "missing_extra_and_invalid_trial_quantities_rejected": true,
+    "repeated_text_quantities_remain_separate_by_id": true,
+    "quantities_mode_manual_lines_and_reasons_survive_reopen": true,
+    "fresh_process_quantity_change_and_export_without_layout_engine": true,
+    "order_quantity_differs_from_drawn_count_in_label_mode": true,
+    "normal_reference_quantities_and_rows_counted_separately": true,
+    "manual_and_original_reference_keep_cutters_and_warnings": true,
+    "every_copy_keeps_saved_text_size_width_and_relative_position": true,
+    "actual_dxf_has_original_geometry_and_unique_copy_origins": true,
+    "actual_dxf_quantity_labels_are_outside_plate_text": true,
+    "excluded_plate_quantity_retained_in_both_modes": true,
+    "no_partial_copies_of_excluded_plate": true,
+    "changed_quantity_with_old_binding_rejected": true,
+    "quantity_mode_or_text_change_during_export_blocks_publication": true,
+    "quantity_change_and_restore_during_export_still_rejects_stale_output": true,
+    "rejected_staging_directories_removed": true,
+    "dirty_layout_cannot_be_exported_by_changing_quantity": true,
+    "second_file_failure_does_not_publish_partial_set": true,
+    "previous_completed_output_cannot_be_overwritten": true,
+    "interrupted_quantity_save_keeps_previous_file": true,
+    "source_snapshots_and_accepted_layouts_unchanged": true
+  },
+  "baseline": {
+    "rows": 100,
+    "regions": 300,
+    "automatic_layout_changes": 0
+  },
+  "quantity_example": {
+    "order_quantity": 105,
+    "replicated": {
+      "normal": {
+        "rows": 98,
+        "order_quantity": 100,
+        "drawn_plates": 100
+      },
+      "reference": {
+        "rows": 2,
+        "order_quantity": 5,
+        "drawn_plates": 5
+      },
+      "excluded": {
+        "rows": 0,
+        "order_quantity": 0,
+        "drawn_plates": 0
+      }
+    },
+    "labelled": {
+      "normal": {
+        "rows": 98,
+        "order_quantity": 100,
+        "drawn_plates": 98
+      },
+      "reference": {
+        "rows": 2,
+        "order_quantity": 5,
+        "drawn_plates": 2
+      },
+      "excluded": {
+        "rows": 0,
+        "order_quantity": 0,
+        "drawn_plates": 0
+      }
+    },
+    "manual_reference": {
+      "id": "R005",
+      "quantity": 2
+    }
+  },
+  "excluded_example": {
+    "order_quantity": 9,
+    "excluded_quantity": 4,
+    "replicated_drawings": 5,
+    "labelled_drawings": 2
+  },
+  "dxf_directory": "DXF",
+  "elapsed_ms": 6376.107,
+  "scope": "Explicit synthetic quantities only. Quantity changes reuse completed automatic/manual layouts. Replication and outside-plate quantity labels, save/reopen and local publication guards. No production quantity-input policy, multi-project/material grouping, nesting, UI or Type3 verification.",
+  "output": "results.json / preview.html / saved_quantity*.json / DXF/"
+}

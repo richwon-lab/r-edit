@@ -1,0 +1,55 @@
+리치원 DXF 처리 기술 검증 01 — 2026-10-03
+
+결론
+Flutter는 후보로 유지한다. 다만 Dart dxf 3.1.3을 수정 없이 제품의 DXF 편집 기반으로 채택하는 것은 보류한다.
+단순 읽기·저장은 통과했지만, 폴리라인 꼭짓점 수정 시 곡선 정보가 유효하게 보존되지 않는 문제가 재현됐다.
+화면 기술과 DXF 처리 기술은 별도로 판단해야 한다. Python ezdxf는 비교한 곡선 이동 시험을 통과했으므로 DXF 처리 후보로 남긴다. 이 결과만으로 전체 UI를 Python으로 선택하지 않는다.
+
+실행 환경과 범위
+- Linux x64, Dart SDK 3.6.2, dxf 3.1.3(배포 원본), Python ezdxf 1.4.4.
+- 사용자 DXF 6개 + 합성 도면 1개를 실제 Dart 라이브러리에 넣고 다시 저장했다.
+- 합성 도면: 곡선 포함 LWPOLYLINE, CIRCLE, LINE, ARC, TEXT, 블록 INSERT.
+- 사용자 DXF는 R2000/R2004. 이번 시험은 Type3를 실행한 시험이 아니다.
+- 파일 인코딩은 Python에서 원래 코드페이지로 읽어 UTF-8 중간 문자열로 전달했다. Dart의 CP949 파일 입출력, Unicode 정규화, Type3의 특수문자 렌더링을 검증한 것은 아니다.
+
+확인된 사실
+1. 무수정 읽기·저장: 7개 모두 모델 공간 객체 수/형식, 재해석한 객체의 DXF 태그, 문자 스타일 속성, DXF 버전이 비교 범위에서 동일했다. ezdxf audit의 미복구 오류는 없었다. 전체 파일 바이트 일치나 모든 DXF 기능 지원을 뜻하지 않는다.
+2. 곡선 편집: AcDbPolyline.vertices로 모든 꼭짓점을 X 방향 +1 이동했다. 변경 전 두 곡선 구간의 bulge=0.414213562373095였으나, 저장 후 ezdxf로 읽은 모든 꼭짓점의 bulge가 0이 됐다. 유효 곡선이 사라지는 실패이다.
+3. 원인: vertices setter가 좌표 그룹(10,20)을 제거한 뒤 마지막에 다시 추가한다. 곡선 그룹(42)은 원위치에 남아 새 꼭짓점과의 연결이 끊어진다. public vertices 값에도 곡선 계수가 노출되지 않는다.
+4. 문자 생성 API: AcDbText에는 위치, 높이, 문구, 레이어 입력은 있지만 자폭, 문자 스타일, 수평/수직 정렬을 직접 지정하는 생성자 인수/전용 속성이 없다. 원본에서 읽어 보관하는 것과 새 문자를 요구대로 생성하는 것은 다르다. DXF 그룹 값을 직접 조작하거나 보완 구현이 필요하다.
+5. 신규 도면: DXF.create() 기본값은 AC1021(R2007). 리치원의 목표인 R2000 출력에는 별도 처리가 필요하다. 기존 R2000/R2004를 읽어 다시 저장하면 그 버전은 유지됐다.
+6. INSERT: 블록 참조는 무수정 저장에서 보존됐다. 하지만 공개 객체 API에서는 일반 AcDbEntity로 나오고 type이 빈 문자열이다. 화면 표시/선택/변환/블록 해석 지원과 보존 능력은 구분해야 한다.
+7. 비교 확인: 동일 합성 도면을 ezdxf의 translate(1,0,0)로 이동해 저장한 경우 곡선 계수와 예상 좌표가 유지됐다. 이것만으로 ezdxf의 모든 도형 편집이 검증된 것은 아니다.
+
+판단
+- dxf 3.1.3의 결함을 Flutter 전체의 불가능으로 해석하지 않는다. 다른 라이브러리나 보완 구현은 가능하지만 비용을 평가해야 한다.
+- 단일 Dart 구현: 배포 구성을 단순화할 가능성이 있으나 DXF/도형/문자 기능 보완 책임이 커진다.
+- Flutter 화면 + 로컬 DXF 처리 구성: 개발 경험과 기존 Python 도구를 활용할 가능성이 있으나 묶음 배포와 프로세스 연결이 추가된다. 서버가 필요하다는 뜻은 아니다.
+- Python 화면 + ezdxf 구성: 언어를 줄일 가능성이 있으나 화면 작성 경험, 표 편집/미리보기 사용성과 설치·업데이트 부담을 따로 검증해야 한다.
+- 어느 쪽도 이번 기록에서 최종 채택하지 않았다. 이미 관측한 손실을 해결하지 않은 채 제품 기능 개발을 시작하지 않는다.
+
+후속 검증의 초점
+직원 PC에서 한 번 설치한 뒤 작은 업데이트를 손쉽게 배포하고, 한글 폰트와 기존 설정을 유지할 수 있는가. 최종 사용자에게 Python/Dart 설치나 개발 설정을 요구하는 구성은 목표에 맞지 않는다.
+
+범위 결정 기록
+- 고객 전용 접속/자동 배치 체험/직접 규칙 편집 기능은 현재 범위에서 보류.
+- 내부 직원의 초기 규칙 조율과 재사용은 유지.
+- 고객에게 보낼 배치 검토 보고서 EXPORT는 추후 검토 항목. 현재 구현 약속이나 파일 형식 확정이 아님.
+
+재현
+bundle 안에서 실행:
+  python prepare_probe.py
+  dart probe.dart
+  python verify_probe.py
+Python에는 ezdxf 1.4.4 필요. Dart SDK는 별도 필요. package/lib는 dxf 3.1.3 배포 원본이며 MIT LICENSE를 포함한다. probe.dart는 상대 경로로 직접 가져오므로 pub get이 필요 없다.
+입력/출력 중간 파일은 UTF-8 문자열이며 그 자체를 생산용 DXF로 사용하면 안 된다. sources는 원본 복사본이다. 이 폴더의 어떠한 파일도 새 생산 승인 도면으로 제공한 것이 아니다.
+
+근거
+- https://pub.dev/packages/dxf (3.1.3)
+- https://pub.dev/api/archives/dxf-3.1.3.tar.gz (검증한 원본)
+- https://dart.dev/get-dart/archive
+- https://ezdxf.readthedocs.io/en/stable/introduction.html
+- dart_report.json / verification.json / python_comparison.json
+- package/lib/src/datamodels/ac_db_polyline.dart
+- package/lib/src/datamodels/ac_db_text.dart
+- package/lib/src/dxf_base.dart

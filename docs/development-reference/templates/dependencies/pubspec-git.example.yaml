@@ -1,0 +1,7 @@
+# 필요한 저장소를 실제 생성하고 첫 릴리스를 만든 뒤 소비 패키지에 적용한다.
+# ORG와 COMMIT_SHA는 자리표시자다. 이 파일을 그대로 pubspec.yaml로 사용하지 않는다.
+dependencies:
+  nameplate_text_layout:
+    git:
+      url: git@github.com:ORG/nameplate-text-layout.git
+      ref: COMMIT_SHA

@@ -1,0 +1,274 @@
+{
+  "note": "Synthetic 160x70 plate; HY glyphs for all regions for measurement only, not recommended production fonts. Independent per-region geometric fitter, no common-pattern algorithm or production UI/DXF integration. Rectangular region and outer bounds plus circular holes only. Heights sampled 0.25mm; fallback ranking provisional. This is not general optimality or engraving validation.",
+  "design": {
+    "size": [
+      160,
+      70
+    ],
+    "holes": [
+      {
+        "x": 5,
+        "y": 5,
+        "r": 2,
+        "extra": 3
+      },
+      {
+        "x": 155,
+        "y": 5,
+        "r": 2,
+        "extra": 3
+      },
+      {
+        "x": 5,
+        "y": 65,
+        "r": 2,
+        "extra": 3
+      },
+      {
+        "x": 155,
+        "y": 65,
+        "r": 2,
+        "extra": 3
+      },
+      {
+        "x": 16,
+        "y": 26,
+        "r": 2,
+        "extra": 3
+      }
+    ],
+    "regions": [
+      {
+        "id": "title",
+        "rect": [
+          10,
+          43,
+          150,
+          61
+        ],
+        "baseHeight": 10,
+        "baseWidth": 0.8,
+        "normalLines": [
+          1,
+          1
+        ],
+        "cutter": {
+          "size": 0.7,
+          "minHeight": 10,
+          "minWidth": 0.56
+        }
+      },
+      {
+        "id": "main",
+        "rect": [
+          10,
+          14,
+          118,
+          39
+        ],
+        "baseHeight": 4.5,
+        "baseWidth": 0.8,
+        "normalLines": [
+          1,
+          3
+        ],
+        "cutter": {
+          "size": 0.3,
+          "minHeight": 3,
+          "minWidth": 0.58
+        }
+      },
+      {
+        "id": "aux",
+        "rect": [
+          123,
+          14,
+          150,
+          39
+        ],
+        "baseHeight": 2.5,
+        "baseWidth": 0.8,
+        "normalLines": [
+          1,
+          2
+        ],
+        "cutter": {
+          "size": 0.2,
+          "minHeight": 2,
+          "minWidth": 0.64
+        }
+      }
+    ]
+  },
+  "checks": {
+    "differentRegionSizes": true,
+    "differentBaseHeights": true,
+    "differentCutterConditions": true,
+    "titleEditIsolation": true,
+    "bodyEditIsolation": true,
+    "manualBreakIsolation": true,
+    "fifthHoleApplied": true,
+    "sourceAndGeometry": true
+  },
+  "holeComparison": {
+    "withHoleWidth": 0.44957259493648405,
+    "withoutHoleWidth": 0.5645795378272125
+  },
+  "cases": {
+    "baseline": {
+      "title": {
+        "status": "normal",
+        "height": 10,
+        "minWidthPercent": 80,
+        "cutter": 0.7,
+        "lines": [
+          "CONTROL PANEL"
+        ],
+        "warnings": []
+      },
+      "main": {
+        "status": "normal",
+        "height": 4.5,
+        "minWidthPercent": 74.38,
+        "cutter": 0.3,
+        "lines": [
+          "RJ45(1-PORT) FOR VOIP TELEPHONE"
+        ],
+        "warnings": []
+      },
+      "aux": {
+        "status": "normal",
+        "height": 2.5,
+        "minWidthPercent": 80,
+        "cutter": 0.2,
+        "lines": [
+          "DC 24V"
+        ],
+        "warnings": []
+      }
+    },
+    "titleChanged": {
+      "title": {
+        "status": "review_required",
+        "height": 6,
+        "minWidthPercent": 48.01,
+        "cutter": 0.7,
+        "lines": [
+          "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+        ],
+        "warnings": [
+          {
+            "code": "CUTTER_HEIGHT",
+            "actual": 6,
+            "minimum": 10
+          },
+          {
+            "code": "CUTTER_WIDTH",
+            "lines": [
+              1
+            ],
+            "minimum": 0.56
+          }
+        ]
+      },
+      "main": {
+        "status": "normal",
+        "height": 4.5,
+        "minWidthPercent": 74.38,
+        "cutter": 0.3,
+        "lines": [
+          "RJ45(1-PORT) FOR VOIP TELEPHONE"
+        ],
+        "warnings": []
+      },
+      "aux": {
+        "status": "normal",
+        "height": 2.5,
+        "minWidthPercent": 80,
+        "cutter": 0.2,
+        "lines": [
+          "DC 24V"
+        ],
+        "warnings": []
+      }
+    },
+    "bodyChanged": {
+      "title": {
+        "status": "normal",
+        "height": 10,
+        "minWidthPercent": 80,
+        "cutter": 0.7,
+        "lines": [
+          "CONTROL PANEL"
+        ],
+        "warnings": []
+      },
+      "main": {
+        "status": "review_required",
+        "height": 2.5,
+        "minWidthPercent": 47.16,
+        "cutter": 0.3,
+        "lines": [
+          "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+        ],
+        "warnings": [
+          {
+            "code": "CUTTER_HEIGHT",
+            "actual": 2.5,
+            "minimum": 3
+          },
+          {
+            "code": "CUTTER_WIDTH",
+            "lines": [
+              1
+            ],
+            "minimum": 0.58
+          }
+        ]
+      },
+      "aux": {
+        "status": "normal",
+        "height": 2.5,
+        "minWidthPercent": 80,
+        "cutter": 0.2,
+        "lines": [
+          "DC 24V"
+        ],
+        "warnings": []
+      }
+    },
+    "manual": {
+      "title": {
+        "status": "normal",
+        "height": 10,
+        "minWidthPercent": 80,
+        "cutter": 0.7,
+        "lines": [
+          "CONTROL PANEL"
+        ],
+        "warnings": []
+      },
+      "main": {
+        "status": "normal",
+        "height": 4.5,
+        "minWidthPercent": 80,
+        "cutter": 0.3,
+        "lines": [
+          "RJ45(1-PORT) FOR",
+          "VOIP TELEPHONE"
+        ],
+        "warnings": []
+      },
+      "aux": {
+        "status": "normal",
+        "height": 2.5,
+        "minWidthPercent": 80,
+        "cutter": 0.2,
+        "lines": [
+          "DC 24V"
+        ],
+        "warnings": []
+      }
+    }
+  }
+}

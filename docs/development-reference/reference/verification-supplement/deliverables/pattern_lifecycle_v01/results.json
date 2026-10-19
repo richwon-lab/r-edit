@@ -1,0 +1,101 @@
+{
+  "version": "0.1",
+  "passed": 31,
+  "total": 31,
+  "assertions": {
+    "automatic_baseline_calculates": true,
+    "all_100_rows_300_baseline_results_unchanged": true,
+    "manual_fixture_calculates": true,
+    "explicit_add_path_is_retained": true,
+    "registered_fixture_matches_previous_verified_results": true,
+    "update_preview_has_old_new_rules_and_only_automatic_targets": true,
+    "update_preview_keeps_working_job_unchanged": true,
+    "cancelled_update_preserves_rule_and_results": true,
+    "editing_display_copy_cannot_change_update": true,
+    "same_rule_update_does_not_create_change": true,
+    "unknown_target_and_implicit_rename_are_rejected": true,
+    "update_applies_reviewed_rule_and_results": true,
+    "accepted_update_equals_preview": true,
+    "update_preserves_other_298_regions_manual_and_quantities": true,
+    "updated_rule_and_results_survive_reopen": true,
+    "delete_preview_removes_only_selected_rule": true,
+    "cancelled_delete_preserves_current_job": true,
+    "explicit_delete_applies": true,
+    "deletion_matches_automatic_selection_excluding_manual_mains": true,
+    "same_delete_cannot_apply_twice": true,
+    "deleted_rule_stays_deleted_after_reopen": true,
+    "delete_keeps_latest_text_instead_of_restoring_historical_input": true,
+    "competing_delete_rejects_old_update_preview": true,
+    "reopen_rejects_previous_delete_preview": true,
+    "quantity_change_and_restore_rejects_stale_delete": true,
+    "dirty_work_cannot_prepare_pattern_deletion": true,
+    "conflicting_update_is_blocked_without_partial_rule_change": true,
+    "manual_only_matches_allow_registry_deletion_without_recalculation": true,
+    "fresh_process_exports_deleted_rule_results_without_engine": true,
+    "actual_dxf_matches_each_saved_stage_and_manual_copies": true,
+    "source_snapshot_unchanged": true
+  },
+  "baseline": {
+    "rows": 100,
+    "regions": 300,
+    "layout_changes": 0
+  },
+  "update": {
+    "before": {
+      "literal": "MONITORING PANEL",
+      "internal_token_cuts": [
+        1
+      ],
+      "independent_block": true
+    },
+    "after": {
+      "literal": "MONITORING PANEL",
+      "internal_token_cuts": [],
+      "independent_block": true
+    },
+    "recalculated_ids": [
+      "R026",
+      "R027"
+    ],
+    "changed_layout_ids": [
+      "R026",
+      "R027"
+    ],
+    "manual_excluded_ids": [
+      "R028"
+    ]
+  },
+  "delete": {
+    "recalculated_ids": [
+      "R026",
+      "R027"
+    ],
+    "changed_layout_ids": [
+      "R026",
+      "R027"
+    ],
+    "manual_excluded_ids": [
+      "R028"
+    ]
+  },
+  "manual": {
+    "id": "R028",
+    "lines": [
+      "EGCS WATER ",
+      "MONITORING ",
+      "PANEL (OUTLET) ",
+      "(E/R FLOOR)"
+    ],
+    "quantity": 2
+  },
+  "conflict": [
+    {
+      "code": "pattern_not_resolved_in_current_search",
+      "message": "시험 미완료: 기존 패턴을 지킬 공통 후보가 없습니다."
+    }
+  ],
+  "dxf_directory": "DXF",
+  "elapsed_ms": 10912.462,
+  "scope": "Explicit same-literal pattern update/delete in the current job. Preview/cancel/apply retains manual regions, unrelated rules and latest text. No pattern rename, customer/project sharing, automatic inference, live UI or production changes.",
+  "output": "results.json / preview.html / lifecycle_previews.json / saved_*.json / DXF/"
+}

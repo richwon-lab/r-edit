@@ -1,0 +1,5040 @@
+{
+  "version": "0.2",
+  "passed": 16,
+  "total": 16,
+  "assertions": {
+    "baseline_100_rows_exact": true,
+    "baseline_geometry": true,
+    "override_reaches_actual_layout": true,
+    "cutter_floor_not_overridden": true,
+    "unset_restores_actual_result": true,
+    "preferred_lines_reaches_layout": true,
+    "pattern_exclusion_reaches_layout": true,
+    "unrelated_pattern_and_region_preserved": true,
+    "other_design_and_sources_unchanged": true,
+    "all_variants_geometry_and_source": true,
+    "unsupported_or_conflicting_setting_rejected": true,
+    "input_order_invariant": true,
+    "saved_result_ignores_shared_change": true,
+    "fresh_process_reopen_without_engine": true,
+    "saved_resolved_rules_replay_exact": true,
+    "fixtures_and_engine_files_unchanged": true
+  },
+  "check_labels": {
+    "baseline_100_rows_exact": "기존 100개 명판의 결과 완전 일치",
+    "baseline_geometry": "기존 100개 원문·홀 회피·영역·정렬 검사",
+    "override_reaches_actual_layout": "고객사 90%가 실제 글자 배치에 반영",
+    "cutter_floor_not_overridden": "기본 자폭 90%여도 커터 하한 58% 유지",
+    "unset_restores_actual_result": "설정 해제 시 80% 결과·출처 복귀",
+    "preferred_lines_reaches_layout": "선호 6줄→3줄 변경 시 긴 문구를 검토용으로 분류",
+    "pattern_exclusion_reaches_layout": "FEEDER / PANEL 제외가 실제 줄바꿈에 반영",
+    "unrelated_pattern_and_region_preserved": "다른 등록 패턴과 모든 NO·RAT 결과 유지",
+    "other_design_and_sources_unchanged": "원본 디자인·규칙과 별도 디자인 결과 유지",
+    "all_variants_geometry_and_source": "가상 변경 결과 모두 원문·홀 회피·영역·정렬 유지",
+    "unsupported_or_conflicting_setting_rejected": "하한 충돌·폰트 자료 없음·미지원 강도를 조용히 무시하지 않음",
+    "input_order_invariant": "레이어 운반 순서·입력 행 순서가 배치에 영향 없음",
+    "saved_result_ignores_shared_change": "공통 기준 변경 후 과거 결과·결합값·출처 유지",
+    "fresh_process_reopen_without_engine": "별도 프로세스에서 배치 엔진 없이 저장 결과 열기",
+    "saved_resolved_rules_replay_exact": "저장 당시 결합값으로 재계산 결과 일치",
+    "fixtures_and_engine_files_unchanged": "원본 시험 자료·기존 배치 엔진 파일 변경 없음"
+  },
+  "baseline_rows": 100,
+  "variant_rows": 4,
+  "elapsed_ms": 602.692,
+  "output": "results.json / resolved_rules.json / preview.html / saved_rules_r1.json",
+  "scope": "Existing engraving fixture: width, preferred lines, registered pattern exclusion, immutable saved result.",
+  "limitations": [
+    "이번 36×36 본문 영역의 연결 시험입니다. 보조 영역·다른 디자인에 공통값을 강제로 적용하지 않습니다.",
+    "100개 기존 결과를 비교하고, 실제 문구 3개와 가상 긴 문구 1개로 조건 변경을 시험합니다.",
+    "기존 엔진의 점수와 탐색 방식은 수정하지 않았습니다. 규칙 강도·곡선·전체 끄기·인쇄·커터 기준 변경 연결은 제외합니다.",
+    "패턴 적용/제외는 기존 FEEDER PANEL / CONTROL PANEL 시험 범위입니다. 임의 신규 패턴·중첩 패턴·새 내부 줄바꿈 방식은 연결하지 않습니다.",
+    "패턴을 제외해도 독립된 언어 점수와 그룹 선택은 남습니다. 원하는 결과로의 강제 줄바꿈을 뜻하지 않습니다.",
+    "규칙 결합 모듈이 받아들인 값이라도 이 연결기가 지원하지 않으면 오류로 알립니다. 제품의 최종 지원 범위를 제한하는 결정은 아닙니다.",
+    "HY세고딕 사전 측정값을 사용합니다. 폰트 설치·새 폰트 측정·DXF·Type3·공유 저장소·실제 가공은 이번 범위에 없습니다.",
+    "저장 시험은 로컬 파일입니다. 공통 기준 변경은 메모리에서 모의하며 네트워크 동기화를 검증하지 않습니다.",
+    "시간은 여러 시험과 파일 저장·새 프로세스 실행을 합친 값입니다. 한 번의 배치 버튼 응답 시간이 아닙니다."
+  ],
+  "cases": {
+    "baseline": {
+      "label": "기존 시험값 · 70%",
+      "prepared": {
+        "design": {
+          "note": "영역 좌표는 기존 시험값이며 생산용 디자인 확정값이 아님",
+          "source_sha256": "660b9804bebba2092f61ec6510b248d5c47b1faa3b6986ce424f3de023eed073",
+          "size_mm": [
+            36,
+            36
+          ],
+          "regions": [
+            {
+              "id": "main",
+              "label": "문구",
+              "fixture": {
+                "width_mm": 36,
+                "height_mm": 36,
+                "text_region_mm": [
+                  2,
+                  9,
+                  34,
+                  33
+                ],
+                "base_height_100": 300,
+                "min_height_100": 300,
+                "height_step_100": 5,
+                "base_width": 0.7,
+                "width_floor": 0.58,
+                "min_lines": 1,
+                "max_lines": 6,
+                "baseline_extra_mm": 1.1,
+                "holes": [
+                  {
+                    "x": 4,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  },
+                  {
+                    "x": 32,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  }
+                ],
+                "alignment": "center",
+                "fixed_baseline_mm": null,
+                "cutter_mm": 0.3,
+                "line_policy": {
+                  "kind": "preferred",
+                  "min": 1,
+                  "max": 6
+                },
+                "quality": {
+                  "line_cost": 0.9,
+                  "compression_weight": 3,
+                  "compression_span": 0.12
+                }
+              }
+            },
+            {
+              "id": "no",
+              "label": "NO",
+              "fixture": {
+                "width_mm": 36,
+                "height_mm": 36,
+                "text_region_mm": [
+                  3.5,
+                  3.4,
+                  16.5,
+                  7
+                ],
+                "base_height_100": 300,
+                "min_height_100": 300,
+                "height_step_100": 5,
+                "base_width": 0.7,
+                "width_floor": 0.58,
+                "min_lines": 1,
+                "max_lines": 1,
+                "baseline_extra_mm": 1.1,
+                "holes": [
+                  {
+                    "x": 4,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  },
+                  {
+                    "x": 32,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  }
+                ],
+                "alignment": "left",
+                "fixed_baseline_mm": 3.5,
+                "cutter_mm": 0.3,
+                "line_policy": {
+                  "kind": "fixed",
+                  "count": 1
+                },
+                "quality": {
+                  "line_cost": 0.9,
+                  "compression_weight": 3,
+                  "compression_span": 0.12
+                }
+              }
+            },
+            {
+              "id": "rat",
+              "label": "RAT",
+              "fixture": {
+                "width_mm": 36,
+                "height_mm": 36,
+                "text_region_mm": [
+                  19.5,
+                  3.4,
+                  32.5,
+                  7
+                ],
+                "base_height_100": 300,
+                "min_height_100": 300,
+                "height_step_100": 5,
+                "base_width": 0.7,
+                "width_floor": 0.58,
+                "min_lines": 1,
+                "max_lines": 1,
+                "baseline_extra_mm": 1.1,
+                "holes": [
+                  {
+                    "x": 4,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  },
+                  {
+                    "x": 32,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  }
+                ],
+                "alignment": "right",
+                "fixed_baseline_mm": 3.5,
+                "cutter_mm": 0.3,
+                "line_policy": {
+                  "kind": "fixed",
+                  "count": 1
+                },
+                "quality": {
+                  "line_cost": 0.9,
+                  "compression_weight": 3,
+                  "compression_span": 0.12
+                }
+              }
+            }
+          ],
+          "baseline_row": {
+            "id": "ROW-001",
+            "source_excel_row": 6,
+            "main": "DC BACKUP",
+            "no": "MCB1",
+            "rat": "32A"
+          },
+          "changed_body": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY"
+        },
+        "policy": {
+          "note": "기존 디자인별 시험 정책을 재현. 제품 공통 규칙 아님.",
+          "phrases": [
+            "REMOTE DISPLAY UNIT",
+            "DISPLAY UNIT",
+            "TEMPERATURE CONTROLLER",
+            "EMERGENCY CONTROL PANEL",
+            "CONTROL PANEL",
+            "ALARM BUZZER",
+            "STOP P/B",
+            "VOIP TELEPHONE",
+            "RELAY BOX",
+            "CONTROL UNIT",
+            "LAMP BOX",
+            "MONITORING PANEL",
+            "GATE VALVE"
+          ],
+          "registered_patterns": [
+            {
+              "literal": "CONTROL PANEL",
+              "internal_token_cuts": [
+                1
+              ],
+              "independent_block": true
+            },
+            {
+              "literal": "FEEDER PANEL",
+              "internal_token_cuts": [
+                1
+              ],
+              "independent_block": true
+            }
+          ]
+        },
+        "resolved_rules": {
+          "values": {
+            "base_height_mm": 3.0,
+            "base_width_percent": 70.0,
+            "font_name": "HY세고딕",
+            "max_height_mm": 3.0,
+            "min_height_mm": 3.0,
+            "preferred_max_lines": 6,
+            "preferred_min_lines": 1
+          },
+          "value_sources": {
+            "base_height_mm": "richwon",
+            "base_width_percent": "richwon",
+            "font_name": "richwon",
+            "max_height_mm": "richwon",
+            "min_height_mm": "richwon",
+            "preferred_max_lines": "richwon",
+            "preferred_min_lines": "richwon"
+          },
+          "rules": {
+            "pattern_alignment": {
+              "sources": {
+                "enabled": "richwon",
+                "strength": "richwon"
+              },
+              "enabled": true,
+              "strength": 1
+            },
+            "width_penalty": {
+              "sources": {
+                "enabled": "richwon",
+                "strength": "richwon"
+              },
+              "enabled": true,
+              "strength": 3
+            }
+          },
+          "active_rule_ids": [
+            "pattern_alignment",
+            "width_penalty"
+          ],
+          "patterns": {
+            "pattern-0": {
+              "sources": {
+                "text": "richwon",
+                "role": "richwon",
+                "enabled": "richwon",
+                "lines": "richwon"
+              },
+              "text": "FEEDER PANEL",
+              "role": "alignment",
+              "enabled": true,
+              "lines": [
+                "FEEDER",
+                "PANEL"
+              ]
+            },
+            "pattern-1": {
+              "sources": {
+                "text": "richwon",
+                "role": "richwon",
+                "enabled": "richwon",
+                "lines": "richwon"
+              },
+              "text": "CONTROL PANEL",
+              "role": "alignment",
+              "enabled": true,
+              "lines": [
+                "CONTROL",
+                "PANEL"
+              ]
+            }
+          },
+          "enabled_pattern_ids": [
+            "pattern-0",
+            "pattern-1"
+          ],
+          "cutter_reference": {
+            "applicable": true,
+            "values": {
+              "cutter_mm": 0.3,
+              "min_height_mm": 3.0,
+              "min_width_percent": 57.99999999999999
+            },
+            "sources": {
+              "cutter_mm": "richwon",
+              "min_height_mm": "richwon",
+              "min_width_percent": "richwon"
+            }
+          },
+          "mandatory_conditions": [
+            "preserve_source",
+            "avoid_holes",
+            "inside_allowed_boundary"
+          ],
+          "layer_order": [
+            "richwon",
+            "customer",
+            "design"
+          ]
+        },
+        "layers": [
+          {
+            "id": "richwon",
+            "name": "기존 36×36 시험 기준",
+            "values": {
+              "font_name": "HY세고딕",
+              "base_height_mm": 3.0,
+              "min_height_mm": 3.0,
+              "max_height_mm": 3.0,
+              "base_width_percent": 70.0,
+              "preferred_min_lines": 1,
+              "preferred_max_lines": 6
+            },
+            "rules": {
+              "width_penalty": {
+                "enabled": true,
+                "strength": 3
+              },
+              "pattern_alignment": {
+                "enabled": true,
+                "strength": 1
+              }
+            },
+            "patterns": {
+              "pattern-0": {
+                "text": "FEEDER PANEL",
+                "role": "alignment",
+                "enabled": true,
+                "lines": [
+                  "FEEDER",
+                  "PANEL"
+                ]
+              },
+              "pattern-1": {
+                "text": "CONTROL PANEL",
+                "role": "alignment",
+                "enabled": true,
+                "lines": [
+                  "CONTROL",
+                  "PANEL"
+                ]
+              }
+            },
+            "cutter": {
+              "cutter_mm": 0.3,
+              "min_height_mm": 3.0,
+              "min_width_percent": 57.99999999999999
+            }
+          },
+          {
+            "id": "customer",
+            "name": "고객사 시험용 변경"
+          },
+          {
+            "id": "design",
+            "name": "디자인 시험용 변경"
+          }
+        ],
+        "priority": [
+          "richwon",
+          "customer",
+          "design"
+        ]
+      },
+      "outputs": [
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 23.443070652173912,
+                    "bbox": [
+                      9.378872282608697,
+                      23.121059782608693,
+                      26.621127717391303,
+                      26.761005434782607
+                    ],
+                    "height": 3.0,
+                    "text": "E/R AC220V ",
+                    "width": 0.7,
+                    "x": 9.076426630434783
+                  },
+                  {
+                    "baseline": 19.343070652173914,
+                    "bbox": [
+                      12.43328804347826,
+                      19.33899456521739,
+                      23.566711956521736,
+                      22.33899456521739
+                    ],
+                    "height": 3.0,
+                    "text": "FEEDER ",
+                    "width": 0.7,
+                    "x": 12.130842391304347
+                  },
+                  {
+                    "baseline": 15.243070652173913,
+                    "bbox": [
+                      13.437635869565216,
+                      15.238994565217391,
+                      22.56236413043478,
+                      18.23899456521739
+                    ],
+                    "height": 3.0,
+                    "text": "PANEL",
+                    "width": 0.7,
+                    "x": 13.126630434782609
+                  }
+                ],
+                "local_cost": 1.8,
+                "token_cuts": [
+                  2,
+                  3
+                ]
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      12.827309782608694,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCCB1",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.321331521739133,
+                      3.4347826086956523,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "40A",
+                    "width": 0.7,
+                    "x": 27.05597826086957
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "excelRow": 2,
+            "id": "R002",
+            "main": "E/R AC220V FEEDER PANEL",
+            "no": "MCCB1",
+            "rat": "40A"
+          }
+        },
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 23.571467391304346,
+                    "bbox": [
+                      7.430095108695653,
+                      23.502173913043475,
+                      28.569904891304347,
+                      26.632608695652173
+                    ],
+                    "height": 3.0,
+                    "text": "EM'CY AC220V ",
+                    "width": 0.7,
+                    "x": 7.12764945652174
+                  },
+                  {
+                    "baseline": 19.471467391304344,
+                    "bbox": [
+                      12.43328804347826,
+                      19.46739130434782,
+                      23.566711956521736,
+                      22.46739130434782
+                    ],
+                    "height": 3.0,
+                    "text": "FEEDER ",
+                    "width": 0.7,
+                    "x": 12.130842391304347
+                  },
+                  {
+                    "baseline": 15.371467391304346,
+                    "bbox": [
+                      13.437635869565216,
+                      15.367391304347825,
+                      22.56236413043478,
+                      18.367391304347823
+                    ],
+                    "height": 3.0,
+                    "text": "PANEL",
+                    "width": 0.7,
+                    "x": 13.126630434782609
+                  }
+                ],
+                "local_cost": 1.804162870335827,
+                "token_cuts": [
+                  2,
+                  3
+                ]
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      13.386548913043478,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCCB2",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.321331521739133,
+                      3.4347826086956523,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "40A",
+                    "width": 0.7,
+                    "x": 27.05597826086957
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "excelRow": 3,
+            "id": "R003",
+            "main": "EM'CY AC220V FEEDER PANEL",
+            "no": "MCCB2",
+            "rat": "40A"
+          }
+        },
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 19.50407608695652,
+                    "bbox": [
+                      9.634239130434784,
+                      19.43478260869565,
+                      26.365760869565214,
+                      22.565217391304344
+                    ],
+                    "height": 3.0,
+                    "text": "DC BACKUP",
+                    "width": 0.7,
+                    "x": 9.32608695652174
+                  }
+                ],
+                "local_cost": 0.0,
+                "token_cuts": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      10.636005434782607,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCB1",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.332744565217393,
+                      3.442934782608696,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "32A",
+                    "width": 0.7,
+                    "x": 27.055978260869566
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "id": "ROW-001",
+            "main": "DC BACKUP",
+            "no": "MCB1",
+            "rat": "32A",
+            "source_excel_row": 6
+          }
+        },
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 27.70611413043478,
+                    "bbox": [
+                      8.788247282608697,
+                      27.63682065217391,
+                      27.211752717391303,
+                      30.767255434782605
+                    ],
+                    "height": 3.0,
+                    "text": "MAIN ENGINE ",
+                    "width": 0.7,
+                    "x": 8.48294836956522
+                  },
+                  {
+                    "baseline": 23.606114130434783,
+                    "bbox": [
+                      10.969565217391306,
+                      23.536820652173912,
+                      25.030434782608694,
+                      26.66725543478261
+                    ],
+                    "height": 3.0,
+                    "text": "CONTROL ",
+                    "width": 0.7,
+                    "x": 10.727038043478263
+                  },
+                  {
+                    "baseline": 19.50611413043478,
+                    "bbox": [
+                      13.437635869565216,
+                      19.502038043478258,
+                      22.56236413043478,
+                      22.502038043478258
+                    ],
+                    "height": 3.0,
+                    "text": "PANEL ",
+                    "width": 0.7,
+                    "x": 13.126630434782609
+                  },
+                  {
+                    "baseline": 15.406114130434782,
+                    "bbox": [
+                      13.312092391304349,
+                      15.336820652173913,
+                      22.687907608695653,
+                      18.467255434782608
+                    ],
+                    "height": 3.0,
+                    "text": "LOCAL ",
+                    "width": 0.7,
+                    "x": 13.009646739130435
+                  },
+                  {
+                    "baseline": 11.306114130434782,
+                    "bbox": [
+                      5.674266085149998,
+                      11.232744565217391,
+                      30.32573391485,
+                      14.367255434782608
+                    ],
+                    "height": 3.0,
+                    "text": "REMOTE DISPLAY",
+                    "width": 0.6878001562856516,
+                    "x": 5.357466828382559
+                  }
+                ],
+                "local_cost": 3.7696411263966896,
+                "token_cuts": [
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      10.636005434782607,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCB1",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.332744565217393,
+                      3.442934782608696,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "32A",
+                    "width": 0.7,
+                    "x": 27.055978260869566
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "id": "LONG",
+            "main": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY",
+            "no": "MCB1",
+            "rat": "32A"
+          }
+        }
+      ]
+    },
+    "width80": {
+      "label": "리치원 80%",
+      "prepared": {
+        "design": {
+          "note": "영역 좌표는 기존 시험값이며 생산용 디자인 확정값이 아님",
+          "source_sha256": "660b9804bebba2092f61ec6510b248d5c47b1faa3b6986ce424f3de023eed073",
+          "size_mm": [
+            36,
+            36
+          ],
+          "regions": [
+            {
+              "id": "main",
+              "label": "문구",
+              "fixture": {
+                "width_mm": 36,
+                "height_mm": 36,
+                "text_region_mm": [
+                  2,
+                  9,
+                  34,
+                  33
+                ],
+                "base_height_100": 300,
+                "min_height_100": 300,
+                "height_step_100": 5,
+                "base_width": 0.8,
+                "width_floor": 0.58,
+                "min_lines": 1,
+                "max_lines": 6,
+                "baseline_extra_mm": 1.1,
+                "holes": [
+                  {
+                    "x": 4,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  },
+                  {
+                    "x": 32,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  }
+                ],
+                "alignment": "center",
+                "fixed_baseline_mm": null,
+                "cutter_mm": 0.3,
+                "line_policy": {
+                  "kind": "preferred",
+                  "min": 1,
+                  "max": 6
+                },
+                "quality": {
+                  "line_cost": 0.9,
+                  "compression_weight": 3,
+                  "compression_span": 0.12
+                }
+              }
+            },
+            {
+              "id": "no",
+              "label": "NO",
+              "fixture": {
+                "width_mm": 36,
+                "height_mm": 36,
+                "text_region_mm": [
+                  3.5,
+                  3.4,
+                  16.5,
+                  7
+                ],
+                "base_height_100": 300,
+                "min_height_100": 300,
+                "height_step_100": 5,
+                "base_width": 0.7,
+                "width_floor": 0.58,
+                "min_lines": 1,
+                "max_lines": 1,
+                "baseline_extra_mm": 1.1,
+                "holes": [
+                  {
+                    "x": 4,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  },
+                  {
+                    "x": 32,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  }
+                ],
+                "alignment": "left",
+                "fixed_baseline_mm": 3.5,
+                "cutter_mm": 0.3,
+                "line_policy": {
+                  "kind": "fixed",
+                  "count": 1
+                },
+                "quality": {
+                  "line_cost": 0.9,
+                  "compression_weight": 3,
+                  "compression_span": 0.12
+                }
+              }
+            },
+            {
+              "id": "rat",
+              "label": "RAT",
+              "fixture": {
+                "width_mm": 36,
+                "height_mm": 36,
+                "text_region_mm": [
+                  19.5,
+                  3.4,
+                  32.5,
+                  7
+                ],
+                "base_height_100": 300,
+                "min_height_100": 300,
+                "height_step_100": 5,
+                "base_width": 0.7,
+                "width_floor": 0.58,
+                "min_lines": 1,
+                "max_lines": 1,
+                "baseline_extra_mm": 1.1,
+                "holes": [
+                  {
+                    "x": 4,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  },
+                  {
+                    "x": 32,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  }
+                ],
+                "alignment": "right",
+                "fixed_baseline_mm": 3.5,
+                "cutter_mm": 0.3,
+                "line_policy": {
+                  "kind": "fixed",
+                  "count": 1
+                },
+                "quality": {
+                  "line_cost": 0.9,
+                  "compression_weight": 3,
+                  "compression_span": 0.12
+                }
+              }
+            }
+          ],
+          "baseline_row": {
+            "id": "ROW-001",
+            "source_excel_row": 6,
+            "main": "DC BACKUP",
+            "no": "MCB1",
+            "rat": "32A"
+          },
+          "changed_body": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY"
+        },
+        "policy": {
+          "note": "기존 디자인별 시험 정책을 재현. 제품 공통 규칙 아님.",
+          "phrases": [
+            "REMOTE DISPLAY UNIT",
+            "DISPLAY UNIT",
+            "TEMPERATURE CONTROLLER",
+            "EMERGENCY CONTROL PANEL",
+            "CONTROL PANEL",
+            "ALARM BUZZER",
+            "STOP P/B",
+            "VOIP TELEPHONE",
+            "RELAY BOX",
+            "CONTROL UNIT",
+            "LAMP BOX",
+            "MONITORING PANEL",
+            "GATE VALVE"
+          ],
+          "registered_patterns": [
+            {
+              "literal": "CONTROL PANEL",
+              "internal_token_cuts": [
+                1
+              ],
+              "independent_block": true
+            },
+            {
+              "literal": "FEEDER PANEL",
+              "internal_token_cuts": [
+                1
+              ],
+              "independent_block": true
+            }
+          ]
+        },
+        "resolved_rules": {
+          "values": {
+            "base_height_mm": 3.0,
+            "base_width_percent": 80,
+            "font_name": "HY세고딕",
+            "max_height_mm": 3.0,
+            "min_height_mm": 3.0,
+            "preferred_max_lines": 6,
+            "preferred_min_lines": 1
+          },
+          "value_sources": {
+            "base_height_mm": "richwon",
+            "base_width_percent": "richwon",
+            "font_name": "richwon",
+            "max_height_mm": "richwon",
+            "min_height_mm": "richwon",
+            "preferred_max_lines": "richwon",
+            "preferred_min_lines": "richwon"
+          },
+          "rules": {
+            "pattern_alignment": {
+              "sources": {
+                "enabled": "richwon",
+                "strength": "richwon"
+              },
+              "enabled": true,
+              "strength": 1
+            },
+            "width_penalty": {
+              "sources": {
+                "enabled": "richwon",
+                "strength": "richwon"
+              },
+              "enabled": true,
+              "strength": 3
+            }
+          },
+          "active_rule_ids": [
+            "pattern_alignment",
+            "width_penalty"
+          ],
+          "patterns": {
+            "pattern-0": {
+              "sources": {
+                "text": "richwon",
+                "role": "richwon",
+                "enabled": "richwon",
+                "lines": "richwon"
+              },
+              "text": "FEEDER PANEL",
+              "role": "alignment",
+              "enabled": true,
+              "lines": [
+                "FEEDER",
+                "PANEL"
+              ]
+            },
+            "pattern-1": {
+              "sources": {
+                "text": "richwon",
+                "role": "richwon",
+                "enabled": "richwon",
+                "lines": "richwon"
+              },
+              "text": "CONTROL PANEL",
+              "role": "alignment",
+              "enabled": true,
+              "lines": [
+                "CONTROL",
+                "PANEL"
+              ]
+            }
+          },
+          "enabled_pattern_ids": [
+            "pattern-0",
+            "pattern-1"
+          ],
+          "cutter_reference": {
+            "applicable": true,
+            "values": {
+              "cutter_mm": 0.3,
+              "min_height_mm": 3.0,
+              "min_width_percent": 57.99999999999999
+            },
+            "sources": {
+              "cutter_mm": "richwon",
+              "min_height_mm": "richwon",
+              "min_width_percent": "richwon"
+            }
+          },
+          "mandatory_conditions": [
+            "preserve_source",
+            "avoid_holes",
+            "inside_allowed_boundary"
+          ],
+          "layer_order": [
+            "richwon",
+            "customer",
+            "design"
+          ]
+        },
+        "layers": [
+          {
+            "id": "richwon",
+            "name": "기존 36×36 시험 기준",
+            "values": {
+              "font_name": "HY세고딕",
+              "base_height_mm": 3.0,
+              "min_height_mm": 3.0,
+              "max_height_mm": 3.0,
+              "base_width_percent": 80,
+              "preferred_min_lines": 1,
+              "preferred_max_lines": 6
+            },
+            "rules": {
+              "width_penalty": {
+                "enabled": true,
+                "strength": 3
+              },
+              "pattern_alignment": {
+                "enabled": true,
+                "strength": 1
+              }
+            },
+            "patterns": {
+              "pattern-0": {
+                "text": "FEEDER PANEL",
+                "role": "alignment",
+                "enabled": true,
+                "lines": [
+                  "FEEDER",
+                  "PANEL"
+                ]
+              },
+              "pattern-1": {
+                "text": "CONTROL PANEL",
+                "role": "alignment",
+                "enabled": true,
+                "lines": [
+                  "CONTROL",
+                  "PANEL"
+                ]
+              }
+            },
+            "cutter": {
+              "cutter_mm": 0.3,
+              "min_height_mm": 3.0,
+              "min_width_percent": 57.99999999999999
+            }
+          },
+          {
+            "id": "customer",
+            "name": "고객사 시험용 변경"
+          },
+          {
+            "id": "design",
+            "name": "디자인 시험용 변경"
+          }
+        ],
+        "priority": [
+          "richwon",
+          "customer",
+          "design"
+        ]
+      },
+      "outputs": [
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 23.443070652173912,
+                    "bbox": [
+                      8.147282608695653,
+                      23.121059782608693,
+                      27.852717391304346,
+                      26.761005434782607
+                    ],
+                    "height": 3.0,
+                    "text": "E/R AC220V ",
+                    "width": 0.8,
+                    "x": 7.801630434782609
+                  },
+                  {
+                    "baseline": 19.343070652173914,
+                    "bbox": [
+                      11.638043478260869,
+                      19.33899456521739,
+                      24.36195652173913,
+                      22.33899456521739
+                    ],
+                    "height": 3.0,
+                    "text": "FEEDER ",
+                    "width": 0.8,
+                    "x": 11.292391304347825
+                  },
+                  {
+                    "baseline": 15.243070652173913,
+                    "bbox": [
+                      12.785869565217391,
+                      15.238994565217391,
+                      23.21413043478261,
+                      18.23899456521739
+                    ],
+                    "height": 3.0,
+                    "text": "PANEL",
+                    "width": 0.8,
+                    "x": 12.430434782608696
+                  }
+                ],
+                "local_cost": 1.8,
+                "token_cuts": [
+                  2,
+                  3
+                ]
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      12.827309782608694,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCCB1",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.321331521739133,
+                      3.4347826086956523,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "40A",
+                    "width": 0.7,
+                    "x": 27.05597826086957
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "excelRow": 2,
+            "id": "R002",
+            "main": "E/R AC220V FEEDER PANEL",
+            "no": "MCCB1",
+            "rat": "40A"
+          }
+        },
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 23.571467391304346,
+                    "bbox": [
+                      5.920108695652175,
+                      23.502173913043475,
+                      30.079891304347825,
+                      26.632608695652173
+                    ],
+                    "height": 3.0,
+                    "text": "EM'CY AC220V ",
+                    "width": 0.8,
+                    "x": 5.5744565217391315
+                  },
+                  {
+                    "baseline": 19.471467391304344,
+                    "bbox": [
+                      11.638043478260869,
+                      19.46739130434782,
+                      24.36195652173913,
+                      22.46739130434782
+                    ],
+                    "height": 3.0,
+                    "text": "FEEDER ",
+                    "width": 0.8,
+                    "x": 11.292391304347825
+                  },
+                  {
+                    "baseline": 15.371467391304346,
+                    "bbox": [
+                      12.785869565217391,
+                      15.367391304347825,
+                      23.21413043478261,
+                      18.367391304347823
+                    ],
+                    "height": 3.0,
+                    "text": "PANEL",
+                    "width": 0.8,
+                    "x": 12.430434782608696
+                  }
+                ],
+                "local_cost": 1.804162870335827,
+                "token_cuts": [
+                  2,
+                  3
+                ]
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      13.386548913043478,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCCB2",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.321331521739133,
+                      3.4347826086956523,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "40A",
+                    "width": 0.7,
+                    "x": 27.05597826086957
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "excelRow": 3,
+            "id": "R003",
+            "main": "EM'CY AC220V FEEDER PANEL",
+            "no": "MCCB2",
+            "rat": "40A"
+          }
+        },
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 19.50407608695652,
+                    "bbox": [
+                      8.439130434782609,
+                      19.43478260869565,
+                      27.56086956521739,
+                      22.565217391304344
+                    ],
+                    "height": 3.0,
+                    "text": "DC BACKUP",
+                    "width": 0.8,
+                    "x": 8.08695652173913
+                  }
+                ],
+                "local_cost": 0.0,
+                "token_cuts": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      10.636005434782607,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCB1",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.332744565217393,
+                      3.442934782608696,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "32A",
+                    "width": 0.7,
+                    "x": 27.055978260869566
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "id": "ROW-001",
+            "main": "DC BACKUP",
+            "no": "MCB1",
+            "rat": "32A",
+            "source_excel_row": 6
+          }
+        },
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 29.75611413043478,
+                    "bbox": [
+                      7.472282608695652,
+                      29.68682065217391,
+                      28.52771739130435,
+                      32.81725543478261
+                    ],
+                    "height": 3.0,
+                    "text": "MAIN ENGINE ",
+                    "width": 0.8,
+                    "x": 7.123369565217391
+                  },
+                  {
+                    "baseline": 25.65611413043478,
+                    "bbox": [
+                      9.965217391304348,
+                      25.58682065217391,
+                      26.03478260869565,
+                      28.717255434782608
+                    ],
+                    "height": 3.0,
+                    "text": "CONTROL ",
+                    "width": 0.8,
+                    "x": 9.68804347826087
+                  },
+                  {
+                    "baseline": 21.556114130434782,
+                    "bbox": [
+                      12.785869565217391,
+                      21.55203804347826,
+                      23.21413043478261,
+                      24.55203804347826
+                    ],
+                    "height": 3.0,
+                    "text": "PANEL ",
+                    "width": 0.8,
+                    "x": 12.430434782608696
+                  },
+                  {
+                    "baseline": 17.456114130434784,
+                    "bbox": [
+                      12.642391304347825,
+                      17.386820652173913,
+                      23.357608695652175,
+                      20.517255434782612
+                    ],
+                    "height": 3.0,
+                    "text": "LOCAL ",
+                    "width": 0.8,
+                    "x": 12.296739130434782
+                  },
+                  {
+                    "baseline": 13.356114130434783,
+                    "bbox": [
+                      11.236956521739131,
+                      13.286820652173914,
+                      24.76304347826087,
+                      16.41725543478261
+                    ],
+                    "height": 3.0,
+                    "text": "REMOTE ",
+                    "width": 0.8,
+                    "x": 10.868478260869566
+                  },
+                  {
+                    "baseline": 9.256114130434781,
+                    "bbox": [
+                      11.308695652173913,
+                      9.18274456521739,
+                      24.69130434782609,
+                      12.313179347826086
+                    ],
+                    "height": 3.0,
+                    "text": "DISPLAY",
+                    "width": 0.8,
+                    "x": 10.956521739130435
+                  }
+                ],
+                "local_cost": 4.5,
+                "token_cuts": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ]
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      10.636005434782607,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCB1",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.332744565217393,
+                      3.442934782608696,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "32A",
+                    "width": 0.7,
+                    "x": 27.055978260869566
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "id": "LONG",
+            "main": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY",
+            "no": "MCB1",
+            "rat": "32A"
+          }
+        }
+      ]
+    },
+    "width90": {
+      "label": "고객사 90% 우선",
+      "prepared": {
+        "design": {
+          "note": "영역 좌표는 기존 시험값이며 생산용 디자인 확정값이 아님",
+          "source_sha256": "660b9804bebba2092f61ec6510b248d5c47b1faa3b6986ce424f3de023eed073",
+          "size_mm": [
+            36,
+            36
+          ],
+          "regions": [
+            {
+              "id": "main",
+              "label": "문구",
+              "fixture": {
+                "width_mm": 36,
+                "height_mm": 36,
+                "text_region_mm": [
+                  2,
+                  9,
+                  34,
+                  33
+                ],
+                "base_height_100": 300,
+                "min_height_100": 300,
+                "height_step_100": 5,
+                "base_width": 0.9,
+                "width_floor": 0.58,
+                "min_lines": 1,
+                "max_lines": 6,
+                "baseline_extra_mm": 1.1,
+                "holes": [
+                  {
+                    "x": 4,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  },
+                  {
+                    "x": 32,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  }
+                ],
+                "alignment": "center",
+                "fixed_baseline_mm": null,
+                "cutter_mm": 0.3,
+                "line_policy": {
+                  "kind": "preferred",
+                  "min": 1,
+                  "max": 6
+                },
+                "quality": {
+                  "line_cost": 0.9,
+                  "compression_weight": 3,
+                  "compression_span": 0.12
+                }
+              }
+            },
+            {
+              "id": "no",
+              "label": "NO",
+              "fixture": {
+                "width_mm": 36,
+                "height_mm": 36,
+                "text_region_mm": [
+                  3.5,
+                  3.4,
+                  16.5,
+                  7
+                ],
+                "base_height_100": 300,
+                "min_height_100": 300,
+                "height_step_100": 5,
+                "base_width": 0.7,
+                "width_floor": 0.58,
+                "min_lines": 1,
+                "max_lines": 1,
+                "baseline_extra_mm": 1.1,
+                "holes": [
+                  {
+                    "x": 4,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  },
+                  {
+                    "x": 32,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  }
+                ],
+                "alignment": "left",
+                "fixed_baseline_mm": 3.5,
+                "cutter_mm": 0.3,
+                "line_policy": {
+                  "kind": "fixed",
+                  "count": 1
+                },
+                "quality": {
+                  "line_cost": 0.9,
+                  "compression_weight": 3,
+                  "compression_span": 0.12
+                }
+              }
+            },
+            {
+              "id": "rat",
+              "label": "RAT",
+              "fixture": {
+                "width_mm": 36,
+                "height_mm": 36,
+                "text_region_mm": [
+                  19.5,
+                  3.4,
+                  32.5,
+                  7
+                ],
+                "base_height_100": 300,
+                "min_height_100": 300,
+                "height_step_100": 5,
+                "base_width": 0.7,
+                "width_floor": 0.58,
+                "min_lines": 1,
+                "max_lines": 1,
+                "baseline_extra_mm": 1.1,
+                "holes": [
+                  {
+                    "x": 4,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  },
+                  {
+                    "x": 32,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  }
+                ],
+                "alignment": "right",
+                "fixed_baseline_mm": 3.5,
+                "cutter_mm": 0.3,
+                "line_policy": {
+                  "kind": "fixed",
+                  "count": 1
+                },
+                "quality": {
+                  "line_cost": 0.9,
+                  "compression_weight": 3,
+                  "compression_span": 0.12
+                }
+              }
+            }
+          ],
+          "baseline_row": {
+            "id": "ROW-001",
+            "source_excel_row": 6,
+            "main": "DC BACKUP",
+            "no": "MCB1",
+            "rat": "32A"
+          },
+          "changed_body": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY"
+        },
+        "policy": {
+          "note": "기존 디자인별 시험 정책을 재현. 제품 공통 규칙 아님.",
+          "phrases": [
+            "REMOTE DISPLAY UNIT",
+            "DISPLAY UNIT",
+            "TEMPERATURE CONTROLLER",
+            "EMERGENCY CONTROL PANEL",
+            "CONTROL PANEL",
+            "ALARM BUZZER",
+            "STOP P/B",
+            "VOIP TELEPHONE",
+            "RELAY BOX",
+            "CONTROL UNIT",
+            "LAMP BOX",
+            "MONITORING PANEL",
+            "GATE VALVE"
+          ],
+          "registered_patterns": [
+            {
+              "literal": "CONTROL PANEL",
+              "internal_token_cuts": [
+                1
+              ],
+              "independent_block": true
+            },
+            {
+              "literal": "FEEDER PANEL",
+              "internal_token_cuts": [
+                1
+              ],
+              "independent_block": true
+            }
+          ]
+        },
+        "resolved_rules": {
+          "values": {
+            "base_height_mm": 3.0,
+            "base_width_percent": 90,
+            "font_name": "HY세고딕",
+            "max_height_mm": 3.0,
+            "min_height_mm": 3.0,
+            "preferred_max_lines": 6,
+            "preferred_min_lines": 1
+          },
+          "value_sources": {
+            "base_height_mm": "richwon",
+            "base_width_percent": "customer",
+            "font_name": "richwon",
+            "max_height_mm": "richwon",
+            "min_height_mm": "richwon",
+            "preferred_max_lines": "richwon",
+            "preferred_min_lines": "richwon"
+          },
+          "rules": {
+            "pattern_alignment": {
+              "sources": {
+                "enabled": "richwon",
+                "strength": "richwon"
+              },
+              "enabled": true,
+              "strength": 1
+            },
+            "width_penalty": {
+              "sources": {
+                "enabled": "richwon",
+                "strength": "richwon"
+              },
+              "enabled": true,
+              "strength": 3
+            }
+          },
+          "active_rule_ids": [
+            "pattern_alignment",
+            "width_penalty"
+          ],
+          "patterns": {
+            "pattern-0": {
+              "sources": {
+                "text": "richwon",
+                "role": "richwon",
+                "enabled": "richwon",
+                "lines": "richwon"
+              },
+              "text": "FEEDER PANEL",
+              "role": "alignment",
+              "enabled": true,
+              "lines": [
+                "FEEDER",
+                "PANEL"
+              ]
+            },
+            "pattern-1": {
+              "sources": {
+                "text": "richwon",
+                "role": "richwon",
+                "enabled": "richwon",
+                "lines": "richwon"
+              },
+              "text": "CONTROL PANEL",
+              "role": "alignment",
+              "enabled": true,
+              "lines": [
+                "CONTROL",
+                "PANEL"
+              ]
+            }
+          },
+          "enabled_pattern_ids": [
+            "pattern-0",
+            "pattern-1"
+          ],
+          "cutter_reference": {
+            "applicable": true,
+            "values": {
+              "cutter_mm": 0.3,
+              "min_height_mm": 3.0,
+              "min_width_percent": 57.99999999999999
+            },
+            "sources": {
+              "cutter_mm": "richwon",
+              "min_height_mm": "richwon",
+              "min_width_percent": "richwon"
+            }
+          },
+          "mandatory_conditions": [
+            "preserve_source",
+            "avoid_holes",
+            "inside_allowed_boundary"
+          ],
+          "layer_order": [
+            "richwon",
+            "customer",
+            "design"
+          ]
+        },
+        "layers": [
+          {
+            "id": "richwon",
+            "name": "기존 36×36 시험 기준",
+            "values": {
+              "font_name": "HY세고딕",
+              "base_height_mm": 3.0,
+              "min_height_mm": 3.0,
+              "max_height_mm": 3.0,
+              "base_width_percent": 80,
+              "preferred_min_lines": 1,
+              "preferred_max_lines": 6
+            },
+            "rules": {
+              "width_penalty": {
+                "enabled": true,
+                "strength": 3
+              },
+              "pattern_alignment": {
+                "enabled": true,
+                "strength": 1
+              }
+            },
+            "patterns": {
+              "pattern-0": {
+                "text": "FEEDER PANEL",
+                "role": "alignment",
+                "enabled": true,
+                "lines": [
+                  "FEEDER",
+                  "PANEL"
+                ]
+              },
+              "pattern-1": {
+                "text": "CONTROL PANEL",
+                "role": "alignment",
+                "enabled": true,
+                "lines": [
+                  "CONTROL",
+                  "PANEL"
+                ]
+              }
+            },
+            "cutter": {
+              "cutter_mm": 0.3,
+              "min_height_mm": 3.0,
+              "min_width_percent": 57.99999999999999
+            }
+          },
+          {
+            "id": "customer",
+            "name": "고객사 시험용 변경",
+            "values": {
+              "base_width_percent": 90
+            }
+          },
+          {
+            "id": "design",
+            "name": "디자인 시험용 변경"
+          }
+        ],
+        "priority": [
+          "richwon",
+          "customer",
+          "design"
+        ]
+      },
+      "outputs": [
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 23.443070652173912,
+                    "bbox": [
+                      6.915692934782609,
+                      23.121059782608693,
+                      29.08430706521739,
+                      26.761005434782607
+                    ],
+                    "height": 3.0,
+                    "text": "E/R AC220V ",
+                    "width": 0.9,
+                    "x": 6.526834239130435
+                  },
+                  {
+                    "baseline": 19.343070652173914,
+                    "bbox": [
+                      10.842798913043477,
+                      19.33899456521739,
+                      25.15720108695652,
+                      22.33899456521739
+                    ],
+                    "height": 3.0,
+                    "text": "FEEDER ",
+                    "width": 0.9,
+                    "x": 10.453940217391304
+                  },
+                  {
+                    "baseline": 15.243070652173913,
+                    "bbox": [
+                      12.134103260869566,
+                      15.238994565217391,
+                      23.865896739130434,
+                      18.23899456521739
+                    ],
+                    "height": 3.0,
+                    "text": "PANEL",
+                    "width": 0.9,
+                    "x": 11.734239130434784
+                  }
+                ],
+                "local_cost": 1.8,
+                "token_cuts": [
+                  2,
+                  3
+                ]
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      12.827309782608694,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCCB1",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.321331521739133,
+                      3.4347826086956523,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "40A",
+                    "width": 0.7,
+                    "x": 27.05597826086957
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "excelRow": 2,
+            "id": "R002",
+            "main": "E/R AC220V FEEDER PANEL",
+            "no": "MCCB1",
+            "rat": "40A"
+          }
+        },
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 23.571467391304346,
+                    "bbox": [
+                      4.410122282608697,
+                      23.502173913043475,
+                      31.589877717391303,
+                      26.632608695652173
+                    ],
+                    "height": 3.0,
+                    "text": "EM'CY AC220V ",
+                    "width": 0.9,
+                    "x": 4.021263586956523
+                  },
+                  {
+                    "baseline": 19.471467391304344,
+                    "bbox": [
+                      10.842798913043477,
+                      19.46739130434782,
+                      25.15720108695652,
+                      22.46739130434782
+                    ],
+                    "height": 3.0,
+                    "text": "FEEDER ",
+                    "width": 0.9,
+                    "x": 10.453940217391304
+                  },
+                  {
+                    "baseline": 15.371467391304346,
+                    "bbox": [
+                      12.134103260869566,
+                      15.367391304347825,
+                      23.865896739130434,
+                      18.367391304347823
+                    ],
+                    "height": 3.0,
+                    "text": "PANEL",
+                    "width": 0.9,
+                    "x": 11.734239130434784
+                  }
+                ],
+                "local_cost": 1.804162870335827,
+                "token_cuts": [
+                  2,
+                  3
+                ]
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      13.386548913043478,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCCB2",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.321331521739133,
+                      3.4347826086956523,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "40A",
+                    "width": 0.7,
+                    "x": 27.05597826086957
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "excelRow": 3,
+            "id": "R003",
+            "main": "EM'CY AC220V FEEDER PANEL",
+            "no": "MCCB2",
+            "rat": "40A"
+          }
+        },
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 19.50407608695652,
+                    "bbox": [
+                      7.733818268982104,
+                      19.43478260869565,
+                      28.266181731017895,
+                      22.565217391304344
+                    ],
+                    "height": 3.0,
+                    "text": "DC BACKUP",
+                    "width": 0.8590165704899013,
+                    "x": 7.3556642352338315
+                  }
+                ],
+                "local_cost": 0.34992531133525606,
+                "token_cuts": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      10.636005434782607,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCB1",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.332744565217393,
+                      3.442934782608696,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "32A",
+                    "width": 0.7,
+                    "x": 27.055978260869566
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "id": "ROW-001",
+            "main": "DC BACKUP",
+            "no": "MCB1",
+            "rat": "32A",
+            "source_excel_row": 6
+          }
+        },
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 29.75611413043478,
+                    "bbox": [
+                      6.15631793478261,
+                      29.68682065217391,
+                      29.84368206521739,
+                      32.81725543478261
+                    ],
+                    "height": 3.0,
+                    "text": "MAIN ENGINE ",
+                    "width": 0.9,
+                    "x": 5.763790760869567
+                  },
+                  {
+                    "baseline": 25.65611413043478,
+                    "bbox": [
+                      8.960869565217392,
+                      25.58682065217391,
+                      27.039130434782606,
+                      28.717255434782608
+                    ],
+                    "height": 3.0,
+                    "text": "CONTROL ",
+                    "width": 0.9,
+                    "x": 8.64904891304348
+                  },
+                  {
+                    "baseline": 21.556114130434782,
+                    "bbox": [
+                      12.134103260869566,
+                      21.55203804347826,
+                      23.865896739130434,
+                      24.55203804347826
+                    ],
+                    "height": 3.0,
+                    "text": "PANEL ",
+                    "width": 0.9,
+                    "x": 11.734239130434784
+                  },
+                  {
+                    "baseline": 17.456114130434784,
+                    "bbox": [
+                      11.972690217391305,
+                      17.386820652173913,
+                      24.027309782608697,
+                      20.517255434782612
+                    ],
+                    "height": 3.0,
+                    "text": "LOCAL ",
+                    "width": 0.9,
+                    "x": 11.583831521739132
+                  },
+                  {
+                    "baseline": 13.356114130434783,
+                    "bbox": [
+                      10.391576086956523,
+                      13.286820652173914,
+                      25.608423913043477,
+                      16.41725543478261
+                    ],
+                    "height": 3.0,
+                    "text": "REMOTE ",
+                    "width": 0.9,
+                    "x": 9.977038043478261
+                  },
+                  {
+                    "baseline": 9.256114130434781,
+                    "bbox": [
+                      10.47228260869565,
+                      9.18274456521739,
+                      25.52771739130435,
+                      12.313179347826086
+                    ],
+                    "height": 3.0,
+                    "text": "DISPLAY",
+                    "width": 0.9,
+                    "x": 10.076086956521737
+                  }
+                ],
+                "local_cost": 4.5,
+                "token_cuts": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ]
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      10.636005434782607,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCB1",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.332744565217393,
+                      3.442934782608696,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "32A",
+                    "width": 0.7,
+                    "x": 27.055978260869566
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "id": "LONG",
+            "main": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY",
+            "no": "MCB1",
+            "rat": "32A"
+          }
+        }
+      ]
+    },
+    "restored80": {
+      "label": "고객사 설정 해제 · 80% 복귀",
+      "prepared": {
+        "design": {
+          "note": "영역 좌표는 기존 시험값이며 생산용 디자인 확정값이 아님",
+          "source_sha256": "660b9804bebba2092f61ec6510b248d5c47b1faa3b6986ce424f3de023eed073",
+          "size_mm": [
+            36,
+            36
+          ],
+          "regions": [
+            {
+              "id": "main",
+              "label": "문구",
+              "fixture": {
+                "width_mm": 36,
+                "height_mm": 36,
+                "text_region_mm": [
+                  2,
+                  9,
+                  34,
+                  33
+                ],
+                "base_height_100": 300,
+                "min_height_100": 300,
+                "height_step_100": 5,
+                "base_width": 0.8,
+                "width_floor": 0.58,
+                "min_lines": 1,
+                "max_lines": 6,
+                "baseline_extra_mm": 1.1,
+                "holes": [
+                  {
+                    "x": 4,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  },
+                  {
+                    "x": 32,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  }
+                ],
+                "alignment": "center",
+                "fixed_baseline_mm": null,
+                "cutter_mm": 0.3,
+                "line_policy": {
+                  "kind": "preferred",
+                  "min": 1,
+                  "max": 6
+                },
+                "quality": {
+                  "line_cost": 0.9,
+                  "compression_weight": 3,
+                  "compression_span": 0.12
+                }
+              }
+            },
+            {
+              "id": "no",
+              "label": "NO",
+              "fixture": {
+                "width_mm": 36,
+                "height_mm": 36,
+                "text_region_mm": [
+                  3.5,
+                  3.4,
+                  16.5,
+                  7
+                ],
+                "base_height_100": 300,
+                "min_height_100": 300,
+                "height_step_100": 5,
+                "base_width": 0.7,
+                "width_floor": 0.58,
+                "min_lines": 1,
+                "max_lines": 1,
+                "baseline_extra_mm": 1.1,
+                "holes": [
+                  {
+                    "x": 4,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  },
+                  {
+                    "x": 32,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  }
+                ],
+                "alignment": "left",
+                "fixed_baseline_mm": 3.5,
+                "cutter_mm": 0.3,
+                "line_policy": {
+                  "kind": "fixed",
+                  "count": 1
+                },
+                "quality": {
+                  "line_cost": 0.9,
+                  "compression_weight": 3,
+                  "compression_span": 0.12
+                }
+              }
+            },
+            {
+              "id": "rat",
+              "label": "RAT",
+              "fixture": {
+                "width_mm": 36,
+                "height_mm": 36,
+                "text_region_mm": [
+                  19.5,
+                  3.4,
+                  32.5,
+                  7
+                ],
+                "base_height_100": 300,
+                "min_height_100": 300,
+                "height_step_100": 5,
+                "base_width": 0.7,
+                "width_floor": 0.58,
+                "min_lines": 1,
+                "max_lines": 1,
+                "baseline_extra_mm": 1.1,
+                "holes": [
+                  {
+                    "x": 4,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  },
+                  {
+                    "x": 32,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  }
+                ],
+                "alignment": "right",
+                "fixed_baseline_mm": 3.5,
+                "cutter_mm": 0.3,
+                "line_policy": {
+                  "kind": "fixed",
+                  "count": 1
+                },
+                "quality": {
+                  "line_cost": 0.9,
+                  "compression_weight": 3,
+                  "compression_span": 0.12
+                }
+              }
+            }
+          ],
+          "baseline_row": {
+            "id": "ROW-001",
+            "source_excel_row": 6,
+            "main": "DC BACKUP",
+            "no": "MCB1",
+            "rat": "32A"
+          },
+          "changed_body": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY"
+        },
+        "policy": {
+          "note": "기존 디자인별 시험 정책을 재현. 제품 공통 규칙 아님.",
+          "phrases": [
+            "REMOTE DISPLAY UNIT",
+            "DISPLAY UNIT",
+            "TEMPERATURE CONTROLLER",
+            "EMERGENCY CONTROL PANEL",
+            "CONTROL PANEL",
+            "ALARM BUZZER",
+            "STOP P/B",
+            "VOIP TELEPHONE",
+            "RELAY BOX",
+            "CONTROL UNIT",
+            "LAMP BOX",
+            "MONITORING PANEL",
+            "GATE VALVE"
+          ],
+          "registered_patterns": [
+            {
+              "literal": "CONTROL PANEL",
+              "internal_token_cuts": [
+                1
+              ],
+              "independent_block": true
+            },
+            {
+              "literal": "FEEDER PANEL",
+              "internal_token_cuts": [
+                1
+              ],
+              "independent_block": true
+            }
+          ]
+        },
+        "resolved_rules": {
+          "values": {
+            "base_height_mm": 3.0,
+            "base_width_percent": 80,
+            "font_name": "HY세고딕",
+            "max_height_mm": 3.0,
+            "min_height_mm": 3.0,
+            "preferred_max_lines": 6,
+            "preferred_min_lines": 1
+          },
+          "value_sources": {
+            "base_height_mm": "richwon",
+            "base_width_percent": "richwon",
+            "font_name": "richwon",
+            "max_height_mm": "richwon",
+            "min_height_mm": "richwon",
+            "preferred_max_lines": "richwon",
+            "preferred_min_lines": "richwon"
+          },
+          "rules": {
+            "pattern_alignment": {
+              "sources": {
+                "enabled": "richwon",
+                "strength": "richwon"
+              },
+              "enabled": true,
+              "strength": 1
+            },
+            "width_penalty": {
+              "sources": {
+                "enabled": "richwon",
+                "strength": "richwon"
+              },
+              "enabled": true,
+              "strength": 3
+            }
+          },
+          "active_rule_ids": [
+            "pattern_alignment",
+            "width_penalty"
+          ],
+          "patterns": {
+            "pattern-0": {
+              "sources": {
+                "text": "richwon",
+                "role": "richwon",
+                "enabled": "richwon",
+                "lines": "richwon"
+              },
+              "text": "FEEDER PANEL",
+              "role": "alignment",
+              "enabled": true,
+              "lines": [
+                "FEEDER",
+                "PANEL"
+              ]
+            },
+            "pattern-1": {
+              "sources": {
+                "text": "richwon",
+                "role": "richwon",
+                "enabled": "richwon",
+                "lines": "richwon"
+              },
+              "text": "CONTROL PANEL",
+              "role": "alignment",
+              "enabled": true,
+              "lines": [
+                "CONTROL",
+                "PANEL"
+              ]
+            }
+          },
+          "enabled_pattern_ids": [
+            "pattern-0",
+            "pattern-1"
+          ],
+          "cutter_reference": {
+            "applicable": true,
+            "values": {
+              "cutter_mm": 0.3,
+              "min_height_mm": 3.0,
+              "min_width_percent": 57.99999999999999
+            },
+            "sources": {
+              "cutter_mm": "richwon",
+              "min_height_mm": "richwon",
+              "min_width_percent": "richwon"
+            }
+          },
+          "mandatory_conditions": [
+            "preserve_source",
+            "avoid_holes",
+            "inside_allowed_boundary"
+          ],
+          "layer_order": [
+            "richwon",
+            "customer",
+            "design"
+          ]
+        },
+        "layers": [
+          {
+            "id": "richwon",
+            "name": "기존 36×36 시험 기준",
+            "values": {
+              "font_name": "HY세고딕",
+              "base_height_mm": 3.0,
+              "min_height_mm": 3.0,
+              "max_height_mm": 3.0,
+              "base_width_percent": 80,
+              "preferred_min_lines": 1,
+              "preferred_max_lines": 6
+            },
+            "rules": {
+              "width_penalty": {
+                "enabled": true,
+                "strength": 3
+              },
+              "pattern_alignment": {
+                "enabled": true,
+                "strength": 1
+              }
+            },
+            "patterns": {
+              "pattern-0": {
+                "text": "FEEDER PANEL",
+                "role": "alignment",
+                "enabled": true,
+                "lines": [
+                  "FEEDER",
+                  "PANEL"
+                ]
+              },
+              "pattern-1": {
+                "text": "CONTROL PANEL",
+                "role": "alignment",
+                "enabled": true,
+                "lines": [
+                  "CONTROL",
+                  "PANEL"
+                ]
+              }
+            },
+            "cutter": {
+              "cutter_mm": 0.3,
+              "min_height_mm": 3.0,
+              "min_width_percent": 57.99999999999999
+            }
+          },
+          {
+            "id": "customer",
+            "name": "고객사 시험용 변경",
+            "values": {}
+          },
+          {
+            "id": "design",
+            "name": "디자인 시험용 변경"
+          }
+        ],
+        "priority": [
+          "richwon",
+          "customer",
+          "design"
+        ]
+      },
+      "outputs": [
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 23.443070652173912,
+                    "bbox": [
+                      8.147282608695653,
+                      23.121059782608693,
+                      27.852717391304346,
+                      26.761005434782607
+                    ],
+                    "height": 3.0,
+                    "text": "E/R AC220V ",
+                    "width": 0.8,
+                    "x": 7.801630434782609
+                  },
+                  {
+                    "baseline": 19.343070652173914,
+                    "bbox": [
+                      11.638043478260869,
+                      19.33899456521739,
+                      24.36195652173913,
+                      22.33899456521739
+                    ],
+                    "height": 3.0,
+                    "text": "FEEDER ",
+                    "width": 0.8,
+                    "x": 11.292391304347825
+                  },
+                  {
+                    "baseline": 15.243070652173913,
+                    "bbox": [
+                      12.785869565217391,
+                      15.238994565217391,
+                      23.21413043478261,
+                      18.23899456521739
+                    ],
+                    "height": 3.0,
+                    "text": "PANEL",
+                    "width": 0.8,
+                    "x": 12.430434782608696
+                  }
+                ],
+                "local_cost": 1.8,
+                "token_cuts": [
+                  2,
+                  3
+                ]
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      12.827309782608694,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCCB1",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.321331521739133,
+                      3.4347826086956523,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "40A",
+                    "width": 0.7,
+                    "x": 27.05597826086957
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "excelRow": 2,
+            "id": "R002",
+            "main": "E/R AC220V FEEDER PANEL",
+            "no": "MCCB1",
+            "rat": "40A"
+          }
+        },
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 23.571467391304346,
+                    "bbox": [
+                      5.920108695652175,
+                      23.502173913043475,
+                      30.079891304347825,
+                      26.632608695652173
+                    ],
+                    "height": 3.0,
+                    "text": "EM'CY AC220V ",
+                    "width": 0.8,
+                    "x": 5.5744565217391315
+                  },
+                  {
+                    "baseline": 19.471467391304344,
+                    "bbox": [
+                      11.638043478260869,
+                      19.46739130434782,
+                      24.36195652173913,
+                      22.46739130434782
+                    ],
+                    "height": 3.0,
+                    "text": "FEEDER ",
+                    "width": 0.8,
+                    "x": 11.292391304347825
+                  },
+                  {
+                    "baseline": 15.371467391304346,
+                    "bbox": [
+                      12.785869565217391,
+                      15.367391304347825,
+                      23.21413043478261,
+                      18.367391304347823
+                    ],
+                    "height": 3.0,
+                    "text": "PANEL",
+                    "width": 0.8,
+                    "x": 12.430434782608696
+                  }
+                ],
+                "local_cost": 1.804162870335827,
+                "token_cuts": [
+                  2,
+                  3
+                ]
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      13.386548913043478,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCCB2",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.321331521739133,
+                      3.4347826086956523,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "40A",
+                    "width": 0.7,
+                    "x": 27.05597826086957
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "excelRow": 3,
+            "id": "R003",
+            "main": "EM'CY AC220V FEEDER PANEL",
+            "no": "MCCB2",
+            "rat": "40A"
+          }
+        },
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 19.50407608695652,
+                    "bbox": [
+                      8.439130434782609,
+                      19.43478260869565,
+                      27.56086956521739,
+                      22.565217391304344
+                    ],
+                    "height": 3.0,
+                    "text": "DC BACKUP",
+                    "width": 0.8,
+                    "x": 8.08695652173913
+                  }
+                ],
+                "local_cost": 0.0,
+                "token_cuts": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      10.636005434782607,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCB1",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.332744565217393,
+                      3.442934782608696,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "32A",
+                    "width": 0.7,
+                    "x": 27.055978260869566
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "id": "ROW-001",
+            "main": "DC BACKUP",
+            "no": "MCB1",
+            "rat": "32A",
+            "source_excel_row": 6
+          }
+        },
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 29.75611413043478,
+                    "bbox": [
+                      7.472282608695652,
+                      29.68682065217391,
+                      28.52771739130435,
+                      32.81725543478261
+                    ],
+                    "height": 3.0,
+                    "text": "MAIN ENGINE ",
+                    "width": 0.8,
+                    "x": 7.123369565217391
+                  },
+                  {
+                    "baseline": 25.65611413043478,
+                    "bbox": [
+                      9.965217391304348,
+                      25.58682065217391,
+                      26.03478260869565,
+                      28.717255434782608
+                    ],
+                    "height": 3.0,
+                    "text": "CONTROL ",
+                    "width": 0.8,
+                    "x": 9.68804347826087
+                  },
+                  {
+                    "baseline": 21.556114130434782,
+                    "bbox": [
+                      12.785869565217391,
+                      21.55203804347826,
+                      23.21413043478261,
+                      24.55203804347826
+                    ],
+                    "height": 3.0,
+                    "text": "PANEL ",
+                    "width": 0.8,
+                    "x": 12.430434782608696
+                  },
+                  {
+                    "baseline": 17.456114130434784,
+                    "bbox": [
+                      12.642391304347825,
+                      17.386820652173913,
+                      23.357608695652175,
+                      20.517255434782612
+                    ],
+                    "height": 3.0,
+                    "text": "LOCAL ",
+                    "width": 0.8,
+                    "x": 12.296739130434782
+                  },
+                  {
+                    "baseline": 13.356114130434783,
+                    "bbox": [
+                      11.236956521739131,
+                      13.286820652173914,
+                      24.76304347826087,
+                      16.41725543478261
+                    ],
+                    "height": 3.0,
+                    "text": "REMOTE ",
+                    "width": 0.8,
+                    "x": 10.868478260869566
+                  },
+                  {
+                    "baseline": 9.256114130434781,
+                    "bbox": [
+                      11.308695652173913,
+                      9.18274456521739,
+                      24.69130434782609,
+                      12.313179347826086
+                    ],
+                    "height": 3.0,
+                    "text": "DISPLAY",
+                    "width": 0.8,
+                    "x": 10.956521739130435
+                  }
+                ],
+                "local_cost": 4.5,
+                "token_cuts": [
+                  2,
+                  3,
+                  4,
+                  5,
+                  6
+                ]
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      10.636005434782607,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCB1",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.332744565217393,
+                      3.442934782608696,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "32A",
+                    "width": 0.7,
+                    "x": 27.055978260869566
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "id": "LONG",
+            "main": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY",
+            "no": "MCB1",
+            "rat": "32A"
+          }
+        }
+      ]
+    },
+    "lines3": {
+      "label": "디자인 선호 3줄 · 가상 변경",
+      "prepared": {
+        "design": {
+          "note": "영역 좌표는 기존 시험값이며 생산용 디자인 확정값이 아님",
+          "source_sha256": "660b9804bebba2092f61ec6510b248d5c47b1faa3b6986ce424f3de023eed073",
+          "size_mm": [
+            36,
+            36
+          ],
+          "regions": [
+            {
+              "id": "main",
+              "label": "문구",
+              "fixture": {
+                "width_mm": 36,
+                "height_mm": 36,
+                "text_region_mm": [
+                  2,
+                  9,
+                  34,
+                  33
+                ],
+                "base_height_100": 300,
+                "min_height_100": 300,
+                "height_step_100": 5,
+                "base_width": 0.8,
+                "width_floor": 0.58,
+                "min_lines": 1,
+                "max_lines": 3,
+                "baseline_extra_mm": 1.1,
+                "holes": [
+                  {
+                    "x": 4,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  },
+                  {
+                    "x": 32,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  }
+                ],
+                "alignment": "center",
+                "fixed_baseline_mm": null,
+                "cutter_mm": 0.3,
+                "line_policy": {
+                  "kind": "preferred",
+                  "min": 1,
+                  "max": 3
+                },
+                "quality": {
+                  "line_cost": 0.9,
+                  "compression_weight": 3,
+                  "compression_span": 0.12
+                }
+              }
+            },
+            {
+              "id": "no",
+              "label": "NO",
+              "fixture": {
+                "width_mm": 36,
+                "height_mm": 36,
+                "text_region_mm": [
+                  3.5,
+                  3.4,
+                  16.5,
+                  7
+                ],
+                "base_height_100": 300,
+                "min_height_100": 300,
+                "height_step_100": 5,
+                "base_width": 0.7,
+                "width_floor": 0.58,
+                "min_lines": 1,
+                "max_lines": 1,
+                "baseline_extra_mm": 1.1,
+                "holes": [
+                  {
+                    "x": 4,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  },
+                  {
+                    "x": 32,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  }
+                ],
+                "alignment": "left",
+                "fixed_baseline_mm": 3.5,
+                "cutter_mm": 0.3,
+                "line_policy": {
+                  "kind": "fixed",
+                  "count": 1
+                },
+                "quality": {
+                  "line_cost": 0.9,
+                  "compression_weight": 3,
+                  "compression_span": 0.12
+                }
+              }
+            },
+            {
+              "id": "rat",
+              "label": "RAT",
+              "fixture": {
+                "width_mm": 36,
+                "height_mm": 36,
+                "text_region_mm": [
+                  19.5,
+                  3.4,
+                  32.5,
+                  7
+                ],
+                "base_height_100": 300,
+                "min_height_100": 300,
+                "height_step_100": 5,
+                "base_width": 0.7,
+                "width_floor": 0.58,
+                "min_lines": 1,
+                "max_lines": 1,
+                "baseline_extra_mm": 1.1,
+                "holes": [
+                  {
+                    "x": 4,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  },
+                  {
+                    "x": 32,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  }
+                ],
+                "alignment": "right",
+                "fixed_baseline_mm": 3.5,
+                "cutter_mm": 0.3,
+                "line_policy": {
+                  "kind": "fixed",
+                  "count": 1
+                },
+                "quality": {
+                  "line_cost": 0.9,
+                  "compression_weight": 3,
+                  "compression_span": 0.12
+                }
+              }
+            }
+          ],
+          "baseline_row": {
+            "id": "ROW-001",
+            "source_excel_row": 6,
+            "main": "DC BACKUP",
+            "no": "MCB1",
+            "rat": "32A"
+          },
+          "changed_body": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY"
+        },
+        "policy": {
+          "note": "기존 디자인별 시험 정책을 재현. 제품 공통 규칙 아님.",
+          "phrases": [
+            "REMOTE DISPLAY UNIT",
+            "DISPLAY UNIT",
+            "TEMPERATURE CONTROLLER",
+            "EMERGENCY CONTROL PANEL",
+            "CONTROL PANEL",
+            "ALARM BUZZER",
+            "STOP P/B",
+            "VOIP TELEPHONE",
+            "RELAY BOX",
+            "CONTROL UNIT",
+            "LAMP BOX",
+            "MONITORING PANEL",
+            "GATE VALVE"
+          ],
+          "registered_patterns": [
+            {
+              "literal": "CONTROL PANEL",
+              "internal_token_cuts": [
+                1
+              ],
+              "independent_block": true
+            },
+            {
+              "literal": "FEEDER PANEL",
+              "internal_token_cuts": [
+                1
+              ],
+              "independent_block": true
+            }
+          ]
+        },
+        "resolved_rules": {
+          "values": {
+            "base_height_mm": 3.0,
+            "base_width_percent": 80,
+            "font_name": "HY세고딕",
+            "max_height_mm": 3.0,
+            "min_height_mm": 3.0,
+            "preferred_max_lines": 3,
+            "preferred_min_lines": 1
+          },
+          "value_sources": {
+            "base_height_mm": "richwon",
+            "base_width_percent": "richwon",
+            "font_name": "richwon",
+            "max_height_mm": "richwon",
+            "min_height_mm": "richwon",
+            "preferred_max_lines": "design",
+            "preferred_min_lines": "richwon"
+          },
+          "rules": {
+            "pattern_alignment": {
+              "sources": {
+                "enabled": "richwon",
+                "strength": "richwon"
+              },
+              "enabled": true,
+              "strength": 1
+            },
+            "width_penalty": {
+              "sources": {
+                "enabled": "richwon",
+                "strength": "richwon"
+              },
+              "enabled": true,
+              "strength": 3
+            }
+          },
+          "active_rule_ids": [
+            "pattern_alignment",
+            "width_penalty"
+          ],
+          "patterns": {
+            "pattern-0": {
+              "sources": {
+                "text": "richwon",
+                "role": "richwon",
+                "enabled": "richwon",
+                "lines": "richwon"
+              },
+              "text": "FEEDER PANEL",
+              "role": "alignment",
+              "enabled": true,
+              "lines": [
+                "FEEDER",
+                "PANEL"
+              ]
+            },
+            "pattern-1": {
+              "sources": {
+                "text": "richwon",
+                "role": "richwon",
+                "enabled": "richwon",
+                "lines": "richwon"
+              },
+              "text": "CONTROL PANEL",
+              "role": "alignment",
+              "enabled": true,
+              "lines": [
+                "CONTROL",
+                "PANEL"
+              ]
+            }
+          },
+          "enabled_pattern_ids": [
+            "pattern-0",
+            "pattern-1"
+          ],
+          "cutter_reference": {
+            "applicable": true,
+            "values": {
+              "cutter_mm": 0.3,
+              "min_height_mm": 3.0,
+              "min_width_percent": 57.99999999999999
+            },
+            "sources": {
+              "cutter_mm": "richwon",
+              "min_height_mm": "richwon",
+              "min_width_percent": "richwon"
+            }
+          },
+          "mandatory_conditions": [
+            "preserve_source",
+            "avoid_holes",
+            "inside_allowed_boundary"
+          ],
+          "layer_order": [
+            "richwon",
+            "customer",
+            "design"
+          ]
+        },
+        "layers": [
+          {
+            "id": "richwon",
+            "name": "기존 36×36 시험 기준",
+            "values": {
+              "font_name": "HY세고딕",
+              "base_height_mm": 3.0,
+              "min_height_mm": 3.0,
+              "max_height_mm": 3.0,
+              "base_width_percent": 80,
+              "preferred_min_lines": 1,
+              "preferred_max_lines": 6
+            },
+            "rules": {
+              "width_penalty": {
+                "enabled": true,
+                "strength": 3
+              },
+              "pattern_alignment": {
+                "enabled": true,
+                "strength": 1
+              }
+            },
+            "patterns": {
+              "pattern-0": {
+                "text": "FEEDER PANEL",
+                "role": "alignment",
+                "enabled": true,
+                "lines": [
+                  "FEEDER",
+                  "PANEL"
+                ]
+              },
+              "pattern-1": {
+                "text": "CONTROL PANEL",
+                "role": "alignment",
+                "enabled": true,
+                "lines": [
+                  "CONTROL",
+                  "PANEL"
+                ]
+              }
+            },
+            "cutter": {
+              "cutter_mm": 0.3,
+              "min_height_mm": 3.0,
+              "min_width_percent": 57.99999999999999
+            }
+          },
+          {
+            "id": "customer",
+            "name": "고객사 시험용 변경"
+          },
+          {
+            "id": "design",
+            "name": "디자인 시험용 변경",
+            "values": {
+              "preferred_max_lines": 3
+            }
+          }
+        ],
+        "priority": [
+          "richwon",
+          "customer",
+          "design"
+        ]
+      },
+      "outputs": [
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 23.443070652173912,
+                    "bbox": [
+                      8.147282608695653,
+                      23.121059782608693,
+                      27.852717391304346,
+                      26.761005434782607
+                    ],
+                    "height": 3.0,
+                    "text": "E/R AC220V ",
+                    "width": 0.8,
+                    "x": 7.801630434782609
+                  },
+                  {
+                    "baseline": 19.343070652173914,
+                    "bbox": [
+                      11.638043478260869,
+                      19.33899456521739,
+                      24.36195652173913,
+                      22.33899456521739
+                    ],
+                    "height": 3.0,
+                    "text": "FEEDER ",
+                    "width": 0.8,
+                    "x": 11.292391304347825
+                  },
+                  {
+                    "baseline": 15.243070652173913,
+                    "bbox": [
+                      12.785869565217391,
+                      15.238994565217391,
+                      23.21413043478261,
+                      18.23899456521739
+                    ],
+                    "height": 3.0,
+                    "text": "PANEL",
+                    "width": 0.8,
+                    "x": 12.430434782608696
+                  }
+                ],
+                "local_cost": 1.8,
+                "token_cuts": [
+                  2,
+                  3
+                ]
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      12.827309782608694,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCCB1",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.321331521739133,
+                      3.4347826086956523,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "40A",
+                    "width": 0.7,
+                    "x": 27.05597826086957
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "excelRow": 2,
+            "id": "R002",
+            "main": "E/R AC220V FEEDER PANEL",
+            "no": "MCCB1",
+            "rat": "40A"
+          }
+        },
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 23.571467391304346,
+                    "bbox": [
+                      5.920108695652175,
+                      23.502173913043475,
+                      30.079891304347825,
+                      26.632608695652173
+                    ],
+                    "height": 3.0,
+                    "text": "EM'CY AC220V ",
+                    "width": 0.8,
+                    "x": 5.5744565217391315
+                  },
+                  {
+                    "baseline": 19.471467391304344,
+                    "bbox": [
+                      11.638043478260869,
+                      19.46739130434782,
+                      24.36195652173913,
+                      22.46739130434782
+                    ],
+                    "height": 3.0,
+                    "text": "FEEDER ",
+                    "width": 0.8,
+                    "x": 11.292391304347825
+                  },
+                  {
+                    "baseline": 15.371467391304346,
+                    "bbox": [
+                      12.785869565217391,
+                      15.367391304347825,
+                      23.21413043478261,
+                      18.367391304347823
+                    ],
+                    "height": 3.0,
+                    "text": "PANEL",
+                    "width": 0.8,
+                    "x": 12.430434782608696
+                  }
+                ],
+                "local_cost": 1.804162870335827,
+                "token_cuts": [
+                  2,
+                  3
+                ]
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      13.386548913043478,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCCB2",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.321331521739133,
+                      3.4347826086956523,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "40A",
+                    "width": 0.7,
+                    "x": 27.05597826086957
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "excelRow": 3,
+            "id": "R003",
+            "main": "EM'CY AC220V FEEDER PANEL",
+            "no": "MCCB2",
+            "rat": "40A"
+          }
+        },
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 19.50407608695652,
+                    "bbox": [
+                      8.439130434782609,
+                      19.43478260869565,
+                      27.56086956521739,
+                      22.565217391304344
+                    ],
+                    "height": 3.0,
+                    "text": "DC BACKUP",
+                    "width": 0.8,
+                    "x": 8.08695652173913
+                  }
+                ],
+                "local_cost": 0.0,
+                "token_cuts": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      10.636005434782607,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCB1",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.332744565217393,
+                      3.442934782608696,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "32A",
+                    "width": 0.7,
+                    "x": 27.055978260869566
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "id": "ROW-001",
+            "main": "DC BACKUP",
+            "no": "MCB1",
+            "rat": "32A",
+            "source_excel_row": 6
+          }
+        },
+        {
+          "result": {
+            "main": {
+              "attempts": 159,
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 27.70611413043478,
+                    "bbox": [
+                      7.472282608695652,
+                      27.63682065217391,
+                      28.52771739130435,
+                      30.767255434782605
+                    ],
+                    "height": 3.0,
+                    "text": "MAIN ENGINE ",
+                    "width": 0.8,
+                    "x": 7.123369565217391
+                  },
+                  {
+                    "baseline": 23.606114130434783,
+                    "bbox": [
+                      3.9130434782608674,
+                      23.536820652173912,
+                      32.08695652173913,
+                      26.66725543478261
+                    ],
+                    "height": 3.0,
+                    "text": "CONTROL PANEL ",
+                    "width": 0.8,
+                    "x": 3.635869565217389
+                  },
+                  {
+                    "baseline": 19.50611413043478,
+                    "bbox": [
+                      12.642391304347825,
+                      19.43682065217391,
+                      23.357608695652175,
+                      22.56725543478261
+                    ],
+                    "height": 3.0,
+                    "text": "LOCAL ",
+                    "width": 0.8,
+                    "x": 12.296739130434782
+                  },
+                  {
+                    "baseline": 15.406114130434782,
+                    "bbox": [
+                      11.236956521739131,
+                      15.336820652173913,
+                      24.76304347826087,
+                      18.467255434782608
+                    ],
+                    "height": 3.0,
+                    "text": "REMOTE ",
+                    "width": 0.8,
+                    "x": 10.868478260869566
+                  },
+                  {
+                    "baseline": 11.306114130434782,
+                    "bbox": [
+                      11.308695652173913,
+                      11.232744565217391,
+                      24.69130434782609,
+                      14.363179347826087
+                    ],
+                    "height": 3.0,
+                    "text": "DISPLAY",
+                    "width": 0.8,
+                    "x": 10.956521739130435
+                  }
+                ],
+                "local_cost": 3.6599349957238902,
+                "token_cuts": [
+                  2,
+                  4,
+                  5,
+                  6
+                ]
+              },
+              "cutter_mm": 0.3,
+              "evaluation_cutter_mm": 0.3,
+              "original_cutter_mm": 0.3,
+              "production_ready": false,
+              "status": "reference_only",
+              "warnings": [
+                "선호 줄 수 초과: 3줄 이하 → 5줄"
+              ],
+              "width_floor_used": 0.58
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      10.636005434782607,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCB1",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.332744565217393,
+                      3.442934782608696,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "32A",
+                    "width": 0.7,
+                    "x": 27.055978260869566
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "id": "LONG",
+            "main": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY",
+            "no": "MCB1",
+            "rat": "32A"
+          }
+        }
+      ]
+    },
+    "pattern_off": {
+      "label": "FEEDER / PANEL 등록 패턴 제외",
+      "prepared": {
+        "design": {
+          "note": "영역 좌표는 기존 시험값이며 생산용 디자인 확정값이 아님",
+          "source_sha256": "660b9804bebba2092f61ec6510b248d5c47b1faa3b6986ce424f3de023eed073",
+          "size_mm": [
+            36,
+            36
+          ],
+          "regions": [
+            {
+              "id": "main",
+              "label": "문구",
+              "fixture": {
+                "width_mm": 36,
+                "height_mm": 36,
+                "text_region_mm": [
+                  2,
+                  9,
+                  34,
+                  33
+                ],
+                "base_height_100": 300,
+                "min_height_100": 300,
+                "height_step_100": 5,
+                "base_width": 0.7,
+                "width_floor": 0.58,
+                "min_lines": 1,
+                "max_lines": 6,
+                "baseline_extra_mm": 1.1,
+                "holes": [
+                  {
+                    "x": 4,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  },
+                  {
+                    "x": 32,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  }
+                ],
+                "alignment": "center",
+                "fixed_baseline_mm": null,
+                "cutter_mm": 0.3,
+                "line_policy": {
+                  "kind": "preferred",
+                  "min": 1,
+                  "max": 6
+                },
+                "quality": {
+                  "line_cost": 0.9,
+                  "compression_weight": 3,
+                  "compression_span": 0.12
+                }
+              }
+            },
+            {
+              "id": "no",
+              "label": "NO",
+              "fixture": {
+                "width_mm": 36,
+                "height_mm": 36,
+                "text_region_mm": [
+                  3.5,
+                  3.4,
+                  16.5,
+                  7
+                ],
+                "base_height_100": 300,
+                "min_height_100": 300,
+                "height_step_100": 5,
+                "base_width": 0.7,
+                "width_floor": 0.58,
+                "min_lines": 1,
+                "max_lines": 1,
+                "baseline_extra_mm": 1.1,
+                "holes": [
+                  {
+                    "x": 4,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  },
+                  {
+                    "x": 32,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  }
+                ],
+                "alignment": "left",
+                "fixed_baseline_mm": 3.5,
+                "cutter_mm": 0.3,
+                "line_policy": {
+                  "kind": "fixed",
+                  "count": 1
+                },
+                "quality": {
+                  "line_cost": 0.9,
+                  "compression_weight": 3,
+                  "compression_span": 0.12
+                }
+              }
+            },
+            {
+              "id": "rat",
+              "label": "RAT",
+              "fixture": {
+                "width_mm": 36,
+                "height_mm": 36,
+                "text_region_mm": [
+                  19.5,
+                  3.4,
+                  32.5,
+                  7
+                ],
+                "base_height_100": 300,
+                "min_height_100": 300,
+                "height_step_100": 5,
+                "base_width": 0.7,
+                "width_floor": 0.58,
+                "min_lines": 1,
+                "max_lines": 1,
+                "baseline_extra_mm": 1.1,
+                "holes": [
+                  {
+                    "x": 4,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  },
+                  {
+                    "x": 32,
+                    "y": 18,
+                    "radius": 2,
+                    "avoid_radius": 4
+                  }
+                ],
+                "alignment": "right",
+                "fixed_baseline_mm": 3.5,
+                "cutter_mm": 0.3,
+                "line_policy": {
+                  "kind": "fixed",
+                  "count": 1
+                },
+                "quality": {
+                  "line_cost": 0.9,
+                  "compression_weight": 3,
+                  "compression_span": 0.12
+                }
+              }
+            }
+          ],
+          "baseline_row": {
+            "id": "ROW-001",
+            "source_excel_row": 6,
+            "main": "DC BACKUP",
+            "no": "MCB1",
+            "rat": "32A"
+          },
+          "changed_body": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY"
+        },
+        "policy": {
+          "note": "기존 디자인별 시험 정책을 재현. 제품 공통 규칙 아님.",
+          "phrases": [
+            "REMOTE DISPLAY UNIT",
+            "DISPLAY UNIT",
+            "TEMPERATURE CONTROLLER",
+            "EMERGENCY CONTROL PANEL",
+            "CONTROL PANEL",
+            "ALARM BUZZER",
+            "STOP P/B",
+            "VOIP TELEPHONE",
+            "RELAY BOX",
+            "CONTROL UNIT",
+            "LAMP BOX",
+            "MONITORING PANEL",
+            "GATE VALVE"
+          ],
+          "registered_patterns": [
+            {
+              "literal": "CONTROL PANEL",
+              "internal_token_cuts": [
+                1
+              ],
+              "independent_block": true
+            }
+          ]
+        },
+        "resolved_rules": {
+          "values": {
+            "base_height_mm": 3.0,
+            "base_width_percent": 70.0,
+            "font_name": "HY세고딕",
+            "max_height_mm": 3.0,
+            "min_height_mm": 3.0,
+            "preferred_max_lines": 6,
+            "preferred_min_lines": 1
+          },
+          "value_sources": {
+            "base_height_mm": "richwon",
+            "base_width_percent": "richwon",
+            "font_name": "richwon",
+            "max_height_mm": "richwon",
+            "min_height_mm": "richwon",
+            "preferred_max_lines": "richwon",
+            "preferred_min_lines": "richwon"
+          },
+          "rules": {
+            "pattern_alignment": {
+              "sources": {
+                "enabled": "richwon",
+                "strength": "richwon"
+              },
+              "enabled": true,
+              "strength": 1
+            },
+            "width_penalty": {
+              "sources": {
+                "enabled": "richwon",
+                "strength": "richwon"
+              },
+              "enabled": true,
+              "strength": 3
+            }
+          },
+          "active_rule_ids": [
+            "pattern_alignment",
+            "width_penalty"
+          ],
+          "patterns": {
+            "pattern-0": {
+              "sources": {
+                "text": "richwon",
+                "role": "richwon",
+                "enabled": "customer",
+                "lines": "richwon"
+              },
+              "text": "FEEDER PANEL",
+              "role": "alignment",
+              "enabled": false,
+              "lines": [
+                "FEEDER",
+                "PANEL"
+              ]
+            },
+            "pattern-1": {
+              "sources": {
+                "text": "richwon",
+                "role": "richwon",
+                "enabled": "richwon",
+                "lines": "richwon"
+              },
+              "text": "CONTROL PANEL",
+              "role": "alignment",
+              "enabled": true,
+              "lines": [
+                "CONTROL",
+                "PANEL"
+              ]
+            }
+          },
+          "enabled_pattern_ids": [
+            "pattern-1"
+          ],
+          "cutter_reference": {
+            "applicable": true,
+            "values": {
+              "cutter_mm": 0.3,
+              "min_height_mm": 3.0,
+              "min_width_percent": 57.99999999999999
+            },
+            "sources": {
+              "cutter_mm": "richwon",
+              "min_height_mm": "richwon",
+              "min_width_percent": "richwon"
+            }
+          },
+          "mandatory_conditions": [
+            "preserve_source",
+            "avoid_holes",
+            "inside_allowed_boundary"
+          ],
+          "layer_order": [
+            "richwon",
+            "customer",
+            "design"
+          ]
+        },
+        "layers": [
+          {
+            "id": "richwon",
+            "name": "기존 36×36 시험 기준",
+            "values": {
+              "font_name": "HY세고딕",
+              "base_height_mm": 3.0,
+              "min_height_mm": 3.0,
+              "max_height_mm": 3.0,
+              "base_width_percent": 70.0,
+              "preferred_min_lines": 1,
+              "preferred_max_lines": 6
+            },
+            "rules": {
+              "width_penalty": {
+                "enabled": true,
+                "strength": 3
+              },
+              "pattern_alignment": {
+                "enabled": true,
+                "strength": 1
+              }
+            },
+            "patterns": {
+              "pattern-0": {
+                "text": "FEEDER PANEL",
+                "role": "alignment",
+                "enabled": true,
+                "lines": [
+                  "FEEDER",
+                  "PANEL"
+                ]
+              },
+              "pattern-1": {
+                "text": "CONTROL PANEL",
+                "role": "alignment",
+                "enabled": true,
+                "lines": [
+                  "CONTROL",
+                  "PANEL"
+                ]
+              }
+            },
+            "cutter": {
+              "cutter_mm": 0.3,
+              "min_height_mm": 3.0,
+              "min_width_percent": 57.99999999999999
+            }
+          },
+          {
+            "id": "customer",
+            "name": "고객사 시험용 변경",
+            "patterns": {
+              "pattern-0": {
+                "enabled": false
+              }
+            }
+          },
+          {
+            "id": "design",
+            "name": "디자인 시험용 변경"
+          }
+        ],
+        "priority": [
+          "richwon",
+          "customer",
+          "design"
+        ]
+      },
+      "outputs": [
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 21.393070652173915,
+                    "bbox": [
+                      9.378872282608697,
+                      21.071059782608696,
+                      26.621127717391303,
+                      24.71100543478261
+                    ],
+                    "height": 3.0,
+                    "text": "E/R AC220V ",
+                    "width": 0.7,
+                    "x": 9.076426630434783
+                  },
+                  {
+                    "baseline": 17.293070652173917,
+                    "bbox": [
+                      8.0,
+                      17.288994565217394,
+                      28.0,
+                      20.288994565217394
+                    ],
+                    "height": 3.0,
+                    "text": "FEEDER PANEL",
+                    "width": 0.6424020249629048,
+                    "x": 7.7224404294317885
+                  }
+                ],
+                "local_cost": 1.59115140174455,
+                "token_cuts": [
+                  2
+                ]
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      12.827309782608694,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCCB1",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.321331521739133,
+                      3.4347826086956523,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "40A",
+                    "width": 0.7,
+                    "x": 27.05597826086957
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "excelRow": 2,
+            "id": "R002",
+            "main": "E/R AC220V FEEDER PANEL",
+            "no": "MCCB1",
+            "rat": "40A"
+          }
+        },
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 21.52146739130435,
+                    "bbox": [
+                      7.430095108695653,
+                      21.452173913043477,
+                      28.569904891304347,
+                      24.582608695652176
+                    ],
+                    "height": 3.0,
+                    "text": "EM'CY AC220V ",
+                    "width": 0.7,
+                    "x": 7.12764945652174
+                  },
+                  {
+                    "baseline": 17.421467391304347,
+                    "bbox": [
+                      8.0,
+                      17.417391304347824,
+                      28.0,
+                      20.417391304347824
+                    ],
+                    "height": 3.0,
+                    "text": "FEEDER PANEL",
+                    "width": 0.6424020249629048,
+                    "x": 7.7224404294317885
+                  }
+                ],
+                "local_cost": 1.59115140174455,
+                "token_cuts": [
+                  2
+                ]
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      13.386548913043478,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCCB2",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.321331521739133,
+                      3.4347826086956523,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "40A",
+                    "width": 0.7,
+                    "x": 27.05597826086957
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "excelRow": 3,
+            "id": "R003",
+            "main": "EM'CY AC220V FEEDER PANEL",
+            "no": "MCCB2",
+            "rat": "40A"
+          }
+        },
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 19.50407608695652,
+                    "bbox": [
+                      9.634239130434784,
+                      19.43478260869565,
+                      26.365760869565214,
+                      22.565217391304344
+                    ],
+                    "height": 3.0,
+                    "text": "DC BACKUP",
+                    "width": 0.7,
+                    "x": 9.32608695652174
+                  }
+                ],
+                "local_cost": 0.0,
+                "token_cuts": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      10.636005434782607,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCB1",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.332744565217393,
+                      3.442934782608696,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "32A",
+                    "width": 0.7,
+                    "x": 27.055978260869566
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "id": "ROW-001",
+            "main": "DC BACKUP",
+            "no": "MCB1",
+            "rat": "32A",
+            "source_excel_row": 6
+          }
+        },
+        {
+          "result": {
+            "main": {
+              "candidate": {
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 27.70611413043478,
+                    "bbox": [
+                      8.788247282608697,
+                      27.63682065217391,
+                      27.211752717391303,
+                      30.767255434782605
+                    ],
+                    "height": 3.0,
+                    "text": "MAIN ENGINE ",
+                    "width": 0.7,
+                    "x": 8.48294836956522
+                  },
+                  {
+                    "baseline": 23.606114130434783,
+                    "bbox": [
+                      10.969565217391306,
+                      23.536820652173912,
+                      25.030434782608694,
+                      26.66725543478261
+                    ],
+                    "height": 3.0,
+                    "text": "CONTROL ",
+                    "width": 0.7,
+                    "x": 10.727038043478263
+                  },
+                  {
+                    "baseline": 19.50611413043478,
+                    "bbox": [
+                      13.437635869565216,
+                      19.502038043478258,
+                      22.56236413043478,
+                      22.502038043478258
+                    ],
+                    "height": 3.0,
+                    "text": "PANEL ",
+                    "width": 0.7,
+                    "x": 13.126630434782609
+                  },
+                  {
+                    "baseline": 15.406114130434782,
+                    "bbox": [
+                      13.312092391304349,
+                      15.336820652173913,
+                      22.687907608695653,
+                      18.467255434782608
+                    ],
+                    "height": 3.0,
+                    "text": "LOCAL ",
+                    "width": 0.7,
+                    "x": 13.009646739130435
+                  },
+                  {
+                    "baseline": 11.306114130434782,
+                    "bbox": [
+                      5.674266085149998,
+                      11.232744565217391,
+                      30.32573391485,
+                      14.367255434782608
+                    ],
+                    "height": 3.0,
+                    "text": "REMOTE DISPLAY",
+                    "width": 0.6878001562856516,
+                    "x": 5.357466828382559
+                  }
+                ],
+                "local_cost": 3.7696411263966896,
+                "token_cuts": [
+                  2,
+                  3,
+                  4,
+                  5
+                ]
+              },
+              "cutter_mm": 0.3,
+              "status": "normal",
+              "warnings": []
+            },
+            "no": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      3.5,
+                      3.4307065217391304,
+                      10.636005434782607,
+                      6.561141304347826
+                    ],
+                    "height": 3.0,
+                    "text": "MCB1",
+                    "width": 0.7,
+                    "x": 3.1947010869565218
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            },
+            "rat": {
+              "candidate": {
+                "cuts": [],
+                "height": 3.0,
+                "lines": [
+                  {
+                    "baseline": 3.5,
+                    "bbox": [
+                      27.332744565217393,
+                      3.442934782608696,
+                      32.5,
+                      6.557065217391305
+                    ],
+                    "height": 3.0,
+                    "text": "32A",
+                    "width": 0.7,
+                    "x": 27.055978260869566
+                  }
+                ],
+                "local_cost": 0,
+                "signature": []
+              },
+              "cutter_mm": 0.3,
+              "status": "normal"
+            }
+          },
+          "row": {
+            "id": "LONG",
+            "main": "MAIN ENGINE CONTROL PANEL LOCAL REMOTE DISPLAY",
+            "no": "MCB1",
+            "rat": "32A"
+          }
+        }
+      ]
+    }
+  }
+}

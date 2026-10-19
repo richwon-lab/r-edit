@@ -1,0 +1,636 @@
+{
+  "scope": "Same MRCE order/design/text-field sample. Candidate relation guard, not a final pattern recognizer, ranking change or layout generation. No stored customer exceptions created. Remaining candidates are not all verified valid. Removed links other than the known case are unreviewed.",
+  "tests": [
+    {
+      "id": "same_structure_numbered",
+      "a": "NO.1 ABC MONITOR",
+      "b": "NO.2 ABC MONITOR",
+      "expectedCandidate": true,
+      "oldCandidate": true,
+      "result": {
+        "relation": {
+          "a": "NO.1 ABC MONITOR",
+          "b": "NO.2 ABC MONITOR",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 3
+        },
+        "reason": "same_normalized_structure_candidate"
+      }
+    },
+    {
+      "id": "spacing_variation",
+      "a": "DIM. SW. FOR  ALARM LAMP",
+      "b": "DIM. SW. FOR ALARM LAMP",
+      "expectedCandidate": true,
+      "oldCandidate": true,
+      "result": {
+        "relation": {
+          "a": "DIM. SW. FOR  ALARM LAMP",
+          "b": "DIM. SW. FOR ALARM LAMP",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 5
+        },
+        "reason": "same_normalized_structure_candidate"
+      }
+    },
+    {
+      "id": "known_negative_242_243",
+      "a": "DIM. SW. FOR MANEUVERING TABLE",
+      "b": "MANEUVERING TABLE",
+      "expectedCandidate": false,
+      "oldCandidate": true,
+      "result": {
+        "relation": null,
+        "reason": "whole_text_containment_only",
+        "candidate": {
+          "a": "DIM. SW. FOR MANEUVERING TABLE",
+          "b": "MANEUVERING TABLE",
+          "start_a": 3,
+          "start_b": 0,
+          "n": 2
+        }
+      }
+    },
+    {
+      "id": "numbered_prefix",
+      "a": "NO.1 ABC MONITOR",
+      "b": "NO.2 ABC KEYBOARD",
+      "expectedCandidate": true,
+      "oldCandidate": true,
+      "result": {
+        "relation": {
+          "a": "NO.1 ABC MONITOR",
+          "b": "NO.2 ABC KEYBOARD",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2
+        },
+        "reason": "candidate_not_yet_confirmed"
+      }
+    },
+    {
+      "id": "actual_order_prefix",
+      "a": "NO.1 ECDIS MONITOR",
+      "b": "NO.1 ECDIS KEYBOARD",
+      "expectedCandidate": true,
+      "oldCandidate": true,
+      "result": {
+        "relation": {
+          "a": "NO.1 ECDIS MONITOR",
+          "b": "NO.1 ECDIS KEYBOARD",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2
+        },
+        "reason": "candidate_not_yet_confirmed"
+      }
+    },
+    {
+      "id": "user_suffix_example",
+      "a": "PORT VOIP TELEPHONE MONITOR",
+      "b": "NO.1 ABC VOIP TELEPHONE MONITOR",
+      "expectedCandidate": true,
+      "oldCandidate": true,
+      "result": {
+        "relation": {
+          "a": "PORT VOIP TELEPHONE MONITOR",
+          "b": "NO.1 ABC VOIP TELEPHONE MONITOR",
+          "start_a": 1,
+          "start_b": 2,
+          "n": 3
+        },
+        "reason": "candidate_not_yet_confirmed"
+      }
+    },
+    {
+      "id": "synthetic_middle",
+      "a": "MAIN ENGINE ROOM TEMPERATURE SENSOR",
+      "b": "AUXILIARY ENGINE ROOM PRESSURE SENSOR",
+      "expectedCandidate": true,
+      "oldCandidate": true,
+      "result": {
+        "relation": {
+          "a": "MAIN ENGINE ROOM TEMPERATURE SENSOR",
+          "b": "AUXILIARY ENGINE ROOM PRESSURE SENSOR",
+          "start_a": 1,
+          "start_b": 1,
+          "n": 2
+        },
+        "reason": "candidate_not_yet_confirmed"
+      }
+    },
+    {
+      "id": "single_word_not_enough",
+      "a": "RADAR MONITOR",
+      "b": "TEMPERATURE MONITOR",
+      "expectedCandidate": false,
+      "oldCandidate": false,
+      "result": {
+        "relation": null,
+        "reason": "no_candidate"
+      }
+    },
+    {
+      "id": "synthetic_containment",
+      "a": "ENGINE ROOM",
+      "b": "ENGINE ROOM TEMPERATURE SENSOR",
+      "expectedCandidate": false,
+      "oldCandidate": true,
+      "result": {
+        "relation": null,
+        "reason": "whole_text_containment_only",
+        "candidate": {
+          "a": "ENGINE ROOM",
+          "b": "ENGINE ROOM TEMPERATURE SENSOR",
+          "start_a": 0,
+          "start_b": 0,
+          "n": 2
+        }
+      }
+    },
+    {
+      "id": "unrelated",
+      "a": "NO.1 ABC MONITOR",
+      "b": "MAIN ALARM PANEL",
+      "expectedCandidate": false,
+      "oldCandidate": false,
+      "result": {
+        "relation": null,
+        "reason": "no_candidate"
+      }
+    }
+  ],
+  "counts": {
+    "rows": 286,
+    "unique": 220,
+    "oldCandidatePairs": 727,
+    "newCandidatePairs": 687,
+    "removedPairs": 40
+  },
+  "removed": [
+    {
+      "a": "ALARM BUZZER",
+      "b": "ALARM BUZZER STOP P/B",
+      "common": "ALARM BUZZER",
+      "positionsA": [
+        101,
+        193,
+        214
+      ],
+      "positionsB": [
+        99,
+        171,
+        201
+      ]
+    },
+    {
+      "a": "ALARM BUZZER",
+      "b": "CO2 RELEASE ALARM BUZZER",
+      "common": "ALARM BUZZER",
+      "positionsA": [
+        101,
+        193,
+        214
+      ],
+      "positionsB": [
+        116
+      ]
+    },
+    {
+      "a": "ALARM BUZZER",
+      "b": "S/G ALARM BUZZER",
+      "common": "ALARM BUZZER",
+      "positionsA": [
+        101,
+        193,
+        214
+      ],
+      "positionsB": [
+        45
+      ]
+    },
+    {
+      "a": "ALARM BUZZER",
+      "b": "S/G ALARM BUZZER STOP P/B",
+      "common": "ALARM BUZZER",
+      "positionsA": [
+        101,
+        193,
+        214
+      ],
+      "positionsB": [
+        43
+      ]
+    },
+    {
+      "a": "ALARM BUZZER STOP P/B",
+      "b": "S/G ALARM BUZZER STOP P/B",
+      "common": "ALARM BUZZER STOP P/B",
+      "positionsA": [
+        99,
+        171,
+        201
+      ],
+      "positionsB": [
+        43
+      ]
+    },
+    {
+      "a": "ALARM FLICKER STOP P/B",
+      "b": "S/G ALARM FLICKER STOP P/B",
+      "common": "ALARM FLICKER STOP P/B",
+      "positionsA": [
+        100,
+        172,
+        202
+      ],
+      "positionsB": [
+        44
+      ]
+    },
+    {
+      "a": "ALARM LAMP",
+      "b": "CO2 RELEASE ALARM LAMP",
+      "common": "ALARM LAMP",
+      "positionsA": [
+        96
+      ],
+      "positionsB": [
+        95
+      ]
+    },
+    {
+      "a": "ALARM LAMP",
+      "b": "DIM. SW. FOR  ALARM LAMP",
+      "common": "ALARM LAMP",
+      "positionsA": [
+        96
+      ],
+      "positionsB": [
+        192
+      ]
+    },
+    {
+      "a": "ALARM LAMP",
+      "b": "DIM. SW. FOR ALARM LAMP",
+      "common": "ALARM LAMP",
+      "positionsA": [
+        96
+      ],
+      "positionsB": [
+        213
+      ]
+    },
+    {
+      "a": "ALARM LAMP",
+      "b": "DIM. SW. FOR S/G ALARM LAMP",
+      "common": "ALARM LAMP",
+      "positionsA": [
+        96
+      ],
+      "positionsB": [
+        47
+      ]
+    },
+    {
+      "a": "ALARM LAMP",
+      "b": "E/R DEAD MAN ALARM LAMP",
+      "common": "ALARM LAMP",
+      "positionsA": [
+        96
+      ],
+      "positionsB": [
+        98
+      ]
+    },
+    {
+      "a": "COM. G/E SCR EM'CY STOP P/B",
+      "b": "G/E SCR EM'CY STOP P/B",
+      "common": "G/E SCR EM'CY STOP P/B",
+      "positionsA": [
+        146
+      ],
+      "positionsB": [
+        141
+      ]
+    },
+    {
+      "a": "DIGITAL GYRO REPEATER",
+      "b": "DIM. SW. FOR DIGITAL GYRO REPEATER",
+      "common": "DIGITAL GYRO REPEATER",
+      "positionsA": [
+        160,
+        235,
+        264
+      ],
+      "positionsB": [
+        68
+      ]
+    },
+    {
+      "a": "DIM. SW. FOR ELECTRIC CLOCK",
+      "b": "ELECTRIC CLOCK",
+      "common": "ELECTRIC CLOCK",
+      "positionsA": [
+        73
+      ],
+      "positionsB": [
+        165
+      ]
+    },
+    {
+      "a": "DIM. SW. FOR FIRE MAIN LINE PRESSURE INDICATOR",
+      "b": "FIRE MAIN LINE PRESSURE INDICATOR",
+      "common": "FIRE MAIN LINE PRESSURE INDICATOR",
+      "positionsA": [
+        119
+      ],
+      "positionsB": [
+        118
+      ]
+    },
+    {
+      "a": "DIM. SW. FOR MANEUVERING TABLE",
+      "b": "MANEUVERING TABLE",
+      "common": "MANEUVERING TABLE",
+      "positionsA": [
+        242,
+        271
+      ],
+      "positionsB": [
+        243,
+        272
+      ]
+    },
+    {
+      "a": "G/E SCR EM'CY STOP P/B",
+      "b": "NO.1 G/E SCR EM'CY STOP P/B",
+      "common": "G/E SCR EM'CY STOP P/B",
+      "positionsA": [
+        141
+      ],
+      "positionsB": [
+        142
+      ]
+    },
+    {
+      "a": "G/E SCR EM'CY STOP P/B",
+      "b": "NO.2 G/E SCR EM'CY STOP P/B",
+      "common": "G/E SCR EM'CY STOP P/B",
+      "positionsA": [
+        141
+      ],
+      "positionsB": [
+        143
+      ]
+    },
+    {
+      "a": "G/E SCR EM'CY STOP P/B",
+      "b": "NO.3 G/E SCR EM'CY STOP P/B",
+      "common": "G/E SCR EM'CY STOP P/B",
+      "positionsA": [
+        141
+      ],
+      "positionsB": [
+        144
+      ]
+    },
+    {
+      "a": "G/E SCR EM'CY STOP P/B",
+      "b": "NO.4 G/E SCR EM'CY STOP P/B",
+      "common": "G/E SCR EM'CY STOP P/B",
+      "positionsA": [
+        141
+      ],
+      "positionsB": [
+        145
+      ]
+    },
+    {
+      "a": "NO.1 BOW THRUSTER CONTROLLER",
+      "b": "NO.1 BOW THRUSTER CONTROLLER (PORT)",
+      "common": "NO.1 BOW THRUSTER CONTROLLER",
+      "positionsA": [
+        109
+      ],
+      "positionsB": [
+        246
+      ]
+    },
+    {
+      "a": "NO.1 BOW THRUSTER CONTROLLER",
+      "b": "NO.1 BOW THRUSTER CONTROLLER (STBD)",
+      "common": "NO.1 BOW THRUSTER CONTROLLER",
+      "positionsA": [
+        109
+      ],
+      "positionsB": [
+        275
+      ]
+    },
+    {
+      "a": "NO.1 BOW THRUSTER CONTROLLER",
+      "b": "NO.2 BOW THRUSTER CONTROLLER (PORT)",
+      "common": "NO.1 BOW THRUSTER CONTROLLER",
+      "positionsA": [
+        109
+      ],
+      "positionsB": [
+        247
+      ]
+    },
+    {
+      "a": "NO.1 BOW THRUSTER CONTROLLER",
+      "b": "NO.2 BOW THRUSTER CONTROLLER (STBD)",
+      "common": "NO.1 BOW THRUSTER CONTROLLER",
+      "positionsA": [
+        109
+      ],
+      "positionsB": [
+        276
+      ]
+    },
+    {
+      "a": "NO.1 BOW THRUSTER CONTROLLER (PORT)",
+      "b": "NO.2 BOW THRUSTER CONTROLLER",
+      "common": "NO.1 BOW THRUSTER CONTROLLER",
+      "positionsA": [
+        246
+      ],
+      "positionsB": [
+        110
+      ]
+    },
+    {
+      "a": "NO.1 BOW THRUSTER CONTROLLER (STBD)",
+      "b": "NO.2 BOW THRUSTER CONTROLLER",
+      "common": "NO.1 BOW THRUSTER CONTROLLER",
+      "positionsA": [
+        275
+      ],
+      "positionsB": [
+        110
+      ]
+    },
+    {
+      "a": "NO.1 VHF HANDSET",
+      "b": "NO.1 VHF HANDSET CONNECTION BOX",
+      "common": "NO.1 VHF HANDSET",
+      "positionsA": [
+        76
+      ],
+      "positionsB": [
+        237,
+        266
+      ]
+    },
+    {
+      "a": "NO.1 VHF HANDSET",
+      "b": "NO.1 VHF HANDSET HOOK",
+      "common": "NO.1 VHF HANDSET",
+      "positionsA": [
+        76
+      ],
+      "positionsB": [
+        236,
+        265
+      ]
+    },
+    {
+      "a": "NO.1 VHF HANDSET",
+      "b": "NO.2 VHF HANDSET CONNECTION BOX",
+      "common": "NO.1 VHF HANDSET",
+      "positionsA": [
+        76
+      ],
+      "positionsB": [
+        179
+      ]
+    },
+    {
+      "a": "NO.1 VHF HANDSET",
+      "b": "NO.2 VHF HANDSET WITH CRADLE",
+      "common": "NO.1 VHF HANDSET",
+      "positionsA": [
+        76
+      ],
+      "positionsB": [
+        178
+      ]
+    },
+    {
+      "a": "NO.1 VHF HANDSET CONNECTION BOX",
+      "b": "NO.2 VHF HANDSET",
+      "common": "NO.1 VHF HANDSET",
+      "positionsA": [
+        237,
+        266
+      ],
+      "positionsB": [
+        21
+      ]
+    },
+    {
+      "a": "NO.1 VHF HANDSET HOOK",
+      "b": "NO.2 VHF HANDSET",
+      "common": "NO.1 VHF HANDSET",
+      "positionsA": [
+        236,
+        265
+      ],
+      "positionsB": [
+        21
+      ]
+    },
+    {
+      "a": "NO.2 BOW THRUSTER CONTROLLER",
+      "b": "NO.2 BOW THRUSTER CONTROLLER (PORT)",
+      "common": "NO.2 BOW THRUSTER CONTROLLER",
+      "positionsA": [
+        110
+      ],
+      "positionsB": [
+        247
+      ]
+    },
+    {
+      "a": "NO.2 BOW THRUSTER CONTROLLER",
+      "b": "NO.2 BOW THRUSTER CONTROLLER (STBD)",
+      "common": "NO.2 BOW THRUSTER CONTROLLER",
+      "positionsA": [
+        110
+      ],
+      "positionsB": [
+        276
+      ]
+    },
+    {
+      "a": "NO.2 VHF HANDSET",
+      "b": "NO.2 VHF HANDSET CONNECTION BOX",
+      "common": "NO.2 VHF HANDSET",
+      "positionsA": [
+        21
+      ],
+      "positionsB": [
+        179
+      ]
+    },
+    {
+      "a": "NO.2 VHF HANDSET",
+      "b": "NO.2 VHF HANDSET WITH CRADLE",
+      "common": "NO.2 VHF HANDSET",
+      "positionsA": [
+        21
+      ],
+      "positionsB": [
+        178
+      ]
+    },
+    {
+      "a": "RJ45(1-PORT) FOR SHIP'S COMPUTER",
+      "b": "RJ45(1-PORT) FOR SHIP'S COMPUTER #1",
+      "common": "RJ45(1-PORT) FOR SHIP'S COMPUTER",
+      "positionsA": [
+        152
+      ],
+      "positionsB": [
+        186
+      ]
+    },
+    {
+      "a": "RJ45(1-PORT) FOR SHIP'S COMPUTER",
+      "b": "RJ45(1-PORT) FOR SHIP'S COMPUTER #2",
+      "common": "RJ45(1-PORT) FOR SHIP'S COMPUTER",
+      "positionsA": [
+        152
+      ],
+      "positionsB": [
+        187
+      ]
+    },
+    {
+      "a": "RJ45(1-PORT) FOR SHIP'S COMPUTER",
+      "b": "RJ45(1-PORT) FOR SHIP'S COMPUTER #3",
+      "common": "RJ45(1-PORT) FOR SHIP'S COMPUTER",
+      "positionsA": [
+        152
+      ],
+      "positionsB": [
+        224
+      ]
+    },
+    {
+      "a": "S/G ALARM BUZZER",
+      "b": "S/G ALARM BUZZER STOP P/B",
+      "common": "S/G ALARM BUZZER",
+      "positionsA": [
+        45
+      ],
+      "positionsB": [
+        43
+      ]
+    }
+  ]
+}

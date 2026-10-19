@@ -1,0 +1,66 @@
+{
+  "version": "0.1",
+  "passed": 18,
+  "total": 18,
+  "assertions": {
+    "source_snapshot_digest_valid": true,
+    "all_100_rows_300_regions_unchanged": true,
+    "only_existing_reference_row_needs_attention": true,
+    "normal_candidate_failures_do_not_raise_attention": true,
+    "reference_warning_and_layout_preserved": true,
+    "actual_exception_keeps_multiple_rejection_reasons": true,
+    "normal_and_reference_search_logs_are_separate": true,
+    "reason_aggregation_is_not_last_failure": true,
+    "reason_summary_independent_of_observation_order": true,
+    "one_candidate_not_double_counted_for_same_reason": true,
+    "candidate_cache_does_not_duplicate_observations": true,
+    "missing_metric_is_calculation_unavailable": true,
+    "missing_metric_keeps_exact_source_position": true,
+    "footer_failure_does_not_change_other_regions": true,
+    "no_fit_is_distinct_from_calculation_unavailable": true,
+    "search_limit_does_not_become_no_fit": true,
+    "search_limit_preserves_observed_normal_reasons": true,
+    "inputs_and_snapshot_unchanged": true
+  },
+  "summary": {
+    "rows": 100,
+    "regions": 300,
+    "normal_rows": 99,
+    "reference_rows": 1,
+    "layout_changes": 0
+  },
+  "reference_reasons": [
+    "배치에 필요한 자폭이 허용 하한보다 작음",
+    "배치에 필요한 자폭이 허용 하한보다 작음 (홀 회피 조건)",
+    "세로 공간 부족"
+  ],
+  "examples": [
+    {
+      "name": "계산 불가: RAT에 측정 자료가 없는 문자",
+      "states": {
+        "main": "normal",
+        "no": "normal",
+        "rat": "calculation_unavailable"
+      }
+    },
+    {
+      "name": "배치 없음: NO 문구가 현재 조건에 들어가지 않음",
+      "states": {
+        "main": "normal",
+        "no": "no_normal_in_search",
+        "rat": "normal"
+      }
+    },
+    {
+      "name": "탐색 미완료: 참고 탐색 한도를 1로 제한",
+      "states": {
+        "main": "search_incomplete",
+        "no": "normal",
+        "rat": "normal"
+      }
+    }
+  ],
+  "elapsed_ms": 1899.956,
+  "scope": "Per-region reporting only, legacy rectangle placement retained. Logs contain inspected candidates, not all pruned branches. Missing metrics preflight, footer no-fit and reference search limit tested. No outline hole fitting, score changes, product UI or DXF changes.",
+  "output": "results.json / annotated_results.json / diagnostic_examples.json / preview.html"
+}

@@ -1,0 +1,52 @@
+{
+  "version": "0.1",
+  "passed": 30,
+  "total": 30,
+  "assertions": {
+    "legacy_results_not_relabelled_as_current": true,
+    "new_trial_records_current_engine_and_parent": true,
+    "all_100_rows_calculated": true,
+    "all_300_layouts_exactly_unchanged": true,
+    "all_states_reasons_and_layouts_survive_reopen": true,
+    "normal_99_reference_1_and_warnings_preserved": true,
+    "fresh_process_reopens_without_layout_engine_or_recalculation": true,
+    "display_copy_cannot_change_saved_results": true,
+    "diagnostic_cases_calculated": true,
+    "unavailable_no_fit_and_incomplete_survive_reopen": true,
+    "source_position_and_search_phases_survive_reopen": true,
+    "edit_hides_previous_results_and_reasons": true,
+    "dirty_save_and_export_blocked": true,
+    "late_worker_cannot_restore_old_reasons": true,
+    "calculating_hides_previous_reasons_and_blocks_save": true,
+    "recalculation_replaces_accepted_results": true,
+    "corrected_region_does_not_retain_missing_metric_reason": true,
+    "other_regions_and_rows_keep_their_diagnostics": true,
+    "corrected_result_reopens_without_old_reason": true,
+    "same_text_does_not_invalidate_results": true,
+    "failed_and_cancelled_jobs_do_not_show_old_reasons": true,
+    "cancel_leaves_edited_input_needing_calculation": true,
+    "changed_input_with_old_results_rejected_on_open": true,
+    "changed_diagnostics_with_old_binding_rejected": true,
+    "contradictory_display_rejected": true,
+    "search_budget_participates_in_result_binding": true,
+    "engine_mismatch_blocks_recalculation": true,
+    "font_metric_mismatch_blocks_recalculation": true,
+    "interrupted_save_preserves_previous_snapshot": true,
+    "original_inputs_snapshot_and_engine_files_unchanged": true
+  },
+  "summary": {
+    "rows": 100,
+    "regions": 300,
+    "normal_rows": 99,
+    "reference_rows": 1,
+    "layout_changes": 0
+  },
+  "restored_example_states": [
+    "calculation_unavailable",
+    "no_normal_in_search",
+    "search_incomplete"
+  ],
+  "elapsed_ms": 4146.85,
+  "scope": "Local completed-result snapshots and session invalidation only. Existing rectangle layout and diagnostics retained. No unfinished-edit persistence, production UI, DXF, outline fitting or cloud concurrency changes.",
+  "output": "results.json / preview.html / state_transitions.json / saved_with_reasons.json / saved_diagnostic_cases.json / saved_after_edit.json"
+}

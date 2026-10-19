@@ -1,0 +1,189 @@
+{
+  "version": "0.1",
+  "passed": 14,
+  "total": 14,
+  "assertions": {
+    "V01": true,
+    "V02": true,
+    "V03": true,
+    "V04": true,
+    "V05": true,
+    "V06": true,
+    "V07": true,
+    "V08": true,
+    "V09": true,
+    "V10": true,
+    "V11": true,
+    "V12": true,
+    "V13": true,
+    "V14": true
+  },
+  "elapsed_ms": 16.67,
+  "output": "results.json / resolved_rules.json / preview.html",
+  "scope": "Rule composition only. No layout, DXF, fonts, scoring or shared storage.",
+  "cases": [
+    {
+      "id": "V01",
+      "title": "항목별 적용과 출처",
+      "explanation": "90% 지정이 커터 자폭 하한 58%를 바꾸지 않습니다.",
+      "passed": true,
+      "evidence": {
+        "base_width": 90,
+        "preferred_lines": [
+          1,
+          6
+        ],
+        "cutter_width_floor": 58
+      }
+    },
+    {
+      "id": "V02",
+      "title": "지정 해제",
+      "explanation": "90% 지정을 제거하면 아래 기준 80%로 돌아갑니다.",
+      "passed": true,
+      "evidence": {
+        "width_after_unset": 80,
+        "source": "richwon"
+      }
+    },
+    {
+      "id": "V03",
+      "title": "기능 끄기와 복귀",
+      "explanation": "사용 여부만 바뀌고 패턴 목록과 강도는 보존됩니다.",
+      "passed": true,
+      "evidence": {
+        "disabled_rule_count": 1,
+        "restore_equal": true
+      }
+    },
+    {
+      "id": "V04",
+      "title": "규칙 중복 방지",
+      "explanation": "실행할 규칙 목록에 같은 규칙을 한 번만 전달합니다. 점수 계산 시험은 아닙니다.",
+      "passed": true,
+      "evidence": {
+        "evaluation_entries": [
+          "pattern_alignment",
+          "width_penalty"
+        ],
+        "strength": 3
+      }
+    },
+    {
+      "id": "V05",
+      "title": "패턴 추가 수정 제외",
+      "explanation": "포함된 두 패턴을 함께 보존하고 현재 디자인의 줄 예시만 수정합니다.",
+      "passed": true,
+      "evidence": {
+        "included": [
+          "STOP P/B",
+          "EM'CY STOP P/B"
+        ],
+        "excluded": "ALARM BUZZER",
+        "design_lines": [
+          "FEEDER",
+          "PANEL"
+        ]
+      }
+    },
+    {
+      "id": "V06",
+      "title": "패턴 역할 구분",
+      "explanation": "같은 문구의 다른 역할은 보존합니다. 다른 ID로 중복 등록한 동일 역할은 임의 합치지 않습니다.",
+      "passed": true,
+      "evidence": {
+        "different_roles_preserved": true,
+        "ambiguous_duplicate": "PATTERN_IDENTITY_AMBIGUOUS"
+      }
+    },
+    {
+      "id": "V07",
+      "title": "패턴 ID 충돌",
+      "explanation": "같은 ID를 서로 다른 표현에 재사용하면 오류와 출처를 돌려줍니다.",
+      "passed": true,
+      "evidence": {
+        "code": "PATTERN_ID_CONFLICT",
+        "detail": "stop: different text under the same ID",
+        "sources": {
+          "existing": "richwon",
+          "incoming": "design"
+        }
+      }
+    },
+    {
+      "id": "V08",
+      "title": "최종 범위 모순",
+      "explanation": "최소 5mm와 최대 4.5mm의 값 및 출처를 안내합니다.",
+      "passed": true,
+      "evidence": {
+        "code": "RANGE_CONFLICT",
+        "detail": "min_height_mm=5 > max_height_mm=4.5",
+        "sources": {
+          "min_height_mm": "customer",
+          "max_height_mm": "richwon"
+        }
+      }
+    },
+    {
+      "id": "V09",
+      "title": "적용 순서 누락",
+      "explanation": "선택한 모든 묶음의 순서가 명시되어야 합니다.",
+      "passed": true,
+      "evidence": {
+        "invalid_orders_rejected": 3
+      }
+    },
+    {
+      "id": "V10",
+      "title": "조각과 인쇄 구분",
+      "explanation": "인쇄에서는 커터 기준을 적용하지 않으며 공간 조건은 유지합니다.",
+      "passed": true,
+      "evidence": {
+        "printing_cutter_applies": false,
+        "engraving_cutter_applies": true
+      }
+    },
+    {
+      "id": "V11",
+      "title": "필수 조건 해제 차단",
+      "explanation": "홀 회피는 덮어쓸 수 있는 설정으로 노출하지 않습니다. 실제 충돌 계산은 하지 않습니다.",
+      "passed": true,
+      "evidence": {
+        "code": "UNKNOWN_SETTING",
+        "detail": "values: unsupported settings ['avoid_holes']",
+        "sources": {}
+      }
+    },
+    {
+      "id": "V12",
+      "title": "누락 잘못된 값 원문 변경",
+      "explanation": "미지정은 키 생략입니다. null은 값으로 받지 않으며 줄 예시로 원문을 바꾸지 않습니다.",
+      "passed": true,
+      "evidence": {
+        "missing_value": true,
+        "invalid_numbers": 6,
+        "changed_pattern_text_rejected": true
+      }
+    },
+    {
+      "id": "V13",
+      "title": "전달 순서 독립",
+      "explanation": "전달 순서가 달라도 저장된 명시적 우선순위로 같은 결과를 만듭니다.",
+      "passed": true,
+      "evidence": {
+        "layer_permutations": 6,
+        "dictionary_permutations": 100
+      }
+    },
+    {
+      "id": "V14",
+      "title": "입력과 결합 결과 분리",
+      "explanation": "원본 입력을 수정하지 않고, 나중의 기준 수정도 이미 결합한 결과를 바꾸지 않습니다.",
+      "passed": true,
+      "evidence": {
+        "input_unchanged": true,
+        "resolved_values_do_not_follow_later_edits": true
+      }
+    }
+  ]
+}

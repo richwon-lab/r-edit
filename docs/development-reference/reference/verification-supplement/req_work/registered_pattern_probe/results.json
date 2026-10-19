@@ -1,0 +1,86 @@
+{
+  "note": "286-row equivalence to explicitly coded reference; registered relation is supplied, not inferred. Scoring and geometry remain sample-specific. ECDIS is a separate 6-row candidate trial, not adopted and not whole-order regression.",
+  "sameRows": 286,
+  "registrationOrderRecognitionEqual": true,
+  "repeatedOccurrenceCheck": true,
+  "numberCandidate": [
+    {
+      "number": 27,
+      "text": "NO.2 ECDIS MONITOR",
+      "lines": [
+        "NO.2 ECDIS",
+        "MONITOR"
+      ],
+      "height": 4.5,
+      "width": [
+        80,
+        80
+      ]
+    },
+    {
+      "number": 28,
+      "text": "NO.2 ECDIS KEYBOARD",
+      "lines": [
+        "NO.2 ECDIS",
+        "KEYBOARD"
+      ],
+      "height": 4.5,
+      "width": [
+        80,
+        80
+      ]
+    },
+    {
+      "number": 29,
+      "text": "NO.2 ECDIS TRACKBALL",
+      "lines": [
+        "NO.2 ECDIS",
+        "TRACKBALL"
+      ],
+      "height": 4.5,
+      "width": [
+        80,
+        80
+      ]
+    },
+    {
+      "number": 86,
+      "text": "NO.1 ECDIS MONITOR",
+      "lines": [
+        "NO.1 ECDIS",
+        "MONITOR"
+      ],
+      "height": 4.5,
+      "width": [
+        80,
+        80
+      ]
+    },
+    {
+      "number": 87,
+      "text": "NO.1 ECDIS KEYBOARD",
+      "lines": [
+        "NO.1 ECDIS",
+        "KEYBOARD"
+      ],
+      "height": 4.5,
+      "width": [
+        80,
+        80
+      ]
+    },
+    {
+      "number": 88,
+      "text": "NO.1 ECDIS TRACKBALL",
+      "lines": [
+        "NO.1 ECDIS",
+        "TRACKBALL"
+      ],
+      "height": 4.5,
+      "width": [
+        80,
+        80
+      ]
+    }
+  ]
+}

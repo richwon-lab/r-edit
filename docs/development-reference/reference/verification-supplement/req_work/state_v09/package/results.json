@@ -1,0 +1,242 @@
+{
+  "version": "0.9",
+  "rows": 100,
+  "assertions": {
+    "current_normal_and_reference_separated": true,
+    "edit_does_not_auto_calculate_and_blocks_export": true,
+    "button_result_matches_input_footer_edit_isolated": true,
+    "late_old_result_does_not_overwrite_latest": true,
+    "late_old_error_does_not_replace_latest": true,
+    "edit_during_calculation_requires_new_button": true,
+    "cancelled_completion_cannot_be_applied": true,
+    "failed_job_keeps_preview_but_blocks_export": true,
+    "retry_recovers_current_result": true,
+    "edit_then_restore_still_rejects_old_request": true,
+    "same_input_duplicate_requests_latest_only": true,
+    "rule_change_invalidates_prior_result": true,
+    "other_document_result_rejected": true,
+    "worker_input_mismatch_rejected": true,
+    "edit_after_export_prepare_blocks_write": true,
+    "old_export_ticket_rejected_after_relayout": true,
+    "fresh_export_matches_current_text": true,
+    "original_saved_job_unchanged": true
+  },
+  "scenarios": [
+    {
+      "name": "현재 결과: 정상 99개 / 검토 1개 구분",
+      "state": "current",
+      "input_revision": 0,
+      "displayed_layout_revision": 0,
+      "can_export": true,
+      "started_jobs": 0,
+      "error": null
+    },
+    {
+      "name": "수정만으로 계산하지 않으며 이전 결과 출력 차단",
+      "state": "needs_layout",
+      "input_revision": 1,
+      "displayed_layout_revision": 0,
+      "can_export": false,
+      "started_jobs": 0,
+      "error": null
+    },
+    {
+      "name": "버튼 계산 후 최신 NO 반영 / 본문·RAT 유지",
+      "state": "current",
+      "input_revision": 1,
+      "displayed_layout_revision": 1,
+      "can_export": true,
+      "started_jobs": 1,
+      "error": null
+    },
+    {
+      "name": "새 결과 뒤에 도착한 이전 결과 폐기",
+      "state": "current",
+      "input_revision": 3,
+      "displayed_layout_revision": 3,
+      "can_export": true,
+      "started_jobs": 3,
+      "error": null
+    },
+    {
+      "name": "늦게 도착한 이전 오류도 현재 상태에 영향 없음",
+      "state": "current",
+      "input_revision": 3,
+      "displayed_layout_revision": 3,
+      "can_export": true,
+      "started_jobs": 3,
+      "error": null
+    },
+    {
+      "name": "계산 중 추가 수정: 이전 계산 폐기, 버튼 재실행 필요",
+      "state": "needs_layout",
+      "input_revision": 5,
+      "displayed_layout_revision": 3,
+      "can_export": false,
+      "started_jobs": 4,
+      "error": null
+    },
+    {
+      "name": "취소한 계산의 뒤늦은 완료 폐기",
+      "state": "needs_layout",
+      "input_revision": 5,
+      "displayed_layout_revision": 3,
+      "can_export": false,
+      "started_jobs": 5,
+      "error": null
+    },
+    {
+      "name": "계산 실패: 이전 미리보기 보존 / 출력 차단",
+      "state": "failed",
+      "input_revision": 5,
+      "displayed_layout_revision": 3,
+      "can_export": false,
+      "started_jobs": 6,
+      "error": "시험용 계산 오류"
+    },
+    {
+      "name": "다시 배치하여 정상 복구",
+      "state": "current",
+      "input_revision": 5,
+      "displayed_layout_revision": 5,
+      "can_export": true,
+      "started_jobs": 7,
+      "error": null
+    },
+    {
+      "name": "수정 후 원문 복귀해도 이전 요청 결과는 자동 적용 안 함",
+      "state": "needs_layout",
+      "input_revision": 2,
+      "displayed_layout_revision": 0,
+      "can_export": false,
+      "started_jobs": 1,
+      "error": null
+    },
+    {
+      "name": "같은 입력으로 재요청해도 마지막 요청만 반영",
+      "state": "current",
+      "input_revision": 0,
+      "displayed_layout_revision": 0,
+      "can_export": true,
+      "started_jobs": 2,
+      "error": null
+    },
+    {
+      "name": "적용 기준 변경도 이전 배치 무효화",
+      "state": "current",
+      "input_revision": 1,
+      "displayed_layout_revision": 1,
+      "can_export": true,
+      "started_jobs": 2,
+      "error": null
+    },
+    {
+      "name": "다른 작업의 계산 결과가 섞이지 않음",
+      "state": "calculating",
+      "input_revision": 0,
+      "displayed_layout_revision": 0,
+      "can_export": false,
+      "started_jobs": 1,
+      "error": null
+    },
+    {
+      "name": "요청 입력과 다른 결과 거부",
+      "state": "failed",
+      "input_revision": 0,
+      "displayed_layout_revision": 0,
+      "can_export": false,
+      "started_jobs": 1,
+      "error": "입력과 배치 결과가 다름"
+    },
+    {
+      "name": "출력 준비 뒤 수정하면 실제 파일 쓰기도 차단",
+      "state": "needs_layout",
+      "input_revision": 6,
+      "displayed_layout_revision": 5,
+      "can_export": false,
+      "started_jobs": 7,
+      "error": null
+    },
+    {
+      "name": "새 배치 완료 후에도 이전 출력 요청은 재사용 불가",
+      "state": "current",
+      "input_revision": 6,
+      "displayed_layout_revision": 6,
+      "can_export": true,
+      "started_jobs": 8,
+      "error": null
+    },
+    {
+      "name": "최신 출력 요청만 현재 문구와 일치하여 기록됨",
+      "state": "current",
+      "input_revision": 6,
+      "displayed_layout_revision": 6,
+      "can_export": true,
+      "started_jobs": 8,
+      "error": null
+    }
+  ],
+  "timeline": [
+    {
+      "event": "저장된 작업 열기",
+      "state": "current",
+      "input_revision": 0,
+      "displayed_layout_revision": 0,
+      "can_export": true,
+      "started_jobs": 0,
+      "error": null
+    },
+    {
+      "event": "NO 수정: 기존 화면은 남지만 갱신 필요",
+      "state": "needs_layout",
+      "input_revision": 1,
+      "displayed_layout_revision": 0,
+      "can_export": false,
+      "started_jobs": 0,
+      "error": null
+    },
+    {
+      "event": "배치 버튼 클릭",
+      "state": "calculating",
+      "input_revision": 1,
+      "displayed_layout_revision": 0,
+      "can_export": false,
+      "started_jobs": 1,
+      "error": null
+    },
+    {
+      "event": "최신 결과 도착: 출력 가능",
+      "state": "current",
+      "input_revision": 1,
+      "displayed_layout_revision": 1,
+      "can_export": true,
+      "started_jobs": 1,
+      "error": null
+    },
+    {
+      "event": "계산 오류: 기존 화면 보존, 출력 차단",
+      "state": "failed",
+      "input_revision": 5,
+      "displayed_layout_revision": 3,
+      "can_export": false,
+      "started_jobs": 6,
+      "error": "시험용 계산 오류"
+    }
+  ],
+  "elapsed_ms": 4187.004,
+  "scheduling": "Deterministic callbacks delivered in specified order; not threaded UI execution",
+  "limits": [
+    "Independent single-session state model, not Flutter UI.",
+    "Export gate writes JSON only, not integrated into real DXF writer.",
+    "Cancel discards results; does not stop engine CPU work.",
+    "No manual-break, quantity, recovery or Google Drive conflict integration.",
+    "No partially updated-row cache; entire design batch recalculated."
+  ],
+  "prior_user_confirmation": {
+    "version": "0.8",
+    "rows": 100,
+    "all_assertions_passed": true,
+    "replay_ms": 958.777,
+    "total_ms": 2829.921
+  }
+}

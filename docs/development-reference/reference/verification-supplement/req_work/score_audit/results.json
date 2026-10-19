@@ -1,0 +1,399 @@
+{
+  "note": "Unchanged experimental weights and bounded candidates. ABC2/ABC3 use three prior layouts as fixed references. Other probes standalone. Additive decompositions reproduce solver cost; not adopted production scoring.",
+  "cases": [
+    {
+      "id": "ABC2",
+      "text": "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT",
+      "context": [
+        "NO.1 ABC MONITOR",
+        "NO.2 ABC KEYBOARD",
+        "NO.3 ABC TEMPERATURE CONTROLLER"
+      ],
+      "selected": {
+        "lines": [
+          "NO.4 ABC",
+          "TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT"
+        ],
+        "height": 4.25,
+        "minWidth": 63.613,
+        "scoreParts": {
+          "size": 2.778,
+          "compression": 12.314,
+          "lineCount": 2,
+          "registeredPattern": 0,
+          "otherLocal": 13.057,
+          "related": 12
+        },
+        "total": 42.15
+      },
+      "bestThree": {
+        "lines": [
+          "NO.4 ABC",
+          "TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT"
+        ],
+        "height": 4.25,
+        "minWidth": 63.613,
+        "scoreParts": {
+          "size": 2.778,
+          "compression": 12.314,
+          "lineCount": 2,
+          "registeredPattern": 0,
+          "otherLocal": 13.057,
+          "related": 12
+        },
+        "total": 42.15
+      },
+      "bestFour": {
+        "lines": [
+          "NO.4 ABC",
+          "TEMPERATURE",
+          "CONTROLLER",
+          "REMOTE DISPLAY UNIT"
+        ],
+        "height": 4.25,
+        "minWidth": 80,
+        "scoreParts": {
+          "size": 2.778,
+          "compression": 0,
+          "lineCount": 43,
+          "registeredPattern": 0,
+          "otherLocal": 18.822,
+          "related": 0
+        },
+        "total": 64.6
+      },
+      "bestPatternPreserving": {
+        "lines": [
+          "NO.4 ABC",
+          "TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT"
+        ],
+        "height": 4.25,
+        "minWidth": 63.613,
+        "scoreParts": {
+          "size": 2.778,
+          "compression": 12.314,
+          "lineCount": 2,
+          "registeredPattern": 0,
+          "otherLocal": 13.057,
+          "related": 12
+        },
+        "total": 42.15
+      },
+      "bestAt45": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE",
+          "CONTROLLER",
+          "REMOTE DISPLAY UNIT"
+        ],
+        "height": 4.5,
+        "minWidth": 73.076,
+        "scoreParts": {
+          "size": 0,
+          "compression": 0.392,
+          "lineCount": 2,
+          "registeredPattern": 0,
+          "otherLocal": 10.204,
+          "related": 36
+        },
+        "total": 48.596
+      }
+    },
+    {
+      "id": "ABC3",
+      "text": "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT EMERGENCY CONTROL PANEL",
+      "context": [
+        "NO.1 ABC MONITOR",
+        "NO.2 ABC KEYBOARD",
+        "NO.3 ABC TEMPERATURE CONTROLLER"
+      ],
+      "selected": {
+        "lines": [
+          "NO.4 ABC",
+          "TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT",
+          "EMERGENCY CONTROL PANEL"
+        ],
+        "height": 4.25,
+        "minWidth": 63.662,
+        "scoreParts": {
+          "size": 2.778,
+          "compression": 12.166,
+          "lineCount": 43,
+          "registeredPattern": 0,
+          "otherLocal": 23.098,
+          "related": 12
+        },
+        "total": 93.042
+      },
+      "bestThree": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE",
+          "CONTROLLER REMOTE DISPLAY",
+          "UNIT EMERGENCY CONTROL PANEL"
+        ],
+        "height": 3.75,
+        "minWidth": 61.262,
+        "scoreParts": {
+          "size": 25,
+          "compression": 21.048,
+          "lineCount": 2,
+          "registeredPattern": 0,
+          "otherLocal": 26.04,
+          "related": 36
+        },
+        "total": 110.088
+      },
+      "bestFour": {
+        "lines": [
+          "NO.4 ABC",
+          "TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT",
+          "EMERGENCY CONTROL PANEL"
+        ],
+        "height": 4.25,
+        "minWidth": 63.662,
+        "scoreParts": {
+          "size": 2.778,
+          "compression": 12.166,
+          "lineCount": 43,
+          "registeredPattern": 0,
+          "otherLocal": 23.098,
+          "related": 12
+        },
+        "total": 93.042
+      },
+      "bestPatternPreserving": {
+        "lines": [
+          "NO.4 ABC",
+          "TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT",
+          "EMERGENCY CONTROL PANEL"
+        ],
+        "height": 4.25,
+        "minWidth": 63.662,
+        "scoreParts": {
+          "size": 2.778,
+          "compression": 12.166,
+          "lineCount": 43,
+          "registeredPattern": 0,
+          "otherLocal": 23.098,
+          "related": 12
+        },
+        "total": 93.042
+      },
+      "bestAt45": null
+    },
+    {
+      "id": "LONG4",
+      "text": "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT EMERGENCY CONTROL PANEL AUXILIARY POWER SUPPLY MONITOR",
+      "context": [],
+      "selected": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT",
+          "EMERGENCY CONTROL PANEL",
+          "AUXILIARY POWER SUPPLY MONITOR"
+        ],
+        "height": 3.75,
+        "minWidth": 60.324,
+        "scoreParts": {
+          "size": 25,
+          "compression": 25.595,
+          "lineCount": 43,
+          "registeredPattern": 0,
+          "otherLocal": 9.123,
+          "related": 0
+        },
+        "total": 102.718
+      },
+      "bestThree": null,
+      "bestFour": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT",
+          "EMERGENCY CONTROL PANEL",
+          "AUXILIARY POWER SUPPLY MONITOR"
+        ],
+        "height": 3.75,
+        "minWidth": 60.324,
+        "scoreParts": {
+          "size": 25,
+          "compression": 25.595,
+          "lineCount": 43,
+          "registeredPattern": 0,
+          "otherLocal": 9.123,
+          "related": 0
+        },
+        "total": 102.718
+      },
+      "bestPatternPreserving": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT",
+          "EMERGENCY CONTROL PANEL",
+          "AUXILIARY POWER SUPPLY MONITOR"
+        ],
+        "height": 3.75,
+        "minWidth": 60.324,
+        "scoreParts": {
+          "size": 25,
+          "compression": 25.595,
+          "lineCount": 43,
+          "registeredPattern": 0,
+          "otherLocal": 9.123,
+          "related": 0
+        },
+        "total": 102.718
+      },
+      "bestAt45": null
+    },
+    {
+      "id": "LONG6",
+      "text": "NO.4 ABC TEMPERATURE CONTROLLER REMOTE DISPLAY UNIT EMERGENCY CONTROL PANEL AUXILIARY POWER SUPPLY MONITOR ENGINE ROOM VENTILATION CONTROL",
+      "context": [],
+      "selected": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT EMERGENCY",
+          "CONTROL PANEL AUXILIARY POWER SUPPLY",
+          "MONITOR ENGINE ROOM VENTILATION CONTROL"
+        ],
+        "height": 3,
+        "minWidth": 59.323,
+        "scoreParts": {
+          "size": 100,
+          "compression": 31.212,
+          "lineCount": 43,
+          "registeredPattern": 0,
+          "otherLocal": 13.038,
+          "related": 0
+        },
+        "total": 187.25
+      },
+      "bestThree": null,
+      "bestFour": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT EMERGENCY",
+          "CONTROL PANEL AUXILIARY POWER SUPPLY",
+          "MONITOR ENGINE ROOM VENTILATION CONTROL"
+        ],
+        "height": 3,
+        "minWidth": 59.323,
+        "scoreParts": {
+          "size": 100,
+          "compression": 31.212,
+          "lineCount": 43,
+          "registeredPattern": 0,
+          "otherLocal": 13.038,
+          "related": 0
+        },
+        "total": 187.25
+      },
+      "bestPatternPreserving": {
+        "lines": [
+          "NO.4 ABC TEMPERATURE CONTROLLER",
+          "REMOTE DISPLAY UNIT EMERGENCY",
+          "CONTROL PANEL AUXILIARY POWER SUPPLY",
+          "MONITOR ENGINE ROOM VENTILATION CONTROL"
+        ],
+        "height": 3,
+        "minWidth": 59.323,
+        "scoreParts": {
+          "size": 100,
+          "compression": 31.212,
+          "lineCount": 43,
+          "registeredPattern": 0,
+          "otherLocal": 13.038,
+          "related": 0
+        },
+        "total": 187.25
+      },
+      "bestAt45": null
+    },
+    {
+      "id": "PATTERN_RELAX",
+      "text": "NO.1 MAIN ENGINE ROOM VENTILATION FAN LOCAL CONTROL PANEL EM'CY STOP P/B (ES-A)",
+      "context": [],
+      "selected": {
+        "lines": [
+          "NO.1 MAIN ENGINE",
+          "ROOM VENTILATION FAN",
+          "LOCAL CONTROL PANEL",
+          "EM'CY STOP P/B (ES-A)"
+        ],
+        "height": 4,
+        "minWidth": 80,
+        "scoreParts": {
+          "size": 11.111,
+          "compression": 0,
+          "lineCount": 43,
+          "registeredPattern": 24,
+          "otherLocal": 9.127,
+          "related": 0
+        },
+        "total": 87.238
+      },
+      "bestThree": {
+        "lines": [
+          "NO.1 MAIN ENGINE ROOM VENTILATION",
+          "FAN LOCAL CONTROL PANEL",
+          "EM'CY STOP P/B (ES-A)"
+        ],
+        "height": 3.5,
+        "minWidth": 60.448,
+        "scoreParts": {
+          "size": 44.444,
+          "compression": 24.951,
+          "lineCount": 2,
+          "registeredPattern": 24,
+          "otherLocal": 6.09,
+          "related": 0
+        },
+        "total": 101.485
+      },
+      "bestFour": {
+        "lines": [
+          "NO.1 MAIN ENGINE",
+          "ROOM VENTILATION FAN",
+          "LOCAL CONTROL PANEL",
+          "EM'CY STOP P/B (ES-A)"
+        ],
+        "height": 4,
+        "minWidth": 80,
+        "scoreParts": {
+          "size": 11.111,
+          "compression": 0,
+          "lineCount": 43,
+          "registeredPattern": 24,
+          "otherLocal": 9.127,
+          "related": 0
+        },
+        "total": 87.238
+      },
+      "bestPatternPreserving": {
+        "lines": [
+          "NO.1 MAIN ENGINE ROOM VENTILATION",
+          "FAN LOCAL CONTROL PANEL",
+          "EM'CY STOP P/B",
+          "(ES-A)"
+        ],
+        "height": 4,
+        "minWidth": 60.404,
+        "scoreParts": {
+          "size": 11.111,
+          "compression": 25.179,
+          "lineCount": 43,
+          "registeredPattern": 0,
+          "otherLocal": 40.104,
+          "related": 0
+        },
+        "total": 119.394
+      },
+      "bestAt45": null
+    }
+  ]
+}

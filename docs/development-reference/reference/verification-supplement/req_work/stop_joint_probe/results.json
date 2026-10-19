@@ -1,0 +1,435 @@
+{
+  "note": "Experimental 75x25 engine. Full current heuristic relation graph retained, weights not adopted. Baseline is whole-order experimental solve with no explicit STOP anchor, not the preceding isolated solve. Sample glyph bbox and 3mm/58% candidate checks only.",
+  "rows": 286,
+  "checks": 286,
+  "changedCount": 7,
+  "outsideTargetChanges": [],
+  "target": [
+    {
+      "number": 43,
+      "text": "S/G ALARM BUZZER STOP P/B",
+      "lines": [
+        "S/G ALARM BUZZER",
+        "STOP P/B"
+      ],
+      "height": 4.5,
+      "widths": [
+        80,
+        80
+      ],
+      "independent": true
+    },
+    {
+      "number": 44,
+      "text": "S/G ALARM FLICKER STOP P/B",
+      "lines": [
+        "S/G ALARM FLICKER",
+        "STOP P/B"
+      ],
+      "height": 4.5,
+      "widths": [
+        80,
+        80
+      ],
+      "independent": true
+    },
+    {
+      "number": 99,
+      "text": "ALARM BUZZER STOP P/B",
+      "lines": [
+        "ALARM BUZZER STOP P/B"
+      ],
+      "height": 4.5,
+      "widths": [
+        68.54
+      ],
+      "independent": false
+    },
+    {
+      "number": 100,
+      "text": "ALARM FLICKER STOP P/B",
+      "lines": [
+        "ALARM FLICKER STOP P/B"
+      ],
+      "height": 4.25,
+      "widths": [
+        71.42
+      ],
+      "independent": false
+    },
+    {
+      "number": 136,
+      "text": "EM'CY STOP P/B (ES-A)",
+      "lines": [
+        "EM'CY STOP P/B",
+        "(ES-A)"
+      ],
+      "height": 4.5,
+      "widths": [
+        80,
+        80
+      ],
+      "independent": true
+    },
+    {
+      "number": 137,
+      "text": "EM'CY STOP P/B (ES-B)",
+      "lines": [
+        "EM'CY STOP P/B",
+        "(ES-B)"
+      ],
+      "height": 4.5,
+      "widths": [
+        80,
+        80
+      ],
+      "independent": true
+    },
+    {
+      "number": 138,
+      "text": "EM'CY STOP P/B (ES-C)",
+      "lines": [
+        "EM'CY STOP P/B",
+        "(ES-C)"
+      ],
+      "height": 4.5,
+      "widths": [
+        80,
+        80
+      ],
+      "independent": true
+    },
+    {
+      "number": 139,
+      "text": "EM'CY STOP P/B (ES-F)",
+      "lines": [
+        "EM'CY STOP P/B",
+        "(ES-F)"
+      ],
+      "height": 4.5,
+      "widths": [
+        80,
+        80
+      ],
+      "independent": true
+    },
+    {
+      "number": 140,
+      "text": "EM'CY STOP P/B (ES-H)",
+      "lines": [
+        "EM'CY STOP P/B",
+        "(ES-H)"
+      ],
+      "height": 4.5,
+      "widths": [
+        80,
+        80
+      ],
+      "independent": true
+    },
+    {
+      "number": 141,
+      "text": "G/E SCR EM'CY STOP P/B",
+      "lines": [
+        "G/E SCR",
+        "EM'CY STOP P/B"
+      ],
+      "height": 4.5,
+      "widths": [
+        80,
+        80
+      ],
+      "independent": true
+    },
+    {
+      "number": 142,
+      "text": "NO.1 G/E SCR EM'CY STOP P/B",
+      "lines": [
+        "NO.1 G/E SCR",
+        "EM'CY STOP P/B"
+      ],
+      "height": 4.5,
+      "widths": [
+        80,
+        80
+      ],
+      "independent": true
+    },
+    {
+      "number": 143,
+      "text": "NO.2 G/E SCR EM'CY STOP P/B",
+      "lines": [
+        "NO.2 G/E SCR",
+        "EM'CY STOP P/B"
+      ],
+      "height": 4.5,
+      "widths": [
+        80,
+        80
+      ],
+      "independent": true
+    },
+    {
+      "number": 144,
+      "text": "NO.3 G/E SCR EM'CY STOP P/B",
+      "lines": [
+        "NO.3 G/E SCR",
+        "EM'CY STOP P/B"
+      ],
+      "height": 4.5,
+      "widths": [
+        80,
+        80
+      ],
+      "independent": true
+    },
+    {
+      "number": 145,
+      "text": "NO.4 G/E SCR EM'CY STOP P/B",
+      "lines": [
+        "NO.4 G/E SCR",
+        "EM'CY STOP P/B"
+      ],
+      "height": 4.5,
+      "widths": [
+        80,
+        80
+      ],
+      "independent": true
+    },
+    {
+      "number": 146,
+      "text": "COM. G/E SCR EM'CY STOP P/B",
+      "lines": [
+        "COM. G/E SCR",
+        "EM'CY STOP P/B"
+      ],
+      "height": 4.5,
+      "widths": [
+        80,
+        80
+      ],
+      "independent": true
+    },
+    {
+      "number": 171,
+      "text": "ALARM BUZZER STOP P/B",
+      "lines": [
+        "ALARM BUZZER STOP P/B"
+      ],
+      "height": 4.5,
+      "widths": [
+        68.54
+      ],
+      "independent": false
+    },
+    {
+      "number": 172,
+      "text": "ALARM FLICKER STOP P/B",
+      "lines": [
+        "ALARM FLICKER STOP P/B"
+      ],
+      "height": 4.25,
+      "widths": [
+        71.42
+      ],
+      "independent": false
+    },
+    {
+      "number": 201,
+      "text": "ALARM BUZZER STOP P/B",
+      "lines": [
+        "ALARM BUZZER STOP P/B"
+      ],
+      "height": 4.5,
+      "widths": [
+        68.54
+      ],
+      "independent": false
+    },
+    {
+      "number": 202,
+      "text": "ALARM FLICKER STOP P/B",
+      "lines": [
+        "ALARM FLICKER STOP P/B"
+      ],
+      "height": 4.25,
+      "widths": [
+        71.42
+      ],
+      "independent": false
+    }
+  ],
+  "changed": [
+    {
+      "number": 43,
+      "text": "S/G ALARM BUZZER STOP P/B",
+      "before": {
+        "lines": [
+          "S/G ALARM BUZZER STOP P/B"
+        ],
+        "height": 4,
+        "widths": [
+          65.9
+        ]
+      },
+      "after": {
+        "lines": [
+          "S/G ALARM BUZZER",
+          "STOP P/B"
+        ],
+        "height": 4.5,
+        "widths": [
+          80,
+          80
+        ]
+      }
+    },
+    {
+      "number": 44,
+      "text": "S/G ALARM FLICKER STOP P/B",
+      "before": {
+        "lines": [
+          "S/G ALARM",
+          "FLICKER STOP P/B"
+        ],
+        "height": 4.5,
+        "widths": [
+          80,
+          80
+        ]
+      },
+      "after": {
+        "lines": [
+          "S/G ALARM FLICKER",
+          "STOP P/B"
+        ],
+        "height": 4.5,
+        "widths": [
+          80,
+          80
+        ]
+      }
+    },
+    {
+      "number": 136,
+      "text": "EM'CY STOP P/B (ES-A)",
+      "before": {
+        "lines": [
+          "EM'CY STOP P/B (ES-A)"
+        ],
+        "height": 4.5,
+        "widths": [
+          73.6
+        ]
+      },
+      "after": {
+        "lines": [
+          "EM'CY STOP P/B",
+          "(ES-A)"
+        ],
+        "height": 4.5,
+        "widths": [
+          80,
+          80
+        ]
+      }
+    },
+    {
+      "number": 137,
+      "text": "EM'CY STOP P/B (ES-B)",
+      "before": {
+        "lines": [
+          "EM'CY STOP P/B (ES-B)"
+        ],
+        "height": 4.5,
+        "widths": [
+          73.6
+        ]
+      },
+      "after": {
+        "lines": [
+          "EM'CY STOP P/B",
+          "(ES-B)"
+        ],
+        "height": 4.5,
+        "widths": [
+          80,
+          80
+        ]
+      }
+    },
+    {
+      "number": 138,
+      "text": "EM'CY STOP P/B (ES-C)",
+      "before": {
+        "lines": [
+          "EM'CY STOP P/B (ES-C)"
+        ],
+        "height": 4.5,
+        "widths": [
+          73.09
+        ]
+      },
+      "after": {
+        "lines": [
+          "EM'CY STOP P/B",
+          "(ES-C)"
+        ],
+        "height": 4.5,
+        "widths": [
+          80,
+          80
+        ]
+      }
+    },
+    {
+      "number": 139,
+      "text": "EM'CY STOP P/B (ES-F)",
+      "before": {
+        "lines": [
+          "EM'CY STOP P/B (ES-F)"
+        ],
+        "height": 4.5,
+        "widths": [
+          74.12
+        ]
+      },
+      "after": {
+        "lines": [
+          "EM'CY STOP P/B",
+          "(ES-F)"
+        ],
+        "height": 4.5,
+        "widths": [
+          80,
+          80
+        ]
+      }
+    },
+    {
+      "number": 140,
+      "text": "EM'CY STOP P/B (ES-H)",
+      "before": {
+        "lines": [
+          "EM'CY STOP P/B (ES-H)"
+        ],
+        "height": 4.5,
+        "widths": [
+          73.6
+        ]
+      },
+      "after": {
+        "lines": [
+          "EM'CY STOP P/B",
+          "(ES-H)"
+        ],
+        "height": 4.5,
+        "widths": [
+          80,
+          80
+        ]
+      }
+    }
+  ]
+}

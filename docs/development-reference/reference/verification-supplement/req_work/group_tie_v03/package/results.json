@@ -1,0 +1,701 @@
+{
+  "version": "0.3",
+  "passed": 13,
+  "total": 13,
+  "assertions": {
+    "six_named_cases_exact": true,
+    "secondary_loss_counterexample": true,
+    "top2_loss_counterexample": true,
+    "group_total_tie_uses_secondary": true,
+    "outer_boundary_required": true,
+    "unrelated_items_no_group_effect": true,
+    "stable_tie_key_preserved": true,
+    "named_order_invariant": true,
+    "random_exact_200": true,
+    "random_order_200": true,
+    "undeclared_contract_change_rejected": true,
+    "budget_not_no_fit": true,
+    "source_inputs_not_mutated": true
+  },
+  "labels": {
+    "six_named_cases_exact": "6개 명시 사례 모두 전체 비교와 주점수·보조·선택 일치",
+    "secondary_loss_counterexample": "주점수만으로 보존하면 동점 최선 후보를 잃는 반례 확인",
+    "top2_loss_counterexample": "개별 상위 두 개만 보존하면 그룹 최선을 잃는 반례 확인",
+    "group_total_tie_uses_secondary": "그룹 감점 포함 후 주점수 동점에서 보조 합계 적용",
+    "outer_boundary_required": "패턴 앞뒤 공유 여부를 버리면 선택이 달라짐",
+    "unrelated_items_no_group_effect": "관련 없는 항목은 그룹 감점에 참여하지 않음",
+    "stable_tie_key_preserved": "완전 동점의 고정 비교 키도 보존",
+    "named_order_invariant": "명시 사례의 항목·후보·관계 순서 변경에도 동일",
+    "random_exact_200": "고정 난수 200개 문제의 전체 비교 결과 일치",
+    "random_order_200": "고정 난수 200개 문제의 순서 변경 결과 일치",
+    "undeclared_contract_change_rejected": "그룹 평가 의존성이 달라지면 기존 보존 방식 거부",
+    "budget_not_no_fit": "조합 한도는 배치 불가능으로 판정하지 않고 시험 중단",
+    "source_inputs_not_mutated": "입력 후보와 관계 원본 유지"
+  },
+  "random": {
+    "seed": 20261011,
+    "cases": 200,
+    "exact_matches": 200,
+    "shuffled_matches": 200,
+    "full_combinations": 259200,
+    "reduced_combinations": 8843,
+    "primary_only_mismatches": 79
+  },
+  "elapsed_ms": 570.897,
+  "output": "results.json / preview.html",
+  "scope": "Synthetic eligible candidates; signature-only group penalties; exact integer test costs.",
+  "limitations": [
+    "이미 정상 조건과 항목별 최대 글자 크기를 충족한 후보를 가정합니다. 형상·커터·후보 생성은 검사하지 않습니다.",
+    "개별 주점수와 자폭 보조 감점은 미리 주어진 시험값입니다. 곡선 계산·최종 가중치를 새로 결정하지 않습니다.",
+    "그룹 감점은 패턴 비교 정보에만 의존하고 보조 점수는 개별 보조 감점의 합입니다. 이 조건 밖의 보존은 보장하지 않습니다.",
+    "시험 점수는 정확한 정수입니다. 최종 부동소수점 정밀도·양자화·근사 동점 정책을 검증하지 않습니다.",
+    "고정 난수 200개는 정해진 범위의 검증입니다. 일반 적용 근거는 문서의 보존 조건과 교체 논리입니다.",
+    "운영 엔진·고객 기준·과거 배치는 변경하지 않았습니다. DXF·Type3·공유 저장소·실제 미관·생산 성능은 제외합니다."
+  ],
+  "cases": [
+    {
+      "id": "G01",
+      "label": "같은 패턴·주점수라도 보조 점수가 다름",
+      "items": {
+        "A": [
+          {
+            "id": "A1",
+            "primary": 10,
+            "secondary": 8,
+            "signature": {
+              "P": "whole|own"
+            },
+            "stable_key": "A1"
+          },
+          {
+            "id": "A2",
+            "primary": 10,
+            "secondary": 2,
+            "signature": {
+              "P": "whole|own"
+            },
+            "stable_key": "A2"
+          }
+        ],
+        "B": [
+          {
+            "id": "B1",
+            "primary": 0,
+            "secondary": 0,
+            "signature": {
+              "P": "whole|own"
+            },
+            "stable_key": "B1"
+          }
+        ]
+      },
+      "edges": [
+        [
+          "A",
+          "B",
+          "P",
+          10
+        ]
+      ],
+      "results": {
+        "all": {
+          "primary": 10,
+          "secondary": 2,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 3,
+          "after": 3
+        },
+        "signature": {
+          "primary": 10,
+          "secondary": 2,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "combinations": 1,
+          "before": 3,
+          "after": 2
+        },
+        "primary_only": {
+          "primary": 10,
+          "secondary": 8,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A1",
+            "B": "B1"
+          },
+          "combinations": 1,
+          "before": 3,
+          "after": 2
+        },
+        "top2": {
+          "primary": 10,
+          "secondary": 2,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 3,
+          "after": 3
+        },
+        "internal_only": {
+          "primary": 10,
+          "secondary": 2,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "combinations": 1,
+          "before": 3,
+          "after": 2
+        }
+      }
+    },
+    {
+      "id": "G02",
+      "label": "개별 상위 두 개 밖에 그룹 최선 후보가 있음",
+      "items": {
+        "A": [
+          {
+            "id": "A1",
+            "primary": 0,
+            "secondary": 0,
+            "signature": {
+              "P": "whole|shared"
+            },
+            "stable_key": "A1"
+          },
+          {
+            "id": "A2",
+            "primary": 1,
+            "secondary": 0,
+            "signature": {
+              "P": "whole|shared"
+            },
+            "stable_key": "A2"
+          },
+          {
+            "id": "A3",
+            "primary": 2,
+            "secondary": 1,
+            "signature": {
+              "P": "whole|own"
+            },
+            "stable_key": "A3"
+          }
+        ],
+        "B": [
+          {
+            "id": "B1",
+            "primary": 0,
+            "secondary": 0,
+            "signature": {
+              "P": "whole|own"
+            },
+            "stable_key": "B1"
+          }
+        ]
+      },
+      "edges": [
+        [
+          "A",
+          "B",
+          "P",
+          10
+        ]
+      ],
+      "results": {
+        "all": {
+          "primary": 2,
+          "secondary": 1,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A3",
+            "B": "B1"
+          },
+          "combinations": 3,
+          "before": 4,
+          "after": 4
+        },
+        "signature": {
+          "primary": 2,
+          "secondary": 1,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A3",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 4,
+          "after": 3
+        },
+        "primary_only": {
+          "primary": 2,
+          "secondary": 1,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A3",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 4,
+          "after": 3
+        },
+        "top2": {
+          "primary": 10,
+          "secondary": 0,
+          "group_penalty": 10,
+          "choices": {
+            "A": "A1",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 4,
+          "after": 3
+        },
+        "internal_only": {
+          "primary": 10,
+          "secondary": 0,
+          "group_penalty": 10,
+          "choices": {
+            "A": "A1",
+            "B": "B1"
+          },
+          "combinations": 1,
+          "before": 4,
+          "after": 2
+        }
+      }
+    },
+    {
+      "id": "G03",
+      "label": "그룹 감점까지 합친 주점수가 같을 때 보조 합계 비교",
+      "items": {
+        "A": [
+          {
+            "id": "A1",
+            "primary": 0,
+            "secondary": 8,
+            "signature": {
+              "P": "whole|shared"
+            },
+            "stable_key": "A1"
+          },
+          {
+            "id": "A2",
+            "primary": 2,
+            "secondary": 1,
+            "signature": {
+              "P": "whole|own"
+            },
+            "stable_key": "A2"
+          }
+        ],
+        "B": [
+          {
+            "id": "B1",
+            "primary": 0,
+            "secondary": 0,
+            "signature": {
+              "P": "whole|own"
+            },
+            "stable_key": "B1"
+          }
+        ]
+      },
+      "edges": [
+        [
+          "A",
+          "B",
+          "P",
+          2
+        ]
+      ],
+      "results": {
+        "all": {
+          "primary": 2,
+          "secondary": 1,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 3,
+          "after": 3
+        },
+        "signature": {
+          "primary": 2,
+          "secondary": 1,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 3,
+          "after": 3
+        },
+        "primary_only": {
+          "primary": 2,
+          "secondary": 1,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 3,
+          "after": 3
+        },
+        "top2": {
+          "primary": 2,
+          "secondary": 1,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 3,
+          "after": 3
+        },
+        "internal_only": {
+          "primary": 2,
+          "secondary": 8,
+          "group_penalty": 2,
+          "choices": {
+            "A": "A1",
+            "B": "B1"
+          },
+          "combinations": 1,
+          "before": 3,
+          "after": 2
+        }
+      }
+    },
+    {
+      "id": "G04",
+      "label": "내부 줄바꿈이 같아도 앞뒤 공유 여부가 다름",
+      "items": {
+        "A": [
+          {
+            "id": "A1",
+            "primary": 0,
+            "secondary": 0,
+            "signature": {
+              "P": "split|shared"
+            },
+            "stable_key": "A1"
+          },
+          {
+            "id": "A2",
+            "primary": 2,
+            "secondary": 1,
+            "signature": {
+              "P": "split|own"
+            },
+            "stable_key": "A2"
+          }
+        ],
+        "B": [
+          {
+            "id": "B1",
+            "primary": 0,
+            "secondary": 0,
+            "signature": {
+              "P": "split|own"
+            },
+            "stable_key": "B1"
+          }
+        ]
+      },
+      "edges": [
+        [
+          "A",
+          "B",
+          "P",
+          10
+        ]
+      ],
+      "results": {
+        "all": {
+          "primary": 2,
+          "secondary": 1,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 3,
+          "after": 3
+        },
+        "signature": {
+          "primary": 2,
+          "secondary": 1,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 3,
+          "after": 3
+        },
+        "primary_only": {
+          "primary": 2,
+          "secondary": 1,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 3,
+          "after": 3
+        },
+        "top2": {
+          "primary": 2,
+          "secondary": 1,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 3,
+          "after": 3
+        },
+        "internal_only": {
+          "primary": 10,
+          "secondary": 0,
+          "group_penalty": 10,
+          "choices": {
+            "A": "A1",
+            "B": "B1"
+          },
+          "combinations": 1,
+          "before": 3,
+          "after": 2
+        }
+      }
+    },
+    {
+      "id": "G05",
+      "label": "관련 없는 항목에는 그룹 감점 없음",
+      "items": {
+        "A": [
+          {
+            "id": "A1",
+            "primary": 0,
+            "secondary": 8,
+            "signature": {
+              "P": "whole|shared"
+            },
+            "stable_key": "A1"
+          },
+          {
+            "id": "A2",
+            "primary": 2,
+            "secondary": 1,
+            "signature": {
+              "P": "whole|own"
+            },
+            "stable_key": "A2"
+          }
+        ],
+        "B": [
+          {
+            "id": "B1",
+            "primary": 0,
+            "secondary": 0,
+            "signature": {
+              "P": "whole|own"
+            },
+            "stable_key": "B1"
+          }
+        ]
+      },
+      "edges": [],
+      "results": {
+        "all": {
+          "primary": 0,
+          "secondary": 8,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A1",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 3,
+          "after": 3
+        },
+        "signature": {
+          "primary": 0,
+          "secondary": 8,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A1",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 3,
+          "after": 3
+        },
+        "primary_only": {
+          "primary": 0,
+          "secondary": 8,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A1",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 3,
+          "after": 3
+        },
+        "top2": {
+          "primary": 0,
+          "secondary": 8,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A1",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 3,
+          "after": 3
+        },
+        "internal_only": {
+          "primary": 0,
+          "secondary": 8,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A1",
+            "B": "B1"
+          },
+          "combinations": 1,
+          "before": 3,
+          "after": 2
+        }
+      }
+    },
+    {
+      "id": "G06",
+      "label": "주점수와 보조 합계까지 같으면 고정 키로 선택",
+      "items": {
+        "A": [
+          {
+            "id": "A1",
+            "primary": 0,
+            "secondary": 2,
+            "signature": {
+              "P": "whole|own"
+            },
+            "stable_key": "z"
+          },
+          {
+            "id": "A2",
+            "primary": 0,
+            "secondary": 2,
+            "signature": {
+              "P": "whole|own"
+            },
+            "stable_key": "a"
+          }
+        ],
+        "B": [
+          {
+            "id": "B1",
+            "primary": 0,
+            "secondary": 0,
+            "signature": {
+              "P": "whole|own"
+            },
+            "stable_key": "B1"
+          }
+        ]
+      },
+      "edges": [
+        [
+          "A",
+          "B",
+          "P",
+          10
+        ]
+      ],
+      "results": {
+        "all": {
+          "primary": 0,
+          "secondary": 2,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 3,
+          "after": 3
+        },
+        "signature": {
+          "primary": 0,
+          "secondary": 2,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "combinations": 1,
+          "before": 3,
+          "after": 2
+        },
+        "primary_only": {
+          "primary": 0,
+          "secondary": 2,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "combinations": 1,
+          "before": 3,
+          "after": 2
+        },
+        "top2": {
+          "primary": 0,
+          "secondary": 2,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "combinations": 2,
+          "before": 3,
+          "after": 3
+        },
+        "internal_only": {
+          "primary": 0,
+          "secondary": 2,
+          "group_penalty": 0,
+          "choices": {
+            "A": "A2",
+            "B": "B1"
+          },
+          "combinations": 1,
+          "before": 3,
+          "after": 2
+        }
+      }
+    }
+  ]
+}
