@@ -25,24 +25,20 @@
 
 ## 실행과 확인
 
-프로젝트 루트에서 실행한다. Flutter SDK에 포함된 Dart를 사용한다.
+프로젝트별 FVM Flutter 3.47.7 / Dart 3.13.5를 사용한다.
+[공통 개발 기반](docs/development-foundation.md)에 기술·라이선스·호환성·초기 설치·CI 조건을 기록했다.
+IntelliJ Flutter 경로는 .fvm/flutter_sdk, Dart는 그 아래 bin/cache/dart-sdk다.
+최초 bootstrap 경로는 실제 설치된 Dart 3.13.5 이상 경로로 바꾼다.
 
-```powershell
-flutter --version
-dart --version
-flutter pub get
-dart format lib test
-flutter analyze
-flutter test
-flutter build windows --debug
-flutter run -d windows
-```
+~~~powershell
+./tool/fvm.ps1 -BootstrapDart 'C:\개발SDK\bin\cache\dart-sdk\bin\dart.exe' use 3.47.7 --force --skip-pub-get
+./tool/fvm.ps1 dart tool/verify.dart --windows
+./tool/fvm.ps1 flutter run -d windows
+~~~
 
-현재 SDK는 Flutter 3.44.8 stable / Dart 3.12.2이며, 생성 시 Dart 제약 `^3.12.2`를 유지한다.
-실제 검증 결과와 확인 범위는 [현재 상태](docs/next-step.md)에 기록한다.
-2026-10-19 앱 골격 검증에서 포맷·의존성 갱신·분석·위젯 테스트 1개·Windows 디버그 빌드가 통과했다.
-Windows 실행과 실제 창 제목·제품 리소스를 확인했다. 화면 외관의 직접 시각 확인은 남아 있다.
-
+2026-10-26 생성·포맷·재생성 안정성·분석·위젯 테스트 4개와 Windows debug 빌드가 통과했다.
+실제 r_edit.exe의 R-edit 창 제목·한국어 시작 안내를 실행·시각 확인했다.
+원격 Actions/Linux 실행은 하지 않았다. 결과·다음 작업은 [현재 상태](docs/next-step.md)를 따른다.
 ## 현재 개발 범위
 
 현재 앱은 R-edit 제목과 한국어 안내를 표시하는 시작 화면이다. 업무 기능은 아직 없다.
@@ -56,13 +52,24 @@ Windows 실행과 실제 창 제목·제품 리소스를 확인했다. 화면 �
 
 Windows 창 제목·제품명·파일 설명은 R-edit, 회사명은 리치원컴퍼니다.
 실행 파일·내부 식별자는 `r_edit`를 유지한다. 버전 리소스는 Flutter의 버전 설정에 연결한다.
-의존성은 Flutter와 개발용 flutter_test·flutter_lints만 사용하며 앱의 pubspec.lock을 관리한다.
-첫 업무 상태를 연결할 때 상태 관리 방식을, 저장 모델을 구현할 때 JSON 코드 생성을 검토한다.
-라우터·DI·코드 생성 패키지나 빈 계층은 미리 추가하지 않는다.
+현재 의존성·역할은 [공통 기준](docs/development-foundation.md)을 따른다.
+앱은 Riverpod ProviderScope 아래 객체 제공/ThemeMode 상태, go_router 시작 경로와 오류 화면,
+logging의 로컬 개발 로그를 연결했다. 업무 버튼·엔진·저장 모델은 추가하지 않았다.
 
-다음 실제 기능은 별도 순수 Dart 패키지의 작업 데이터 모델과 저장 정책부터 구현한다.
-아직 생성되지 않은 라이브러리를 pubspec.yaml에 선언하지 않는다.
+| 파일 | 기반 연결 책임 |
+|---|---|
+| lib/app/providers/app_logger.dart | 앱 Logger 제공 |
+| lib/app/providers/app_theme_mode.dart | 앱 표시 테마 상태·변경 로그 |
+| lib/app/providers/app_router.dart | 시작/없는 경로·수명 종료 |
+| lib/app/logging/app_logging.dart | 진입점 로컬 로그 구독 |
+| build.yaml | Provider·실제 값 모델 생성 범위 |
+| tool/fvm.ps1 / tool/verify.dart | 프로젝트 SDK·공통 검증 |
+| .github/workflows/verify.yml | 무료 운용 경계를 둔 CI |
 
+테마 상태는 UI 표시 책임이며 업무 상태가 아니다. 빈 서비스/Repository/DI 계층은 만들지 않았다.
+앱 lock·필요한 생성 소스는 추적하고 .fvm/.tooling/build/IDE 설정은 제외한다.
+workflow는 독립 저장소의 값·참조 계약을 제공한다. 앱 runtime 연결은 첫 실제 명령 설계 후 수행하며
+로컬 형제 경로 의존성·가짜 업무 모델은 추가하지 않았다.
 전체 요구사항·논리 설계·검증 근거는 기존 개발 참고자료 묶음을 사용한다.
 중앙 문서 저장소 r-edit-docs를 구성하면 채택한 기준 문서 경로와 커밋을 이 문서에 연결한다.
 현재는 생성되거나 연결된 것으로 가정하지 않는다.

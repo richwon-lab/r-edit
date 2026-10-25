@@ -1,0 +1,17 @@
+# 앱의 명시적 Provider와 후속 값 모델만 생성한다.
+targets:
+  $default:
+    sources:
+      - lib/**
+      - pubspec.yaml
+      - $package$
+    builders:
+      riverpod_generator:
+        generate_for:
+          - lib/app/providers/*.dart
+      freezed:
+        generate_for:
+          - lib/**/*.dart
+      json_serializable:
+        generate_for:
+          - lib/**/*.dart

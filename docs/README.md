@@ -14,17 +14,19 @@
 
 ## 개발 안내와 읽기용 추출본
 
-| 자료 | 위치 |
-|---|---|
-| 저장소·패키지 구조 | [구조 안내](development-reference/docs/01-repositories.md) |
-| 프로젝트 생성·환경 | [설정 안내](development-reference/docs/02-project-setup.md) |
-| 변수·클래스·단위 네이밍 | [네이밍 기준](development-reference/docs/03-naming.md) |
-| 독립 패키지 첫 구현 지시 | [Junie 작업](development-reference/docs/04-junie-tasks.md) |
-| 최근 14개 독립 시험 목록 | [시험 목록](development-reference/docs/05-verification-inventory.md) |
-| 공식 기술 자료 | [출처](development-reference/docs/06-official-sources.md) |
-| Flutter·Dart 선택 | [기술 결정](development-reference/docs/07-technology-decision.md) |
-| XLSX 읽기용 원문 추출 | [점검표 셀 값](development-reference/reference/text/리치원_기능활용_점검표_v0.1.txt) |
-| 전체 포함 파일 | [파일 목록](../DOCUMENT_INVENTORY.csv) |
+| 자료                     | 위치                                                                                 |
+|--------------------------|--------------------------------------------------------------------------------------|
+| 저장소·패키지 구조       | [구조 안내](development-reference/docs/01-repositories.md)                           |
+| 프로젝트 생성·환경       | [설정 안내](development-reference/docs/02-project-setup.md)                          |
+| 변수·클래스·단위 네이밍  | [네이밍 기준](development-reference/docs/03-naming.md)                               |
+| 독립 패키지 첫 구현 지시 | [Junie 작업](development-reference/docs/04-junie-tasks.md)                           |
+| 최근 14개 독립 시험 목록 | [시험 목록](development-reference/docs/05-verification-inventory.md)                 |
+| 공식 기술 자료           | [출처](development-reference/docs/06-official-sources.md)                            |
+| Flutter·Dart 선택        | [기술 결정](development-reference/docs/07-technology-decision.md)                    |
+| XLSX 읽기용 원문 추출    | [점검표 셀 값](development-reference/reference/text/리치원_기능활용_점검표_v0.1.txt) |
+| 참고자료 구성           | [자료 분류와 폴더 안내](development-reference/README.md)                              |
+
+별도 전체 파일 목록 CSV는 현재 저장소에 포함되어 있지 않다.
 
 DOCX·XLSX를 직접 읽지 못하는 개발 도구는 reference/text의 추출본을 함께 읽는다.
 문단·표·셀의 글을 옮긴 자료이며 도형·이미지·서식은 원본을 확인한다.
@@ -41,3 +43,4 @@ DOCX·XLSX를 직접 읽지 못하는 개발 도구는 reference/text의 추출�
 
 이 전체 문서는 현재 앱 저장소에 함께 보관할 수 있다. 향후 문서 저장소를 분리할 때 경로와 채택 버전을 명시해 이동한다.
 코드 패키지의 독립 저장소 원칙은 유지한다.
+현재 개발 환경·기술 기준: [공통 개발 기반](development-foundation.md).

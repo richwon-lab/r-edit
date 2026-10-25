@@ -43,3 +43,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# 프로젝트 SDK 관리와 개발 도구 캐시
+.fvm/
+.tooling/
