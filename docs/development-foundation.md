@@ -99,7 +99,7 @@ tag checkout의 channel은 user-branch로 표시된다. 공식 해시를 대조�
 - test는 책임별 폴더, group은 대상·행동, test는 한국어 조건·기대 결과다. 독립 사례를 실행 이름으로 구분하고 파일 단독 실행을 유지한다. 키/issue 순서가 계약이 아니면 고정하지 않는다.
 - 실제 객체로 충분하면 그대로 사용한다. 협력 객체는 Fake 우선, 상호작용 검증이 필요할 때만 mocktail 검토를 남긴다.
 - .freezed.dart/.g.dart는 추적하고 직접 편집하지 않는다. 소비자가 생성 없이 사용할 수 있어야 한다.
-- tool/verify.dart는 pub get → 생성 → 포맷 검사 → 최종 재생성 안정성 → 분석 → 전체 테스트다. workflow는 5개 assert 비활성 AOT·생성기 없는 별도 path 소비자도 실행한다. 앱 --windows는 네이티브 debug 빌드다. 시각 확인은 별도다.
+- tool/verify.dart는 시작 생성 소스 기록 → pub get → 첫 생성 전후 일치 → 포맷 검사 → 반복 생성 안정성 → CI Git 포함 검사 → 분석 → 전체 테스트다. workflow는 5개 assert 비활성 AOT·생성기 없는 별도 path 소비자도 실행한다. 앱 --windows는 네이티브 debug 빌드다. 시각 확인은 별도다.
 - 포맷 수정은 프로젝트 Dart로 실제 변경 디렉터리·도구에 적용한다. 검증 명령은 포맷 불일치 시 실패하며 인덱스를 변경하지 않는다.
 - 의존성 추가·교체는 실제 사용처/소유 모듈/역할 중복, 공식 유지·라이선스·SDK/생성기 제약, 대안·확인일을 기록한다. 해결·생성·분석·테스트와 필요한 AOT/Windows/소비자 검증을 실행한다.
 - 임의 전체 업그레이드·overrides·빈 계층으로 문제를 숨기지 않는다. 업무 API/오류/JSON 의미 변경은 기반 설정에 섞지 않는다.
@@ -191,3 +191,57 @@ SDK·의존성·검증 명령·권한·무료 활성화·실행 조건은 유지
 workflow 원문을 변경 전과 대조해 checkout SHA/버전 주석·Ubuntu label 외 내용이 같음을 확인했다.
 기존 스테이징은 보존했다. 원격 Actions는 실행하지 않았으며 원격 성공/경고 해소 완료로 보고하지 않는다.
 업무 코드·도구 명령은 그대로이므로 생성·분석·앱 테스트·AOT는 반복하지 않았다.
+
+## 생성 소스 검증 계약
+
+현재 생성 범위는 lib 아래 .g.dart/.freezed.dart다. 검사 함수는 tool/generated_sources.dart,
+실행 연결은 tool/verify.dart에 둔다. 업무 공개 API·JSON·검증 정책과 분리한다.
+
+1. 검증 시작 때 생성 소스의 상대 경로 집합과 원본 바이트를 기록한다.
+   첫 build_runner 실행 뒤 추가·삭제·내용 변경이 있으면 해당 경로와 재생성 명령을 출력하고 실패한다.
+   생성기가 결과를 고쳤다는 것과 저장소의 시작 상태가 올바랐다는 것을 구분한다.
+2. 포맷 검사 뒤 두 번째 생성 전후를 다시 비교하여 반복 생성의 안정성을 검사한다.
+3. GITHUB_ACTIONS=true 또는 명시적 --ci일 때만 Git 포함 검사도 수행한다.
+   생성 소스 pathspec에 한정한 git diff HEAD와 git ls-files를 사용한다.
+   추적 소스의 수정/삭제·stage만 된 추가와 미추적 생성 소스(ignored 포함)를 거부한다.
+   다른 소스·문서·라이브러리 pubspec.lock은 검사 대상이 아니다.
+4. 기본 로컬 검증은 HEAD와 비교하지 않는다. 선언과 함께 유효하게 재생성한 미커밋 파일도 시작/반복 결과가 같으면 통과할 수 있다.
+   CI 결과는 commit에 필요한 생성 소스가 포함됐다는 조건까지 요구한다.
+   Git 읽기만 하며 자동 stage/commit/reset/checkout/사용자 파일 삭제는 하지 않는다.
+
+첫 생성 자체는 기존처럼 작업 트리에 생성 결과를 쓸 수 있다.
+실패 후 자동 복구하지 않으므로 diff를 검토하고 필요한 생성 결과를 명시적으로 준비한다.
+
+~~~powershell
+# 명시적 재생성: 결과를 검토한다.
+./tool/fvm.ps1 dart run build_runner build
+# 시작 상태 일치와 반복 생성 안정성을 다시 검사한다.
+./tool/fvm.ps1 dart tool/verify.dart
+# 필요한 생성 소스를 검토하여 커밋한 뒤 CI 조건을 로컬 재현할 때만 사용한다.
+./tool/fvm.ps1 dart tool/verify.dart --ci
+~~~
+
+CI에서는 기존 fvm dart tool/verify.dart 명령이 GITHUB_ACTIONS를 감지한다.
+앱 --windows, workflow의 AOT·생성기 없는 소비자 검증은 유지한다.
+test/tool/generated_sources_test.dart는 시스템 임시 디렉터리의 독립 Git 저장소만 수정하여
+변경/추가/삭제·반복 불안정·Git 추적 여부를 검증한다.
+테스트 fixture 초기 추적 기준을 위한 add/commit은 이 임시 저장소 안에서만 수행하며 실제 저장소 인덱스는 변경하지 않는다.
+
+### 생성 소스 검사 보완의 실제 검증 (2026-10-26)
+
+- 각 저장소의 test/tool/generated_sources_test.dart 12개 단독 실행 성공.
+- 실제 build_runner를 사용하는 격리 복사본에서 정상 --ci 검증 성공.
+- 두 복사본 모두 생성 파일 직접 수정, 필요한 파일 누락, 선언만 변경한 오래된 출력은
+  첫 생성 전후 불일치로 exit 255. 실제 생성기가 복구해도 실패로 판정했고 경로·재생성 명령을 확인했다.
+- Git 추적에서만 뺀 생성 파일은 반복 생성이 안정적이어도 CI Git 검사에서 exit 255.
+- 추가/삭제 집합, 반복 불안정, tracked 수정/삭제, untracked/ignored/stage만 된 소스는 격리 Git 회귀 테스트로 확인했다.
+- 실제 작업 트리의 전체 verify도 성공: 앱 16개(기존 4+도구 12), workflow 429개(기존 417+도구 12).
+  workflow의 assert 비활성 AOT 5개와 생성기 없는 독립 소비자 컴파일·실행도 성공.
+- 앱 분석 No issues found. workflow 분석은 exit 0이나 기존 test/geometry/arc_representation_test.dart:43에
+  document_ignores info 1건이 남아 있다. 이번 범위 밖의 주석이므로 수정하지 않았다.
+- GitHub Actions YAML/명령/권한/실행 조건은 변경하지 않았다. 원격 Actions·실제 Linux 러너·Windows 앱 빌드/시각 확인은 반복하지 않았다.
+
+생성 소스의 바이트 비교는 줄 끝도 포함한다. Windows core.autocrlf=true checkout에서도
+생성기가 쓰는 LF와 일치하도록 .gitattributes를 lib/**/*.g.dart와 lib/**/*.freezed.dart에만 적용했다.
+다른 파일의 줄 끝 정책은 바꾸지 않았다. 임시 Git 저장소를 core.autocrlf=true로 clone해
+두 생성 확장자의 LF 바이트 보존을 확인했다.

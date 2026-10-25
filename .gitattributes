@@ -1,0 +1,3 @@
+# 생성기 출력과 checkout의 바이트를 OS와 무관하게 일치시킨다.
+lib/**/*.g.dart text eol=lf
+lib/**/*.freezed.dart text eol=lf

@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'generated_sources.dart';
+
 /// 고정 SDK로 생성·분석·테스트·소비자를 검사한다. 인덱스는 변경하지 않는다.
 Future<void> main(List<String> arguments) async {
   final root = File.fromUri(Platform.script).parent.parent;
@@ -42,21 +44,21 @@ Future<void> main(List<String> arguments) async {
     if (result != 0) throw StateError('검증 실패(exit=$result): $args');
   }
 
-  Map<String, String> generatedContent() => {
-    for (final file in Directory(
-      'lib',
-    ).listSync(recursive: true).whereType<File>())
-      if (file.path.endsWith('.g.dart') || file.path.endsWith('.freezed.dart'))
-        file.path: base64Encode(file.readAsBytesSync()),
-  };
+  final initialGenerated = snapshotGeneratedSources(root);
 
   final pub = app ? flutter : dart;
   await run(pub, ['pub', 'get']);
   await run(dart, ['run', 'build_runner', 'build']);
+  checkGeneratedSourcesUnchanged(
+    initialGenerated,
+    snapshotGeneratedSources(root),
+    phase: '검증 시작 상태와 첫 생성 결과의 일치 검사',
+  );
   final formatPaths = <String>[
     'lib',
     'test',
     'tool/verify.dart',
+    'tool/generated_sources.dart',
     if (Directory('example').existsSync()) 'example',
     for (final file in Directory('tool').listSync().whereType<File>())
       if (file.path.endsWith('_release.dart')) file.path,
@@ -67,12 +69,16 @@ Future<void> main(List<String> arguments) async {
     '--set-exit-if-changed',
     ...formatPaths,
   ]);
-  final before = generatedContent();
+  final before = snapshotGeneratedSources(root);
   await run(dart, ['run', 'build_runner', 'build']);
-  final after = generatedContent();
-  if (before.length != after.length ||
-      before.keys.any((key) => before[key] != after[key])) {
-    throw StateError('생성 파일 재생성 결과가 안정적이지 않습니다.');
+  checkGeneratedSourcesUnchanged(
+    before,
+    snapshotGeneratedSources(root),
+    phase: '반복 생성 안정성 검사',
+  );
+  if (arguments.contains('--ci') ||
+      Platform.environment['GITHUB_ACTIONS'] == 'true') {
+    await checkGeneratedSourcesInGit(root);
   }
   await run(pub, ['analyze']);
   await run(pub, ['test']);
