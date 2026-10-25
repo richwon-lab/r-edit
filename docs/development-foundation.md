@@ -108,7 +108,7 @@ tag checkout의 channel은 user-branch로 표시된다. 공식 해시를 대조�
 ## GitHub Actions와 무료 운용
 
 .github/workflows/verify.yml은 로컬 tool/verify.dart를 재사용한다.
-PR/main/master에서 Ubuntu 표준 러너, 앱은 수동 선택 Windows 빌드만 추가했다.
+PR/main/master에서 ubuntu-24.04 표준 러너를 사용하며, 앱의 수동 선택 Windows 빌드는 windows-latest를 유지한다.
 read-only token, SHA 고정 actions, 시간 제한, 중복 취소를 적용했다. 예약·배포·아티팩트/캐시 업로드는 없다.
 
 [공식 과금 기준](https://docs.github.com/en/billing/concepts/product-billing/github-actions)에 따라 공개 저장소 표준 hosted runner는 무료다.
@@ -163,3 +163,31 @@ bootstrap Dart 다운로드는 setup-dart의 기존 SDK 설치 위치를 유지�
 원격 Actions/실제 Ubuntu 러너의 전체 SDK 설치·검증은 재실행하지 않았다.
 업무 코드 변경이 없어 생성·분석·Dart/Flutter 테스트·AOT·앱 빌드도 반복하지 않았다.
 로컬 shell 초기화 검사를 원격 CI 성공으로 기록하지 않는다.
+
+## Action·러너 유지보수 (2026-10-26)
+
+| 항목 | 현재 고정값 | 확인 |
+|---|---|---|
+| actions/checkout | v5.1.0 / fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 | action.yml의 runs.using: node24, Ubuntu/앱 Windows 모두 적용 |
+| dart-lang/setup-dart | v1 / 6afc89df92d6eb3834022f73cd65adc8cdfcb92d | 고정 action.yml의 runs.using: node24, 변경 불필요 |
+| Ubuntu | ubuntu-24.04 | latest 이미지 이동 영향을 줄이도록 고정 |
+| 앱 Windows | windows-latest | 이번 변경에서 유지 |
+
+[checkout v5.0.0 공식 릴리스](https://github.com/actions/checkout/releases/tag/v5.0.0)는
+Node 24 전환과 최소 runner v2.327.1을 명시한다.
+[v5.1.0 정식 릴리스](https://github.com/actions/checkout/releases/tag/v5.1.0)의 태그를 GitHub API로
+해석해 전체 commit SHA를 확인하고 draft/prerelease가 아님을 확인했다.
+v5.1.0은 allow-unsafe-pr-checkout과 관련 수정의 backport를 포함한다.
+현재 workflow는 일반 pull_request/push의 기본 checkout이며 pull_request_target이나 별도 unsafe checkout을 사용하지 않는다.
+v6 이후의 추가 변경을 함께 도입할 필요 없이 Node 24 전환과 v5 후속 수정을 적용했다.
+
+[고정 checkout action.yml](https://github.com/actions/checkout/blob/fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09/action.yml),
+[고정 setup-dart action.yml](https://github.com/dart-lang/setup-dart/blob/6afc89df92d6eb3834022f73cd65adc8cdfcb92d/action.yml)을 직접 확인했다.
+GitHub-hosted 표준 러너를 대상으로 하며 self-hosted 구버전 러너의 호환 검증을 주장하지 않는다.
+별도 Node 설치나 경고 억제 환경변수는 추가하지 않았다.
+SDK·의존성·검증 명령·권한·무료 활성화·실행 조건은 유지했다.
+
+로컬 actionlint 1.7.12의 스키마/표현식·컨텍스트 검사와 git diff --check를 통과했다.
+workflow 원문을 변경 전과 대조해 checkout SHA/버전 주석·Ubuntu label 외 내용이 같음을 확인했다.
+기존 스테이징은 보존했다. 원격 Actions는 실행하지 않았으며 원격 성공/경고 해소 완료로 보고하지 않는다.
+업무 코드·도구 명령은 그대로이므로 생성·분석·앱 테스트·AOT는 반복하지 않았다.
