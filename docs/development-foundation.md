@@ -131,3 +131,35 @@ Linux CI는 구성 검토이며 실제 Windows 로컬 실행과 구분한다.
 | 원격 로그·인증 | 운영 요구·문구 정보 보존/전송 정책 후 | 원문/토큰 자동 수집 |
 
 보류는 구현자의 임의 선택을 허용한 것이 아니다. 조건 충족 시 비교 근거를 제시하고 사용자 결정 후 도입한다.
+
+## CI 캐시 컨텍스트 수정 (2026-10-26)
+
+이전 YAML 구조 검사만으로는 컨텍스트 사용 위치 오류를 검출하지 못했다.
+workflow/job env에서는 runner 컨텍스트를 사용할 수 없어 실행 전에 검증이 실패했다.
+[공식 context availability](https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#context-availability)를 기준으로 수정했다.
+
+고정 setup-dart 소스는 PUB_CACHE를 사용자 홈으로 다시 export하고 그 bin을 PATH에 추가한다.
+따라서 setup-dart 직후에 RUNNER_TEMP 기준 pub-cache/fvm을 GITHUB_ENV로 등록하고,
+pub-cache/bin을 GITHUB_PATH에도 추가한다. 이후 단계부터 적용되므로 초기화 단계 안에서
+새 환경변수가 이미 설정됐다고 가정하지 않는다.
+[공식 환경 파일 규칙](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands#setting-an-environment-variable),
+[고정 액션 구현](https://github.com/dart-lang/setup-dart/blob/6afc89df92d6eb3834022f73cd65adc8cdfcb92d/lib/main.dart)을 대조했다.
+
+Ubuntu는 bash의 인용한 RUNNER_TEMP/GITHUB_ENV/GITHUB_PATH를 사용한다.
+앱 Windows job은 pwsh의 Join-Path와 UTF-8 Out-File을 사용한다.
+bootstrap Dart 다운로드는 setup-dart의 기존 SDK 설치 위치를 유지하며,
+이후 pub global activate FVM, FVM의 Flutter SDK 설치, verify.dart의 pub get/생성/검증은
+동일한 PUB_CACHE/FVM_CACHE_PATH를 상속한다. tool/fvm.ps1은 로컬 개발용이며 CI에서 호출하지 않는다.
+
+실제 로컬 검사:
+- actionlint 1.7.12로 수정 전 컨텍스트 오류 재현, 수정 후 두 workflow의 표현식·컨텍스트/스키마 검사 통과.
+- 외부 ShellCheck/Pyflakes는 설치하지 않아 actionlint에서 비활성화했다.
+- 추출한 Ubuntu 초기화 스크립트를 Windows Git Bash에서 구문 검사·실행하고,
+  Windows 초기화는 PowerShell 파서·실행으로 검사했다. 공백·한글 경로에서 env/PATH 출력값을 확인했다.
+- YAML 의미 비교로 SDK/패키지 버전, 권한, 무료 활성화 조건, 실행 조건/기존 명령 유지 확인.
+- FVM 4.3.2의 환경설정 로더와 verify.dart의 PUB_CACHE 상속을 소스 대조했다.
+- git diff --check와 기존 인덱스 보존 확인.
+
+원격 Actions/실제 Ubuntu 러너의 전체 SDK 설치·검증은 재실행하지 않았다.
+업무 코드 변경이 없어 생성·분석·Dart/Flutter 테스트·AOT·앱 빌드도 반복하지 않았다.
+로컬 shell 초기화 검사를 원격 CI 성공으로 기록하지 않는다.
