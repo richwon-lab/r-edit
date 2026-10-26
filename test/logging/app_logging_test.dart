@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart' show ProviderException;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:logging/logging.dart';
+import 'package:r_edit/app/logging/app_log_diagnostic.dart';
 import 'package:r_edit/app/logging/app_log_event.dart';
 import 'package:r_edit/app/logging/app_logging.dart';
 
@@ -31,9 +32,108 @@ void main() {
       ),
     );
     expect(text, contains('package:r_edit/main.dart:12:3'));
-    expect(text, contains('local-source:45:6'));
+    expect(text, contains('file:file.dart:45:6'));
     expect(text, isNot(contains('비공개')));
     expect(text, isNot(contains('private')));
+  });
+
+  test('명시적으로 선택한 진단과 다른 패키지의 소스 위치를 실제 JSONL에 보존한다', () async {
+    runtime = await AppLogging.start(
+      debug: false,
+      directory: () async => directory,
+    );
+    const error = FormatException('비공개 외부 메시지', '비공개 원문 전체 JSON');
+    final stack = StackTrace.fromString(
+      '#0 비공개 함수 (package:other_package/src/reader.dart:28:9)\n'
+      '#1 method (file:///C:/Users/private_user/project/lib/main.dart:45:6)',
+    );
+    // 로그 투영 계약의 테스트 자료다. workflow 연결/업무 명령을 가정하지 않는다.
+    runtime!.reportUnexpected(
+      error,
+      stack,
+      AppEvent.platformError,
+      diagnostic: const AppLogDiagnostic(
+        code: 'invalidType',
+        fieldPath: 'items[1].value',
+        type: AppLogTypeDiagnostic(expectedType: 'String', actualType: 'int'),
+        operation: 'readValue',
+      ),
+    );
+    await runtime!.flush();
+    final text = await File(runtime!.filePath!).readAsString();
+    final record = const LineSplitter()
+        .convert(text)
+        .map((line) => jsonDecode(line) as Map<String, dynamic>)
+        .singleWhere((record) => record['event'] == 'platformError');
+    expect(record['diagnostic'], {
+      'code': 'invalidType',
+      'fieldPath': 'items[1].value',
+      'expectedType': 'String',
+      'actualType': 'int',
+      'operation': 'readValue',
+    });
+    expect(record['errorType'], 'FormatException');
+    expect(record.containsKey('wrapperTypes'), isFalse);
+    expect(
+      record['stack'],
+      'package:other_package/src/reader.dart:28:9\nfile:main.dart:45:6',
+    );
+    expect(text, isNot(contains('비공개')));
+    expect(text, isNot(contains('private_user')));
+    expect(text, isNot(contains('C:/Users')));
+  });
+
+  test('Riverpod wrapper가 먼저 도달해도 원래 실패 타입·스택과 선택한 진단을 파일에 보존한다', () async {
+    runtime = await AppLogging.start(
+      debug: false,
+      directory: () async => directory,
+    );
+    const failure = FormatException('비공개 외부 메시지', '비공개 전체 상태');
+    final originalStack = StackTrace.fromString(
+      '#0 parse (package:third_party/parser.dart:8:2)',
+    );
+    // observer 없는 컨테이너에서 실제 Riverpod wrapper를 얻는다.
+    final provider = Provider<int>(
+      (ref) => Error.throwWithStackTrace(failure, originalStack),
+    );
+    final container = ProviderContainer();
+    addTearDown(container.dispose);
+    try {
+      container.read(provider);
+      fail('Provider 실패가 정상값으로 바뀜');
+    } on ProviderException catch (wrapper, wrapperStack) {
+      expect(wrapper.exception, same(failure));
+      runtime!.reportUnexpected(
+        wrapper,
+        wrapperStack,
+        AppEvent.flutterError,
+        diagnostic: const AppLogDiagnostic(
+          code: 'invalidType',
+          fieldPath: 'value',
+          type: AppLogTypeDiagnostic(expectedType: 'String', actualType: 'int'),
+        ),
+      );
+      // 원인이 뒤에 다시 도달해도 기존 중복 방지 정책을 유지한다.
+      runtime!.reportUnexpected(failure, originalStack, AppEvent.providerError);
+    }
+    await runtime!.flush();
+    final text = await File(runtime!.filePath!).readAsString();
+    final errors = const LineSplitter()
+        .convert(text)
+        .map((line) => jsonDecode(line) as Map<String, dynamic>)
+        .where((record) => record.containsKey('errorType'))
+        .toList();
+    expect(errors, hasLength(1));
+    expect(errors.single['errorType'], 'FormatException');
+    expect(errors.single['wrapperTypes'], ['ProviderException']);
+    expect(errors.single['stack'], 'package:third_party/parser.dart:8:2');
+    expect(errors.single['diagnostic'], {
+      'code': 'invalidType',
+      'fieldPath': 'value',
+      'expectedType': 'String',
+      'actualType': 'int',
+    });
+    expect(text, isNot(contains('비공개')));
   });
 
   test('배포 레벨은 FINE의 지연 메시지를 평가하지 않고 고정 이벤트만 파일에 기록한다', () async {

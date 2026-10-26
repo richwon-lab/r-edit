@@ -67,7 +67,7 @@ Windows Application Support는 RoamingAppData다. Application Cache가 LocalAppD
 레코드는 UTC 시각/고정 이벤트명/레벨/등록 로거명/pid/Stopwatch 경과 시간으로 구성한다.
 실행은 기존 pid와 시작 시각으로 연결하며 새 업무 ID 체계를 만들지 않는다.
 실제 업무 연결 전이므로 제품/영역 ID 필드를 미리 만들지 않는다. 향후 해당 경계에서 원래 ID만 명시적으로 전달한다.
-오류 객체와 스택은 Logger의 error/stackTrace 인자로 전달하고 출력 경계가 안전한 타입명·제한된 프레임만 선택한다.
+오류 객체와 스택은 Logger의 error/stackTrace 인자로 전달한다. 출력 경계는 원래 실패 타입·wrapper 타입·제한된 소스 위치와 호출자가 승인한 진단만 선택한다.
 스택 경로/임의 문자열은 마스킹/절단한다. 로그에 sourceText·전체 JSON·Provider 상태를 자동 덤프하지 않는다.
 debug 기본 FINE, profile/release INFO다. 비싼 메시지는 logging의 지연 콜백과 isLoggable로 보호한다.
 예상 입력 거부/취소는 기능 경계에서 처리하며 SEVERE로 자동 기록하지 않는다. 실제 그런 명령은 아직 없다.
@@ -156,7 +156,8 @@ causeStackTrace는 최초 실패, contextStackTrace는 문맥 연결 경계다. 
   design/design_errors.dart, product/product_design_errors.dart — 각 오류 계열의 상세/설명/조합 검사.
 - workflow의 모델/JSON 문맥 catch — 처리 가능한 해당 예외만 잡고 Error.throwWithStackTrace로 변환.
   geometry_path의 환산 퇴화 재분류는 원인 객체/스택을 함께 보존하며 다른 코드는 rethrow.
-- 앱 app_log_event.dart — 허용 이벤트와 안전한 출력 변환. 임의 문구/외부 메시지는 받지 않음.
+- 앱 app_log_event.dart — 허용 이벤트·원래 실패/wrapper 구분·안전한 소스 위치/JSONL 변환.
+- 앱 app_log_diagnostic.dart — 처리 경계가 명시적으로 승인한 코드/필드 경로/타입/연산명만 전달하는 로그 투영.
 - 앱 app_logging.dart — root 레벨/구독/Flutter·Platform·Provider 경계/정상 종료 수명.
 - 앱 rotating_file_log.dart — 앱 전용 고정 슬롯·한도·OS lock·비동기 쓰기.
   stdout/원격 전송/로그 조회 UI/업무 이력은 구현하지 않음.
@@ -191,3 +192,88 @@ jni는 다른 플랫폼 구현에서 따라온 FFI 등록 정보이며 앱 업�
   자식 isolate·업무 I/O·배치 결과·저장·로그 조회/공유·원격 수집은 미구현이다.
 - 기존 스테이징은 비어 있었으며 유지했다. 실제 저장소에 stage/commit/push/reset/checkout을 수행하지 않았다.
 
+
+
+## 진단·소스 위치 출력 보완 (2026-10-27)
+
+이 절이 앱 로그의 현행 출력 계약이다. 앞선 실행 결과는 해당 작업 당시 기록이다.
+이 변경은 앱의 로그 출력과 테스트에 한정하며 workflow·업무 기능·의존성·잠금/회전/종료 정책을 바꾸지 않는다.
+
+### 명시적 진단 투영
+
+처리 경계는 의미를 아는 오류에서 허용할 메타데이터만 AppLogDiagnostic으로 선택한다.
+code는 필수, fieldPath·operation은 필요할 때만 전달한다.
+타입 차이는 AppLogTypeDiagnostic의 expectedType/actualType 쌍으로 전달한다.
+code/operation은 개발자가 정의한 이름, fieldPath는 필드명과 0 기반 인덱스다.
+실제 입력값·ID를 삽입한 경로·외부 메시지·원문·전체 JSON/상태를 넣지 않는다.
+문자열의 업무 민감성은 타입이 자동 판별할 수 없으므로 선택하는 경계의 책임이다.
+임의 Map/객체를 진단으로 받지 않으며 출력 전용 허용 필드만 수동으로 선택한다.
+업무 값 모델/JSON 복원/값 비교가 아니므로 생성 모델이나 범용 예외 직렬화기를 만들지 않았다.
+
+전달 경로는 다음 두 가지다.
+- AppLogEvent(event, diagnostic: selectedDiagnostic)를 기존 Logger 레벨/오류/스택 인자와 함께 전달한다.
+- 예상 밖 실패의 최종 경계는 reportUnexpected(..., diagnostic: selectedDiagnostic)를 사용한다.
+  이 API는 기존처럼 SEVERE다. 예상 입력 거부를 자동으로 이 API에 전달하지 않는다.
+
+알려지지 않은 오류와 전역 핸들러는 진단을 추측하지 않으며 diagnostic 키를 생략한다.
+같은 원인은 처음 정한 경계에서 한 번 기록한다. 먼저 기록한 뒤 늦게 온 진단으로
+기존 기록을 수정하거나 같은 오류를 다시 출력하지 않는다.
+따라서 실제 기능 연결 시 의미를 아는 처리 경계가 최초 기록 전에 진단을 선택해야 한다.
+Provider가 먼저 오류 상태를 기록하는 기능을 연결할 때는 해당 Provider 경계의 선택 책임도 함께 정해야 한다.
+
+현재 앱은 workflow를 참조하지 않으며 해당 예외의 실사용 매핑은 없다.
+향후 실제 연결 시 workflow의 code/fieldPath와 해당 타입 상세/기하 diagnostic.operation 등에서
+기록을 승인한 값만 변환한다. sourceText·실제 미지원 문자열·전체 예외를 자동 직렬화하지 않는다.
+이번 테스트의 FormatException과 명시적 진단은 출력 계약 확인 자료이며 가짜 업무 명령/엔진이 아니다.
+
+### 원래 실패와 Riverpod wrapper
+
+errorType은 ProviderException을 벗긴 원래 실패의 runtimeType 이름이다.
+wrapperTypes는 바깥쪽부터 안쪽 순서의 wrapper 타입 목록이며 wrapper가 없으면 생략한다.
+원래 오류 메시지를 평가하지 않으며 Riverpod의 공개 exception/stackTrace 필드만 해석한다.
+스택은 가장 안쪽 원인의 스택을 사용한다. 오류 전달/예외 객체/핸들러 반환값은 바꾸지 않는다.
+기존 동일 원인 identity 중복 방지도 그대로 유지한다.
+
+아래는 실제 JSONL 테스트가 확인하는 필드 구조다. 시각/pid/경과 시간은 생략한 테스트 자료이며 실제 업무 결과가 아니다.
+~~~json
+{
+  "event": "flutterError",
+  "errorType": "FormatException",
+  "wrapperTypes": ["ProviderException"],
+  "diagnostic": {
+    "code": "invalidType",
+    "fieldPath": "value",
+    "expectedType": "String",
+    "actualType": "int"
+  },
+  "stack": "package:third_party/parser.dart:8:2"
+}
+~~~
+별도 JSONL 사례에서는 operation: readValue도 보존한다. 선택하지 않은 필드는 null 대신 생략한다.
+
+### 소스 위치와 개인정보
+
+safeStack은 입력 앞 4096자·최대 16행을 검사한다. 기존 16KiB/건·64건 큐·5MiB × 3슬롯은 유지한다.
+Dart VM의 #번호 함수 (위치) 형식을 해석하며 다음 위치만 출력한다.
+- package URI: r_edit에 한정하지 않고 package:third_party/src/file.dart:줄:열을 보존한다.
+- dart URI: dart:async/future_impl.dart:줄:열을 보존한다.
+- file URI/Windows 절대경로/POSIX 절대경로: 디렉터리를 제거한 file:파일명:줄:열만 출력한다.
+- 열 정보가 없는 지원 위치는 줄까지만 보존한다. 비동기 간격은 async-gap이다.
+
+함수 표현과 사용자 디렉터리는 출력하지 않는다. ASCII 파일명/URI 경로의 위 형식 밖인
+웹/V8·네이티브·난독화 스택 등은 unparsed-frame으로 제한한다. 원래 텍스트를 대체 문구에 끼워 넣지 않는다.
+지원하는 스택 형식의 범위를 확대할 때는 위치 보존과 경로 비노출 회귀 사례를 함께 추가한다.
+
+### 이번 보완의 실제 검사
+
+- 프로젝트 전용 SDK로 format 및 flutter analyze 성공(No issues found).
+- app_log_event_test.dart 11개·app_logging_test.dart 9개 각각 단독 실행 성공.
+- 전체 tool/verify.dart 성공: 첫 생성 전후 경로/내용 일치·반복 생성 안정성·포맷·분석·41개 테스트.
+- 임시 디렉터리의 실제 JSONL에서 code/fieldPath/expectedType/actualType/operation을 확인했다.
+  실제 ProviderException을 통해 원래 FormatException 타입/스택과 wrapperTypes가 함께 보존됨을 확인했다.
+- 다른 패키지·dart URI, Windows/POSIX/file URI, 열 없는 URI, 미지원 형식, 긴 스택을 검사했다.
+  원문/전체 상태/외부 메시지/로컬 사용자 경로 미출력과 error.toString 비평가도 확인했다.
+- 기존 회전/용량/대기열/프로세스 잠금/종료/중복 방지 테스트를 전체 실행에 포함했다.
+- 앱 UI·Windows 네이티브·의존성·SDK·workflow는 변경하지 않았다.
+  Windows 앱 실행/빌드·원격 CI·workflow AOT/소비자는 이번 출력 보완에서 반복하지 않았다.
+- 시작 시 사용자 변경/스테이징은 없었으며 인덱스는 변경하지 않았다. 커밋·푸시하지 않았다.

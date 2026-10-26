@@ -7,9 +7,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_riverpod/misc.dart' show ProviderException;
 import 'package:logging/logging.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:r_edit/app/logging/app_log_diagnostic.dart';
 import 'package:r_edit/app/logging/app_log_event.dart';
 import 'package:r_edit/app/logging/rotating_file_log.dart';
 
@@ -121,17 +121,21 @@ final class AppLogging {
   }
 
   /// 예상 밖 실패만 최종 경계에서 기록한다. 원래 예외/스택을 별도 인자로 전달한다.
-  void reportUnexpected(Object error, StackTrace stack, AppEvent event) {
+  /// diagnostic은 해당 오류를 이해하는 경계가 선택한다. 전역 핸들러는 추측하지 않는다.
+  void reportUnexpected(
+    Object error,
+    StackTrace stack,
+    AppEvent event, {
+    AppLogDiagnostic? diagnostic,
+  }) {
     // Riverpod의 공개 원인 필드로만 동일성을 판단한다. 예외를 재던지거나 바꾸지 않는다.
-    var identity = error;
-    while (identity is ProviderException) {
-      identity = identity.exception;
-    }
+    final identity = appFailureContext(error, stack).error;
     if (identity is Exception || identity is Error) {
       if (_reported[identity] == true) return;
       _reported[identity] = true;
     }
-    Logger('r_edit.errors').severe(AppLogEvent(event), error, stack);
+    Logger('r_edit.errors')
+        .severe(AppLogEvent(event, diagnostic: diagnostic), error, stack);
   }
 
   /// 취소 가능한 정상 종료 요청에서 flush 후 exit를 응답한다.
