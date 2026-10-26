@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:r_edit/app/logging/app_log_event.dart';
 import 'package:r_edit/app/providers/app_logger.dart';
 import 'package:r_edit/app/start_page.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -17,7 +18,7 @@ GoRouter appRouter(Ref ref) {
     errorBuilder: (context, state) =>
         const Scaffold(body: Center(child: Text('페이지를 찾을 수 없습니다.'))),
     redirect: (context, state) {
-      logger.fine('앱 경로 확인');
+      logger.fine(const AppLogEvent(AppEvent.routeChecked));
       return null;
     },
   );

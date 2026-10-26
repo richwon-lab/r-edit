@@ -245,3 +245,11 @@ test/tool/generated_sources_test.dart는 시스템 임시 디렉터리의 독립
 생성기가 쓰는 LF와 일치하도록 .gitattributes를 lib/**/*.g.dart와 lib/**/*.freezed.dart에만 적용했다.
 다른 파일의 줄 끝 정책은 바꾸지 않았다. 임시 Git 저장소를 core.autocrlf=true로 clone해
 두 생성 확장자의 LF 바이트 보존을 확인했다.
+
+## 예외·진단·로깅 (2026-10-27)
+
+현재 [처리·소유권·기술 선택 계약](failure-diagnostics-logging.md)이 이전의 개발 콘솔 전용 로그 설명을 보완한다.
+logging 1.3.0은 유지하고 앱 로컬 경로에 path_provider 2.1.6을 채택했다.
+고정 3슬롯 총 15MiB·레코드 16KiB·대기열 64건, 정상 종료 flush를 적용한다.
+root/Flutter/Platform/Riverpod 경계는 앱만 소유한다. workflow에 로그/플랫폼 의존성을 넣지 않는다.
+Talker·logging_appenders 비교 근거, 원문 보호와 동시 프로세스 제한은 위 계약을 따른다.

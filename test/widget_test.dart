@@ -64,6 +64,6 @@ void main() {
     );
     addTearDown(container.dispose);
     container.read(appThemeModeProvider.notifier).select(ThemeMode.dark);
-    expect(records.map((record) => record.message), ['앱 테마 모드 변경']);
+    expect(records.map((record) => record.message), ['themeChanged']);
   });
 }

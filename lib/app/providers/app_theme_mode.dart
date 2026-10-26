@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:r_edit/app/logging/app_log_event.dart';
 import 'package:r_edit/app/providers/app_logger.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -14,6 +15,6 @@ class AppThemeMode extends _$AppThemeMode {
   void select(ThemeMode mode) {
     if (state == mode) return;
     state = mode;
-    ref.read(appLoggerProvider).info('앱 테마 모드 변경');
+    ref.read(appLoggerProvider).info(const AppLogEvent(AppEvent.themeChanged));
   }
 }

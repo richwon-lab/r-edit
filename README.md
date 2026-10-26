@@ -54,14 +54,16 @@ Windows 창 제목·제품명·파일 설명은 R-edit, 회사명은 리치원�
 실행 파일·내부 식별자는 `r_edit`를 유지한다. 버전 리소스는 Flutter의 버전 설정에 연결한다.
 현재 의존성·역할은 [공통 기준](docs/development-foundation.md)을 따른다.
 앱은 Riverpod ProviderScope 아래 객체 제공/ThemeMode 상태, go_router 시작 경로와 오류 화면,
-logging의 로컬 개발 로그를 연결했다. 업무 버튼·엔진·저장 모델은 추가하지 않았다.
+logging의 개발 콘솔·제한된 로컬 파일 로그를 연결했다. 업무 버튼·엔진·저장 모델은 추가하지 않았다.
 
 | 파일 | 기반 연결 책임 |
 |---|---|
 | lib/app/providers/app_logger.dart | 앱 Logger 제공 |
 | lib/app/providers/app_theme_mode.dart | 앱 표시 테마 상태·변경 로그 |
 | lib/app/providers/app_router.dart | 시작/없는 경로·수명 종료 |
-| lib/app/logging/app_logging.dart | 진입점 로컬 로그 구독 |
+| lib/app/logging/app_logging.dart | 로그 수명·전역 오류·Provider 실패·정상 종료 |
+| lib/app/logging/app_log_event.dart | 고정 이벤트·안전한 JSONL 레코드 |
+| lib/app/logging/rotating_file_log.dart | 크기/버퍼/OS lock을 가진 고정 파일 슬롯 |
 | build.yaml | Provider·실제 값 모델 생성 범위 |
 | tool/fvm.ps1 / tool/verify.dart | 프로젝트 SDK·공통 검증 |
 | .github/workflows/verify.yml | 무료 운용 경계를 둔 CI |
@@ -77,3 +79,17 @@ workflow는 독립 저장소의 값·참조 계약을 제공한다. 앱 runtime 
 생성 소스 검증은 시작 상태와 첫 생성 결과의 일치, 반복 생성 안정성을 따로 검사한다.
 CI에서는 생성 소스의 Git 포함 상태도 검사하며 로컬 기본 실행은 HEAD와 비교하지 않는다.
 실패 후 재생성·검토·재검사 절차와 실제 결과는 [개발 기준](docs/development-foundation.md)의 생성 소스 검증 계약을 따른다.
+
+## 실행 후 로컬 로그
+
+[예외·진단·로깅 기준](docs/failure-diagnostics-logging.md)을 따른다.
+Windows의 path_provider Application Cache 아래 logs에 JSONL을 기록한다.
+현재 리소스 기준 위치는 %LOCALAPPDATA%\리치원컴퍼니\R-edit\logs다.
+활성 파일 포함 총 15MiB(5MiB × 3슬롯)이며 캐시 정리/강제 종료의 마지막 기록 보존은 보장하지 않는다.
+파일에는 고정 이벤트·시각·레벨·pid·경과 시간과 안전한 오류 타입/소스 위치만 기록한다.
+업무 원문·전체 상태·외부 오류 메시지·작업 이력은 기록하지 않는다.
+
+PowerShell에서 -d가 공통 Debug 매개변수로 소비되지 않도록 실행 인자를 배열로 전달할 수 있다.
+~~~powershell
+./tool/fvm.ps1 -FvmArguments @('flutter', 'run', '-d', 'windows')
+~~~
