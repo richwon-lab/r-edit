@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:r_edit/app/logging/app_log_event.dart';
 import 'package:r_edit/app/providers/app_logger.dart';
-import 'package:r_edit/app/start_page.dart';
+import 'package:r_edit/app/routing/app_routes.dart';
+import 'package:r_edit/l10n/generated/app_localizations.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'app_router.g.dart';
@@ -12,11 +13,10 @@ part 'app_router.g.dart';
 GoRouter appRouter(Ref ref) {
   final logger = ref.watch(appLoggerProvider);
   final router = GoRouter(
-    routes: [
-      GoRoute(path: '/', builder: (context, state) => const StartPage()),
-    ],
-    errorBuilder: (context, state) =>
-        const Scaffold(body: Center(child: Text('페이지를 찾을 수 없습니다.'))),
+    routes: $appRoutes,
+    errorBuilder: (context, state) => Scaffold(
+      body: Center(child: Text(AppLocalizations.of(context).pageNotFound)),
+    ),
     redirect: (context, state) {
       logger.fine(const AppLogEvent(AppEvent.routeChecked));
       return null;

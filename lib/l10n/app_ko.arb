@@ -1,0 +1,9 @@
+{
+  "@@locale": "ko",
+  "programDescription": "명판 문구 배치 및 제작 파일 작성 프로그램",
+  "@programDescription": {"description": "시작 화면의 프로그램 설명"},
+  "startGuidance": "작업 기능은 앞으로 이 화면에 연결됩니다.",
+  "@startGuidance": {"description": "업무 기능 연결 전의 시작 안내"},
+  "pageNotFound": "페이지를 찾을 수 없습니다.",
+  "@pageNotFound": {"description": "미등록 경로 안내"}
+}

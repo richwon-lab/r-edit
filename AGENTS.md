@@ -44,3 +44,11 @@
 - 원인·스택은 보존하며 처리 가능한 실패만 잡는다. 예상 입력 거부는 기능 경계에서 처리하고 같은 실패는 최종 경계에서 한 번 기록한다.
 - 앱이 root/레벨/구독/전역 핸들러/로컬 파일 수명을 소유한다. 파일은 허용 이벤트만 기록하고 원문·전체 JSON·Provider 상태·외부 오류 메시지를 덤프하지 않는다.
 - 새 로깅 도구나 출력 대상을 임의 추가하지 않는다. 변경 시 한도·잠금·해제·실패 격리·실제 Windows 로그를 검증한다.
+
+## 개발 기반 보완 (2026-10-28)
+
+- [개발 기반 보완](docs/development-foundation-additions.md)을 따른다. Dependabot 및 다른 자동 갱신 도구는 보류한다.
+- 앱은 riverpod_lint의 공식 분석 플러그인과 fatal-infos 검사, go_router_builder의 타입 라우트, 공식 ARB/gen_l10n 한국어화를 사용한다.
+- workflow는 결과를 버리면 호출 목적이 사라지는 API에 meta의 @useResult를 선별 적용한다. annotation을 런타임 검증 대신 사용하지 않는다.
+- 지역화 생성 파일은 Git 관리하고 첫 pub get 이전 상태와 비교한다. 반복 생성 안정성과 CI Git 포함 검사는 별도 조건이다.
+- workflow 문서는 SDK dart doc --dry-run과 경고/오류 거부 경계로 검사한다. IDE 실행·HTML 시각 확인·원격 CI를 로컬 성공과 혼동하지 않는다.

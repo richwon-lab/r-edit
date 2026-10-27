@@ -9,6 +9,9 @@ targets:
       riverpod_generator:
         generate_for:
           - lib/app/providers/*.dart
+      go_router_builder:
+        generate_for:
+          - lib/app/routing/*.dart
       freezed:
         generate_for:
           - lib/**/*.dart

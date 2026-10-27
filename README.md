@@ -93,3 +93,10 @@ PowerShell에서 -d가 공통 Debug 매개변수로 소비되지 않도록 실�
 ~~~powershell
 ./tool/fvm.ps1 -FvmArguments @('flutter', 'run', '-d', 'windows')
 ~~~
+
+## 개발 기반 보완
+
+현재 도구·호환성·명령·검사 범위는 [개발 기반 보완](docs/development-foundation-additions.md)을 따른다.
+Flutter 3.47.7/Dart 3.13.5와 기존 Freezed/생성기 기준은 유지한다.
+로컬 전체 검증: ./tool/fvm.ps1 dart tool/verify.dart
+분석은 --fatal-infos를 사용해 안내 수준의 채택 lint도 실패로 처리한다.

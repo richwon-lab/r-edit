@@ -1,3 +1,5 @@
+> 현행 보완 기준(2026-10-28): [개발 기반 보완](development-foundation-additions.md). 새 분석 플러그인·타입 라우트·한국어화·meta·문서 검사는 이 결정을 따른다. 아래 날짜별 선택 근거는 당시 기록이다.
+
 # 공통 개발 기반
 
 결정·공식 자료 확인일: 2026-10-26. 앱 r_edit와 순수 Dart r_edit_workflow의 공통 기준이다.
@@ -15,13 +17,13 @@
 | flutter_riverpod | 3.4.3 | 앱 객체 제공·화면 상태 연결 | workflow 상태·업무 정책 소유 금지 |
 | riverpod_annotation / generator | 4.0.7 / 4.0.9 | 앱 Provider 선언·생성 | 별도 DI 프레임워크 중복 도입 금지 |
 | 생성자 주입 | Dart 언어 기능 | workflow의 실제 외부 협력 객체 전달 | 전역 컨테이너·빈 Repository 금지 |
-| go_router | 17.1.0 | 앱 화면 이동 | 라우터에 업무 흐름 구현 금지 |
+| go_router / builder | 17.3.0 / 4.5.2 | 앱 화면 이동 | 라우터에 업무 흐름 구현 금지 |
 | logging | 1.3.0 | 앱 진입점 root 처리, 기능별 Logger | 업무 오류 반환·원문 저장 대체 금지 |
 | very_good_analysis | 11.0.0 | 공통 분석 + strict 3종 | flutter_lints/lints 중복 include 금지 |
 | Fake 우선 / mocktail | 1.0.5 검토, 미추가 | 실제 협력 객체 필요 시 작은 Fake, 상호작용 검증 필요 시 mocktail | 사용처 없는 대역·Mockito 직접 도입 금지 |
 
 앱의 Freezed/JSON 도구는 기준만 준비했다. 가짜 업무 모델을 만들지 않았다.
-workflow runtime에는 기존 annotation 두 개만 필요하다. 앱 상태·라우터·플랫폼·logging 의존성을 추가하지 않았다.
+workflow runtime에는 Freezed/JSON annotation과 직접 의존성 meta 1.19.0을 사용한다. 앱 상태·라우터·플랫폼·logging 의존성을 추가하지 않았다.
 향후 실제 로그가 필요하면 logging과 생성자 전달 책임을 검토하고 라이브러리에서 root handler를 설치하지 않는다.
 Riverpod 생성기의 전이 개발 의존성 mockito는 자체 테스트 도구 채택을 뜻하지 않는다.
 

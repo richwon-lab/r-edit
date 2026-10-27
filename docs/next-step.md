@@ -65,3 +65,21 @@ AppLogDiagnostic으로 코드·필드 경로·타입 쌍·연산명을 선택해
 Windows 앱 실행/네이티브 빌드·원격 CI·workflow AOT/소비자는 반복하지 않았다.
 workflow 실사용 매핑은 아직 없으며 향후 연결 시 최초 처리 경계에서 공개 가능한 진단을 선택해야 한다.
 다음 업무 작업은 앞선 안전한 제품 구성 변경 반영/첫 실제 명령 범위 검토를 유지한다.
+
+## 개발 기반 보완 — 2026-10-28
+
+[현행 기준과 명령](development-foundation-additions.md)을 적용했다.
+앱은 riverpod_lint 3.1.9, go_router_builder 4.5.2/go_router 17.3.0과 공식 한국어화를 사용한다.
+workflow는 meta 1.19.0의 선별 @useResult와 SDK dart doc 검사를 사용한다.
+업무 값·JSON·기하·도안 변경·로그 정책은 변경하지 않았다.
+
+실제 검사: 앱 전체 검증 46개 테스트·Windows debug 빌드, workflow 전체 검증
+502개 테스트·AOT 7개·생성 없는 소비자 실행, 문서 경고/오류 0건.
+격리 자료에서 Provider 오용, 외부 소비자의 반환값 무시, 끊어진 문서 참조를 검출했다.
+격리 앱의 오래된/누락 지역화 파일은 첫 pub get이 재생성해도 초기 상태 비교에서 실패했다.
+Windows 정상 시작 화면은 시각 확인했다. 이후 기본 위젯 검사 앱의 화면 캡처는
+no monitor found for window로 실패했다. Material·Cupertino 한국어 리소스는 위젯 테스트로 확인했다.
+IDE 분석 실행, 원격 Actions 실행, HTML 생성/시각 검증은 하지 않았다.
+
+다음 한 가지: workflow의 공개 입력 모델을 앱에 연결할 첫 범위를 검토한다. 새 저장·배치 기능을 함께 구현하지 않는다.
+이번 도구 적용을 새 업무 기능이나 안전한 도안 변경 반영 완료로 해석하지 않는다.

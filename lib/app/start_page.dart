@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:r_edit/l10n/generated/app_localizations.dart';
 
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
@@ -6,6 +7,7 @@ class StartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final strings = AppLocalizations.of(context);
 
     return Scaffold(
       body: SafeArea(
@@ -27,12 +29,12 @@ class StartPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    '명판 문구 배치 및 제작 파일 작성 프로그램',
+                    strings.programDescription,
                     style: theme.textTheme.titleLarge,
                   ),
                   const SizedBox(height: 12),
                   Text(
-                    '작업 기능은 앞으로 이 화면에 연결됩니다.',
+                    strings.startGuidance,
                     style: theme.textTheme.bodyLarge?.copyWith(
                       color: theme.colorScheme.onSurfaceVariant,
                     ),

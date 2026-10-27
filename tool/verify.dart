@@ -48,6 +48,7 @@ Future<void> main(List<String> arguments) async {
 
   final pub = app ? flutter : dart;
   await run(pub, ['pub', 'get']);
+  if (app) await run(flutter, ['gen-l10n']);
   await run(dart, ['run', 'build_runner', 'build']);
   checkGeneratedSourcesUnchanged(
     initialGenerated,
@@ -70,6 +71,7 @@ Future<void> main(List<String> arguments) async {
     ...formatPaths,
   ]);
   final before = snapshotGeneratedSources(root);
+  if (app) await run(flutter, ['gen-l10n']);
   await run(dart, ['run', 'build_runner', 'build']);
   checkGeneratedSourcesUnchanged(
     before,
@@ -80,7 +82,7 @@ Future<void> main(List<String> arguments) async {
       Platform.environment['GITHUB_ACTIONS'] == 'true') {
     await checkGeneratedSourcesInGit(root);
   }
-  await run(pub, ['analyze']);
+  await run(pub, ['analyze', '--fatal-infos']);
   await run(pub, ['test']);
   if (app) {
     if (arguments.contains('--windows')) {

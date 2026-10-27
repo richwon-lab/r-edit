@@ -53,6 +53,27 @@ void main() {
   });
 
   group('생성 소스 시작 상태와 재생성 결과', () {
+    test('지역화 Dart 파일을 검사하고 수동 l10n 소스는 포함하지 않는다', () async {
+      final locale = File(
+        '${root.path}/lib/l10n/generated/app_localizations_ko.dart',
+      );
+      await locale.create(recursive: true);
+      await locale.writeAsString('// generated ko');
+      final manual = File('${root.path}/lib/l10n/manual.dart');
+      await manual.writeAsString('// manual');
+      final before = snapshotGeneratedSources(root);
+      expect(before, contains('lib/l10n/generated/app_localizations_ko.dart'));
+      expect(before, isNot(contains('lib/l10n/manual.dart')));
+      await locale.writeAsString('// stale ko');
+      expect(
+        () => checkGeneratedSourcesUnchanged(
+          before,
+          snapshotGeneratedSources(root),
+          phase: '첫 생성',
+        ),
+        gitFailure('lib/l10n/generated/app_localizations_ko.dart'),
+      );
+    });
     test('같은 경로와 바이트이면 통과한다', () {
       final before = snapshotGeneratedSources(root);
       checkGeneratedSourcesUnchanged(
@@ -122,6 +143,30 @@ void main() {
         ),
       );
     });
+  });
+
+  group('CI 지역화 소스 Git 포함 검사', () {
+    for (final operation in ['미추적', '수정', '삭제']) {
+      test('지역화 파일 $operation 상태를 놓치지 않는다', () async {
+        final locale = File(
+          '${root.path}/lib/l10n/generated/app_localizations_ko.dart',
+        );
+        await locale.create(recursive: true);
+        await locale.writeAsString('// generated ko');
+        if (operation != '미추적') {
+          await commitFixture();
+          if (operation == '수정') {
+            await locale.writeAsString('// changed ko');
+          } else {
+            await locale.delete();
+          }
+        }
+        await expectLater(
+          checkGeneratedSourcesInGit(root),
+          gitFailure('lib/l10n/generated/app_localizations_ko.dart'),
+        );
+      });
+    }
   });
 
   group('CI 생성 소스 Git 포함 검사', () {

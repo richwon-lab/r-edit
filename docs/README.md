@@ -46,3 +46,9 @@ DOCX·XLSX를 직접 읽지 못하는 개발 도구는 reference/text의 추출�
 현재 개발 환경·기술 기준: [공통 개발 기반](development-foundation.md).
 
 - [예외·진단·로깅 기준](failure-diagnostics-logging.md): 처리 소유권·기술 비교·로컬 파일 한도·전역 오류·실제 검사.
+
+## 현행 개발 도구 보완
+
+[개발 기반 보완 — 2026-10-28](development-foundation-additions.md):
+riverpod_lint·타입 라우트·공식 한국어화·workflow meta·문서 검사.
+버전·호환성·생성 순서와 실제 검사/미실행 범위를 구분한다.
