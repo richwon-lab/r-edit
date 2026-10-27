@@ -53,6 +53,23 @@ void main() {
   });
 
   group('생성 소스 시작 상태와 재생성 결과', () {
+    test('지역화 파일의 줄바꿈만 바뀌어도 바이트 불일치로 거부한다', () async {
+      final locale = File(
+        '${root.path}/lib/l10n/generated/app_localizations_ko.dart',
+      );
+      await locale.create(recursive: true);
+      await locale.writeAsString('// generated ko\n');
+      final before = snapshotGeneratedSources(root);
+      await locale.writeAsString('// generated ko\r\n');
+      expect(
+        () => checkGeneratedSourcesUnchanged(
+          before,
+          snapshotGeneratedSources(root),
+          phase: '첫 생성',
+        ),
+        gitFailure('lib/l10n/generated/app_localizations_ko.dart'),
+      );
+    });
     test('지역화 Dart 파일을 검사하고 수동 l10n 소스는 포함하지 않는다', () async {
       final locale = File(
         '${root.path}/lib/l10n/generated/app_localizations_ko.dart',
@@ -143,6 +160,41 @@ void main() {
         ),
       );
     });
+  });
+
+  group('지역화 입력과 생성 소스 checkout', () {
+    for (final autocrlf in ['true', 'false']) {
+      test('core.autocrlf=$autocrlf에서도 입력과 생성 소스는 LF다', () async {
+        await File('.gitattributes').copy('${root.path}/.gitattributes');
+        const paths = [
+          'pubspec.yaml',
+          'lib/l10n/generated/app_localizations.dart',
+          'lib/l10n/generated/app_localizations_ko.dart',
+        ];
+        for (final path in paths) {
+          final file = File('${root.path}/$path');
+          await file.create(recursive: true);
+          await file.writeAsString('// fixture\r\n');
+        }
+        await commitFixture();
+        final checkout = '${root.path}/checkout-$autocrlf';
+        await git([
+          'clone',
+          '--quiet',
+          '--config',
+          'core.autocrlf=$autocrlf',
+          root.path,
+          checkout,
+        ]);
+        for (final path in paths) {
+          expect(
+            await File('$checkout/$path').readAsBytes(),
+            '// fixture\n'.codeUnits,
+            reason: '$path checkout 줄바꿈',
+          );
+        }
+      });
+    }
   });
 
   group('CI 지역화 소스 Git 포함 검사', () {

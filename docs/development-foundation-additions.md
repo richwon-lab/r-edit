@@ -184,3 +184,25 @@ tool/api_documentation.dart가 같은 공식 dry-run의 모든 warning/error 진
 
 새 생성 소스는 Git 포함 대상이다. 이번 작업은 stage하지 않으므로 사용자가 이후 커밋할 때
 라우트 및 지역화 생성 파일을 함께 포함해야 한다. 미커밋 상태의 실제 작업 트리를 CI 성공으로 보고하지 않는다.
+## 지역화 줄바꿈 재현성 보완 — 2026-10-28
+
+Flutter 3.47.7의 packages/flutter_tools/lib/src/localizations/gen_l10n.dart는
+pubspec.yaml에 CRLF가 하나라도 포함되면 useCRLF=true로 지역화 코드를 출력한다.
+기존 pubspec에는 CRLF 2개/LF 35개가 섞여 있었고 지역화 두 파일은 전부 CRLF였다.
+생성 파일만 LF checkout으로 고정하면 Windows의 pubspec CRLF checkout 뒤 첫 생성과 달라진다.
+
+.gitattributes에 pubspec.yaml text eol=lf를 추가하고 해당 파일만 내용 변경 없이 LF로 통일했다.
+지역화 두 파일은 ./tool/fvm.ps1 flutter gen-l10n으로 재생성했다. 생성 파일을 직접 편집하지 않았다.
+첫 pub get 이전 바이트 기록·첫 생성 일치·반복 안정성·CI Git 포함 검사는 그대로 유지한다.
+줄바꿈을 무시하거나 비교 전에 자동 정규화하지 않는다.
+회귀 테스트는 지역화 파일의 LF/CRLF 차이를 거부하고 실제 속성을 사용하는 임시 clone에서
+core.autocrlf=true/false 모두 pubspec과 지역화 파일이 LF로 checkout되는지 검사한다.
+실제 검증: 단독 생성 파일 검사 19개 및 실제 작업 트리 verify(포맷·분석·전체 49개 테스트) 성공.
+현재 미커밋 수정 파일을 포함해 준비한 격리 seed에서 core.autocrlf=true/false로 각각 새 clone했다.
+두 clone 모두 생성 전 pubspec과 지역화 두 파일의 CR 바이트가 0이었다.
+SDK 연결과 캐시 위치만 준비하고 사전 pub get/gen-l10n 없이 최초 tool/verify.dart --ci를 실행했다.
+두 clone 모두 첫 생성 일치·반복 안정성·CI Git 포함 검사·포맷·분석·49개 테스트를 통과했다.
+로그는 .tooling/eol-checkout-root.txt가 가리키는 격리 경로의 verify-true.log/verify-false.log에 있다.
+재현 시 실제 HEAD만 복사하지 말고 작업 트리의 현재 소스·속성·생성 파일을 seed에 반영한다.
+임시 seed/clone에서만 add/commit/clone을 수행하며 실제 저장소 설정·인덱스는 바꾸지 않는다.
+Windows 빌드/화면·원격 CI·다른 OS 검증은 이번 줄바꿈 변경에서 반복하지 않았다.

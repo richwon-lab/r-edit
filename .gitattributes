@@ -2,3 +2,4 @@
 lib/**/*.g.dart text eol=lf
 lib/**/*.freezed.dart text eol=lf
 lib/l10n/generated/*.dart text eol=lf
+pubspec.yaml text eol=lf
