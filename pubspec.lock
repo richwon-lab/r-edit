@@ -565,6 +565,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.7.0"
+  r_edit_workflow:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: "969253699f28d03db3f2d8d81d5cadad5a6ad5c7"
+      resolved-ref: "969253699f28d03db3f2d8d81d5cadad5a6ad5c7"
+      url: "https://github.com/richwon-lab/r-edit-workflow.git"
+    source: git
+    version: "0.1.0"
   record_use:
     dependency: transitive
     description:

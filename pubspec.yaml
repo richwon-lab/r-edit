@@ -19,6 +19,10 @@ dependencies:
   json_annotation: 4.12.0
   logging: 1.3.0
   path_provider: 2.1.6
+  r_edit_workflow:
+    git:
+      url: https://github.com/richwon-lab/r-edit-workflow.git
+      ref: 969253699f28d03db3f2d8d81d5cadad5a6ad5c7
   riverpod_annotation: 4.0.7
 
 dev_dependencies:

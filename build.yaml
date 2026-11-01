@@ -9,6 +9,7 @@ targets:
       riverpod_generator:
         generate_for:
           - lib/app/providers/*.dart
+          - lib/app/work/open_works.dart
       go_router_builder:
         generate_for:
           - lib/app/routing/*.dart

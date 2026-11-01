@@ -1,5 +1,10 @@
 # R-edit
 
+열린 작업의 유효 구성 등록·세션 소유/활성화·변경 준비·확인/취소·관찰 통지·명시 close를
+keepAlive 생성 Riverpod Notifier로 연결했다. [현행 연결 계약](docs/workflow-edit-session-binding.md)을 따른다.
+workflow는 실제 원격 커밋 969253699f28d03db3f2d8d81d5cadad5a6ad5c7로 고정한다.
+작업 화면·실제 파일 읽기/저장·전체 탭/에디터는 아직 없다. 이후 날짜별 기록은 당시 상태다.
+
 명판 문구 배치 및 제작 파일 작성 프로그램. Flutter와 Dart로 개발하는 Windows 데스크톱 앱이다.
 
 ## 저장소 역할
@@ -41,7 +46,7 @@ IntelliJ Flutter 경로는 .fvm/flutter_sdk, Dart는 그 아래 bin/cache/dart-s
 원격 Actions/Linux 실행은 하지 않았다. 결과·다음 작업은 [현재 상태](docs/next-step.md)를 따른다.
 ## 현재 개발 범위
 
-현재 앱은 R-edit 제목과 한국어 안내를 표시하는 시작 화면이다. 업무 기능은 아직 없다.
+현재 화면은 R-edit 제목과 한국어 안내를 표시하는 시작 화면이다. 세션 명령 기반은 연결했지만 업무 화면과 실제 파일 읽기·저장은 아직 없다.
 
 | 파일 | 책임 |
 |---|---|
