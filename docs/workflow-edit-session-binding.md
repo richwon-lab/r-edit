@@ -150,8 +150,9 @@ geometry_change_confirmation_test.dart, open_works_lifetime_test.dart다.
 반복되는 실제 구성 준비만 test/support/work_configurations.dart로 공유한다.
 실제 ProviderContainer와 고정 기대 전체 구성으로 등록/선택·원래 작업 반영·수명·재진입을 검증한다.
 
-다음 한 가지는 **실제 파일 열기 경계의 식별·읽기/유효 구성 공급 계약 설계**다.
-지원 경로와 작업 파일 형식·검증 책임을 정하기 전에 임의 로더/파일 선택 UI를 추가하지 않는다.
+파일 열기의 현행 설계는 [정식 작업 파일 열기 계약](work-file-opening.md)을 따른다.
+전체 문서 데이터가 부족하므로 다음 한 가지는 **workflow 저장 결과/입력 정합성·결과별 확인 계약 설계**다.
+구성 JSON을 정식 파일로 승격하거나 임의 로더/파일 선택 UI를 추가하지 않는다.
 저장·동기화·UI·전체 탭/에디터·배치/제작 판정·결과 무효화는 미구현이다.
 
 실제 로컬 검사: 앱 tool/verify.dart 성공(생성 시작 일치·반복 안정성·포맷·fatal-infos 분석·전체 68개 테스트).
