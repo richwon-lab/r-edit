@@ -54,3 +54,10 @@ Flutter 3.47.7 / Dart 3.13.5의 기존 `.fvm/flutter_sdk`를 재사용한다. �
 - integration_test/probe_windows_test.dart: 실제 Windows 실행/텍스트/확대/이동/실패 보존과 렌더 화면 캡처.
 
 운영 미리보기가 매번 DXF를 다시 읽는 구조로 채택된 것은 아니다. 성공/제한을 보고 파서와 좌표/텍스트 렌더링의 재사용을 따로 판단한다.
+## 운영 CI와의 분석 경계
+
+루트 pub get은 이 독립 패키지의 의존성을 설치하지 않는다. 루트 analysis_options.yaml에서
+이 실험 경로만 제외하며 실험 자체의 분석 규칙이나 진단을 끄지 않는다.
+로컬에 실험 package_config가 있어서 루트 분석까지 성공하는 상태를 CI 재현으로 간주하지 않는다.
+실험은 위 get/analyze/test/windows-test 명령으로 따로 검증한다.
+Windows·지정 로컬 글꼴이 필요한 실험을 운영 Ubuntu CI에 자동 연결하지 않는다.

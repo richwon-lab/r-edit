@@ -15,6 +15,8 @@ analyzer:
     - build/**
     # 당시 도구 비교 자료는 해당 패키지 설정으로 검증한다.
     - tool/model_comparison/**
+    # 독립 Windows 실험은 자체 pubspec과 run.ps1 -Action analyze로 검증한다.
+    - tool/experiments/dxf_flutter_probe/**
     - windows/**
 
 linter:

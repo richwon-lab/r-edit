@@ -255,3 +255,21 @@ logging 1.3.0은 유지하고 앱 로컬 경로에 path_provider 2.1.6을 채택
 고정 3슬롯 총 15MiB·레코드 16KiB·대기열 64건, 정상 종료 flush를 적용한다.
 root/Flutter/Platform/Riverpod 경계는 앱만 소유한다. workflow에 로그/플랫폼 의존성을 넣지 않는다.
 Talker·logging_appenders 비교 근거, 원문 보호와 동시 프로세스 제한은 위 계약을 따른다.
+
+## 독립 실험 패키지의 분석 경계 (2026-11-01)
+
+운영 루트의 pub get/verify는 운영 의존성만 해결한다. 별도 pubspec을 가진 Windows DXF 실험
+`tool/experiments/dxf_flutter_probe/`는 루트 analyzer.exclude에 해당 경로만 명시하고,
+자체 run.ps1의 get/analyze/test/windows-test로 검증한다. 운영 lib/test와 일반 tool 소스는 계속 검사한다.
+루트 CI에 실험 의존성·로컬 글꼴·Windows 요구를 섞거나 오류 코드를 광범위 ignore로 숨기지 않는다.
+새 독립 실험을 추가할 때 해당 분석 경계와 재현 명령을 함께 검토한다.
+
+로컬 실험의 .dart_tool/package_config.json 유무에 따라 루트 분석 성공이 달라져서는 안 된다.
+이번 CI 실패는 그 파일이 없는 checkout에서 실험 소스가 루트 분석에 포함되어 발생했다.
+실험 의존성이 없는 격리 clone으로 확인하며, 원격 Actions 재실행 결과와 로컬 검사를 구분한다.
+실제 로컬 확인: 실험 package_config가 없는 새 로컬 clone에서 수정 전 analyze의 53건 실패를 재현했다.
+루트 분석 경로 수정만 적용한 같은 clone에서 고정 SDK의 `dart tool/verify.dart --ci`가 성공했다.
+생성 시작 상태/반복 안정성·Git 포함 검사, strict 분석, 운영 테스트 68건이 통과했고,
+clone에는 끝까지 실험 package_config가 생기지 않았다. 기존 실험 자체의 별도 analyze도 통과했다.
+이 검사는 Windows 로컬 clone이며 GitHub의 Ubuntu 러너/원격 Actions 재실행 결과는 아직 확인하지 않았다.
+SDK·의존성·CI 명령/권한/실행 조건은 변경하지 않았고 Windows 빌드는 반복하지 않았다.
