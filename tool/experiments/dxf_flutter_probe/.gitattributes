@@ -1,0 +1,2 @@
+# 합성 원본 바이트를 checkout에서도 보존한다.
+fixtures/*.dxf -text

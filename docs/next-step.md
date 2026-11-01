@@ -131,3 +131,9 @@ override·형제 workflow 없이 해결했으며 화면/네이티브 변경이 �
 다음 한 가지: workflow 저장 결과/현재 입력의 정합성과 결과별 확인 계약을 구체화한다.
 검토 후 그 불변 입력 근거와 결과/확인 연결의 최소 값·검증부터 구현하며 로더·저장·UI·엔진은 별도다.
 이번 변경은 문서 3개뿐이며 링크·정책·실제 API를 대조했다. Dart/Flutter 검증은 반복하지 않았다.
+
+
+## 검증 DXF의 격리 Flutter 표시 실험
+
+[자료 조사·후속 범위](dxf-flutter-render-probe.md). 기존 CAD/Type3 정상 확인을 기준으로 유지하며 외부 재시험을 다시 요구하지 않는다.
+사용자가 제공한 합성 DXF를 tool/experiments/dxf_flutter_probe/fixtures로 이동하고 H2GTRE.TTF를 명시 로드하는 별도 Windows 실험을 구현했다. 단독 20건·실제 Windows 통합 1건·화면 캡처를 확인했으며, CAD/Type3 정밀 일치·fallback 완전 검증과는 구분한다. 다음 한 가지는 합성 샘플 화면을 검토해 운영에 재사용할 최소 렌더링 입력을 정하는 것이다.
